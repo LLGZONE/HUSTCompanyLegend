@@ -13,7 +13,7 @@ const Root = ({ store }) => (
     <Provider store={store}>
       <ConnectedRouter history={history}>
         <div>
-          <Route path='/' component={App} />
+          <Route exact path='/' component={App} />
           <DevTools />
         </div>
       </ConnectedRouter>

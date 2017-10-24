@@ -9,7 +9,7 @@ import App from '../pages/App'
 const Root = ({ store }) => (
   <Provider store={store}>
     <ConnectedRouter history={history}>
-      <Route path='/' component={App} />
+      <Route exact path='/' component={App} />
     </ConnectedRouter>
   </Provider>
 )

@@ -13,4 +13,4 @@ if (process.env.NODE_ENV === 'production') {
   configureStore = require('./configureStore.dev')
 }
 
-export default configureStore(history, middleware)
+module.exports = configureStore(history, middleware)
