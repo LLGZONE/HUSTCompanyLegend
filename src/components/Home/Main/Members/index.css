@@ -1,0 +1,35 @@
+.home-main-members {
+    display: flex;
+    justify-content: center;
+    --mermberHeight: 80px;
+}
+
+.home-main-members-side {
+    flex: 1 0 80px;
+    max-width: var(--mermberHeight);
+    max-height: var(--mermberHeight);
+    background-color: #FF7043;
+    color: white;
+    line-height: var(--mermberHeight);
+    font-size: 1.2rem;
+    vertical-align: middle;
+}
+
+.home-main-members-imgs {
+    flex: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.home-main-members-imgs img:first-child {
+    width: calc(calc(759 / 106 * var(--mermberHeight)) * 80%);
+    max-width: calc(759 / 106 * var(--mermberHeight));
+    height: var(--mermberHeight);
+    flex: 1 1 auto;
+}
+
+.home-main-members-imgs img:nth-child(2) {
+    height: var(--mermberHeight);
+    width: calc(calc(294 / 83 * var(--mermberHeight)));
+}
+

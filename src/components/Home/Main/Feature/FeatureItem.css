@@ -1,0 +1,28 @@
+.main-feature-item {
+    display: inline-flex;
+    height: 100px;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+.main-feature-item p {
+    flex: auto;
+    margin: 0;
+}
+
+.main-feature-font {
+    font-size: calc(14 / 16 * 1rem);
+}
+
+.main-feature-item-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.main-feature-item-message p:first-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}

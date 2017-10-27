@@ -1,0 +1,7 @@
+.home-header-logo {
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: center;
+    max-width: 200px;
+    margin-left: 20px;
+}

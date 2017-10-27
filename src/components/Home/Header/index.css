@@ -1,0 +1,12 @@
+.home-header {
+    display: flex;
+    align-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    align-items: center;
+    height: 60px;
+    line-height: 60px;
+    font-size: 1.125rem;
+    width: 100%;
+}
