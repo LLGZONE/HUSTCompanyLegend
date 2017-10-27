@@ -1,0 +1,4 @@
+.home-main-experts {
+    flex: auto;
+    width: calc(30% - 20px);
+}

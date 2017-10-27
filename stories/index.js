@@ -11,6 +11,7 @@ import {BrowserRouter as Router} from 'react-router-dom'
 import Feature from '../src/components/Home/Main/Feature'
 import Announcement from '../src/components/Home/Main/Announcement'
 import Members from '../src/components/Home/Main/Members'
+import Achievement from '../src/components/Home/Main/Achievement'
 
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
@@ -26,3 +27,4 @@ storiesOf('Main', module)
   .add('Feature', () => <Feature/>)
   .add('Announcement', () => <Announcement/>)
   .add('Members', () => <Members/>)
+  .add('Achievement', ()=> <Achievement/>)

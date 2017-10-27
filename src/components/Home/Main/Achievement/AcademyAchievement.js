@@ -3,9 +3,10 @@
  */
 import React from 'react'
 import acad from '../images/academy_achivement.png'
+import './AcademyAchievement.css'
 
 const AcademyAchievement = () => (
-  <div>
+  <div className="home-main-achieve-academy">
     <img src={acad} alt="科研成果" />
   </div>
 )

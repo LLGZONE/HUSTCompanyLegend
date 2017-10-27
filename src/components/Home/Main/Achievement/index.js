@@ -4,11 +4,12 @@
 import React from 'react'
 import AcademyAchievement from './AcademyAchievement'
 import LedgendAchievement from './LedgendAchievement'
+import './index.css'
 
 const Achievement = () => (
-  <div>
-    <AcademyAchievement />
+  <div className="home-main-achieve">
     <LedgendAchievement />
+    <AcademyAchievement />
   </div>
 )
 
