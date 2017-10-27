@@ -1,16 +1,24 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import Root from './routes/routes'
-import configureStore from './store/configureStore'
+import Root from './routes'
+import configureStore, {history} from './store/configureStore'
+import rootSaga from './utils/sagas'
 
 const store = configureStore()
-
-if (module.hot) {
-  modles.hot.accept()
+store.runSaga(rootSaga)
+const render = () => {
+  ReactDOM.render(
+    <Root store={store} history={history} />,
+    document.getElementById('root')
+  )
 }
 
-ReactDOM.render(
-  <Root store={store} />,
-  document.getElementById('root')
-)
+render()
+
+if (module.hot) {
+  // Enable Webpack hot module replacement for reducers
+  module.hot.accept('./routes', () => {
+    render()
+  })
+}
