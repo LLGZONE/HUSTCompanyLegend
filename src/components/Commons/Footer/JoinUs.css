@@ -1,0 +1,33 @@
+.common-footer-join-container {
+    display: flex;
+    padding: 15px 0;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.common-footer-join-reason {
+    font-size: 35px;
+    line-height: 40px;
+    font-weight: 600;
+    color: white;
+}
+
+.common-footer-join-btn-container {
+    display: flex;
+    flex: auto;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.common-footer-join-btn {
+    background-color: rgb(42, 128, 185);
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    height: 100px;
+    writing-mode: vertical-lr;
+    text-align: center;
+    letter-spacing: 2px;
+    padding: 0 15px;
+}

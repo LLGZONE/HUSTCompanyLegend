@@ -1,0 +1,21 @@
+.home-main-rec {
+    width: 100%;
+    background-color: #EFEFEF;
+    height: 350px;
+}
+
+.home-main-rec-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 15px;
+}
+
+.home-main-rec-title {
+    background-color: white;
+    padding: 5px 10px;
+    border: #000000 solid 1px;
+    border-radius: 5px;
+    font-size: 1.3rem;
+    font-weight: bold;
+}

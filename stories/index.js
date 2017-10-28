@@ -12,6 +12,11 @@ import Feature from '../src/components/Home/Main/Feature'
 import Announcement from '../src/components/Home/Main/Announcement'
 import Members from '../src/components/Home/Main/Members'
 import Achievement from '../src/components/Home/Main/Achievement'
+import CommonPerson from '../src/components/Home/Main/Recommendation/CommonPerson'
+import Recommendation from '../src/components/Home/Main/Recommendation'
+import Footer from '../src/components/Home/Footer'
+
+import CommonFooter from '../src/components/Commons/Footer'
 
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
@@ -27,4 +32,58 @@ storiesOf('Main', module)
   .add('Feature', () => <Feature/>)
   .add('Announcement', () => <Announcement/>)
   .add('Members', () => <Members/>)
-  .add('Achievement', ()=> <Achievement/>)
+  .add('Achievement', () => <Achievement/>)
+  .add('CommonPerson', () => <CommonPerson/>)
+  .addDecorator((story)=><Router>{story()}</Router>)
+  .add('Recommendation', () => <Recommendation />)
+
+const hotClicks = [
+  {
+    url: 'www.baidu.com',
+    text: '关于第三批试点产业技术创新战略联盟提交联络信息的通知'
+  },
+  {
+    url: 'www.baidu.com',
+    text: '舍弗勒倡导组件"产品安全网络"'
+  },
+  {
+    url: 'www.baidu.com',
+    text: '安全技术创新战略联盟筹备会邀请函'
+  },
+  {
+    url: 'www.baidu.com',
+    text: '安全技术创新战略联盟筹备会邀请函'
+  },
+  {
+    url: 'www.baidu.com',
+    text: '关于组织填报产业技术创新战略联盟信息的通知'
+  }
+]
+
+const latestArticle = [
+  {
+    url: 'www.baidu.com',
+    text: '360企业安全集团'
+  },
+  {
+    url: 'www.baidu.com',
+    text: '武汉思为网络技术股份有限公司'
+  },
+  {
+    url: 'www.baidu.com',
+    text: '武汉虹旭信息技术有限责任公司'
+  },
+  {
+    url: 'www.baidu.com',
+    text: '武汉天喻信息产业有限责任公司'
+  },
+  {
+    url: 'www.baidu.com',
+    text: '武汉达梦数据库有限公司'
+  },
+]
+
+storiesOf('Footer', module)
+  .add('footer', () => <Footer />)
+  .addDecorator((story) => <Router>{story()}</Router>)
+  .add('commonFooter', () => <CommonFooter hotClicks={hotClicks} latestArticle={latestArticle}/>)

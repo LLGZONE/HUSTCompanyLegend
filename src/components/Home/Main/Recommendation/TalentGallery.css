@@ -1,0 +1,5 @@
+.more-main-recommendation-gallery {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}

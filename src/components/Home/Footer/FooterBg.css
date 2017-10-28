@@ -1,0 +1,24 @@
+.home-footer-bg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:  #ff7043;
+    color: white;
+    height: 210px;
+    margin: 10px 0;
+}
+
+.home-footer-bg-icon {
+    font-size: 75px;
+}
+
+.home-footer-bg p {
+    margin: 0;
+}
+
+.home-footer-bg p:first-of-type {
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 10px 0 5px 0;
+}
