@@ -1,0 +1,16 @@
+.commons-lineheader-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: #FF6B00;
+}
+
+.commons-lineheader-container p {
+    padding: 0 15px;
+}
+
+.commons-lineheader-line {
+    flex: auto;
+    border-top: 1px solid #FF6B00;
+    height: 1px;
+}

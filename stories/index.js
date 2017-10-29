@@ -18,6 +18,7 @@ import Footer from '../src/components/Home/Footer'
 
 import CommonFooter from '../src/components/Commons/Footer'
 
+
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
 storiesOf('Button', module)
@@ -87,3 +88,4 @@ storiesOf('Footer', module)
   .add('footer', () => <Footer />)
   .addDecorator((story) => <Router>{story()}</Router>)
   .add('commonFooter', () => <CommonFooter hotClicks={hotClicks} latestArticle={latestArticle}/>)
+

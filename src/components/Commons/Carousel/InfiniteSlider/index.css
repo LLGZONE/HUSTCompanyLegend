@@ -1,0 +1,29 @@
+.infiniteSlider {
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+
+.infiniteSlider-arrow {
+    background-color: rgba(0, 0, 0, .2);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.infiniteSlider-arrow .fa {
+    background-color: slategray;
+}
+
+.arrow-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.arrow-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+}

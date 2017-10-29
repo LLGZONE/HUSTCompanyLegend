@@ -1,0 +1,13 @@
+.exercitation-base-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.exercitation-base-show-container {
+    display: flex;
+    margin: 0 10px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}

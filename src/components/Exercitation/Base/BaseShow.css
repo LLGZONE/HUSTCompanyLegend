@@ -1,0 +1,25 @@
+.exercitation-base-show {
+    min-width: 45%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid grey;
+    margin-bottom: 15px;
+}
+
+.exercitation-base-show p {
+    margin: 5px 0;
+}
+
+.exercitation-base-img {
+    max-width: 80px;
+}
+
+.exercitation-base-img img {
+    width: 100%;
+}
+
+.exercitation-base-info {
+    display: flex;
+    justify-content: space-between;
+}
