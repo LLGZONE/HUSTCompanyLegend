@@ -1,0 +1,10 @@
+.execitation-models-show {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.execitation-models-show img {
+    width: 100%;
+}

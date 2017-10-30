@@ -1,0 +1,28 @@
+.exercitation-posts-show {
+    min-width: 45%;
+    display: flex;
+    position: relative;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid grey;
+    margin-bottom: 15px;
+}
+
+.exercitation-posts-show p {
+    margin: 5px 0;
+}
+
+.exercitation-posts-img {
+    flex: auto;
+    margin: 0 40px;
+    max-width: 80px;
+}
+
+.exercitation-posts-img img {
+    width: 100%;
+}
+
+.exercitation-posts-info {
+    display: flex;
+    justify-content: space-between;
+}

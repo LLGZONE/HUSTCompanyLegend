@@ -2,59 +2,56 @@
  * Created by LLGZONE on 2017/10/29.
  */
 import React from 'react'
+import InstituteHeader from './InstituteHeader'
+import InstituteShow from './InstituteShow'
+import InstituteMore from '../More'
 
 import './index.css'
-import LineHeader from '../../Commons/LineHeader'
+
+import course1 from '../images/courses/course1.png'
+import course2 from '../images/courses/course2.png'
+import course3 from '../images/courses/course.png'
+import course4 from '../images/courses/course4.png'
 
 const Institute = () => (
-  <section className="exercitation-base-container">
-    <BaseHeader />
-    <div className="exercitation-base-show-container">
-      <BaseShow
-        baseName="华中科技大学—360实习基地"
-        basePlace="武汉光谷软件园"
-        baseProperty="团体"
-        baseTime="1个月以上"
-        baseMark={4.5}
-        company="360集团公司"
+  <section className="exercitation-institute-container">
+    <InstituteHeader/>
+    <div className="exercitation-institute-show-container">
+      <InstituteShow
+        course="如何让你的简历脱颖而出"
+        teacher="王xx教授"
+        host="华中科技大学"
+        money={0}
       >
-        <img src={hust} alt="hust" />
-        <img src={_360} alt="360"/>
-      </BaseShow>
-      <BaseShow
-        baseName="武汉大学—360实习基地"
-        basePlace="武汉光谷软件园"
-        baseProperty="个人"
-        baseTime="3个月以上"
-        baseMark={4.5}
-        company="360集团公司"
+        <img src={course1} alt="简历脱颖而出" />
+      </InstituteShow>
+      <InstituteShow
+        course="从零开始学运营"
+        teacher="王xx教授"
+        host="华中科技大学"
+        money={0}
       >
-        <img src={wu} alt="武汉大学" />
-        <img src={_360} alt="360" />
-      </BaseShow>
-      <BaseShow
-        baseName="武汉理工大学—安天实习基地"
-        basePlace="武汉光谷软件园"
-        baseProperty="团体"
-        baseTime="1个月以上"
-        baseMark={4.5}
-        company="武汉安天科技"
+        <img src={course2} alt="从0学运营" />
+      </InstituteShow>
+      <InstituteShow
+        course="前端代码入门篇"
+        teacher="王xx教授"
+        host="华中科技大学"
+        money={0}
       >
-        <img src={huot} alt="武汉理工" />
-        <img src={antian} alt="安天" />
-      </BaseShow>
-      <BaseShow
-        baseName="武汉大学—360实习基地"
-        basePlace="武汉光谷软件园"
-        baseProperty="个人"
-        baseTime="3个月以上"
-        baseMark={4.5}
-        company="360集团公司"
+        <img src={course3} alt="前端入门" />
+      </InstituteShow>
+      <InstituteShow
+        course="坚果手机视频效果讲解"
+        teacher="王xx教授"
+        host="华中科技大学"
+        money={0}
       >
-        <img src={zuel} alt="中南财经政法大学"/>
-        <img src={antian} alt="安天" />
-      </BaseShow>
+        <img src={course4} alt="坚果手机视频效果讲解" />
+      </InstituteShow>
     </div>
-    <BaseMore />
+    <InstituteMore url="/institute/more" />
   </section>
 )
+
+export default Institute

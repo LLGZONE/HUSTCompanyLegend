@@ -12,9 +12,13 @@ import member from '../src/components/Home/Main/images/members1.png'
 import LineHeader from "../src/components/Commons/LineHeader/index"
 import BaseShow from '../src/components/Exercitation/Base/BaseShow'
 import Base from '../src/components/Exercitation/Base'
+import CompanyGallery from '../src/components/Exercitation/CompanyGallery'
+import Posts from '../src/components/Exercitation/Posts'
+import Institute from '../src/components/Exercitation/Institute'
 
-import zuel from '../src/components/Exercitation/images/zuel.png'
-import antian from '../src/components/Exercitation/images/antian.png'
+import zuel from '../src/components/Exercitation/images/Base/zuel.png'
+import antian from '../src/components/Exercitation/images/Base/antian.png'
+
 
 storiesOf('Exercitation', module)
   .addDecorator((story) => <Router>{story()}</Router>)
@@ -33,3 +37,6 @@ storiesOf('Exercitation', module)
     <img src={antian} alt="安天" />
   </BaseShow>)
   .add('base', () => <Base />)
+  .add('gallery', () => <CompanyGallery />)
+  .add('posts', () => <Posts/>)
+  .add('institute', () => <Institute/>)

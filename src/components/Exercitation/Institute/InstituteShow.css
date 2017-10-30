@@ -1,0 +1,26 @@
+.exercitation-institute-show {
+    display: flex;
+    width: 23%;
+    flex-direction: column;
+    padding: 5px;
+    border: 1px solid grey;
+    margin-bottom: 15px;
+}
+
+.exercitation-institute-show img {
+    flex: auto;
+    width: 100%;
+}
+
+.exercitation-institute-msg p {
+    margin: 5px 0;
+}
+
+.exercitation-institute-bill {
+    color: #259B24;
+    text-align: right;
+}
+
+.exercitation-institute-bill p {
+    margin: 0 20px 0 0;
+}
