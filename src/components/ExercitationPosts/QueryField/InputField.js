@@ -3,6 +3,7 @@
  */
 import React from 'react'
 import contolInput from '../../Commons/WrapComponent/controlInput'
+import PropTypes from 'prop-types'
 
 import './InputField.css'
 
@@ -15,6 +16,11 @@ class InputField extends React.Component {
       </div>
     )
   }
+}
+
+InputField.propTypes = {
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired
 }
 
 export default contolInput(InputField)

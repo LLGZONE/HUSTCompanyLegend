@@ -4,6 +4,11 @@
 import React from 'react'
 import Button from '../../Commons/Button'
 
-const QueryBtn = () => (
-  <Button value="搜索" />
+const QueryBtn = ({handleClick}) => (
+  <Button
+    value="搜索"
+    onClick={handleClick}
+  />
 )
+
+export default QueryBtn
