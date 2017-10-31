@@ -4,11 +4,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import './ModelShow.css'
+
 const ModelsShow = ({children, name, info}) => (
-  <div>
+  <div className="exercitation-models-show">
     {children}
-    <p>name</p>
-    <p>info</p>
+    <p>{name}</p>
+    <p>{info}</p>
   </div>
 )
 

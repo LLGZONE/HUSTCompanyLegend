@@ -15,6 +15,7 @@ import Base from '../src/components/Exercitation/Base'
 import CompanyGallery from '../src/components/Exercitation/CompanyGallery'
 import Posts from '../src/components/Exercitation/Posts'
 import Institute from '../src/components/Exercitation/Institute'
+import Models from '../src/components/Exercitation/Models'
 
 import zuel from '../src/components/Exercitation/images/Base/zuel.png'
 import antian from '../src/components/Exercitation/images/Base/antian.png'
@@ -40,3 +41,4 @@ storiesOf('Exercitation', module)
   .add('gallery', () => <CompanyGallery />)
   .add('posts', () => <Posts/>)
   .add('institute', () => <Institute/>)
+  .add('models', () => <Models />)

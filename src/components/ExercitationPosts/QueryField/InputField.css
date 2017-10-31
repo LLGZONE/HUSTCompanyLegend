@@ -1,0 +1,10 @@
+.queryfield-input {
+    width: 100%;
+    padding: 2px 5px;
+    border: 1px solid #FF9800;
+}
+
+.queryfield-input > input {
+    width: 100%;
+    outline: hidden;
+}

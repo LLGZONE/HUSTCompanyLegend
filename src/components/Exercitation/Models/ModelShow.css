@@ -1,8 +1,9 @@
 .execitation-models-show {
     display: flex;
     flex-direction: column;
+    max-width:18%;
+    justify-content: space-around;
     align-items: center;
-    width: 100%;
 }
 
 .execitation-models-show img {
