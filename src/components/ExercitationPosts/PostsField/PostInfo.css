@@ -1,0 +1,21 @@
+.exercitationPosts-posts-info-ctn {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+}
+
+.exercitationPosts-posts-info {
+    display: flex;
+    width: 100%;
+    flex-flow: row wrap;
+}
+
+.exercitationPosts-posts-info > span {
+    flex: auto;
+    padding: 5px 0;
+    width: 33%;
+}
+
+.exercitationPosts-posts-info .fa {
+    padding: 0 5px;
+}

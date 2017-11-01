@@ -1,4 +1,25 @@
 .exercitationPosts-query-field {
     display: flex;
     align-items: center;
+    margin: 0 20px;
+}
+
+.exercitationPosts-query-searchbar {
+    display: flex;
+    height: 40px;
+    line-height: 40px;
+    flex: 1 1 auto;
+}
+
+.exercitationPosts-query-links {
+    display: flex;
+    margin-left: 20px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.exercitationPosts-query-links a {
+    text-decoration: none;
+    color: black;
 }

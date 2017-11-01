@@ -8,6 +8,7 @@ const QueryBtn = ({handleClick}) => (
   <Button
     value="搜索"
     onClick={handleClick}
+    customStyle={{fontSize: '28px'}}
   />
 )
 

@@ -4,7 +4,7 @@
 import React from 'react'
 
 function controlInput(WrapComponent) {
-  return class ControlInput extends React.components {
+  return class ControlInput extends React.Component {
     constructor(props) {
       super(props)
       this.state = {
@@ -19,7 +19,7 @@ function controlInput(WrapComponent) {
     }
 
     render() {
-      return <WrapComponent {...this.props} input={{value: this.state.inputValue, onChange: () => this.onChange}} />
+      return <WrapComponent {...this.props} input={{value: this.state.inputValue, onChange: (e) => this.onChange(e)}} />
     }
   }
 }

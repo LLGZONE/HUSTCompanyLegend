@@ -16,6 +16,8 @@ import CompanyGallery from '../src/components/Exercitation/CompanyGallery'
 import Posts from '../src/components/Exercitation/Posts'
 import Institute from '../src/components/Exercitation/Institute'
 import Models from '../src/components/Exercitation/Models'
+import QueryField from '../src/components/ExercitationPosts/QueryField'
+import PostsField from '../src/components/ExercitationPosts/PostsField'
 
 import zuel from '../src/components/Exercitation/images/Base/zuel.png'
 import antian from '../src/components/Exercitation/images/Base/antian.png'
@@ -42,3 +44,5 @@ storiesOf('Exercitation', module)
   .add('posts', () => <Posts/>)
   .add('institute', () => <Institute/>)
   .add('models', () => <Models />)
+  .add('queryField', () => <QueryField/>)
+  .add('postsField', () => <PostsField handleTime="2017-09-08"/>)

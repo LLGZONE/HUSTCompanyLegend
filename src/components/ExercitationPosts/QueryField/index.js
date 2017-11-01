@@ -19,7 +19,7 @@ class QueryField extends React.Component {
 
   //在这里dispatch
   handleClick() {
-    console.log(this.inputValue)
+    console.log(this.state.inputValue)
   }
 
   getInputValue(value) {
@@ -28,12 +28,12 @@ class QueryField extends React.Component {
 
   render() {
     return (
-      <section className="">
-        <div className="">
+      <section className="exercitationPosts-query-field">
+        <div className="exercitationPosts-query-searchbar">
           <InputField getInputValue={(value)=> this.getInputValue(value)} />
           <QueryBtn handleClick={()=>this.handleClick()} />
         </div>
-        <div className="">
+        <div className="exercitationPosts-query-links">
           <Link to="/exercitation/query">更多筛选</Link>
           <Link to="/exercitation/publish">我要发布</Link>
         </div>

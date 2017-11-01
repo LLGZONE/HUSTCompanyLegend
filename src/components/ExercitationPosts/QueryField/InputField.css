@@ -1,10 +1,19 @@
 .queryfield-input {
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: auto;
     padding: 2px 5px;
     border: 1px solid #FF9800;
 }
 
 .queryfield-input > input {
-    width: 100%;
-    outline: hidden;
+    flex: auto;
+    font-size: 20px;
+    line-height: 30px;
+    border:none;
+}
+
+.queryfield-input > input:focus {
+    outline: none;
 }

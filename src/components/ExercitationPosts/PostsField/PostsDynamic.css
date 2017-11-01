@@ -1,0 +1,12 @@
+.exercitationPosts-posts-dynamic {
+    flex: auto;
+    display: flex;
+    background-color: #E3E3E3;
+    justify-content: flex-end;
+    border-top: 1px solid gray;
+}
+
+.exercitationPosts-posts-dynamic p {
+    margin: 5px 20px;
+    font-size: 0.9rem;
+}

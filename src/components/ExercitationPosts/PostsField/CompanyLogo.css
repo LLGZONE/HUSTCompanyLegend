@@ -1,0 +1,8 @@
+.exercitationPosts-posts-logo {
+    display: flex;
+    align-items: center;
+}
+
+.exercitationPosts-posts-logo img {
+    max-width: 150px;
+}
