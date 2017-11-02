@@ -24,7 +24,7 @@ const Pagination = () => (
     <Link to='/exercitation/posts/pagination/3'>
       <PaginationBtn text="3"/>
     </Link>
-    <Link>
+    <Link to='/exercitation/posts/pagination/'>
       <PaginationBtn text="下页"/>
     </Link>
   </nav>
