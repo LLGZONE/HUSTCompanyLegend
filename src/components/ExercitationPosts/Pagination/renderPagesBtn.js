@@ -6,7 +6,7 @@ import PaginationBtn from './PaginationBtn'
 import {Link} from 'react-router-dom'
 
 function renderPagesBtn(arr, pageIndex, activeStyle) {
-  arr.map((item) =>
+  return arr.map((item) =>
     <Link
       to={`/exercitation/posts/pagination/${item}`}
       key={`${item}`}
