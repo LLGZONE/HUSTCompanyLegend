@@ -1,0 +1,39 @@
+.exercitationPosts-filter-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 22px;
+}
+
+.exercitationPosts-filter-container p:first-of-type {
+    font-weight: bold;
+}
+
+.exercitationPosts-filter-container button {
+    font-size: 22px;
+    margin: 0 5px;
+    border: none;
+    background-color: transparent;
+    color: black;
+}
+
+.exercitationPosts-filter-container > button:first-of-type {
+    margin-left: 15px;
+}
+
+.exercitationPosts-filter-container button:focus {
+    outline: none;
+}
+
+.exercitationPosts-filter-container button.exercitationPosts-filter-active {
+    cursor: pointer;
+    border: 1px solid #FF9800;
+    background-color: #FF9800;
+    color: white;
+}
+
+.exercitationPosts-filter-container button.exercitationPosts-filter-deactive {
+    border: none;
+    background-color: transparent;
+    color: black;
+}

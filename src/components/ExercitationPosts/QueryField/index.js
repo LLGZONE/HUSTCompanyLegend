@@ -34,7 +34,7 @@ class QueryField extends React.Component {
           <QueryBtn handleClick={()=>this.handleClick()} />
         </div>
         <div className="exercitationPosts-query-links">
-          <Link to="/exercitation/query">更多筛选</Link>
+          <Link to="/exercitation/query/filter">更多筛选</Link>
           <Link to="/exercitation/publish">我要发布</Link>
         </div>
       </section>
