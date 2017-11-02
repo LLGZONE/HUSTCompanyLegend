@@ -2,6 +2,7 @@
  * Created by LLGZONE on 2017/11/2.
  */
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import './FilterItem.css'
 
@@ -27,7 +28,7 @@ class FilterItem extends React.Component {
   }
 
   render() {
-    const {title, children} = this.props
+    const {title, children, type} = this.props
     return (
       <div className="exercitationPosts-filter-container">
         <p>{title}:</p>
@@ -35,13 +36,24 @@ class FilterItem extends React.Component {
           ref={(btn) => this.initRef = btn}
           className="exercitationPosts-filter-active"
           onClick={(e) => this.handleClick(e)}
+          data-type={type}
         >
           不限
         </button>
-        {React.Children.map(children, child => React.cloneElement(child, {onClick: (e) => this.handleClick(e)}))}
+        {
+          React.Children.map(children, child => React.cloneElement(child, {
+            onClick: (e) => this.handleClick(e),
+            'data-type': type})
+          )
+        }
       </div>
     )
   }
+}
+
+FilterItem.propTypes = {
+  title: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired
 }
 
 export default FilterItem

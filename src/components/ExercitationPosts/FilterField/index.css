@@ -1,0 +1,17 @@
+.exercitationPosts-filter-field {
+    width: 100%;
+    padding: 15px 7px;
+    border: 1px solid gray;
+}
+
+.exercitationPosts-filter-field-container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.exercitationPosts-filter-field-container p {
+    margin: 5px 0;
+}

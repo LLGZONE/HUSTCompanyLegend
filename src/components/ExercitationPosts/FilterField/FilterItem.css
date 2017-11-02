@@ -15,6 +15,7 @@
     border: none;
     background-color: transparent;
     color: black;
+    cursor: pointer;
 }
 
 .exercitationPosts-filter-container > button:first-of-type {
@@ -26,7 +27,6 @@
 }
 
 .exercitationPosts-filter-container button.exercitationPosts-filter-active {
-    cursor: pointer;
     border: 1px solid #FF9800;
     background-color: #FF9800;
     color: white;
