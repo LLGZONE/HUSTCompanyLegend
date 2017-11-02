@@ -19,9 +19,11 @@ import Models from '../src/components/Exercitation/Models'
 import QueryField from '../src/components/ExercitationPosts/QueryField'
 import PostsField from '../src/components/ExercitationPosts/PostsField'
 import FilterItem from '../src/components/ExercitationPosts/FilterField/FilterItem'
+import Pagination from '../src/components/ExercitationPosts/Pagination'
 
 import zuel from '../src/components/Exercitation/images/Base/zuel.png'
 import antian from '../src/components/Exercitation/images/Base/antian.png'
+
 
 
 storiesOf('Exercitation', module)
@@ -47,4 +49,5 @@ storiesOf('Exercitation', module)
   .add('models', () => <Models />)
   .add('queryField', () => <QueryField/>)
   .add('postsField', () => <PostsField handleTime="2017-09-08"/>)
+  .add('pagination', () => <Pagination pageIndex={10} maxPageIndex={12} size={5} />)
   .add('filterItem', () => <FilterItem title="实习地点"><button>北京</button><button>sad京</button></FilterItem>)

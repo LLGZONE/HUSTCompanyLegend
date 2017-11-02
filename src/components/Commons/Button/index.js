@@ -5,7 +5,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {Link} from 'react-router-dom'
 
-const Button = ({value, backgroundColor="#FF9800", color="white", border='1px solid #FF9800', url, width, height, onClick,customStyle}) => {
+const Button = ({value, backgroundColor="#FF9800", color="white", border='1px solid #FF9800', url, width, height, onClick, customStyle}) => {
   const style = {
     backgroundColor,
     color,

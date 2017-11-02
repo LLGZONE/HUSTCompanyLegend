@@ -6,12 +6,13 @@ import Button from '../../Commons/Button'
 
 import PropTypes from 'prop-types'
 
-const PaginationBtn = ({text}) => (
-  <Button value={text} backgroundColor="white" color="#FF9800"/>
+const PaginationBtn = ({text, activeStyle}) => (
+  <Button value={text} backgroundColor="white" color="#FF9800" customStyle={activeStyle} />
 )
 
 PaginationBtn.propTypes = {
-  text: PropTypes.string.isRequired
+  text: PropTypes.string.isRequired,
+  activeStyle: PropTypes.object
 }
 
 export default PaginationBtn
