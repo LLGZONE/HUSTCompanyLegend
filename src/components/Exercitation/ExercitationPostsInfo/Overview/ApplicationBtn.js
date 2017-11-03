@@ -7,3 +7,5 @@ import Button from '../../../Commons/Button'
 const ApplicationBtn = () => (
   <Button value="申请" url="/exercitation/posts/apply" />
 )
+
+export default ApplicationBtn

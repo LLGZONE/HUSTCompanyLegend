@@ -2,13 +2,18 @@
  * Created by LLGZONE on 2017/11/3.
  */
 import React from 'react'
+import PropTypes from 'prop-types'
+
 import ApplicationBtn from './ApplicationBtn'
 
+import './index.css'
 import 'font-awesome/css/font-awesome.min.css'
 
 class Overview extends React.Component {
   star(e) {
-    e.target.classList.add('fa-')
+    const target = e.target
+    target.classList.add('fa-star')
+    target.classList.remove('fa-star-o')
   }
 
   render() {
@@ -17,29 +22,39 @@ class Overview extends React.Component {
       company,
       place,
       beOfficial,
-      mark } = this.props
+      mark,
+      duration
+    } = this.props
+
+    const iconStyle = {
+      color: '#FF6B00',
+      fontSize: '1.5rem',
+      margin: '0 10px',
+    }
 
     return (
-      <section>
-        <div>
-          <h3>{title}</h3>
-          <p>{company}</p>
-          <div>
-            <i className="fa fa-globe">
-            </i>
-            <p>{place}</p>
-            <p>转正机会：{beOfficial ? '有' : '无'}</p>
+      <section className="exercitationInfo-overview">
+        <div className="exercitationInfo-overview-text">
+          <h3 style={{marginTop: 0}}>{title}</h3>
+          <p style={{margin: 0}}>{company}</p>
+          <div className="exercitationInfo-overview-row">
+            <span style={{display: 'flex', alignItems: 'center'}}>
+              <i style={{marginRight: '10px'}} className="fa fa-globe">
+              </i>
+              <p>{place}</p>
+            </span>
+            <p style={{marginLeft: '40px'}}>转正机会：{beOfficial ? '有' : '无'}</p>
           </div>
-          <div>
-            <p>岗位评价：{mark}分</p>
-            <p>实习时间：</p>
+          <div className="exercitationInfo-overview-row">
+            <p style={{marginTop: 0}}>岗位评价：{mark}分</p>
+            <p style={{marginTop: 0,marginLeft: '40px'}}>实习时间：{duration}</p>
           </div>
         </div>
-        <div>
-          <div>
-            <i className="fa fa-star-o">
+        <div className="exercitationInfo-overview-btn">
+          <div className="exercitationInfo-overview-row">
+            <i style={iconStyle} className="fa fa-star-o">
             </i>
-            <i className="fa fa-check">
+            <i style={iconStyle} className="fa fa-check">
             </i>
           </div>
           <ApplicationBtn />
@@ -48,3 +63,14 @@ class Overview extends React.Component {
     )
   }
  }
+
+Overview.propTypes = {
+  title: PropTypes.string.isRequired,
+  company: PropTypes.string.isRequired,
+  place: PropTypes.string.isRequired,
+  beOfficial: PropTypes.bool.isRequired,
+  mark: PropTypes.number.isRequired,
+  duration: PropTypes.string.isRequired
+}
+
+ export default Overview
