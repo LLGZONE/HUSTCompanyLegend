@@ -2,14 +2,14 @@
  * Created by LLGZONE on 2017/10/30.
  */
 import React from 'react'
-import LineHeader from '../../Commons/LineHeader'
+import LineHeader from '../../../Commons/LineHeader/index'
 import ModelShow from './ModelShow'
 import ModelMore from './ModelMore'
 
-import model1 from '../images/model/model1.png'
-import model2 from '../images/model/model2.png'
-import model3 from '../images/model/model3.png'
-import model4 from '../images/model/model4.png'
+import model1 from '../../images/model/model1.png'
+import model2 from '../../images/model/model2.png'
+import model3 from '../../images/model/model3.png'
+import model4 from '../../images/model/model4.png'
 
 import './index.css'
 

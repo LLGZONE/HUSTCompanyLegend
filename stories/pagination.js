@@ -2,7 +2,7 @@
  * Created by LLGZONE on 2017/11/3.
  */
 import React from 'react'
-import Pagination from '../src/components/ExercitationPosts/Pagination'
+import Pagination from '../src/components/Exercitation/ExercitationPosts/Pagination'
 import { storiesOf } from '@storybook/react'
 import {BrowserRouter as Router} from 'react-router-dom'
 

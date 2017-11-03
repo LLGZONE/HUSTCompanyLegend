@@ -8,10 +8,10 @@ import InstituteMore from '../More'
 
 import './index.css'
 
-import course1 from '../images/courses/course1.png'
-import course2 from '../images/courses/course2.png'
-import course3 from '../images/courses/course.png'
-import course4 from '../images/courses/course4.png'
+import course1 from '../../images/courses/course1.png'
+import course2 from '../../images/courses/course2.png'
+import course3 from '../../images/courses/course.png'
+import course4 from '../../images/courses/course4.png'
 
 const Institute = () => (
   <section className="exercitation-institute-container">

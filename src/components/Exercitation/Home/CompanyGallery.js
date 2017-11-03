@@ -5,15 +5,15 @@ import React from 'react'
 
 import './CompanyGallery.css'
 
-import _360 from './images/Base/360.png'
-import antian from './images/Base/antian.png'
-import a from './images/Institute/a.png'
-import qleaf from './images/Institute/qleaf.png'
-import ad from './images/Institute/ad.png'
-import tencent from './images/Institute/ten.png'
-import baidu from './images/Institute/baidu.png'
-import mi from './images/Institute/mi.png'
-import toutiao from './images/Institute/toutiao.png'
+import _360 from '../images/Base/360.png'
+import antian from '../images/Base/antian.png'
+import a from '../images/Institute/a.png'
+import qleaf from '../images/Institute/qleaf.png'
+import ad from '../images/Institute/ad.png'
+import tencent from '../images/Institute/ten.png'
+import baidu from '../images/Institute/baidu.png'
+import mi from '../images/Institute/mi.png'
+import toutiao from '../images/Institute/toutiao.png'
 
 const CompanyGallery = ({children}) => (
   <div className="exercitation-company-gallery">

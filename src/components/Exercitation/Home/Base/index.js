@@ -8,12 +8,12 @@ import BaseMore from '../More'
 
 import './index.css'
 
-import hust from '../images/Base/hust.png'
-import antian from '../images/Base/antian.png'
-import huot from '../images/Base/huot.png'
-import wu from '../images/Base/wu.png'
-import zuel from '../images/Base/zuel.png'
-import _360 from '../images/Base/360.png'
+import hust from '../../images/Base/hust.png'
+import antian from '../../images/Base/antian.png'
+import huot from '../../images/Base/huot.png'
+import wu from '../../images/Base/wu.png'
+import zuel from '../../images/Base/zuel.png'
+import _360 from '../../images/Base/360.png'
 
 const Base = () => (
   <section className="exercitation-base-container">

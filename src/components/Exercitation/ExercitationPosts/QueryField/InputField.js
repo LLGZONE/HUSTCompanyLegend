@@ -2,7 +2,7 @@
  * Created by LLGZONE on 2017/10/30.
  */
 import React from 'react'
-import controlInput from '../../Commons/WrapComponent/controlInput'
+import controlInput from '../../../Commons/WrapComponent/controlInput'
 import PropTypes from 'prop-types'
 
 import './InputField.css'

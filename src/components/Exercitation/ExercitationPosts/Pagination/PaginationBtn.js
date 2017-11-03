@@ -2,7 +2,7 @@
  * Created by LLGZONE on 2017/11/1.
  */
 import React from 'react'
-import Button from '../../Commons/Button'
+import Button from '../../../Commons/Button/index'
 
 import PropTypes from 'prop-types'
 

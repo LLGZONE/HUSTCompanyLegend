@@ -8,12 +8,12 @@ import PostsShow from './PostsShow'
 
 import './index.css'
 
-import _360 from '../images/Base/360.png'
-import qleaf from '../images/Institute/qleaf.png'
-import antian from '../images/Base/antian.png'
-import toutiao from '../images/Institute/toutiao.png'
-import a from '../images/Institute/a.png'
-import baidu from '../images/Institute/baidu.png'
+import _360 from '../../images/Base/360.png'
+import qleaf from '../../images/Institute/qleaf.png'
+import antian from '../../images/Base/antian.png'
+import toutiao from '../../images/Institute/toutiao.png'
+import a from '../../images/Institute/a.png'
+import baidu from '../../images/Institute/baidu.png'
 
 const Posts = () => (
   <section className="exercitation-posts-container">
