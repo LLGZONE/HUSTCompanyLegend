@@ -4,6 +4,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import './index.css'
+
 const CompanyInfo = ({imgSrc, companyName, place, size, website}) => (
   <section className="postsInfo-company-info">
     <div className="postsInfo-img-item">
