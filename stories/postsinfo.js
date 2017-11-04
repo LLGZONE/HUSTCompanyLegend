@@ -8,8 +8,10 @@ import {BrowserRouter as Router} from 'react-router-dom'
 import Overview from '../src/components/Exercitation/ExercitationPostsInfo/Overview'
 import CompanyInfo from '../src/components/Exercitation/ExercitationPostsInfo/CompanyInfo'
 import Module from '../src/components/Exercitation/ExercitationPostsInfo/Module'
+import PostsRecommendation from '../src/components/Exercitation/ExercitationPostsInfo/PostsRecommendation'
 
 import _360 from '../src/components/Exercitation/images/Base/360.png'
+
 
 storiesOf('PostsInfo', module)
   .addDecorator((story) => <Router>{story()}</Router>)
@@ -29,3 +31,4 @@ storiesOf('PostsInfo', module)
       }
     </pre>
   </Module>)
+  .add('postsRecommendation', () => <PostsRecommendation/>)
