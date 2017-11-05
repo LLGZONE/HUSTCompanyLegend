@@ -16,7 +16,7 @@ import CommonPerson from '../src/components/Home/Main/Recommendation/CommonPerso
 import Recommendation from '../src/components/Home/Main/Recommendation'
 import Footer from '../src/components/Home/Footer'
 
-import CommonFooter from '../src/components/Commons/Footer'
+import CommonFooter from '../src/components/commons/Footer'
 
 
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);

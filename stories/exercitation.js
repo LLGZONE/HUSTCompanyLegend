@@ -6,10 +6,10 @@ import React from 'react';
 import { storiesOf } from '@storybook/react'
 import {BrowserRouter as Router} from 'react-router-dom'
 
-import Exercitation from '../src/components/Commons/ExercitationHeader'
-import Slider from '../src/components/Commons/Carousel/InfiniteSlider'
+import Exercitation from '../src/components/commons/ExercitationHeader'
+import Slider from '../src/components/commons/Carousel/InfiniteSlider'
 import member from '../src/components/Home/Main/images/members1.png'
-import LineHeader from "../src/components/Commons/LineHeader/index"
+import LineHeader from "../src/components/commons/LineHeader/index"
 import BaseShow from '../src/components/Exercitation/Home/Base/BaseShow'
 import Base from '../src/components/Exercitation/Home/Base'
 import CompanyGallery from '../src/components/Exercitation/Home/CompanyGallery'
