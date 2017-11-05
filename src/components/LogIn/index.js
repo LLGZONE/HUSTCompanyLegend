@@ -4,6 +4,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import LogInType from './LogInType'
+import FormField from './FormField'
 
 class LogIn extends React.Component {
   constructor(props) {
@@ -40,7 +41,7 @@ class LogIn extends React.Component {
     return (
       <section>
         <LogInType/>
-
+        <FormField/>
       </section>
     )
   }

@@ -6,8 +6,8 @@ import PropTypes from 'prop-types'
 
 import './index.css'
 
-const LineHeader  = ({title}) => (
-  <div className="commons-lineheader-container">
+const LineHeader  = ({title, style}) => (
+  <div className="commons-lineheader-container" style={style}>
     <span className="commons-lineheader-line">
     </span>
     <p>{title}</p>
@@ -17,7 +17,8 @@ const LineHeader  = ({title}) => (
 )
 
 LineHeader.propTypes = {
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
+  style: PropTypes.object
 }
 
 export default LineHeader

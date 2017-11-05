@@ -1,5 +1,6 @@
 import {createStore, combineReducers, applyMiddleware} from 'redux'
 import createSagaMiddleware from 'redux-saga'
+import {reducer  as formReducer} from 'redux-form'
 
 import reducers from '../reducers'
 import middlewares from '../utils/middlewares'
@@ -10,7 +11,8 @@ const configureStore = (routerReducer, middleware) => preloadedState => (
     ...createStore(
       combineReducers({
         reducers,
-        router: routerReducer
+        router: routerReducer,
+        form: formReducer
       }),
       preloadedState,
       applyMiddleware(...middlewares, middleware, sagaMiddleware)

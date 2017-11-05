@@ -9,11 +9,11 @@ const FormField = ({onSubmit, onChange, signIn, signUp, to}) => (
   <form onSubmit={onSubmit}>
     <label>
       用户名：
-      <input name="account" placeholder="输入账号" onChange={onChange} />
+      <input type="text" name="account" placeholder="输入账号" onChange={onChange} />
     </label>
     <label>
       密码：
-      <input name="password" placeholder="输入密码" onChange={onChange} />
+      <input type="password" name="password" placeholder="输入密码" onChange={onChange} />
     </label>
     <div>
       <input type="submit" value="登录" />
