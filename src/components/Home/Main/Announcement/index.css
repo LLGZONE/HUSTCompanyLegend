@@ -1,6 +1,7 @@
 .home-main-ann {
     display: flex;
     justify-content: space-around;
+    box-sizing: border-box;
     width: 100%;
     padding: 30px 5px;
     height: 264px;

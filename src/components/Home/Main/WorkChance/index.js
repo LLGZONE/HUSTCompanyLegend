@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom'
 import wCh from '../images/work_chance.png'
 
 const WorkChance = () => (
-  <Link to="/workplace">
+  <Link to="/exercitation">
     <img src={wCh} alt="实习机会" />
   </Link>
 )

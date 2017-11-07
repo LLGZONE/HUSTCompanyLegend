@@ -4,7 +4,8 @@ import {Provider} from 'react-redux'
 import {ConnectedRouter} from 'react-router-redux'
 import {Route} from 'react-router'
 
-import App from '../containers/Home'
+import Home from '../components/Home'
+import Exercitation from '../components/Exercitation'
 import DevTools from '../containers/DevTools'
 import {AppContainer} from 'react-hot-loader'
 
@@ -13,7 +14,8 @@ const Root = ({ store, history }) => (
     <Provider store={store}>
       <ConnectedRouter history={history}>
         <div>
-          <Route exact path='/' component={App} />
+          <Route exact path="/" component={Home} />
+          <Route path="/exercitation" component={Exercitation} />
           <DevTools />
         </div>
       </ConnectedRouter>

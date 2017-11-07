@@ -56,13 +56,15 @@ class LogIn extends React.Component {
     }
 
     return (
-      <section className="login-container">
-        <LogInType type={type}/>
-        <FormField
-          onSubmit={() => this.signUp()}
-          onChange={(e) => this.handleInputChange(e)}
-          to={to}
-        />
+      <section className="login">
+        <div className="login-container">
+          <LogInType type={type}/>
+          <FormField
+            onSubmit={() => this.signUp()}
+            onChange={(e) => this.handleInputChange(e)}
+            to={to}
+          />
+        </div>
       </section>
     )
   }

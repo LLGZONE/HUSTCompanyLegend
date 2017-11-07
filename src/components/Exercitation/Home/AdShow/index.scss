@@ -1,0 +1,16 @@
+.adshow {
+  &-container {
+    position: relative;
+    width: 100%;
+    &:before {
+      display: block;
+      content: '';
+      padding-top: 100px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

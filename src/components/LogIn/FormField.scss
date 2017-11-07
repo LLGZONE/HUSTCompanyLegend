@@ -1,16 +1,40 @@
 .login-form {
   &-field {
     display: grid;
-    grid-column: span 3;
+    grid-column: 1 / -1;
     grid-template-rows: repeat(3, 1fr);
-    align-items: center;
-    justify-content: space-around;
+    border: 1px solid gray;
+    border-top: 0;
+    margin-top: -1px;
+    font-size: 20px;
 
     .input-field {
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 10px;
+      height: 50px;
+
+      input {
+        flex: auto;
+        margin-left: 20px;
+        height: 70%;
+      }
+    }
+
+    input[type='submit'],
+    button {
+      border: 1px solid gray;
+      background-color: white;
+      padding: 10px 15px;
+      width: 100px;
+      cursor: pointer;
+      
+      &:hover {
+        transition: color .3s linear, background-color .3s linear;
+        background-color: #ff9800;
+        color: white;
+      }
     }
 
     .btn-field {

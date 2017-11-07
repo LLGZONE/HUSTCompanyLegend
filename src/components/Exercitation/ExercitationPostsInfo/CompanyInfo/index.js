@@ -15,19 +15,21 @@ const CompanyInfo = ({imgSrc, companyName, place, size, website}) => (
       <p>{companyName}</p>
     </div>
     <div className="postsInfo-text-item">
-      <p>地址 ：{place}</p>
-    </div>
-    <div className="postsInfo-text-item">
-      <p>规模 ： {size}人</p>
-    </div>
-    <div className="postsInfo-text-item">
-      <p>网址 ： {website}</p>
-    </div>
-    <div className="postsInfo-text-item">
-      <p>联系人 ： 登陆后可见</p>
-    </div>
-    <div className="postsInfo-text-item">
-      <p>电话 ： 登陆后可见</p>
+      <div>
+        <p>地址 ：{place}</p>
+      </div>
+      <div>
+        <p>规模 ： {size}人</p>
+      </div>
+      <div>
+        <p>网址 ： {website}</p>
+      </div>
+      <div>
+        <p>联系人 ： 登陆后可见</p>
+      </div>
+      <div>
+        <p>电话 ： 登陆后可见</p>
+      </div>
     </div>
   </section>
 )

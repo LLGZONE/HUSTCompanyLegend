@@ -1,13 +1,20 @@
 .login {
   &-select-field {
     display: flex;
-    align-items: stretch;
+    align-self: stretch;
     font-size: 1.3rem;
     grid-column: 1 / 4;
 
     a {
       flex: auto;
       text-decoration: none;
+    }
+
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
       border: 1px solid rgba(0, 0, 0, .3);
     }
   }

@@ -1,7 +1,7 @@
 .exercitationPosts-query-field {
     display: flex;
     align-items: center;
-    margin: 0 20px;
+    margin-bottom: 20px;
 }
 
 .exercitationPosts-query-searchbar {

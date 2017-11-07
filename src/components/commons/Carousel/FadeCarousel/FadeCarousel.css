@@ -1,0 +1,17 @@
+.slide-carousel {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.carousel-show, .carousel-transition{
+    visibility: visible;
+    opacity: 1;
+}
+
+.carousel-transition {
+    transition: opacity 1.5s ease-in;
+    z-index: 2;
+}

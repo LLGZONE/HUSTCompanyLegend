@@ -1,0 +1,25 @@
+.exercitation-posts-info {
+  &-main {
+    display: grid;
+    padding: 20px 40px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-column-gap: 20px;
+    align-content: flex-start;
+
+    &-left {
+      grid-column: 1 / 4;
+
+      section {
+        margin-bottom: 20px;
+      }
+    }
+
+    &-right {
+      grid-column: 4 / 6;
+
+      section {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

@@ -20,6 +20,8 @@ import QueryField from '../src/components/Exercitation/ExercitationPosts/QueryFi
 import PostsField from '../src/components/Exercitation/ExercitationPosts/PostsField'
 import FilterItem from '../src/components/Exercitation/ExercitationPosts/FilterField/FilterItem'
 import FilterField from '../src/components/Exercitation/ExercitationPosts/FilterField'
+import AdShow from '../src/components/Exercitation/Home/AdShow'
+import ExercitationHome from '../src/components/Exercitation/Home'
 
 import zuel from '../src/components/Exercitation/images/Base/zuel.png'
 import antian from '../src/components/Exercitation/images/Base/antian.png'
@@ -51,3 +53,5 @@ storiesOf('Exercitation', module)
   .add('postsField', () => <PostsField handleTime="2017-09-08"/>)
   .add('filterItem', () => <FilterItem title="实习地点"><button>北京</button><button>sad京</button></FilterItem>)
   .add('filterField', () => <FilterField/>)
+  .add('adshow', () => <AdShow/>)
+  .add('adShow', () => <ExercitationHome/>)
