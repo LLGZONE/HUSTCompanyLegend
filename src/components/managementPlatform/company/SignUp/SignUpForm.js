@@ -11,8 +11,8 @@ import MobileRegister from './MobileRegister'
 const SignUpForm = () => (
   <div>
     <nav>
-      <Button value="手机注册" url="/management/company/signup/mobile" />
-      <Button value="邮箱注册" url="/management/company/signup/email" />
+      <Button value="手机注册" />
+      <Button value="邮箱注册" />
     </nav>
   </div>
 )

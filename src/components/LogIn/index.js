@@ -6,6 +6,8 @@ import {Link} from 'react-router-dom'
 import LogInType from './LogInType'
 import FormField from './FormField'
 
+import './index.scss'
+
 class LogIn extends React.Component {
   constructor(props) {
     super(props)
@@ -37,12 +39,33 @@ class LogIn extends React.Component {
 
   render() {
     const type = this.props.match.params
+    let to = '/';
+
+    switch (type) {
+      case 'company':
+        to = '/management/company/signup'
+        break
+      case 'school':
+        to = '/management/company/signup'
+        break
+      case 'person':
+        to = '/person/signup'
+        break
+      default:
+        break
+    }
 
     return (
-      <section>
-        <LogInType/>
-        <FormField/>
+      <section className="login-container">
+        <LogInType type={type}/>
+        <FormField
+          onSubmit={() => this.signUp()}
+          onChange={(e) => this.handleInputChange(e)}
+          to={to}
+        />
       </section>
     )
   }
 }
+
+export default LogIn

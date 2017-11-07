@@ -15,6 +15,9 @@ import Achievement from '../src/components/Home/Main/Achievement'
 import CommonPerson from '../src/components/Home/Main/Recommendation/CommonPerson'
 import Recommendation from '../src/components/Home/Main/Recommendation'
 import Footer from '../src/components/Home/Footer'
+import Main from '../src/components/Home/Main'
+
+import Home from '../src/components/Home'
 
 import CommonFooter from '../src/components/commons/Footer'
 
@@ -28,6 +31,7 @@ storiesOf('Button', module)
 storiesOf('Home', module)
   .addDecorator((story) => <Router>{story()}</Router>)
   .add('Header', () => <Header/>)
+  .add('index', ()=><Home />)
 
 storiesOf('Main', module)
   .add('Feature', () => <Feature/>)
@@ -37,6 +41,7 @@ storiesOf('Main', module)
   .add('CommonPerson', () => <CommonPerson/>)
   .addDecorator((story)=><Router>{story()}</Router>)
   .add('Recommendation', () => <Recommendation />)
+  .add('index', () => <Main />)
 
 const hotClicks = [
   {

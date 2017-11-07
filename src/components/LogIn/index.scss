@@ -1,0 +1,10 @@
+.login {
+  &-container {
+    display: grid;
+    max-width: 40%;
+    grid-template-rows: 1fr 4fr;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    border: 1px solid gray;
+  }
+}

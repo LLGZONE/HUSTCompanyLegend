@@ -1,0 +1,22 @@
+.login-form {
+  &-field {
+    display: grid;
+    grid-column: span 3;
+    grid-template-rows: repeat(3, 1fr);
+    align-items: center;
+    justify-content: space-around;
+
+    .input-field {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+    }
+
+    .btn-field {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+  }
+}

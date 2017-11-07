@@ -5,17 +5,19 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import PropTypes from 'prop-types'
 
+import './FormField.scss'
+
 const FormField = ({onSubmit, onChange, signIn, signUp, to}) => (
-  <form onSubmit={onSubmit}>
-    <label>
+  <form className="login-form-field" onSubmit={onSubmit}>
+    <label className="login-field">
       用户名：
       <input type="text" name="account" placeholder="输入账号" onChange={onChange} />
     </label>
-    <label>
+    <label className="login-field">
       密码：
       <input type="password" name="password" placeholder="输入密码" onChange={onChange} />
     </label>
-    <div>
+    <div className="btn-field">
       <input type="submit" value="登录" />
       <Link to={to}>
         <button>
@@ -25,5 +27,11 @@ const FormField = ({onSubmit, onChange, signIn, signUp, to}) => (
     </div>
   </form>
 )
+
+FormField.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
+  to: PropTypes.string.isRequired,
+}
 
 export default FormField

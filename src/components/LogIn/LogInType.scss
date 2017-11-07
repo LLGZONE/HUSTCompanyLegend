@@ -1,0 +1,27 @@
+.login {
+  &-select-field {
+    display: flex;
+    align-items: stretch;
+    font-size: 1.3rem;
+    grid-column: 1 / 4;
+
+    a {
+      flex: auto;
+      text-decoration: none;
+      border: 1px solid rgba(0, 0, 0, .3);
+    }
+  }
+
+  &-select-btn {
+    display: block;
+    text-align: center;
+    vertical-align: middle;
+    color: black;
+    cursor: pointer;
+
+    &.active {
+      background-color: #ff9800;
+      color: white;
+    }
+  }
+}

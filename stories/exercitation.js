@@ -12,7 +12,7 @@ import member from '../src/components/Home/Main/images/members1.png'
 import LineHeader from "../src/components/commons/LineHeader/index"
 import BaseShow from '../src/components/Exercitation/Home/Base/BaseShow'
 import Base from '../src/components/Exercitation/Home/Base'
-import CompanyGallery from '../src/components/Exercitation/Home/CompanyGallery'
+import CompanyGallery from '../src/components/Exercitation/Home/CompanyGallery/index'
 import Posts from '../src/components/Exercitation/Home/Posts'
 import Institute from '../src/components/Exercitation/Home/Institute'
 import Models from '../src/components/Exercitation/Home/Models'
