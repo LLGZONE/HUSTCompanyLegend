@@ -7,6 +7,7 @@ function loadStories() {
   require('../stories/pagination')
   require('../stories/postsinfo')
   require('../stories/login')
+  require('../stories/company')
 }
 
 configure(loadStories, module);

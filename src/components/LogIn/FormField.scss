@@ -5,8 +5,8 @@
     grid-template-rows: repeat(3, 1fr);
     border: 1px solid gray;
     border-top: 0;
-    margin-top: -1px;
     font-size: 20px;
+    align-items: center;
 
     .input-field {
       display: flex;

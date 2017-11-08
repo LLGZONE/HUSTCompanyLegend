@@ -8,8 +8,11 @@
   &-container {
     display: grid;
     width: 50%;
+    max-width: 550px;
+    height: 50%;
+    max-height: 300px;
     grid-template-rows: minmax(30px, 50px) auto;
     grid-template-columns: repeat(3, 1fr);
-    align-items: center;
+    align-items: stretch;
   }
 }

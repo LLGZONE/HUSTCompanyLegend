@@ -1,0 +1,41 @@
+.management-company {
+  &-aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #525252;
+    color: #ffffff;
+    text-align: center;
+    min-height: 90vh;
+
+    a {
+      color: #ffffff;
+    }
+
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      font-weight: bold;
+      margin-top: 20px;
+
+      .header {
+        font-size: 20px;
+        padding: 10px 0;
+        margin: 10px 0;
+      }
+
+      .active-header {
+        background-color: #fa7339;
+      }
+
+      .active-link a {
+        color: #ff6b00;
+      }
+    }
+
+    .normal-font {
+      font-size: 18px;
+    }
+  }
+}

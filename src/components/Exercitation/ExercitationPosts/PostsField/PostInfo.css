@@ -1,12 +1,12 @@
 a {
     text-decoration: none;
-    color: black;
 }
 
 .exercitationPosts-posts-info-ctn {
     display: flex;
     flex: auto;
     flex-direction: column;
+    color: black;
 }
 
 .exercitationPosts-posts-info {
