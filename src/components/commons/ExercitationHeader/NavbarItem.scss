@@ -1,0 +1,21 @@
+.navbar {
+  &-item {
+    display: flex;
+    flex: auto;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: white;
+
+    a {
+      color: inherit;
+      font-weight: 900;
+      text-decoration: none;
+    }
+
+    @at-root .nav-active {
+      background-color: white;
+      color: #ff7043;
+    }
+  }
+}

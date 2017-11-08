@@ -38,18 +38,18 @@ class LogIn extends React.Component {
   }
 
   render() {
-    const type = this.props.match.params
+    const {type} = this.props.match.params
     let to = '/';
 
     switch (type) {
       case 'company':
-        to = '/management/company/signup'
+        to = '/exercitation/posts/apply/company'
         break
       case 'school':
-        to = '/management/company/signup'
+        to = '/exercitation/posts/apply/school'
         break
       case 'person':
-        to = '/person/signup'
+        to = '/exercitation/posts/apply/person'
         break
       default:
         break

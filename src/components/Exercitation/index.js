@@ -22,8 +22,8 @@ const Exercitation = ({match}) => (
     <Switch>
       <Route path="/exercitation" exact component={Home} />
       <Route path="/exercitation/posts/info" exact component={ExercitationPostsInfo} />
-      <Route path="/exercitation/posts" exact  component={ExercitationPosts} />
-      <Route path="/exercitation/posts/apply" exact  component={LogIn} />
+      <Route path="/exercitation/posts/apply/:type" component={LogIn} />
+      <Route path="/exercitation/posts" component={ExercitationPosts} />
     </Switch>
     <Route path="/login" component={LogIn} />
     <Footer hotClicks={hotClicks} latestArticle={articles}/>
