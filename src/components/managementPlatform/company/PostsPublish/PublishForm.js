@@ -8,8 +8,9 @@ import OtherDeal from './OtherDeal'
 import FormDatePicker from  './FormDatePicker'
 import FormSelect from './FormSelect'
 import {required} from '../../../../utils/other/validate'
+import FormTextField from './FormTextField'
 
-const renderInpuField = ({ input, label, type, meta: { touched, error, warning } }) => (
+const renderInputField = ({ input, label, type, meta: { touched, error, warning } }) => (
   <div>
     <label>{label}</label>
     <div>
@@ -25,14 +26,14 @@ const PublishForm = ({companyName}) => (
       name="companyName"
       label="单位名称"
       type="text"
-      component={renderInputField)}
+      component={renderInputField}
       validate={required}
     />
     <Field
       name="postsName"
       label="岗位名称"
       type="text"
-      component={renderInpuField}
+      component={renderInputField}
       validate={required}
     />
     <div>
@@ -50,7 +51,7 @@ const PublishForm = ({companyName}) => (
         name="place"
         label="实习地点"
         type="text"
-        component={renderInpuField}
+        component={renderInputField}
         validate={required}
       />
       <FormSelect
@@ -69,11 +70,23 @@ const PublishForm = ({companyName}) => (
         component={FormDatePicker}
       />
     </div>
+    <OtherDeal/>
     <Field
-      name="otherDeal"
-      label="其他待遇"
-      component={OtherDeal}
+      name="condition"
+      label="岗位条件"
+      component={FormTextField}
     />
+    <Field
+      name="duty"
+      label="岗位职责"
+      component={FormTextField}
+    />
+    <button>
+      提交
+    </button>
+    <button>
+      预览
+    </button>
   </form>
 )
 
