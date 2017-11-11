@@ -8,6 +8,7 @@ function loadStories() {
   require('../stories/postsinfo')
   require('../stories/login')
   require('../stories/company')
+  require('../stories/TraineeFilter')
 }
 
 configure(loadStories, module);

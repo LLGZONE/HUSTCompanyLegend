@@ -1,4 +1,4 @@
-import React from 'raect'
+import React from 'react'
 import Editor from '../../../commons/Editor'
 
 const FormTextField = ({label,input: {value, onChange}}) => (

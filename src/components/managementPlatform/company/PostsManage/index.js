@@ -59,7 +59,23 @@ class PostsManage extends React.Component {
             {
               Header: '操作',
               Cell() {
-                return
+                return <div>
+                  <Link to="">
+                    编辑
+                  </Link>
+                  <Link>
+                    下架
+                  </Link>
+                  <Link>
+                    删除
+                  </Link>
+                  <Link>
+                    置顶
+                  </Link>
+                  <Link>
+                    发布到首页
+                  </Link>
+                </div>
               }
             }
           ]}
