@@ -10,9 +10,9 @@ import FormSelect from './FormSelect'
 import {required} from '../../../../utils/other/validate'
 import FormTextField from './FormTextField'
 
-const renderInputField = ({ input, label, type, meta: { touched, error, warning } }) => (
+export const renderInputField = ({ input, label, type, meta: { touched, error, warning }, hasLabel=true}) => (
   <div>
-    <label>{label}</label>
+    {hasLabel ? <label>{label}</label> : null}
     <div>
       <input {...input} placeholder={label} type={type}/>
       {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}

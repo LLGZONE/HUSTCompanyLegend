@@ -19,7 +19,7 @@ const TraineeFilter = ({data, employ, abandon}) => {
           {
             Header: '序号',
             Cell({ viewIndex }) {
-              return viewIndex
+              return viewIndex + 1
             },
             sortable: false,
             filterable: false,
@@ -52,6 +52,8 @@ const TraineeFilter = ({data, employ, abandon}) => {
           },
           {
             Header: '操作',
+            sortable: false,
+            filterable: false,
             Cell() {
               return (
                 <div>

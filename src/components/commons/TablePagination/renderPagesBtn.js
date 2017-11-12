@@ -6,6 +6,7 @@ import PaginationBtn from './PaginationBtn'
 
 const renderPagesBtn = (arr, pageIndex, activeStyle, onClick) => {
   return arr.map(item => <PaginationBtn
+    key={`${item}`}
     activeStyle={item === pageIndex ? activeStyle : {}}
     text={`${item}`}
     onClick={onClick}

@@ -43,11 +43,9 @@ class ReactTablePagination extends Component {
   }
 
   handleClick (e) {
-    const val = e.target.firstChild.nodeValue
+    const val = e.target.value
     const page = val - 1
-    if (val === '') {
-      return this.setState({ page: val })
-    }
+    console.log(val)
     this.setState({ page: this.getSafePage(page) })
     if (this.props.page !== page) {
       this.props.onPageChange(page)
@@ -62,7 +60,7 @@ class ReactTablePagination extends Component {
       page,
       showPageSizeOptions,
       pageSizeOptions,
-      pageSize,
+      pageSize, //页面
       canPrevious,
       canNext,
       onPageSizeChange,
@@ -74,22 +72,25 @@ class ReactTablePagination extends Component {
       backgroundColor: '#FF9800',
       color: 'white'
     }
+    const size = 4 // pagination btn 个数
 
     const pageIndex = this.state.page + 1
-    const rest = pages % pageSize === 0 ? pageSize : pages % pageSize
-    const isStart = pageIndex <= pageSize
-    const isEnd = pages - pageIndex + 1 <= rest
+    const rest = Math.ceil(size / 2 + 1)
+    const isStart = pageIndex <= size / 2
+    const isEnd = pages - pageIndex + 2 <= rest
 
     const restArr = new Array(rest)
       .fill(1)
-      .map((item, id) => pages-rest+id+1)
-    const sizeArr = new Array(pageSize).fill(1).map((item, id) => pageIndex - Math.ceil(pageSize/2)+id+1)
+      .map((item, id) => pages - rest + id + 1)
+    const sizeArr = new Array(size).fill(1).map((item, id) => pageIndex - Math.ceil(size/2)+id+1)
     let startArr;
-    if (pages < pageSize) {
+    if (pages < size) {
       startArr = new Array(pages).fill(1).map((item, id) => 1+id)
     } else {
-      startArr = new Array(pageSize).fill(1).map((item, id) => 1+id)
+      startArr = new Array(size).fill(1).map((item, id) => 1+id)
     }
+
+    console.log(isStart)
 
     return (
       <div

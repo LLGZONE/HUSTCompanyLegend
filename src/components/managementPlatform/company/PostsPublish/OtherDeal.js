@@ -2,7 +2,7 @@
  * Created by LLGZONE on 2017/11/9.
  */
 import React from 'react'
-import {Field} from 'redux-form'
+import {Field, FormSection} from 'redux-form'
 
 const renderCheckBoxField = ({label, input}) => (
   <div>
@@ -24,7 +24,7 @@ class OtherDeal extends React.Component {
   render() {
 
     return (
-      <fieldset>
+      <FormSection name="otherDeal">
         <div>
           其他待遇:
         </div>
@@ -48,7 +48,7 @@ class OtherDeal extends React.Component {
           label="一对一辅导"
           component={renderCheckBoxField}
         />
-      </fieldset>
+      </FormSection>
     )
   }
 }

@@ -19,9 +19,7 @@ const Button = ({value, backgroundColor="#FF9800", color="white", border='1px so
   }
 
   const btn = (
-    <div onClick={onClick} style={{...style, ...customStyle}}>
-      <p style={{margin: 0}}>{value}</p>
-    </div>
+    <input type="button" onClick={onClick} style={{...style, ...customStyle}} value={value} />
   )
 
   return url ? <Link to={url}>{btn}</Link> : btn

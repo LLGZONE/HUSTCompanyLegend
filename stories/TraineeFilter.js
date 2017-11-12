@@ -5,37 +5,30 @@ import TraineeFilter from '../src/components/managementPlatform/company/TraineeF
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import {BrowserRouter as Router} from 'react-router-dom'
+import range from '../src/utils/other/range'
+import namor from 'namor'
 
-const makeData = () => (
+const newPerson = () => {
+  return {
+    name: namor.generate({ words: 1, numbers: 0 }),
+    sex: Math.floor(Math.random()) + 1,
+    birthday: Math.floor(Math.random() * 50) + 1970,
+    major: Math.floor(Math.random() * 100),
+    from: 'Hust'
+  }
+}
 
-)
+const makeData = (len) => {
+  return range(len).map(d => {
+    return {
+      ...newPerson(),
+      children: range(10).map(newPerson)
+    };
+  });
+}
+
 
 storiesOf('TraneeFilter', module)
   .addDecorator((story) => <Router>{story()}</Router>)
   .add('table', () => <TraineeFilter
-    data={[
-      {'name': '1', 'sex': '男', 'birthday': '1997-04-12', 'major': 'science', 'from': 'hust'},
-      {'name': '2', 'sex': '男', 'birthday': '1997-04-12', 'major': 'science', 'from': 'hust'},
-      {'name': '3', 'sex': '男', 'birthday': '1997-04-12', 'major': 'science', 'from': 'hust'},
-      {'name': '4', 'sex': '男', 'birthday': '1997-04-12', 'major': 'science', 'from': 'hust'},
-      {'name': '1', 'sex': '男', 'birthday': '1997-04-12', 'major': 'science', 'from': 'hust'},
-      {'name': '2', 'sex': '男', 'birthday': '1997-04-12', 'major': 'science', 'from': 'hust'},
-      {'name': '3', 'sex': '男', 'birthday': '1997-04-12', 'major': 'science', 'from': 'hust'},
-      {'name': '4', 'sex': '男', 'birthday': '1997-04-12', 'major': 'science', 'from': 'hust'},
-      {'name': '5', 'sex': '男', 'birthday': '1997-04-12', 'major': 'science', 'from': 'hust'},
-      {'name': '1', 'sex': '男', 'birthday': '1997-04-12', 'major': 'science', 'from': 'hust'},
-      {'name': '2', 'sex': '男', 'birthday': '1997-04-12', 'major': 'science', 'from': 'hust'},
-      {'name': '3', 'sex': '男', 'birthday': '1997-04-12', 'major': 'science', 'from': 'hust'},
-      {'name': '4', 'sex': '男', 'birthday': '1997-04-12', 'major': 'science', 'from': 'hust'},
-      {'name': '5', 'sex': '男', 'birthday': '1997-04-12', 'major': 'science', 'from': 'hust'},
-      {'name': '1', 'sex': '男', 'birthday': '1997-04-12', 'major': 'science', 'from': 'hust'},
-      {'name': '2', 'sex': '男', 'birthday': '1997-04-12', 'major': 'science', 'from': 'hust'},
-      {'name': '3', 'sex': '男', 'birthday': '1997-04-12', 'major': 'science', 'from': 'hust'},
-      {'name': '4', 'sex': '男', 'birthday': '1997-04-12', 'major': 'science', 'from': 'hust'},
-      {'name': '5', 'sex': '男', 'birthday': '1997-04-12', 'major': 'science', 'from': 'hust'},
-      {'name': '1', 'sex': '男', 'birthday': '1997-04-12', 'major': 'science', 'from': 'hust'},
-      {'name': '2', 'sex': '男', 'birthday': '1997-04-12', 'major': 'science', 'from': 'hust'},
-      {'name': '3', 'sex': '男', 'birthday': '1997-04-12', 'major': 'science', 'from': 'hust'},
-      {'name': '4', 'sex': '男', 'birthday': '1997-04-12', 'major': 'science', 'from': 'hust'},
-      {'name': '5', 'sex': '男', 'birthday': '1997-04-12', 'major': 'science', 'from': 'hust'},
-    ]}/>)
+    data={makeData(500)}/>)

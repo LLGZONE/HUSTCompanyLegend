@@ -10,6 +10,7 @@ import './index.css'
 
 import PropTypes from 'prop-types'
 
+//size为pagination btn的个数
 const Pagination = ({pageIndex, maxPageIndex, size}) => {
   const activeStyle = {
     backgroundColor: '#FF9800',
@@ -17,7 +18,7 @@ const Pagination = ({pageIndex, maxPageIndex, size}) => {
   }
 
   const rest = maxPageIndex % size === 0 ? size : maxPageIndex % size
-  const isStart = pageIndex <= size
+  const isStart = pageIndex <= size / 2
   const isEnd = maxPageIndex - pageIndex + 1 <= rest
 
   const restArr = new Array(rest)
