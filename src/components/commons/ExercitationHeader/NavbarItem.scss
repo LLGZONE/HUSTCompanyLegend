@@ -13,9 +13,11 @@
       text-decoration: none;
     }
 
-    @at-root .nav-active {
+    &.nav-active {
       background-color: white;
-      color: #ff7043;
+      a {
+        color: #ff7043;
+      }
     }
   }
 }
