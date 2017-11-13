@@ -6,7 +6,8 @@
 .posts-publish-deal {
   display: flex;
   justify-content: flex-start;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
 
   div {
     margin-left: 5%;

@@ -8,7 +8,7 @@ import PropTypes from 'prop-types'
 const FormSelect = ({name, label, datas}) => (
   <div style={{display: 'flex'}} className="posts-publish-gap">
     <label>{label} :</label>
-    <div style={{marginLeft: '10px', flex: 'auto'}}>
+    <div style={{marginLeft: '10px', flex: 'auto', maxWidth: '257px'}}>
       <Field name={name} component="select" style={{width: '100%', height: '100%'}}>
         {datas.map((data) => (
           <option key={data} value={data}>{data}</option>

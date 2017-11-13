@@ -11,10 +11,10 @@ import {required} from '../../../../utils/other/validate'
 import FormTextField from './FormTextField'
 
 export const renderInputField = ({ input, label, type, meta: { touched, error, warning }, hasLabel=true}) => (
-  <div className="posts-publish-gap" style={{display: 'flex', alignItems: 'center'}}>
+  <div className="posts-publish-gap" style={{display: 'flex', alignItems: 'center', marginLeft: '10px'}}>
     {hasLabel ? <label>{label} :</label> : null}
     <div>
-      <input {...input} placeholder={label} type={type} style={{padding: '0 0 0 10px', marginLeft: '10px'}}/>
+      <input {...input} placeholder={label} type={type} style={{padding: '0 0 0 10px'}}/>
       {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
     </div>
   </div>
@@ -22,21 +22,23 @@ export const renderInputField = ({ input, label, type, meta: { touched, error, w
 
 const PublishForm = ({companyName}) => (
   <form>
-    <Field
-      name="companyName"
-      label="单位名称"
-      type="text"
-      component={renderInputField}
-      validate={required}
-    />
-    <Field
-      name="postsName"
-      label="岗位名称"
-      type="text"
-      component={renderInputField}
-      validate={required}
-    />
     <div className="posts-publish-two-col">
+      <Field
+        name="companyName"
+        label="单位名称"
+        type="text"
+        component={renderInputField}
+        validate={required}
+      />
+      <div> </div>
+      <Field
+        name="postsName"
+        label="岗位名称"
+        type="text"
+        component={renderInputField}
+        validate={required}
+      />
+      <div> </div>
       <FormSelect
         label="岗位类别"
         name="companyName"
@@ -81,12 +83,14 @@ const PublishForm = ({companyName}) => (
       label="岗位职责"
       component={FormTextField}
     />
-    <button>
-      提交
-    </button>
-    <button>
-      预览
-    </button>
+    <div className="posts-publish-btn-container">
+      <button className="posts-publish-btn">
+        提交
+      </button>
+      <button className="posts-publish-btn">
+        预览
+      </button>
+    </div>
   </form>
 )
 

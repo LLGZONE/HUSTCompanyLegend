@@ -17,5 +17,30 @@
   &-two-col {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-column-gap: 15px;
+  }
+
+  &-btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &-btn {
+    color: black;
+    font-size: 18px;
+    padding: 5px 25px;
+    border: 1px solid #bbbbbb;
+    background-color: transparent;
+
+    &:hover {
+      background-color: #ff9800;
+      color: white;
+    }
+
+    &:nth-child(2) {
+      margin-left: 20px;
+    }
   }
 }
