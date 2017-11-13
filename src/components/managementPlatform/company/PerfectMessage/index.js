@@ -3,13 +3,13 @@
  */
 import React from 'react'
 import LineHeader from '../../../commons/LineHeader'
-import
+import FormField from './FormField'
 
 const PerfectMessage = () => (
   <section>
     <LineHeader title="完善企业信息"/>
-
+    <FormField/>
   </section>
 )
 
-export default PerfectMessages
+export default PerfectMessage

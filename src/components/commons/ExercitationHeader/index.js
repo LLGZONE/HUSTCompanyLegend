@@ -2,7 +2,6 @@
  * Created by LLGZONE on 2017/10/28.
  */
 import React from 'react'
-import {Link, Route} from 'react-router-dom'
 import NavBarItem from './NavBarItem'
 
 import './index.css'

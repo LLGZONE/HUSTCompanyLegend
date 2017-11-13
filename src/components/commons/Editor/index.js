@@ -5,6 +5,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import ReactQuill from 'react-quill'
 import 'react-quill/dist/quill.snow.css'
+import './index.scss'
 
 class Editor extends React.Component {
   render () {
@@ -12,7 +13,7 @@ class Editor extends React.Component {
 
     return (
         <ReactQuill
-          theme={this.state.theme}
+          theme='snow'
           onChange={(html) => onChange(html)}
           value={value}
           modules={readOnly ? Editor.modulesNoBar : Editor.modules}

@@ -27,7 +27,7 @@ const Posts = () => (
         baseMoney={200}
         baseMark={4.5}
       >
-        <img src={_360} />
+        <img src={_360} alt="360" />
       </PostsShow>
       <PostsShow
         baseName="武汉大学—360实习基地"
@@ -37,7 +37,7 @@ const Posts = () => (
         baseMoney={200}
         baseMark={4.5}
       >
-        <img src={qleaf} />
+        <img src={qleaf} alt="qleaf" />
       </PostsShow>
       <PostsShow
         baseName="武汉理工大学—安天实习基地"
@@ -47,7 +47,7 @@ const Posts = () => (
         baseMoney={200}
         baseMark={4.5}
       >
-        <img src={antian} />
+        <img src={antian} alt="安天" />
       </PostsShow>
       <PostsShow
         baseName="中南财经政法大学—安天实习基地"
@@ -57,7 +57,7 @@ const Posts = () => (
         baseMoney={200}
         baseMark={4.5}
       >
-        <img src={toutiao} />
+        <img src={toutiao} alt="头条" />
       </PostsShow>
       <PostsShow
         baseName="武汉理工大学—安天实习基地"
@@ -67,7 +67,7 @@ const Posts = () => (
         baseMoney={200}
         baseMark={4.5}
       >
-        <img src={a} />
+        <img src={a} alt="a" />
       </PostsShow>
       <PostsShow
         baseName="中南财经政法大学—安天实习基地"
@@ -77,7 +77,7 @@ const Posts = () => (
         baseMoney={200}
         baseMark={4.5}
       >
-        <img src={baidu} />
+        <img src={baidu} alt="百度" />
       </PostsShow>
     </div>
     <More url="/posts/more" />

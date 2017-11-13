@@ -105,7 +105,7 @@ class ReactTablePagination extends Component {
             }}
             disabled={!canPrevious}
           >
-            {this.props.previousText}
+            上一页
           </PreviousComponent>
         </div>
         <div className='-center'>
@@ -143,7 +143,7 @@ class ReactTablePagination extends Component {
             }}
             disabled={!canNext}
           >
-            {this.props.nextText}
+            下一页
           </NextComponent>
         </div>
       </div>
