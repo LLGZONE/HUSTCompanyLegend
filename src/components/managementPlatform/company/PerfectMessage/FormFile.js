@@ -11,17 +11,23 @@ class FormFile extends React.Component {
   }
 
   onDrop(files) {
+    const {input: {onChange}} = this.props
     this.setState({
-      files
+      files: this.state.files.push(files)
     })
+    const imgUrls = this.state.files.map(file => URL.createObjectURL(file))
+    onChange(imgUrls)
   }
 
   render() {
     return (
       <div>
-        <Dropzone>
+        <Dropzone onDrop={() => this.onDrop()}>
           <p>选择文件</p>
         </Dropzone>
+        <ul>
+          {this.state.files.map()}
+        </ul>
       </div>
     )
   }
