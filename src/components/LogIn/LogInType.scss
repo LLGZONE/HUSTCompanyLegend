@@ -8,6 +8,9 @@
     a {
       flex: auto;
       text-decoration: none;
+      display: block;
+      padding: 10px;
+      border: 1px solid rgba(0, 0, 0, .3);
     }
 
     div {
@@ -15,7 +18,7 @@
       justify-content: center;
       align-items: center;
       height: 100%;
-      border: 1px solid rgba(0, 0, 0, .3);
+
     }
   }
 

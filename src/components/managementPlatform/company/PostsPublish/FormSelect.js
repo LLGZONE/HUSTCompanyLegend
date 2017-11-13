@@ -6,10 +6,10 @@ import {Field} from 'redux-form'
 import PropTypes from 'prop-types'
 
 const FormSelect = ({name, label, datas}) => (
-  <div>
-    <label>岗位类别</label>
-    <div>
-      <Field name={name} component="select">
+  <div style={{display: 'flex'}} className="posts-publish-gap">
+    <label>{label} :</label>
+    <div style={{marginLeft: '10px', flex: 'auto'}}>
+      <Field name={name} component="select" style={{width: '100%', height: '100%'}}>
         {datas.map((data) => (
           <option key={data} value={data}>{data}</option>
         ))}

@@ -1,0 +1,15 @@
+.active {
+  background-color: #ff9800;
+  color: white;
+}
+
+.posts-publish-deal {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+
+  div {
+    margin-left: 5%;
+    cursor: pointer;
+  }
+}

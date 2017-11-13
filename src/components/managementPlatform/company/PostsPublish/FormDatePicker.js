@@ -5,6 +5,9 @@ import React from 'react'
 import DatePicker from 'react-datepicker'
 import moment from 'moment'
 
+import 'react-datepicker/dist/react-datepicker.min.css'
+import './FormDatePicker.scss'
+
 class FormDatePicker extends React.Component {
   constructor(props) {
     super(props)
@@ -28,11 +31,15 @@ class FormDatePicker extends React.Component {
     const {label} = this.props
 
     return (
-      <div>
-        {label}
+      <div className="date-picker-container">
+        {label} :
         <DatePicker
           selected={this.state.start}
           onChange={(date) => this.handleChange(date)}
+          locale="zh-cn"
+          popperPlacement="top-end"
+          showYearDropdown
+          className="date-picker"
         />
       </div>
     )

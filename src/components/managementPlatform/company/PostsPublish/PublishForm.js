@@ -11,10 +11,10 @@ import {required} from '../../../../utils/other/validate'
 import FormTextField from './FormTextField'
 
 export const renderInputField = ({ input, label, type, meta: { touched, error, warning }, hasLabel=true}) => (
-  <div>
-    {hasLabel ? <label>{label}</label> : null}
+  <div className="posts-publish-gap" style={{display: 'flex', alignItems: 'center'}}>
+    {hasLabel ? <label>{label} :</label> : null}
     <div>
-      <input {...input} placeholder={label} type={type}/>
+      <input {...input} placeholder={label} type={type} style={{padding: '0 0 0 10px', marginLeft: '10px'}}/>
       {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
     </div>
   </div>
@@ -36,15 +36,15 @@ const PublishForm = ({companyName}) => (
       component={renderInputField}
       validate={required}
     />
-    <div>
+    <div className="posts-publish-two-col">
       <FormSelect
-        label="单位名称"
+        label="岗位类别"
         name="companyName"
         datas={["研发岗", "测试岗", "运维岗", "运营岗", "产品岗", "行政岗"]}
       />
       <FormSelect
-        name="转正机会"
-        label="beOfficial"
+        name="beOfficial"
+        label="转正机会"
         datas={["无转正", "可转正", "优先录用"]}
       />
       <Field
@@ -90,4 +90,6 @@ const PublishForm = ({companyName}) => (
   </form>
 )
 
-export default reduxForm()(PublishForm)
+export default reduxForm({
+  name: 'publish'
+})(PublishForm)

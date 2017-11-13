@@ -2,14 +2,13 @@
  * Created by LLGZONE on 2017/11/12.
  */
 import React from 'react'
-import {Field} from 'redux-form'
+import {Field, reduxForm} from 'redux-form'
 import {renderInputField} from '../PostsPublish/PublishForm'
 import FormSelect from './FormSelect'
 import FormTextField from '../PostsPublish/FormTextField'
+import FormFile from './FormFile'
 
-const render
-
-const FormField = () => (
+const FormField = ({pristine, submitting, reset}) => (
   <form>
     <Field
       name="companyName"
@@ -56,9 +55,26 @@ const FormField = () => (
       component={FormTextField}
     />
     <Field
-      name=""
+      name="license"
+      label="上传公司信用资质"
+      component={FormFile}
     />
+    <Field
+      name="environment"
+      label="上传公司环境照片"
+      component={FormFile}
+    />
+    <div>
+      <button type="button" disabled={pristine || submitting} onClick={reset}>
+        Clear Values
+      </button>
+      <button type="submit" disabled={pristine || submitting}>
+        Submit
+      </button>
+    </div>
   </form>
 )
 
-export default FormField
+export default reduxForm({
+  name: 'perfectMessage'
+})(FormField)

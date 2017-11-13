@@ -4,8 +4,12 @@
 import React from 'react'
 import {Field, FormSection} from 'redux-form'
 
+import './OtherDeal.scss'
+
 const renderCheckBoxField = ({label, input}) => (
-  <div>
+  <div onClick={e => {
+    e.target.classList.toggle('active')
+  }} >
     <label>
       {label}
       <input
@@ -25,29 +29,29 @@ class OtherDeal extends React.Component {
 
     return (
       <FormSection name="otherDeal">
-        <div>
-          其他待遇:
+        <div className="posts-publish-deal">
+          其他待遇 :
+          <Field
+            name="employee"
+            label="正式员工待遇"
+            component={renderCheckBoxField}
+          />
+          <Field
+            name="trafic"
+            label="交通补贴"
+            component={renderCheckBoxField}
+          />
+          <Field
+            name="communication"
+            label="通讯补贴"
+            component={renderCheckBoxField}
+          />
+          <Field
+            name="tutor"
+            label="一对一辅导"
+            component={renderCheckBoxField}
+          />
         </div>
-        <Field
-          name="employee"
-          label="正式员工待遇"
-          component={renderCheckBoxField}
-        />
-        <Field
-          name="trafic"
-          label="交通补贴"
-          component={renderCheckBoxField}
-        />
-        <Field
-          name="communication"
-          label="通讯补贴"
-          component={renderCheckBoxField}
-        />
-        <Field
-          name="tutor"
-          label="一对一辅导"
-          component={renderCheckBoxField}
-        />
       </FormSection>
     )
   }
