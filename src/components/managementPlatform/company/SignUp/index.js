@@ -21,5 +21,4 @@ const SignUp = () => (
   </section>
 )
 
-
 export default SignUp
