@@ -1,9 +1,3 @@
-/**
- * Created by LLGZONE on 2017/11/5.
- */
-/**
- * Created by LLGZONE on 2017/11/5.
- */
 import React from 'react'
 import {Link} from 'react-router-dom'
 import PropTypes from 'prop-types'
@@ -16,7 +10,6 @@ import './index.scss'
 class PostsManage extends React.Component {
   render() {
     const {data} = this.props
-    let id = 0
 
     return (
       <section>
