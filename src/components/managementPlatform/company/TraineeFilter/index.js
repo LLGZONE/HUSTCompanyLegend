@@ -8,6 +8,8 @@ import ReactTable from 'react-table'
 import LineHeader from '../../../commons/LineHeader'
 import TablePagination from '../../../commons/TablePagination'
 
+import '../PostsManage/index.scss'
+
 const TraineeFilter = ({data, employ, abandon}) => {
 
   return (
