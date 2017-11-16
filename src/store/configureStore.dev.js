@@ -1,4 +1,5 @@
 import {createStore, combineReducers, applyMiddleware, compose} from 'redux'
+import { persistState } from 'redux-devtools'
 import createSagaMiddleware from 'redux-saga'
 import {reducer as formReducer} from 'redux-form'
 
@@ -18,17 +19,14 @@ const configureStore = (routerReducer, middleware) => preloadedState => {
     preloadedState,
     compose(
       applyMiddleware(middleware, ...middlewares, sagaMiddleware),
-      DevTools.instrument()
+      DevTools.instrument(),
+      persistState(
+        window.location.href.match(
+          /[?&]debug_session=([^&#]+)\b/
+        )
+      ),
     )
   )
-
-  if (module.hot) {
-    // Enable Webpack hot module replacement for reducers
-    module.hot.accept('../reducers', () => {
-      const nextRootReducer = require('../reducers').default
-      store.replaceReducer(nextRootReducer)
-    })
-  }
 
   return {
     ...store,

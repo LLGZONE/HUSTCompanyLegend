@@ -10,8 +10,10 @@ import Exercitation from '../components/Exercitation'
 const Root = ({store, history}) => (
   <Provider store={store}>
     <ConnectedRouter history={history}>
-      <Route exact path="/" component={Home} />
-      <Route exact path="/exercitation" component={Exercitation} />
+      <div>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/exercitation" component={Exercitation} />
+      </div>
     </ConnectedRouter>
   </Provider>
 )

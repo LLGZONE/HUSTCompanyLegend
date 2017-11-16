@@ -7,7 +7,7 @@ import {Link, Route} from 'react-router-dom'
 
 import './NavbarItem.scss'
 
-const NavBarItem = ({to, label,...rest}) => (
+const NavBarItem = ({to, label, ...rest}) => (
   <Route path={to} exact children={({match}) => {
 
     return (
@@ -21,8 +21,8 @@ const NavBarItem = ({to, label,...rest}) => (
 )
 
 NavBarItem.propTypes = {
-  to: PropTypes.oneOf([PropTypes.string, PropTypes.object]).isRequired,
-  label: PropTypes.string.isRequired
+  to: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  label: PropTypes.string.isRequired,
 }
 
 export default NavBarItem

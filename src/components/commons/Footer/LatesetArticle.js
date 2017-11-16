@@ -10,6 +10,8 @@ const ClickItemStyle = {
   padding: '5px 0'
 }
 
+let key = 1
+
 const LatestArticle = ({latest}) => (
   <div>
     <h3>最新文章</h3>
@@ -17,7 +19,7 @@ const LatestArticle = ({latest}) => (
       {latest.map(article => {
         const {text, url} = article
         return (
-          <div  style={ClickItemStyle}>
+          <div key={key++} style={ClickItemStyle}>
             <ClickItem item={text} url={url} />
           </div>
         )
