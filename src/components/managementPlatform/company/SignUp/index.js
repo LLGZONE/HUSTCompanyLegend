@@ -5,7 +5,6 @@ import React from 'react'
 import LineHeader  from '../../../commons/LineHeader'
 import SignUpForm from './MobileRegister'
 import ThirdParty from './ThirdParty'
-import Button from '../../../commons/Button'
 import {Link} from 'react-router-dom'
 
 const SignUp = () => (

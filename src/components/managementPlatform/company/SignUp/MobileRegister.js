@@ -77,5 +77,4 @@ const MobileRegister = ({handleSubmit}) => (
 export default reduxForm({
   form: 'MobileRegister',
   validate,
-  onSubmit: submit
 })(MobileRegister)

@@ -28,7 +28,7 @@ const Button = ({value, backgroundColor="#FF9800", color="white", border='1px so
 
 Button.propTypes = {
   value: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
 }
 
 export default Button

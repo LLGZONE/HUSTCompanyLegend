@@ -74,5 +74,5 @@ const EmailRegister = ({handleSubmit}) => (
 
 export default reduxForm({
   name: 'EmailRegister',
-  validate:
+  validate
 })(EmailRegister)
