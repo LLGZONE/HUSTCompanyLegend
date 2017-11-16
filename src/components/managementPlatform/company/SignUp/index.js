@@ -3,7 +3,7 @@
  */
 import React from 'react'
 import LineHeader  from '../../../commons/LineHeader'
-import SignUpForm from './MobileRegister'
+import SignUpForm from './SignUpForm'
 import ThirdParty from './ThirdParty'
 import {Link} from 'react-router-dom'
 

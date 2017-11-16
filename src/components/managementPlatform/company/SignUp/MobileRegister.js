@@ -27,7 +27,6 @@ const validate = values => {
 
 const renderField = ({ input, label, type, meta: { touched, error, warning } }) => (
   <div>
-    {label}
     <div>
       <input {...input} placeholder={label} type={type}/>
       {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
@@ -35,7 +34,7 @@ const renderField = ({ input, label, type, meta: { touched, error, warning } }) 
   </div>
 )
 
-const renderVerification = ({ input, label, type, meta: { touched, error, warning } }) => (
+const renderVerification = ({ input, label, type, meta: { touched, error, warning }}) => (
   <div>
     <div>
       <input {...input} placeholder={label} type={type}/>
@@ -45,24 +44,24 @@ const renderVerification = ({ input, label, type, meta: { touched, error, warnin
   </div>
 )
 
-const MobileRegister = ({handleSubmit}) => (
+const MobileRegister = ({handleSubmit, submitting, pristine, reset}) => (
   <form onSubmit={handleSubmit}>
     <Field
       name="phone"
       type="number"
-      label="账号"
+      label="请输入手机号码"
       component={renderField}
     />
     <Field
       name="password"
       type="password"
-      label="密码"
+      label="请输入密码"
       component={renderField}
     />
     <Field
       name="repassword"
       type="password"
-      label="再次输入密码"
+      label="请再次输入密码"
       component={renderField}
     />
     <Field
@@ -71,6 +70,10 @@ const MobileRegister = ({handleSubmit}) => (
       label="短信验证码"
       component={renderVerification}
     />
+    <div>
+      <button type="submit" disabled={submitting}>Submit</button>
+      <button type="button" disabled={pristine || submitting} onClick={reset}>Clear Values</button>
+    </div>
   </form>
 )
 

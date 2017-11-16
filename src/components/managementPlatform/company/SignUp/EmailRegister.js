@@ -16,6 +16,8 @@ const renderField = ({ input, type, label, meta: { touched, error, warning } }) 
 )
 
 const validate = values => {
+  const errors = {}
+
   if (!values.password) {
     errors.password = '必填项'
   } else if (!/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,20}$/.test(values.password)) {
@@ -39,7 +41,7 @@ const renderVerification = ({ input, label, type, meta: { touched, error, warnin
   </div>
 )
 
-const EmailRegister = ({handleSubmit}) => (
+const EmailRegister = ({handleSubmit, reset, submitting, pristine}) => (
   <form onSubmit={handleSubmit}>
     <Field
       name="phone"
@@ -69,6 +71,10 @@ const EmailRegister = ({handleSubmit}) => (
       component={renderVerification}
       validate={[required]}
     />
+    <div>
+      <button type="submit" disabled={submitting}>Submit</button>
+      <button type="button" disabled={pristine || submitting} onClick={reset}>Clear Values</button>
+    </div>
   </form>
 )
 
