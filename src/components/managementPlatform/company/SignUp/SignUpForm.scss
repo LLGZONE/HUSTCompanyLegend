@@ -1,5 +1,32 @@
 .company-signup {
   &-form-main {
     padding: 10px;
+
+    > div {
+      width: 100%;
+      box-sizing: border-box;
+    }
+  }
+
+  &-render {
+    &-field {
+      margin: 20px 0;
+
+      input {
+        flex: 1 1 auto;
+        border: 1px solid #BBBBBB;
+      }
+    }
+
+    &-verify {
+      display: flex;
+      align-items: center;
+      margin: 20px 0;
+
+      input {
+        flex: 1 1 auto;
+        border: 1px solid #BBBBBB;
+      }
+    }
   }
 }

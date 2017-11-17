@@ -5,13 +5,12 @@ import React from 'react'
 import {email, required} from '../../../../utils/other/validate'
 import {Field, reduxForm} from 'redux-form'
 import Button from '../../../commons/Button'
+import './SignUpForm.scss'
 
 const renderField = ({ input, type, label, meta: { touched, error, warning } }) => (
   <div>
-    <div>
-      <input {...input} placeholder={label} type={type}/>
-      {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
-    </div>
+    <input {...input} placeholder={label} type={type}/>
+    {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
   </div>
 )
 
