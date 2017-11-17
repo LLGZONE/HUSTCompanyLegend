@@ -6,6 +6,7 @@ import {Route} from 'react-router'
 
 import Home from '../components/Home'
 import Exercitation from '../components/Exercitation'
+import CompanyManagement from '../components/managementPlatform/Company'
 
 const Root = ({store, history}) => (
   <Provider store={store}>
@@ -13,6 +14,7 @@ const Root = ({store, history}) => (
       <div>
         <Route exact path="/" component={Home} />
         <Route exact path="/exercitation" component={Exercitation} />
+        <Route path="/management/company" component={CompanyManagement} />
       </div>
     </ConnectedRouter>
   </Provider>

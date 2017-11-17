@@ -7,9 +7,9 @@ import NavLink from './NavLink'
 
 import './index.scss'
 
-const postsUrl = '/management/company/posts'
-const traineeUrl = '/management/company/trainee'
-const userUrl = '/management/company/user'
+const postsUrl = '/management/Company/posts'
+const traineeUrl = '/management/Company/trainee'
+const userUrl = '/management/Company/user'
 
 const AsideNav = () => (
   <section className="management-company-aside">

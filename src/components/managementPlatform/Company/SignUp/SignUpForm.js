@@ -11,8 +11,8 @@ import '../../../LogIn/LogInType.scss'
 import './index.scss'
 
 const SignUpForm = () => {
-  const mobilePath = '/management/company/signup/phone'
-  const emailPath = '/management/company/signup/email'
+  const mobilePath = '/management/Company/signup/phone'
+  const emailPath = '/management/Company/signup/email'
 
   return (
     <div>

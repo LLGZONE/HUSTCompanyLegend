@@ -1,13 +1,13 @@
 /**
  * Created by LLGZONE on 2017/11/11.
  */
-import TraineeFilter from '../src/components/managementPlatform/company/TraineeFilter'
+import TraineeFilter from '../src/components/managementPlatform/Company/TraineeFilter'
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import {BrowserRouter as Router} from 'react-router-dom'
 import range from '../src/utils/other/range'
 import namor from 'namor'
-import PostsManage from '../src/components/managementPlatform/company/PostsManage'
+import PostsManage from '../src/components/managementPlatform/Company/PostsManage'
 
 const newPerson = () => {
   return {
