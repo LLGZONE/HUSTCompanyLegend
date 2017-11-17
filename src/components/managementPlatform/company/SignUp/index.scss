@@ -1,0 +1,22 @@
+.company-signup {
+  padding: 0 40px;
+
+  &-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 40px;
+  }
+
+  &-form-nav {
+    display: flex;
+    align-items: center;
+
+    a {
+      text-decoration: none;
+      padding: 20px;
+      border: 1px solid #BBBBBB;
+      color: #000000;
+      background-color: transparent;
+    }
+  }
+}

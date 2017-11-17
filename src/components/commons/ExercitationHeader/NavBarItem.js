@@ -21,8 +21,9 @@ const NavBarItem = ({to, label, exact, ...rest}) => (
 )
 
 NavBarItem.propTypes = {
-  to: PropTypes.oneOf([PropTypes.string, PropTypes.object]).isRequired,
-  label: PropTypes.string.isRequired
+  to: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  label: PropTypes.string.isRequired,
+  exact: PropTypes.bool,
 }
 
 export default NavBarItem

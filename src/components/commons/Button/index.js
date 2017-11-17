@@ -13,7 +13,10 @@ const Button = ({value, backgroundColor="#FF9800", color="white", border='1px so
     width,
     height,
     cursor: 'pointer',
+    display: 'flex',
+    alignItems: 'center',
     padding: '5px 15px',
+    lineHeight: customStyle ? customStyle.fontSize : '16px'
   }
 
   const btn = (
@@ -25,6 +28,7 @@ const Button = ({value, backgroundColor="#FF9800", color="white", border='1px so
 
 Button.propTypes = {
   value: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
 }
 
 export default Button

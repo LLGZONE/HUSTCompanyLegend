@@ -1,0 +1,76 @@
+.perfect-message {
+  &-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px 20%;
+    justify-content: space-between;
+    align-items: stretch;
+
+    > div {
+      height: 45px;
+      border: 1px solid #BBBBBB;
+
+      input {
+        border: 0;
+        width: calc(100% - 20px);
+        height: 100%;
+        outline: none;
+      }
+    }
+
+    > select {
+      height: 45px;
+      border: 1px solid #BBBBBB;
+      border-radius: 5px;
+    }
+  }
+
+  &-drag {
+    vertical-align: middle;
+  }
+
+  &-drag-select {
+    display: inline-block;
+    text-align: center;
+    width: 80px;
+    line-height: 30px;
+    height: 30px;
+    border: 2px dashed black;
+    margin-left: 10px;
+  }
+
+  &-drag-env {
+    box-sizing: border-box;
+    width: 80%;
+    border: 2px dashed black;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 30px;
+
+    &:before {
+      display: inline-block;
+      content: '';
+      padding-top: 20%;
+      vertical-align: middle;
+    }
+  }
+
+  &-form-btn {
+    padding: 40px 0;
+
+    button {
+      border: 1px solid #BBBBBB;
+      color: black;
+      background-color: transparent;
+      width: 70px;
+      height: 35px;
+      margin: 0 20px;
+      float: right;
+
+      &:hover {
+        color: white;
+        background-color: #FF9800;
+      }
+    }
+  }
+}

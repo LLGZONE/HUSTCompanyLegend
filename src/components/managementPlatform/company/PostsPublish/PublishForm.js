@@ -11,7 +11,7 @@ import {required} from '../../../../utils/other/validate'
 import FormTextField from './FormTextField'
 
 export const renderInputField = ({ input, label, type, meta: { touched, error, warning }, hasLabel=true}) => (
-  <div className="posts-publish-gap" style={{display: 'flex', alignItems: 'center', marginLeft: '10px'}}>
+  <div className={hasLabel ? 'posts-publish-gap' : ''} style={hasLabel ? {display: 'flex', alignItems: 'center', marginLeft: '10px'} : {}}>
     {hasLabel ? <label>{label} :</label> : null}
     <div>
       <input {...input} placeholder={label} type={type} style={{padding: '0 0 0 10px'}}/>

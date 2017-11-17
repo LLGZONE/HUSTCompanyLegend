@@ -4,6 +4,8 @@
 import React from 'react'
 import Dropzone from 'react-dropzone'
 
+import PropTypes from 'prop-types'
+
 class FormFile extends React.Component {
   constructor() {
     super()
@@ -22,21 +24,33 @@ class FormFile extends React.Component {
   }
 
   render() {
-    const {input: {value}, label} = this.props
+    const {
+      input: {value},
+      label,
+      multiple,
+      className,
+      dropClassName,
+    } = this.props
+
+    const v = value || []
 
     let id = 0
     return (
-      <div>
-        <p>{label}</p>
-        <Dropzone>
-          <p>选择文件</p>
+      <div className={className}>
+        <span>{label}</span>:
+        <Dropzone multiple={multiple} className={dropClassName}>
+          选择文件
         </Dropzone>
         <ul>
-          {value.map(url => <i key={id++}><img src={url} alt="img" /></i>)}
+          {v.map(url => <i key={id++}><img src={url} alt="img" /></i>)}
         </ul>
       </div>
     )
   }
+}
+
+FormFile.propTypes = {
+  dropClassName: PropTypes.string,
 }
 
 export default FormFile

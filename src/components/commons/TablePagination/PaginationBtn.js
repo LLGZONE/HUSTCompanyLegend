@@ -5,7 +5,7 @@ import React from 'react'
 import Button from '../Button'
 
 const PaginationBtn = ({activeStyle, onClick, text}) => (
-  <Button value={text} backgroundColor="white" color="#FF9800" customStyle={activeStyle} onClick={onClick} />
+  <Button value={text} backgroundColor="white" color="#FF9800" customStyle={{...activeStyle, width: '40px'}} onClick={onClick} />
 )
 
 export default PaginationBtn

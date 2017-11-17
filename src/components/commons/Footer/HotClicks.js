@@ -9,6 +9,8 @@ const ClickItemStyle = {
   padding: '5px 0'
 }
 
+let key = 1
+
 const HotClicks = ({hot}) => (
   <div>
     <h3>热门点击</h3>
@@ -16,7 +18,7 @@ const HotClicks = ({hot}) => (
       {hot.map(hotItem => {
         const {text, url} = hotItem
         return (
-          <div style={ClickItemStyle}>
+          <div key={`${key++}`} style={ClickItemStyle}>
             <ClickItem item={text} url={url} />
           </div>
         )

@@ -1,6 +1,7 @@
 import { configure } from '@storybook/react';
 
 function loadStories() {
+  require('../stories/signup')
   require('../stories/pages')
   require('../stories');
   require('../stories/exercitation')

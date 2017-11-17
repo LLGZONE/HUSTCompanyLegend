@@ -1,14 +1,9 @@
-/**
- * Created by LLGZONE on 2017/11/5.
- */
-/**
- * Created by LLGZONE on 2017/11/5.
- */
 import React from 'react'
 import {Link} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import LineHeader from '../../../commons/LineHeader'
 import ReactTable from 'react-table'
+import TablePagination from '../../../commons/TablePagination'
 
 import 'react-table/react-table.css'
 import './index.scss'
@@ -16,7 +11,6 @@ import './index.scss'
 class PostsManage extends React.Component {
   render() {
     const {data} = this.props
-    let id = 0
 
     return (
       <section>
@@ -60,25 +54,27 @@ class PostsManage extends React.Component {
               Header: '操作',
               Cell() {
                 return <div>
-                  <Link to="">
+                  <Link to="/modify">
                     编辑
                   </Link>
-                  <Link>
+                  <Link to="/abandon">
                     下架
                   </Link>
-                  <Link>
+                  <Link to="/delete">
                     删除
                   </Link>
-                  <Link>
+                  <Link to="/top">
                     置顶
                   </Link>
-                  <Link>
+                  <Link to="/tohome">
                     发布到首页
                   </Link>
                 </div>
               }
             }
           ]}
+        showPagination
+        PaginationComponent={TablePagination}
         />
       </section>
     )

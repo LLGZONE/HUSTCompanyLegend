@@ -9,6 +9,7 @@ import AsideNav from '../src/components/managementPlatform/company/AsideNav'
 import FormTextField from '../src/components/managementPlatform/company/PostsPublish/FormTextField'
 import PendingReview from '../src/components/managementPlatform/company/PendingReview'
 import PostsPublish from '../src/components/managementPlatform/company/PostsPublish'
+import PerfectMessage from '../src/components/managementPlatform/company/PerfectMessage'
 
 import _360 from '../src/components/Exercitation/images/Base/360.png'
 import license from '../src/components/managementPlatform/company/PendingReview/license.png'
@@ -37,3 +38,7 @@ storiesOf('company', module)
     simpleIntro="sadfsdfwerdfgggggggggggggg"
   />)
   .add('postspublish', () => <Provider store={store}><ConnectedRouter history={history}><PostsPublish/></ConnectedRouter></Provider>)
+  .add('signup', () => <Provider store={store}>
+    <ConnectedRouter history={history}>
+      <PerfectMessage />
+    </ConnectedRouter></Provider>)
