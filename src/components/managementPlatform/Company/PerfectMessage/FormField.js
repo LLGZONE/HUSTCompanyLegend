@@ -6,6 +6,7 @@ import {Field, reduxForm} from 'redux-form'
 import FormSelect from './FormSelect'
 import FormTextField from '../PostsPublish/FormTextField'
 import FormFile from './FormFile'
+import {Link} from 'react-router-dom'
 
 import './FormField.scss'
 
@@ -85,7 +86,9 @@ const FormField = ({pristine, submitting, reset}) => (
         重置
       </button>
       <button type="submit" disabled={pristine || submitting}>
-        提交
+        <Link to="/management/company/exercitation/pending">
+          提交
+        </Link>
       </button>
     </div>
   </form>

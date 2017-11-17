@@ -10,10 +10,11 @@ import TablePagination from '../../../commons/TablePagination'
 
 import '../PostsManage/index.scss'
 
+
 const TraineeFilter = ({data, employ, abandon}) => {
 
   return (
-    <section>
+    <section style={{marginBottom: '20px'}}>
       <LineHeader title="大数据开发工程师实习名单" style={{fontSize: '20px'}}/>
       <ReactTable
         data={data}
@@ -25,7 +26,8 @@ const TraineeFilter = ({data, employ, abandon}) => {
             },
             sortable: false,
             filterable: false,
-            className: 'text-center'
+            className: 'text-center',
+            width: 50,
           },
           {
             Header: '姓名',
@@ -35,7 +37,8 @@ const TraineeFilter = ({data, employ, abandon}) => {
           {
             Header: '性别',
             accessor: 'sex',
-            className: 'text-center'
+            className: 'text-center',
+            width: 50
           },
           {
             Header: '生日',
@@ -58,7 +61,7 @@ const TraineeFilter = ({data, employ, abandon}) => {
             filterable: false,
             Cell() {
               return (
-                <div>
+                <div className="posts-manage-operation">
                   <Link to="/detail">
                     详情
                   </Link>

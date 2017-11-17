@@ -13,7 +13,7 @@ class PostsManage extends React.Component {
     const {data} = this.props
 
     return (
-      <section>
+      <section style={{marginBottom: '20px'}}>
         <LineHeader title="实习岗位列表" style={{fontSize: '20px'}} />
         <ReactTable
           data={data}
@@ -21,11 +21,12 @@ class PostsManage extends React.Component {
             {
               Header: '序号',
               Cell({ viewIndex }) {
-                return viewIndex
+                return viewIndex + 1
               },
               sortable: false,
               filterable: false,
-              className: 'text-center'
+              className: 'text-center',
+              width: 50,
             },
             {
               Header: '岗位名称',
@@ -53,7 +54,7 @@ class PostsManage extends React.Component {
             {
               Header: '操作',
               Cell() {
-                return <div>
+                return <div className="posts-manage-operation">
                   <Link to="/modify">
                     编辑
                   </Link>
@@ -70,7 +71,8 @@ class PostsManage extends React.Component {
                     发布到首页
                   </Link>
                 </div>
-              }
+              },
+              width: 230
             }
           ]}
         showPagination

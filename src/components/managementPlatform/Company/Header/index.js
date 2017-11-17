@@ -40,7 +40,7 @@ const Header = () => (
         </Link>
       </div>
       <div className="commons-exercitation-icon">
-        <Link to="/management/company">
+        <Link to="/exercitation">
           <i className="fa fa-home">
           </i>
         </Link>

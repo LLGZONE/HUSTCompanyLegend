@@ -42,7 +42,7 @@ class LogIn extends React.Component {
 
     switch (type) {
       case 'company':
-        to = '/management/company/signup'
+        to = '/management/company/exercitation/signup'
         break
       case 'school':
         to = '/management/school/signup'
