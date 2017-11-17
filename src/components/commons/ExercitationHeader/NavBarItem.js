@@ -7,8 +7,8 @@ import {Link, Route} from 'react-router-dom'
 
 import './NavbarItem.scss'
 
-const NavBarItem = ({to, label,...rest}) => (
-  <Route path={to} exact children={({match}) => {
+const NavBarItem = ({to, label, exact, ...rest}) => (
+  <Route path={to} exact={exact} children={({match}) => {
 
     return (
       <div className={`navbar-item ${match ? 'nav-active' : ''}`}>

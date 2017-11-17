@@ -13,9 +13,7 @@ const Button = ({value, backgroundColor="#FF9800", color="white", border='1px so
     width,
     height,
     cursor: 'pointer',
-    display: 'flex',
-    alignItems: 'center',
-    padding: '5px 15px'
+    padding: '5px 15px',
   }
 
   const btn = (

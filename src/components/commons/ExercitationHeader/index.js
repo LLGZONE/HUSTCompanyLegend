@@ -17,6 +17,7 @@ const ExercitationHeader = () => {
           <NavBarItem
             to="/exercitation"
             label="实习首页"
+            exact
           />
           <NavBarItem
             to="/base"
