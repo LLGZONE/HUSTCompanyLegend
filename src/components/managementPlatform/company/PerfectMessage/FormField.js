@@ -65,17 +65,22 @@ const FormField = ({pristine, submitting, reset}) => (
       label="公司简介"
       component={FormTextField}
     />
+    <br />
     <Field
       name="license"
       label="上传公司信用资质"
       component={FormFile}
+      multiple={false}
+      className="perfect-message-drag"
+      dropClassName="perfect-message-drag-select"
     />
     <Field
       name="environment"
       label="上传公司环境照片"
       component={FormFile}
+      dropClassName="perfect-message-drag-env"
     />
-    <div>
+    <div className="perfect-message-form-btn">
       <button type="button" disabled={pristine || submitting} onClick={reset}>
         重置
       </button>

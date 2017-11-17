@@ -29,16 +29,17 @@ class FormFile extends React.Component {
       label,
       multiple,
       className,
+      dropClassName,
     } = this.props
 
     const v = value || []
 
     let id = 0
     return (
-      <div>
-        <p>{label}</p>
-        <Dropzone multiple={multiple} className={className}>
-          <p>选择文件</p>
+      <div className={className}>
+        <span>{label}</span>:
+        <Dropzone multiple={multiple} className={dropClassName}>
+          选择文件
         </Dropzone>
         <ul>
           {v.map(url => <i key={id++}><img src={url} alt="img" /></i>)}
@@ -49,7 +50,7 @@ class FormFile extends React.Component {
 }
 
 FormFile.propTypes = {
-  className: PropTypes.string,
+  dropClassName: PropTypes.string,
 }
 
 export default FormFile
