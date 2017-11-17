@@ -5,6 +5,8 @@ import React from 'react'
 import Button from '../../../commons/Button'
 import {Field, reduxForm} from 'redux-form'
 
+import './SignUpForm.scss'
+
 const validate = values => {
   const errors = {}
   if (!values.phone) {
@@ -26,26 +28,29 @@ const validate = values => {
 }
 
 const renderField = ({ input, label, type, meta: { touched, error, warning } }) => (
-  <div>
-    <div>
-      <input {...input} placeholder={label} type={type}/>
-      {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
-    </div>
+  <div className="company-signup-render-field">
+    <input {...input} placeholder={label} type={type}/>
+    {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
   </div>
 )
 
 const renderVerification = ({ input, label, type, meta: { touched, error, warning }}) => (
+  <div className="company-signup-render-verify">
+    <input {...input} placeholder={label} type={type}/>
+    <Button value="获取短信验证码"/>
+    {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
+  </div>
+)
+
+const renderCheck = ({input, type, }) => (
   <div>
-    <div>
-      <input {...input} placeholder={label} type={type}/>
-      <Button value="获取短信验证码"/>
-      {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
-    </div>
+    <input type={type} {...input} />
+    <p>我已阅读并同意<a href="#">《校企联盟实习平台用户协议》</a></p>
   </div>
 )
 
 const MobileRegister = ({handleSubmit, submitting, pristine, reset}) => (
-  <form onSubmit={handleSubmit}>
+  <form className="company-signup-form-main" onSubmit={handleSubmit}>
     <Field
       name="phone"
       type="number"
@@ -69,6 +74,11 @@ const MobileRegister = ({handleSubmit, submitting, pristine, reset}) => (
       type="text"
       label="短信验证码"
       component={renderVerification}
+    />
+    <Field
+      name="accept"
+      type="checkbox"
+      component={renderCheck}
     />
     <div>
       <button type="submit" disabled={submitting}>Submit</button>
