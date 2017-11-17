@@ -4,22 +4,23 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-size: 18px;
   }
 
   &-logo {
     display: flex;
     justify-content: center;
-    margin: 0 10px;
 
     img {
-      width: 80px;
-      height: 80px;
+      margin: 0 10px;
+      height: 50px;
     }
   }
 
   &-er {
+    padding-top: 50px;
     img {
-      max-width: 400px;
+      min-width: 300px;
     }
   }
 }

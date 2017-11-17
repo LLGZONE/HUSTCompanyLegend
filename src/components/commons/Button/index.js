@@ -5,7 +5,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {Link} from 'react-router-dom'
 
-const Button = ({value, backgroundColor="#FF9800", color="white", border='1px solid #FF9800', url, width, height, onClick, customStyle}) => {
+const Button = ({value, backgroundColor="#FF9800", color="white", border='1px solid #FF9800', url, width, height, onClick, customStyle, name}) => {
   const style = {
     backgroundColor,
     color,
@@ -20,7 +20,7 @@ const Button = ({value, backgroundColor="#FF9800", color="white", border='1px so
   }
 
   const btn = (
-    <input type="button" onClick={onClick} style={{...style, ...customStyle}} value={value} />
+    <input type="button" onClick={onClick} style={{...style, ...customStyle}} value={value} name={name} />
   )
 
   return url ? <Link to={url}>{btn}</Link> : btn

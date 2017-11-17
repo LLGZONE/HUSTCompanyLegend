@@ -8,14 +8,14 @@ import ThirdParty from './ThirdParty'
 import {Link} from 'react-router-dom'
 
 const SignUp = () => (
-  <section>
+  <section className="company-signup">
     <LineHeader title="实习单位注册" style={{fontSize: '20px'}}/>
     <div className="company-signup-main">
       <SignUpForm/>
       <div>
-        <div>
+        <div className="company-signup-login">
           <p>
-            已有账号？直接
+            已有账号？直接 &nbsp;
             <Link to="/login">登录</Link>
           </p>
         </div>

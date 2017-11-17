@@ -6,10 +6,20 @@ import {email, required} from '../../../../utils/other/validate'
 import {Field, reduxForm} from 'redux-form'
 import Button from '../../../commons/Button'
 import './SignUpForm.scss'
+import {renderCheck} from "./MobileRegister";
 
-const renderField = ({ input, type, label, meta: { touched, error, warning } }) => (
-  <div>
+const renderField = ({ input, label, type, meta: { touched, error, warning } }) => (
+  <div className="company-signup-render-field">
     <input {...input} placeholder={label} type={type}/>
+    {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
+  </div>
+)
+
+const renderVerification = ({ input, label, type, meta: { touched, error, warning }}) => (
+  <div className="company-signup-render-verify">
+    <input {...input} placeholder={label} type={type}/>
+
+    <Button value="获取邮箱验证码"/>
     {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
   </div>
 )
@@ -29,16 +39,6 @@ const validate = values => {
     errors.verification = '输入邮箱验证码'
   }
 }
-
-const renderVerification = ({ input, label, type, meta: { touched, error, warning } }) => (
-  <div>
-    <div>
-      <input {...input} placeholder={label} type={type}/>
-      <Button value="获取短信验证码"/>
-      {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
-    </div>
-  </div>
-)
 
 const EmailRegister = ({handleSubmit, reset, submitting, pristine}) => (
   <form onSubmit={handleSubmit}>
@@ -70,10 +70,12 @@ const EmailRegister = ({handleSubmit, reset, submitting, pristine}) => (
       component={renderVerification}
       validate={[required]}
     />
-    <div>
-      <button type="submit" disabled={submitting}>Submit</button>
-      <button type="button" disabled={pristine || submitting} onClick={reset}>Clear Values</button>
-    </div>
+    <Field
+      name="accept"
+      type="checkbox"
+      component={renderCheck}
+    />
+    <button type="submit" disabled={submitting} className="company-signup-form-btn">注册</button>
   </form>
 )
 

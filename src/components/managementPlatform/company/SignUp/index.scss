@@ -3,20 +3,47 @@
 
   &-main {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 3fr 2fr;
     grid-column-gap: 40px;
+    padding: 20px 0;
   }
 
   &-form-nav {
     display: flex;
     align-items: center;
+    max-width: 630px;
+
+    > div {
+      padding: 15px;
+      flex: 1 1 auto;
+      border: 1px solid #BBBBBB;
+      text-align: center;
+      font-size: 18px;
+
+      &.active a {
+        color: white;
+      }
+    }
 
     a {
       text-decoration: none;
-      padding: 20px;
-      border: 1px solid #BBBBBB;
       color: #000000;
       background-color: transparent;
+    }
+  }
+
+  &-login {
+    text-align: center;
+    font-size: 23px;
+
+    a {
+      font-weight: bold;
+      text-decoration: underline;
+      color: black;
+    }
+
+    p {
+      margin: 15px;
     }
   }
 }

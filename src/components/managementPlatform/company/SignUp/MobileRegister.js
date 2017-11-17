@@ -37,16 +37,16 @@ const renderField = ({ input, label, type, meta: { touched, error, warning } }) 
 const renderVerification = ({ input, label, type, meta: { touched, error, warning }}) => (
   <div className="company-signup-render-verify">
     <input {...input} placeholder={label} type={type}/>
-    <Button value="获取短信验证码"/>
+    <Button value="获取短信验证码" name={'verify'}/>
     {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
   </div>
 )
 
-const renderCheck = ({input, type, }) => (
-  <div>
+export const renderCheck = ({input, type, }) => (
+  <label className="company-signup-render-check">
     <input type={type} {...input} />
-    <p>我已阅读并同意<a href="#">《校企联盟实习平台用户协议》</a></p>
-  </div>
+    <span>我已阅读并同意<a href="#">《校企联盟实习平台用户协议》</a></span>
+  </label>
 )
 
 const MobileRegister = ({handleSubmit, submitting, pristine, reset}) => (
@@ -80,10 +80,7 @@ const MobileRegister = ({handleSubmit, submitting, pristine, reset}) => (
       type="checkbox"
       component={renderCheck}
     />
-    <div>
-      <button type="submit" disabled={submitting}>Submit</button>
-      <button type="button" disabled={pristine || submitting} onClick={reset}>Clear Values</button>
-    </div>
+    <button type="submit" disabled={submitting} className="company-signup-form-btn">注册</button>
   </form>
 )
 

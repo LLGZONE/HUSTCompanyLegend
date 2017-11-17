@@ -10,6 +10,7 @@ import FormTextField from '../src/components/managementPlatform/company/PostsPub
 import PendingReview from '../src/components/managementPlatform/company/PendingReview'
 import PostsPublish from '../src/components/managementPlatform/company/PostsPublish'
 import PerfectMessage from '../src/components/managementPlatform/company/PerfectMessage'
+import SignUp from '../src/components/managementPlatform/company/SignUp'
 
 import _360 from '../src/components/Exercitation/images/Base/360.png'
 import license from '../src/components/managementPlatform/company/PendingReview/license.png'
@@ -42,3 +43,7 @@ storiesOf('company', module)
     <ConnectedRouter history={history}>
       <PerfectMessage />
     </ConnectedRouter></Provider>)
+  .add('log', () =>  <Provider store={store}>
+  <ConnectedRouter history={history}>
+    <SignUp/>
+  </ConnectedRouter></Provider>)

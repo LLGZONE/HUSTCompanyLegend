@@ -21,13 +21,13 @@ const SignUpForm = () => {
           path={mobilePath}
           children={({ match }) => {
             return (
-              <Link to={mobilePath}>
-                <div className={match
-                  ? 'login-select-type'
-                  : 'login-select-type active'}>
+              <div className={match
+                ? 'login-select-type'
+                : 'login-select-type active'}>
+                <Link to={mobilePath}>
                   手机注册
-                </div>
-              </Link>
+                </Link>
+              </div>
             )
           }}
         />
@@ -35,13 +35,13 @@ const SignUpForm = () => {
           path={emailPath}
           children={({ match }) => {
             return (
-              <Link to={emailPath}>
-                <div className={match
-                  ? 'login-select-type'
-                  : 'login-select-type active'}>
-                  邮箱注册
-                </div>
-              </Link>
+              <div className={match
+                ? 'login-select-type'
+                : 'login-select-type active'}>
+                  <Link to={emailPath}>
+                    邮箱注册
+                  </Link>
+              </div>
             )
           }}
         />
