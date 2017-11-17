@@ -1,0 +1,9 @@
+.management-company-main-container {
+  display: flex;
+  padding-top: 75px;
+
+  > section:nth-child(n+2) {
+    width: 100%;
+    padding: 0 40px;
+  }
+}

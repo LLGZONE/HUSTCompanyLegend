@@ -7,9 +7,9 @@ import NavLink from './NavLink'
 
 import './index.scss'
 
-const postsUrl = '/management/Company/posts'
-const traineeUrl = '/management/Company/trainee'
-const userUrl = '/management/Company/user'
+const postsUrl = '/management/company/exercitation/posts'
+const traineeUrl = '/management/company/exercitation/trainee'
+const userUrl = '/management/company/exercitation/user'
 
 const AsideNav = () => (
   <section className="management-company-aside">
@@ -22,7 +22,7 @@ const AsideNav = () => (
         <NavLink msg="实习生筛选" path={`${traineeUrl}/filter`}  />
       </AsideNavItem>
       <AsideNavItem to={userUrl} title="用户中心">
-        <NavLink msg="完善信息" path={`${userUrl}/info/perfect`}  />
+        <NavLink msg="完善信息" path={`${userUrl}/perfect/message`}  />
       </AsideNavItem>
     </nav>
   </section>

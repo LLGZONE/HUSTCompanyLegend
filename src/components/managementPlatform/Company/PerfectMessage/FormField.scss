@@ -9,6 +9,7 @@
     > div {
       height: 45px;
       border: 1px solid #BBBBBB;
+      padding: 1px;
 
       input {
         border: 0;
@@ -57,6 +58,7 @@
 
   &-form-btn {
     padding: 40px 0;
+    margin-bottom: 20px;
 
     button {
       border: 1px solid #BBBBBB;

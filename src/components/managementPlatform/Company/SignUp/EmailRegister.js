@@ -5,8 +5,9 @@ import React from 'react'
 import {email, required} from '../../../../utils/other/validate'
 import {Field, reduxForm} from 'redux-form'
 import Button from '../../../commons/Button'
-import './SignUpForm.scss'
 import {renderCheck} from "./MobileRegister";
+
+import './SignUpForm.scss'
 
 const renderField = ({ input, label, type, meta: { touched, error, warning } }) => (
   <div className="company-signup-render-field">
@@ -41,7 +42,7 @@ const validate = values => {
 }
 
 const EmailRegister = ({handleSubmit, reset, submitting, pristine}) => (
-  <form onSubmit={handleSubmit}>
+  <form className="company-signup-form-main"  onSubmit={handleSubmit}>
     <Field
       name="phone"
       type="number"

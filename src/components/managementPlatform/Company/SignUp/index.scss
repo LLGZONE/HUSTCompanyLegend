@@ -1,4 +1,5 @@
 .company-signup {
+  width:100%;
   padding: 0 40px;
 
   &-main {
@@ -14,13 +15,23 @@
     max-width: 630px;
 
     > div {
-      padding: 15px;
       flex: 1 1 auto;
       border: 1px solid #BBBBBB;
       text-align: center;
       font-size: 18px;
 
+      &:nth-child(2) {
+        margin-left: -1px;
+      }
+
+      a {
+        display: block;
+        padding: 15px;
+      }
+
       &.active a {
+        width: 100%;
+        height: 100%;
         color: white;
       }
     }

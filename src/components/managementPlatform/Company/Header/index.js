@@ -9,6 +9,8 @@ import NavBarItem from '../../../commons/ExercitationHeader/NavBarItem'
 
 import 'font-awesome/css/font-awesome.min.css'
 
+const prefix = '/management/company/exercitation'
+
 const Header = () => (
   <header className="commons-exercitation-header">
     <h1 style={{textAlign: 'left', paddingLeft: '40px'}}>
@@ -16,7 +18,7 @@ const Header = () => (
     </h1>
     <nav className="commons-exercitation-nav">
       <NavBarItem
-        to="/management/company/exercitation"
+        to={prefix}
         label="实习管理"
       />
       <NavBarItem

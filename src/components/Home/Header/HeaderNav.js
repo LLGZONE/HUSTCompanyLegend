@@ -18,6 +18,9 @@ const HeaderNav = () => (
         <Link to="/legend/service">联盟服务</Link>
       </li>
       <li>
+        <Link to="/exercitation">实习平台</Link>
+      </li>
+      <li>
         <Link to="/member/dynamics">会员动态</Link>
       </li>
       <li>
