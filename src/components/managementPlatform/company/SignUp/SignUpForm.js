@@ -8,6 +8,7 @@ import EmailRegister from './EmailRegister'
 import MobileRegister from './MobileRegister'
 
 import '../../../LogIn/LogInType.scss'
+import './index.scss'
 
 const SignUpForm = () => {
   const mobilePath = '/management/company/signup/phone'
@@ -15,7 +16,7 @@ const SignUpForm = () => {
 
   return (
     <div>
-      <nav>
+      <nav className="company-signup-form-nav">
         <Route
           path={mobilePath}
           children={({ match }) => {
