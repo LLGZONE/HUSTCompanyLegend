@@ -2,21 +2,28 @@
  * Created by LLGZONE on 2017/10/27.
  */
 import React from 'react'
-import members1 from '../images/members1.png'
-import members2 from '../images/members2.png'
+import PropTypes from 'prop-types'
+
 import './index.css'
 
-const Members = () => (
+const Members = ({imgUrlArr}) => (
   <section className="home-main-members">
     <div className="home-main-members-side">
-      会员风采
+      <p style={{margin: 0}}>会员风采</p>
     </div>
     <div className="home-main-members-imgs">
-      <img src={members1} alt="会员" />
-      <img src={members2} alt="会员" />
+      {imgUrlArr && imgUrlArr.map(img => <img id={img.id} src={img.url} alt={img.alt} />)}
     </div>
-    <div className="home-main-members-side">{}</div>
+    <div className="home-main-members-side" />
   </section>
 )
+
+Members.propTypes = {
+  imgUrlArr: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    url: PropTypes.string.isRequired,
+    alt: PropTypes.string.isRequired,
+  }))
+}
 
 export default Members

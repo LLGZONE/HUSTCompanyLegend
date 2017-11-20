@@ -14,8 +14,8 @@ const AnnounceContent = ({items}) => (
       <p className="home-main-ann-head">联盟动态 通知公告</p>
       <Link to="/announcement/more"><span className="home-main-ann-more small-font">更多</span></Link>
     </div>
-    {items.map(item => (
-      <div className="home-main-ann-content">
+    {items && items.map(item => (
+      <div key={item.id} className="home-main-ann-content">
         <div className="home-main-ann-time">
           <p style={{fontSize: '2em'}}>{item.year}</p>
           <p className="medium-font">{`${item.month}月`}</p>
@@ -31,6 +31,7 @@ const AnnounceContent = ({items}) => (
 
 AnnounceContent.propTypes = {
   items: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
     year: PropTypes.number.isRequired,
     month: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
