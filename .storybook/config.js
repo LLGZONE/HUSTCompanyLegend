@@ -10,6 +10,7 @@ function loadStories() {
   require('../stories/login')
   require('../stories/company')
   require('../stories/TraineeFilter')
+  require('../stories/ann')
 }
 
 configure(loadStories, module);

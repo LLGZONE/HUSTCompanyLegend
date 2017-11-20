@@ -5,10 +5,10 @@ import React from 'react'
 import AnnounceContent from './AnnounceContent'
 import './index.css'
 
-const Announcement = () => (
+const Announcement = ({items}) => (
   <section className="home-main-ann">
     <div className="home-main-ann-pic">{}</div>
-    <AnnounceContent/>
+    <AnnounceContent items={items} />
   </section>
 )
 

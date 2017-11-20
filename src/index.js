@@ -5,6 +5,8 @@ import Root from './routes'
 import configureStore, {history} from './store/configureStore'
 import rootSaga from './utils/sagas'
 
+import 'normalize.css'
+
 const store = configureStore()
 store.runSaga(rootSaga)
 const render = () => {

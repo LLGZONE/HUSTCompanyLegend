@@ -5,7 +5,7 @@ import React from 'react'
 import ClickItem from './ClickItem'
 
 const ClickItemStyle = {
-  borderBottom: '1px solid rgba(255,255,255,.3)',
+  borderBottom: '1px solid #BBBBBB',
   padding: '5px 0'
 }
 
