@@ -6,17 +6,19 @@ import PropTypes from 'prop-types'
 import {Link} from 'react-router-dom'
 import Clamp from 'shiitake'
 
-import './LedgendAchievement.css'
+import './LedgendAchievement.scss'
 import 'font-awesome/css/font-awesome.min.css'
 
 const LedgendAchievement = ({main, subTitles}) => (
-  <div className="home-main-achieve-legend">
+  <div className="home-achieve-legend">
     <div>
-      <i className="fa fa-book" />
-      <div><p>联盟成果</p></div>
-      <Link>更多>></Link>
+      <i className="fa fa-book large-font" />
       <div>
-        <span />
+        <p>联盟成果</p>
+      </div>
+      <Link>更多>></Link>
+      <div className="l-border">
+        <span className="s-border"/>
       </div>
     </div>
     <div>

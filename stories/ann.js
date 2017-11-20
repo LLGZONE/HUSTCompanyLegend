@@ -5,6 +5,7 @@ import '../public/base.css'
 
 import Announcement from '../src/components/Home/Main/Announcement'
 import Members from '../src/components/Home/Main/Members'
+import LedgendAchievement from '../src/components/Home/Main/Achievement/LedgendAchievement'
 
 import zuel from '../src/components/Exercitation/images/Base/zuel.png'
 import antian from '../src/components/Exercitation/images/Base/antian.png'
@@ -23,3 +24,4 @@ storiesOf('ann', module)
       {id: 6, alt: '360', url: _360},
       ]}
   />)
+  .add('legendAchieve', () => <LedgendAchievement subTitles={['我国学者在肠道具核梭杆菌影响大肠杆菌', '我国学者在肠道具核梭杆菌影响大肠杆菌', '我国学者在肠道具核梭杆菌影响大肠杆菌', '我国学者在肠道具核梭杆菌影响大肠杆菌']} main={{alt: 'th17', title: '我国学者揭示调控TH17细胞', url: _360}}/>)
