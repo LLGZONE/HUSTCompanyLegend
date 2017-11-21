@@ -1,16 +1,17 @@
 .home-achieve-academy {
-  flex: auto;
-  max-width: calc(70% - 15px);
   height: var(--achiveHeight);
   $orange: rgb(255, 117, 72);
 
+  flex: auto;
+  max-width: calc(70% - 15px);
+
   &-header {
+    width: 100%;
     border-bottom: $orange solid 2px;
   }
 
-  .trapezium {
+  @mixin trapezium($height) {
     display: inline-block;
-    $height: 50px;
     background-color: $orange;
     height: $height;
     position: relative;
@@ -19,12 +20,16 @@
       display: block;
       content: '';
       position: absolute;
-      right: -$height;
+      right: $height;
       width: 0;
       height: 0;
       border-top: $height solid #FFFFFF;
       border-left: $height solid $orange;
     }
+  }
+
+  .trapezium-title {
+    @include trapezium(50px);
   }
 
   .nav-bar {
@@ -42,6 +47,26 @@
       color: #FFFFFF;
       padding: 5px 10px;
       background-color: rgb(39, 195, 154);
+    }
+  }
+
+  .trapezium-decorate {
+    @include trapezium(10px);
+  }
+
+  &-main {
+    border: {
+      left: 1px solid #BBBBBB;
+      right: 1px solid #BBBBBB;
+    };
+    padding: 10px;
+
+    .title {
+      border-bottom: 2px solid $orange;
+    }
+
+    .projects-container {
+      border-top: 1px solid #BBBBBB;
     }
   }
 }

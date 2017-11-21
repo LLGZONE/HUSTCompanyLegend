@@ -12,7 +12,7 @@ const AcademyAchievement = ({projects}) => (
   <div className="home-achieve-academy">
     <div className="home-achieve-academy-header">
       <div style={{width: '100%'}}>
-        <div className="trapezium">
+        <div className="trapezium-title">
           <p>科技成果</p>
         </div>
         <div className="nav-bar">
@@ -28,13 +28,15 @@ const AcademyAchievement = ({projects}) => (
           </button>
         </div>
       </div>
-      <div className="" />
+      <div className="trapezium-decorate" />
     </div>
-    <div>
-      <div>
-        <p>热门项目</p>
+    <div className="home-achieve-academy-main">
+      <div className="title">
+        <p style={{margin: '0 0 5px', fontWeight: 'bold'}}>热门项目</p>
       </div>
-      {projects && projects.map(({id, img, type, title, industry, date}) => <AcademyProject img={img} type={type} title={title} industry={industry} date={date} key={id} />)}
+      <div className="projects-container">
+        {projects && projects.map(({id, img, type, title, industry, date}) => <AcademyProject img={img} type={type} title={title} industry={industry} date={date} key={id} />)}
+      </div>
     </div>
   </div>
 )
