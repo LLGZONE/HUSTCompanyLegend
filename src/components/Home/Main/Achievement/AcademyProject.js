@@ -3,18 +3,16 @@ import PropTypes from 'prop-types'
 
 import './AcademyAchievement.scss'
 
-const fontColor = '#BBBBBB'
-
 const AcademyProject = ({img: {url, alt}, type, title, industry, date}) => (
   <div className="academy-project">
     <img src={url} alt={alt}/>
     <div className="academy-project-main">
-      <p>
+      <p style={{margin: 0, lineHeight: '2em'}}>
         <span className="type">[ {type} ]</span>
         {title}
       </p>
-      <p style={{color: fontColor}}>行业: {industry}</p>
-      <p style={{color: fontColor}}>发布时间: {date}</p>
+      <p className="font" style={{marginTop: '10px'}}>行业: {industry}</p>
+      <p className="font">发布时间: {date}</p>
     </div>
   </div>
 )
