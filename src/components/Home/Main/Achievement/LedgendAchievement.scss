@@ -1,18 +1,91 @@
 .home-achieve-legend {
+  $border-color: rgb(33, 104, 176);
   flex: 1 0 auto;
   max-width: 30%;
   margin-right: 15px;
   height: var(--achiveHeight);
 
+  &-header {
+    position: relative;
+    margin-bottom: 2px;
+  }
+
+  .icon {
+    display: inline-block;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    margin: 0 6px -1px 0;
+  }
+
+  &-title {
+    display: inline-block;
+    border: 1px solid #BBBBBB;
+    padding: 0 0.8em;
+
+    p {
+      font-weight: bold;
+      margin: 5px;
+    }
+  }
+
+  .right {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+
   .l-border {
     box-sizing: border-box;
     width: 100%;
-    border-bottom: 1px solid rgb(33, 104, 176);
+    border-bottom: 2px solid $border-color;
   }
 
   .s-border {
-    width: 50%;
-    height: 5px;
-    background-color: rgb(33, 104, 176);
+    width: 35%;
+    height: 1px;
+    border: 1px solid $border-color;
+    background-color: $border-color;
+  }
+
+  .main {
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 1.2em;
+
+    &-thumb {
+      border: 2px solid $border-color;
+
+      img {
+        width:100%;
+      }
+
+      &-desp {
+        padding: 10px 0 10px 5px;
+        color: white;
+        font-weight: bold;
+        background-color: $border-color;
+      }
+
+      &-shiitake {
+        letter-spacing: -1.5px;
+        width: 80%;
+      }
+    }
+
+    &-list {
+      margin-left: -8px;
+
+      &-item {
+        position: relative;
+        margin-bottom: 10px;
+      }
+
+      &-shiitake {
+        position: absolute;
+        top: 0;
+        left: 0;
+        letter-spacing: -1.5px;
+      }
+    }
   }
 }

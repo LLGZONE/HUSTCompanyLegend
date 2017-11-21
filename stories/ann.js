@@ -10,6 +10,7 @@ import LedgendAchievement from '../src/components/Home/Main/Achievement/LedgendA
 import zuel from '../src/components/Exercitation/images/Base/zuel.png'
 import antian from '../src/components/Exercitation/images/Base/antian.png'
 import _360 from '../src/components/Exercitation/images/Base/360.png'
+import bg from '../src/components/Home/Main/Achievement/bg.jpg'
 
 storiesOf('ann', module)
   .addDecorator((story) => <Router>{story()}</Router>)
@@ -24,4 +25,4 @@ storiesOf('ann', module)
       {id: 6, alt: '360', url: _360},
       ]}
   />)
-  .add('legendAchieve', () => <LedgendAchievement subTitles={['我国学者在肠道具核梭杆菌影响大肠杆菌', '我国学者在肠道具核梭杆菌影响大肠杆菌', '我国学者在肠道具核梭杆菌影响大肠杆菌', '我国学者在肠道具核梭杆菌影响大肠杆菌']} main={{alt: 'th17', title: '我国学者揭示调控TH17细胞', url: _360}}/>)
+  .add('legendAchieve', () => <LedgendAchievement subTitles={[{id: 1, title: '我国学者在肠道具核梭杆菌影响大肠杆菌'}, {id: 2, title: '我国学者在肠道具核梭杆菌影响大肠杆菌',}, {id: 3, title: '我国学者在肠道具核梭杆菌影响大肠杆菌'}]} main={{alt: 'th17', title: '我国学者揭示调控TH17细胞因此而有了这一系列', url: bg}}/>)
