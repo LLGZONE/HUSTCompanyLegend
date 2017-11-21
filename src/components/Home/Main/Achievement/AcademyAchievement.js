@@ -6,25 +6,27 @@ import PropTypes from 'prop-types'
 
 import AcademyProject from './AcademyProject'
 
-import './AcademyAchievement.css'
+import './AcademyAchievement.scss'
 
 const AcademyAchievement = ({projects}) => (
-  <div className="home-main-achieve-academy">
-    <div>
-      <div>
-        <div>
+  <div className="home-achieve-academy">
+    <div className="home-achieve-academy-header">
+      <div style={{width: '100%'}}>
+        <div className="trapezium">
           <p>科技成果</p>
         </div>
-        <ul>
-          <li>技术项目</li>
-          <li>专利项目</li>
-          <li>版权项目</li>
-          <li>新品种</li>
-          <li>商标</li>
-        </ul>
-        <button>
-          发布转让项目
-        </button>
+        <div>
+          <ul className="nav-list">
+            <li>技术项目</li>
+            <li>专利项目</li>
+            <li>版权项目</li>
+            <li>新品种</li>
+            <li>商标</li>
+          </ul>
+          <button>
+            发布转让项目
+          </button>
+        </div>
       </div>
       <div />
     </div>
