@@ -4,12 +4,20 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-import wCh from '../images/work_chance.png'
+import './index.scss'
 
 const WorkChance = () => (
-  <Link to="/exercitation">
-    <img src={wCh} alt="实习机会" />
-  </Link>
+  <div className="home-work-chance">
+    <div className="header">
+      <p>实习机会</p>
+    </div>
+    <div className="nav-container">
+
+    </div>
+    <div className="description-container">
+
+    </div>
+  </div>
 )
 
 export default WorkChance
