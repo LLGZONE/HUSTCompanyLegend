@@ -11,12 +11,12 @@ import './AcademyAchievement.scss'
 const AcademyAchievement = ({projects}) => (
   <div className="home-achieve-academy">
     <div className="home-achieve-academy-header">
-      <div style={{width: '100%'}}>
+      <div style={{width: '100%', position: 'relative'}}>
         <div className="trapezium-title">
           <p>科技成果</p>
         </div>
         <div className="nav-bar">
-          <ul className="nav-bar-list">
+          <ul className="nav-bar-list small-font">
             <li>技术项目</li>
             <li>专利项目</li>
             <li>版权项目</li>
