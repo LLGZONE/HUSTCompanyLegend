@@ -1,4 +1,60 @@
 .home-work-chance {
-    background-color: #EEEEEE;
-}
+  background-color: #EEEEEE;
+  width: 100%;
+  padding: 4px 0 0;
+  $height: 2.2em;
+  $borderRadius: 10px;
+  $whBg: #FFFFFF;
 
+  .header {
+    position: relative;
+    width: 5em;
+    padding: 0 1em;
+    font-weight: bold;
+    background-color: #FFFFFF;
+    height: $height;
+    border-top-left-radius: $borderRadius;
+    border-top-right-radius: $borderRadius + 5;
+
+    &:before {
+      display: block;
+      content: '';
+      width: $height;
+      height: $height;
+      background-color: $whBg;
+      position: absolute;
+      right: -$height / 2;
+      transform: skew(45deg);
+      border-top-right-radius: $borderRadius;
+    }
+
+    p {
+      line-height: $height;
+      margin: 1px 0;
+      text-align: center;
+    }
+  }
+
+  .main-container {
+    display: flex;
+  }
+
+  .nav-container {
+    background-color: $whBg;
+    width: 33%;
+    height: 500px;
+    border-top-right-radius: $borderRadius;
+  }
+
+  .description-container {
+    width: calc(67% - 30px);
+    background-color: $whBg;
+    margin-left: 20px;
+    height: 500px;
+
+    border-top: {
+      left-radius: $borderRadius;
+      right-radius: $borderRadius;
+    };
+  }
+}

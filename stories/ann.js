@@ -7,6 +7,7 @@ import Announcement from '../src/components/Home/Main/Announcement'
 import Members from '../src/components/Home/Main/Members'
 import LedgendAchievement from '../src/components/Home/Main/Achievement/LedgendAchievement'
 import AcademyAchievement from '../src/components/Home/Main/Achievement/AcademyAchievement'
+import WorkChance from '../src/components/Home/Main/WorkChance'
 
 import zuel from '../src/components/Exercitation/images/Base/zuel.png'
 import antian from '../src/components/Exercitation/images/Base/antian.png'
@@ -139,3 +140,4 @@ storiesOf('ann', module)
       date: '2015-11-15',
     },
   ]}/>)
+  .add('workchance', () => <WorkChance/>)
