@@ -15,20 +15,20 @@ const AcademyAchievement = ({projects}) => (
         <div className="trapezium">
           <p>科技成果</p>
         </div>
-        <div>
-          <ul className="nav-list">
+        <div className="nav-bar">
+          <ul className="nav-bar-list">
             <li>技术项目</li>
             <li>专利项目</li>
             <li>版权项目</li>
             <li>新品种</li>
             <li>商标</li>
           </ul>
-          <button>
+          <button className="nav-bar-btn">
             发布转让项目
           </button>
         </div>
       </div>
-      <div />
+      <div className="" />
     </div>
     <div>
       <div>

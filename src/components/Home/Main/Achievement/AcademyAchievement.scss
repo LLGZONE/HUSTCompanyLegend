@@ -27,8 +27,21 @@
     }
   }
 
-  .nav-list {
-    list-style: none;
+  .nav-bar {
+    display: flex;
 
+    &-list {
+      list-style: none;
+
+      li {
+        border-right: 1px solid #BBBBBB;
+      }
+    }
+
+    &-btn {
+      color: #FFFFFF;
+      padding: 5px 10px;
+      background-color: rgb(39, 195, 154);
+    }
   }
 }
