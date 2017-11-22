@@ -1,28 +1,27 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import './index.scss'
+
 const Expert = ({
-  img: {src, alt},
+  avatar,
   honor,
   name,
   field,
   area,
 }) => (
-  <div>
-    <img src={src} alt={alt} />
+  <div className="expert-container">
+    <img className="expert-avatar large-font" src={avatar} alt={name} />
     <div>
-      <p>{`${name}${honor ? `——${honor}` : ''}`}</p>
-      <p>领域：{field}</p>
-      <p>方向：{area}</p>
+      <p className="expert-name">{`${name}${honor ? `——${honor}` : ''}`}</p>
+      <p className="expert-info">领域：{field}</p>
+      <p className="expert-info">方向：{area}</p>
     </div>
   </div>
 )
 
 Expert.propTypes = {
-  img: PropTypes.shape({
-    alt: PropTypes.string.isRequired,
-    src: PropTypes.string.isRequired,
-  }),
+  avatar: PropTypes.string.isRequired,
   honor: PropTypes.string,
   name: PropTypes.string.isRequired,
   field: PropTypes.string.isRequired,

@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import './WorkChanceNav.scss'
+
 const WorkChanceNav = ({
   icon: {url, alt},
   area,   //就业方向

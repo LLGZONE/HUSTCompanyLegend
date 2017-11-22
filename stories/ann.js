@@ -13,6 +13,7 @@ import zuel from '../src/components/Exercitation/images/Base/zuel.png'
 import antian from '../src/components/Exercitation/images/Base/antian.png'
 import _360 from '../src/components/Exercitation/images/Base/360.png'
 import bg from '../src/components/Home/Main/Achievement/bg.jpg'
+import wcjson from '../src/api/Home/workchance.json'
 
 storiesOf('ann', module)
   .addDecorator((story) => <Router>{story()}</Router>)
@@ -140,4 +141,4 @@ storiesOf('ann', module)
       date: '2015-11-15',
     },
   ]}/>)
-  .add('workchance', () => <WorkChance/>)
+  .add('workchance', () => <WorkChance datas={wcjson}/>)

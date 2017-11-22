@@ -8,7 +8,6 @@ import {BrowserRouter as Router} from 'react-router-dom'
 
 import Exercitation from '../src/components/commons/ExercitationHeader'
 import Slider from '../src/components/commons/Carousel/InfiniteSlider'
-import member from '../src/components/Home/Main/images/members1.png'
 import LineHeader from "../src/components/commons/LineHeader/index"
 import BaseShow from '../src/components/Exercitation/Home/Base/BaseShow'
 import Base from '../src/components/Exercitation/Home/Base'
@@ -25,8 +24,6 @@ import ExercitationHome from '../src/components/Exercitation/Home'
 
 import zuel from '../src/components/Exercitation/images/Base/zuel.png'
 import antian from '../src/components/Exercitation/images/Base/antian.png'
-
-
 
 storiesOf('Exercitation', module)
   .addDecorator((story) => <Router>{story()}</Router>)

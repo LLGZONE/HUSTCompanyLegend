@@ -6,9 +6,16 @@
   height: 4em;
   background-color: $blue;
   border-radius: 10px;
+  padding: 1px 0;
+  margin-bottom: 2em;
+
 
   &.active {
     background-color: $orange;
+
+    .icon {
+      border-color: $orange;
+    }
   }
 
   .icon {
@@ -17,12 +24,12 @@
     position: absolute;
     left: 10px;
     top: -20px;
-    border: 2px solid $orange;
+    border: 2px solid $blue;
     border-radius: 50%;
   }
 
   .font {
-    margin: 10px 0;
+    margin: 5px 5px;
     text-align: right;
     font-weight: bold;
     color: #FFFFFF;

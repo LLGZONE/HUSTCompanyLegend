@@ -1,8 +1,47 @@
 .home-main-experts {
+  $orange: rgb(255, 117, 72);
+  $blue: rgb(22, 126, 222);
+  $headerMargin: 5px;
+
   flex: auto;
+  margin-left: 10px;
   width: calc(30% - 20px);
 
-  img {
-    height: 100%;
+  .header {
+    padding-bottom: $headerMargin;
+    position: relative;
+    border-bottom: 3px solid $blue;
+  }
+
+  .title {
+    color: $blue;
+  }
+
+  .more {
+    color: $orange;
+  }
+
+  .experts-container {
+    margin-top: $headerMargin;
+    border: 1px solid #BBBBBB;
+  }
+}
+
+.expert {
+  &-container {
+    display: flex;
+  }
+
+  &-avatar {
+    width: 50px;
+    height: 50px;
+  }
+
+  &-name {
+    font-weight: bold;
+  }
+
+  &-info {
+    color: #BBBBBB;
   }
 }

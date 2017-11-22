@@ -6,8 +6,9 @@ import PropTypes from 'prop-types'
 import WorkChanceNav from './WorkChanceNav'
 
 import './index.scss'
+import WorkDescription from "./WorkDescription";
 
-const WorkChance = (datas) => (
+const WorkChance = ({datas}) => (
   <div className="home-work-chance">
     <div className="header xlarge-font">
       <p>实习机会</p>
@@ -23,7 +24,7 @@ const WorkChance = (datas) => (
           />)}
       </div>
       <div className="description-container">
-        {datas && datas.map({description}) => }
+        {datas && datas.map(({id, description}) => <WorkDescription key={id} description={description} />)}
       </div>
     </div>
   </div>
@@ -31,7 +32,7 @@ const WorkChance = (datas) => (
 
 WorkChance.propTypes = {
   datas: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.oneOfType([PropTypes.id, PropTypes.number()]),
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     icon: PropTypes.shape({
       url: PropTypes.string.isRequired,
       alt: PropTypes.string.isRequired,
