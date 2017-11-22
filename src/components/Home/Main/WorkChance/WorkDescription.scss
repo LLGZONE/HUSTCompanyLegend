@@ -1,0 +1,28 @@
+.work-chance-description {
+  padding: 15px 5px;
+  $blue: rgb(22, 126, 222);
+  $orange: rgb(250, 102, 0);
+
+
+  .more-info {
+    color: $orange;
+  }
+
+  .btn {
+    float: right;
+    padding: 6px 15px;
+    margin-right: 10px;
+    outline: none;
+    color: #FFFFFF;
+    background-color: $blue;
+    border-radius: 10px;
+
+    &:hover {
+      background-color: $orange;
+    }
+
+    &:first-of-type {
+      margin-right: 5px;
+    }
+  }
+}
