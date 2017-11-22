@@ -8,12 +8,14 @@ import Members from '../src/components/Home/Main/Members'
 import LedgendAchievement from '../src/components/Home/Main/Achievement/LedgendAchievement'
 import AcademyAchievement from '../src/components/Home/Main/Achievement/AcademyAchievement'
 import WorkChance from '../src/components/Home/Main/WorkChance'
+import Experts from '../src/components/Home/Main/Experts'
 
 import zuel from '../src/components/Exercitation/images/Base/zuel.png'
 import antian from '../src/components/Exercitation/images/Base/antian.png'
 import _360 from '../src/components/Exercitation/images/Base/360.png'
 import bg from '../src/components/Home/Main/Achievement/bg.jpg'
 import wcjson from '../src/api/Home/workchance.json'
+import expertsjson from '../src/api/Home/experts.json'
 
 storiesOf('ann', module)
   .addDecorator((story) => <Router>{story()}</Router>)
@@ -135,10 +137,11 @@ storiesOf('ann', module)
         url: _360,
         alt: '360',
       },
-      type: '技术项目',
+      type: 'wqerweqr3qwrqwerqwerqw3wqerwqer技术项目',
       title: '合成橡胶后处理成套工艺装备',
       industry: '生物与医药技术',
       date: '2015-11-15',
     },
   ]}/>)
   .add('workchance', () => <WorkChance datas={wcjson}/>)
+  .add('experts', () => <Experts experts={expertsjson}/>)

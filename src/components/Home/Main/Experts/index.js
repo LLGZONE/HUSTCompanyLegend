@@ -9,7 +9,7 @@ import Expert from './Expert'
 
 import './index.scss'
 
-const Experts = (experts) => (
+const Experts = ({experts}) => (
   <div className="home-main-experts">
     <div className="header">
       <p className="title xlarge-font">专家人才</p>
