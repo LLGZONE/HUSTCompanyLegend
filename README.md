@@ -1,4 +1,4 @@
-# HUSTComponyLegend
+# HUSTComponyLeague
 使用React, redux, react-router的单页面应用
 
 ## ToDo
