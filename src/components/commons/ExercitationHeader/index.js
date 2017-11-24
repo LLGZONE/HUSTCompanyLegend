@@ -28,7 +28,7 @@ const ExercitationHeader = () => {
             label="实习岗位"
           />
           <NavBarItem
-            to="/exercitation/school"
+            to="/exercitation/institute"
             label="实习学院"
           />
           <NavBarItem

@@ -16,39 +16,44 @@ const Contact = '/contact'
 const routes = {
   Home: {
     path: Home,
-    exact: true,
   },
   LeagueOverview: {
     path: LeagueOverview,
-    exact: true,
   },
   LeagueService: {
     path: LeagueService,
-    exact: true,
   },
   Exercitation: {
     path: Exercitation,
-    exact: true,
     routes: [
       {
         path: `${Exercitation}/`,
       },
       {
-        path: `${}`
+        path: `${Exercitation}/base`,
+      },
+      {
+        path: `${Exercitation}/posts`,
+      },
+      {
+        path: `${Exercitation}/institute`,
+      },
+      {
+        path: `${Exercitation}/model`,
+      },
+      {
+        path: MemberCenter,
       }
     ]
   },
   MemberCenter: {
     path: MemberCenter,
-    exact: true,
   },
   MemberTrends: {
     path: MemberTrends,
-    exact: true,
   },
   Contact: {
     path: Contact,
-    exact: true,
   }
 }
 
