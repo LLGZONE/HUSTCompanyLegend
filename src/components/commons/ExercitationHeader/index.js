@@ -20,7 +20,7 @@ const ExercitationHeader = () => {
             exact={true}
           />
           <NavBarItem
-            to="/base"
+            to="/exercitation/base"
             label="实习基地"
           />
           <NavBarItem
@@ -28,11 +28,11 @@ const ExercitationHeader = () => {
             label="实习岗位"
           />
           <NavBarItem
-            to="/school"
+            to="/exercitation/school"
             label="实习学院"
           />
           <NavBarItem
-            to="/model"
+            to="/exercitation/model"
             label="实习标兵"
           />
           <NavBarItem

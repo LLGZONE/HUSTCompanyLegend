@@ -12,10 +12,10 @@ const HeaderNav = () => (
         <Link to="/">首页</Link>
       </li>
       <li>
-        <Link to="/legend/overview">联盟概况</Link>
+        <Link to="/league/overview">联盟概况</Link>
       </li>
       <li>
-        <Link to="/legend/service">联盟服务</Link>
+        <Link to="/league/service">联盟服务</Link>
       </li>
       <li>
         <Link to="/exercitation">实习平台</Link>
@@ -27,7 +27,7 @@ const HeaderNav = () => (
         <Link to="/member/center">会员中心</Link>
       </li>
       <li>
-        <Link to="/connection">联系我们</Link>
+        <Link to="/contact">联系我们</Link>
       </li>
     </ul>
   </nav>
