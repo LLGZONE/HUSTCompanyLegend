@@ -6,20 +6,20 @@ import PropTypes from 'prop-types'
 
 import './index.css'
 
-const Members = ({imgUrlArr}) => (
+const Members = ({memebers}) => (
   <section className="home-main-members">
     <div className="home-main-members-side">
       <p style={{margin: 0}}>会员风采</p>
     </div>
     <div className="home-main-members-imgs">
-      {imgUrlArr && imgUrlArr.map(img => <img id={img.id} src={img.url} alt={img.alt} />)}
+      {memebers && memebers.map(member => <member id={member.id} src={member.url} alt={member.alt} />)}
     </div>
     <div className="home-main-members-side" />
   </section>
 )
 
 Members.propTypes = {
-  imgUrlArr: PropTypes.arrayOf(PropTypes.shape({
+  memebers: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
     url: PropTypes.string.isRequired,
     alt: PropTypes.string.isRequired,
