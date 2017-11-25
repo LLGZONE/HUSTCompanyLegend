@@ -19,13 +19,35 @@ class Home extends React.Component {
         exchange,
         base,
         help
+      },
+      announcements,
+      members,
+      achievements: {
+        league,
+        subTitles,
+      },
+      workChanceDatas,
+      experts,
+      recommendTalents,
+      footer: {
+        hotClicks,
+        latestArticle
       }
     } = this.props
     return (
       <div>
         <Header />
         <Feature exchange={exchange} base={base} help={help}/>
-        <Announcement />
+        <Announcement announcements={announcements} />
+        <Members memebers={members}/>
+        <Achievement league={league} subTitles={subTitles}/>
+        <section className="home-main-row">
+          <WorkChance datas={workChanceDatas}/>
+          <Experts experts={experts}/>
+        </section>
+        <Recommendation talents={recommendTalents}/>
+        <FooterHeader/>
+        <Footer hotClicks={hotClicks} latestArticle={latestArticle}/>
       </div>
     )
   }

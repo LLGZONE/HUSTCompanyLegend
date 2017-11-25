@@ -7,15 +7,15 @@ import PropTypes from 'prop-types'
 import AnnounceContent from './AnnounceContent'
 import './index.css'
 
-const Announcement = ({items}) => (
+const Announcement = ({announcements}) => (
   <section className="home-main-ann">
     <div className="home-main-ann-pic" />
-    <AnnounceContent items={items} />
+    <AnnounceContent items={announcements} />
   </section>
 )
 
 Announcement.propTypes = {
-  items: PropTypes.array,
+  announcements: PropTypes.array,
 }
 
 export default Announcement
