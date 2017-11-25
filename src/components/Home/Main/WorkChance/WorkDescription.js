@@ -1,7 +1,7 @@
 import React from 'react'
 import Clamp from 'shiitake'
 import PropTypes from 'prop-types'
-import addSpace from '../../../../utils/other/addSpace'
+import addSpace from '../../../../utils/addSpace'
 
 import './WorkDescription.scss'
 

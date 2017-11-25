@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 
 import Root from './containers/Root'
 import configureStore, {history} from './store/configureStore'
-import rootSaga from './utils/sagas'
+import rootSaga from './sagas'
 
 import 'normalize.css'
 

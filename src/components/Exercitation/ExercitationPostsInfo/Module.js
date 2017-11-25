@@ -3,7 +3,7 @@
  */
 import React from 'react'
 import PropTypes from 'prop-types'
-import {addClassName} from '../../../utils/other/addClassName'
+import {addClassName} from '../../../utils/addClassName'
 
 import './Module.css'
 

@@ -5,7 +5,7 @@ import TraineeFilter from '../src/components/managementPlatform/Company/TraineeF
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import {BrowserRouter as Router} from 'react-router-dom'
-import range from '../src/utils/other/range'
+import range from '../src/utils/range'
 import namor from 'namor'
 import PostsManage from '../src/components/managementPlatform/Company/PostsManage'
 

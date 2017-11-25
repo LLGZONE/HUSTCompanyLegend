@@ -21,7 +21,7 @@ import namor from 'namor'
 
 import './index.scss'
 //just for test
-import range from '../../../utils/other/range'
+import range from '../../../utils/range'
 
 import _360 from '../../Exercitation/images/Base/360.png'
 import license from './PendingReview/license.png'

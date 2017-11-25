@@ -7,7 +7,7 @@ import {Field, reduxForm} from 'redux-form'
 import OtherDeal from './OtherDeal'
 import FormDatePicker from  './FormDatePicker'
 import FormSelect from './FormSelect'
-import {required} from '../../../../utils/other/validate'
+import {required} from '../../../../utils/validate'
 import FormTextField from './FormTextField'
 
 export const renderInputField = ({ input, label, type, meta: { touched, error, warning }, hasLabel=true}) => (

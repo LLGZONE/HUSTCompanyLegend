@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import Header from '../../components/Home/Header'
 import Feature from '../../components/Home/Main/Feature'
@@ -14,6 +15,16 @@ import Footer from '../../components/commons/Footer'
 import '../../components/Home/Main/index.scss'
 
 class Home extends React.Component {
+  static propTypes = {
+    feature: PropTypes.object,
+    announcements: PropTypes.object,
+    members: PropTypes.array,
+    achievements: PropTypes.object,
+    workChanceDatas: PropTypes.array,
+    experts: PropTypes.array,
+    recommendTalents: PropTypes.array,
+    footer: PropTypes.object,
+  }
 
   render() {
     const {
@@ -34,7 +45,7 @@ class Home extends React.Component {
       footer: {
         hotClicks,
         latestArticle
-      }
+      },
     } = this.props
 
     return (

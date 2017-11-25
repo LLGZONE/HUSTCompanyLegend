@@ -5,7 +5,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {Link} from 'react-router-dom'
 import Clamp from 'shiitake'
-import addSpace from '../../../../utils/other/addSpace'
+import addSpace from '../../../../utils/addSpace'
 
 import './LeagueAchievement.scss'
 import 'font-awesome/css/font-awesome.min.css'

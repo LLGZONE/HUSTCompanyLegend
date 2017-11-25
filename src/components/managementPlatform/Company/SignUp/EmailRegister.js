@@ -2,7 +2,7 @@
  * Created by LLGZONE on 2017/11/5.
  */
 import React from 'react'
-import {email, required} from '../../../../utils/other/validate'
+import {email, required} from '../../../../utils/validate'
 import {Field, reduxForm} from 'redux-form'
 import Button from '../../../commons/Button'
 import {renderCheck} from "./MobileRegister";
