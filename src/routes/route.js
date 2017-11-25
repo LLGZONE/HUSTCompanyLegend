@@ -13,6 +13,8 @@ const MemberTrends = '/member/trends'
 //联系我们
 const Contact = '/contact'
 
+const CompanyManagement = '/management/company'
+
 const routes = {
   Home: {
     path: Home,
@@ -34,6 +36,14 @@ const routes = {
       },
       {
         path: `${Exercitation}/posts`,
+        routes: [
+          {
+            path: `${Exercitation}/posts/info`,
+          },
+          {
+            path: `${Exercitation}/posts/apply`
+          }
+        ]
       },
       {
         path: `${Exercitation}/institute`,
@@ -43,7 +53,7 @@ const routes = {
       },
       {
         path: MemberCenter,
-      }
+      },
     ]
   },
   MemberCenter: {
@@ -54,6 +64,26 @@ const routes = {
   },
   Contact: {
     path: Contact,
+  },
+  CompanyManagement: {
+    path: CompanyManagement,
+    routes: [
+      {
+        path: `${CompanyManagement}/posts/publish`,
+      },
+      {
+        path: `${CompanyManagement}/posts/manage`,
+      },
+      {
+        path: `${CompanyManagement}/user/message/perfection`,
+      },
+      {
+        path: `${CompanyManagement}/signup`,
+      },
+      {
+        path: `${CompanyManagement}/trainee/filter`
+      }
+    ]
   }
 }
 
