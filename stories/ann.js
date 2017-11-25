@@ -5,7 +5,7 @@ import '../public/base.css'
 
 import Announcement from '../src/components/Home/Main/Announcement'
 import Members from '../src/components/Home/Main/Members'
-import LedgendAchievement from '../src/components/Home/Main/Achievement/LedgendAchievement'
+import LedgendAchievement from '../src/components/Home/Main/Achievement/LeagueAchievement'
 import AcademyAchievement from '../src/components/Home/Main/Achievement/AcademyAchievement'
 import WorkChance from '../src/components/Home/Main/WorkChance'
 import Experts from '../src/components/Home/Main/Experts'

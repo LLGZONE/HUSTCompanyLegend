@@ -7,7 +7,7 @@ import './index.css'
 
 const Announcement = ({items}) => (
   <section className="home-main-ann">
-    <div className="home-main-ann-pic">{}</div>
+    <div className="home-main-ann-pic" />
     <AnnounceContent items={items} />
   </section>
 )

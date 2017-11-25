@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom'
 import Clamp from 'shiitake'
 import addSpace from '../../../../utils/other/addSpace'
 
-import './LedgendAchievement.scss'
+import './LeagueAchievement.scss'
 import 'font-awesome/css/font-awesome.min.css'
 
 const LedgendAchievement = ({main, subTitles}) => (
