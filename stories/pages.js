@@ -13,7 +13,7 @@ import Exercitation from '../src/components/Exercitation/Home'
 import configureStore, {history} from '../src/store/configureStore'
 import ExercitationPosts from '../src/components/Exercitation/ExercitationPosts'
 import ExercitationPostsInfo from '../src/components/Exercitation/ExercitationPostsInfo'
-import Root from '../src/routes'
+import Root from '../src/containers/Root'
 
 const store = configureStore()
 

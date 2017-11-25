@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import {Provider} from 'react-redux'
 import {ConnectedRouter} from 'react-router-redux'
 import {Route} from 'react-router'
-import DevTools from '../containers/DevTools'
+import DevTools from './DevTools'
 import {AppContainer} from 'react-hot-loader'
 
 import Home from '../components/Home'
