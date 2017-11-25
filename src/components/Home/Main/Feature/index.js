@@ -36,9 +36,9 @@ const Feature = ({exchange, base, help}) => (
 )
 
 Feature.propTypes = {
-  exchange: PropTypes.string.isRequired,
-  base: PropTypes.string.isRequired,
-  help: PropTypes.string.isRequired,
+  exchange: PropTypes.string,
+  base: PropTypes.string,
+  help: PropTypes.string,
 }
 
 Feature.defaultProps = {

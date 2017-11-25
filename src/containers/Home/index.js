@@ -12,8 +12,23 @@ import FooterHeader from '../../components/Home/Footer'
 import Footer from '../../components/commons/Footer'
 
 class Home extends React.Component {
-  constructor() {
-    super()
 
+  render() {
+    const {
+      feature: {
+        exchange,
+        base,
+        help
+      }
+    } = this.props
+    return (
+      <div>
+        <Header />
+        <Feature exchange={exchange} base={base} help={help}/>
+        <Announcement />
+      </div>
+    )
   }
 }
+
+export default Home
