@@ -11,6 +11,8 @@ import Recommendation from '../../components/Home/Main/Recommendation'
 import FooterHeader from '../../components/Home/Footer'
 import Footer from '../../components/commons/Footer'
 
+import '../../components/Home/Main/index.scss'
+
 class Home extends React.Component {
 
   render() {
@@ -34,6 +36,7 @@ class Home extends React.Component {
         latestArticle
       }
     } = this.props
+
     return (
       <div>
         <Header />
