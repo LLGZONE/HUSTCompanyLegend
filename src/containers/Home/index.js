@@ -13,11 +13,12 @@ import FooterHeader from '../../components/Home/Footer'
 import Footer from '../../components/commons/Footer'
 
 import '../../components/Home/Main/index.scss'
+import home from '../../api/home'
 
 class Home extends React.Component {
   static propTypes = {
     feature: PropTypes.object,
-    announcements: PropTypes.object,
+    announcements: PropTypes.array,
     members: PropTypes.array,
     achievements: PropTypes.object,
     workChanceDatas: PropTypes.array,
@@ -26,6 +27,7 @@ class Home extends React.Component {
     footer: PropTypes.object,
   }
 
+  static defaultProps = home
   render() {
     const {
       feature,
@@ -47,9 +49,9 @@ class Home extends React.Component {
     return (
       <div>
         <Header />
-        {feature ? <Feature/>: <Feature exchange={feature.exchange} base={feature.base} help={feature.help}/>}
+        {feature ? <Feature exchange={feature.exchange} base={feature.base} help={feature.help}/> :  <Feature/>}
         <Announcement announcements={announcements} />
-        <Members memebers={members}/>
+        <Members members={members}/>
         <Achievement league={league} projects={projects}/>
         <section className="home-main-row">
           <WorkChance datas={workChanceDatas}/>

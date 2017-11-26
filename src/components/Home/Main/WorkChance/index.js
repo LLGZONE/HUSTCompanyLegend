@@ -24,7 +24,7 @@ const WorkChance = ({datas}) => (
           />)}
       </div>
       <div className="description-container">
-        {datas && datas.map(({id, description}) => <WorkDescription key={id} description={description} />)}
+        <WorkDescription description={datas[0].description} />
       </div>
     </div>
   </div>

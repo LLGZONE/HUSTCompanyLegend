@@ -22,6 +22,7 @@ const Recommendation = ({talents}) => (
     <TalentGallery>
       {talents && talents.map(({name, school, photo, contactUrls}) =>
         <CommonPerson
+          key={name}
           name={name}
           school={school}
           photo={photo}

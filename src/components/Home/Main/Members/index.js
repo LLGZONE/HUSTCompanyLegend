@@ -6,20 +6,20 @@ import PropTypes from 'prop-types'
 
 import './index.css'
 
-const Members = ({memebers}) => (
+const Members = ({members}) => (
   <section className="home-main-members">
     <div className="home-main-members-side">
       <p style={{margin: 0}}>会员风采</p>
     </div>
     <div className="home-main-members-imgs">
-      {memebers && memebers.map(member => <member id={member.id} src={member.url} alt={member.alt} />)}
+      {members && members.map(member => <img key={member.id} src={member.url} alt={member.alt} />)}
     </div>
     <div className="home-main-members-side" />
   </section>
 )
 
 Members.propTypes = {
-  memebers: PropTypes.arrayOf(PropTypes.shape({
+  members: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
     url: PropTypes.string.isRequired,
     alt: PropTypes.string.isRequired,

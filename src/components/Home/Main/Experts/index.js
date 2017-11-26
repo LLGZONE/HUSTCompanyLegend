@@ -18,8 +18,9 @@ const Experts = ({experts}) => (
       </Link>
     </div>
     <div className="experts-container">
-      {experts && experts.map(({avatar, name, field, area, honor}) =>
+      {experts && experts.map(({id, avatar, name, field, area, honor}) =>
         <Expert
+          key={id}
           avatar={avatar}
           name={name}
           field={field}
@@ -34,10 +35,10 @@ Experts.propTypes = {
   experts: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
-    avator: PropTypes.string.isRequired,
+    avatar: PropTypes.string.isRequired,
     honor: PropTypes.string,
     field: PropTypes.string.isRequired,
-    arear: PropTypes.string.isRequired
+    area: PropTypes.string.isRequired
   }))
 }
 

@@ -186,7 +186,7 @@ const home = {
     {
       name: '张三',
       school: '华中科技大学',
-      contacturls: {
+      contactUrls: {
         facebook: '',
         twitter: '',
         ins: '',
@@ -196,7 +196,7 @@ const home = {
     {
       name: '张四',
       school: '华中科技大学',
-      contacturls: {
+      contactUrls: {
         facebook: '',
         twitter: '',
         ins: '',
@@ -206,7 +206,7 @@ const home = {
     {
       name: '张五',
       school: '华中科技大学',
-      contacturls: {
+      contactUrls: {
         facebook: '',
         twitter: '',
         ins: '',
@@ -216,7 +216,7 @@ const home = {
     {
       name: '张六',
       school: '华中科技大学',
-      contacturls: {
+      contactUrls: {
         facebook: '',
         twitter: '',
         ins: '',
@@ -226,7 +226,7 @@ const home = {
     {
       name: '张七',
       school: '华中科技大学',
-      contacturls: {
+      contactUrls: {
         facebook: '',
         twitter: '',
         ins: '',
@@ -236,7 +236,7 @@ const home = {
     {
       name: '张八',
       school: '华中科技大学',
-      contacturls: {
+      contactUrls: {
         facebook: '',
         twitter: '',
         ins: '',

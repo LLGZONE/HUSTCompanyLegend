@@ -1,7 +1,8 @@
 .home-work-chance {
   background-color: #EEEEEE;
-  width: 100%;
+  max-width: 70%;
   padding: 4px 0 0;
+  $containerHeight: 400px;
   $height: 2.2em;
   $borderRadius: 10px;
   $whBg: #FFFFFF;
@@ -43,7 +44,8 @@
     padding: 20px 5px 0;
     background-color: $whBg;
     width: 33%;
-    height: 500px;
+    height: $containerHeight;
+    box-sizing: border-box;
     border-top-right-radius: $borderRadius;
     overflow: hidden;
   }
@@ -52,7 +54,8 @@
     width: calc(67% - 30px);
     background-color: $whBg;
     margin-left: 20px;
-    height: 500px;
+    box-sizing: border-box;
+    height: $containerHeight;
 
     border-top: {
       left-radius: $borderRadius;

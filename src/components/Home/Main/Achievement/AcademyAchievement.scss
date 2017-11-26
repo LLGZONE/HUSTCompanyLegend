@@ -1,6 +1,8 @@
 .home-achieve-academy {
   height: var(--achiveHeight);
   $orange: rgb(255, 117, 72);
+  display: flex;
+  flex-direction: column;
   flex: auto;
 
   &-header {
@@ -75,9 +77,10 @@
   }
 
   &-main {
+    flex: 1 1 auto;
     border: {
-      left: 1px solid #BBBBBB;
-      right: 1px solid #BBBBBB;
+      left: 2px solid #BBBBBB;
+      right: 2px solid #BBBBBB;
     };
     padding: 10px;
 
@@ -97,6 +100,7 @@
 
   .academy-project {
     max-width: 33.3%;
+    height: 33.3%;
 
     img {
       width: 40%;
@@ -111,6 +115,7 @@
       }
 
       .font {
+        color: #BBBBBB;
         margin: 10px;
       }
     }

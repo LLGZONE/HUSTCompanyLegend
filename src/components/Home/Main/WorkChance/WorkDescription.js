@@ -8,7 +8,7 @@ import './WorkDescription.scss'
 const WorkDescription = ({description}) => (
   <div className="work-chance-description">
     <Clamp lines={14} overflowNode={
-      <a className="more-info">{'< 查看详情 >'}</a>
+      <a className="more-info">{'. . .< 查看详情 >'}</a>
     } className="pre-paragraph" >
       {addSpace(description)}
     </Clamp>

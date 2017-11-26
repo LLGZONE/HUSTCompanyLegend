@@ -14,8 +14,8 @@ import SignUp from '../../../components/managementPlatform/Company/SignUp/index'
 import TraineeFilter from './TraineeFilter'
 import Footer from '../../../components/commons/Footer/index'
 
-import hotClicks from '../../../api/Home/hotClicks.json'
-import articles from '../../../api/Home/aticles.json'
+import hotClicks from '../../../api/home/hotClicks.json'
+import articles from '../../../api/home/aticles.json'
 //for test
 import namor from 'namor'
 

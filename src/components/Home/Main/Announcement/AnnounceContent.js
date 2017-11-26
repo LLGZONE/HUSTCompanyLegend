@@ -6,6 +6,8 @@ import PropTypes from 'prop-types'
 import {Link} from 'react-router-dom'
 import Clamp from 'shiitake'
 
+import addSpace from '../../../../utils/addSpace'
+
 import './AnnounceContent.scss'
 
 const AnnounceContent = ({items}) => (
@@ -22,7 +24,7 @@ const AnnounceContent = ({items}) => (
         </div>
         <div>
           <p className="home-main-ann-title large-font">{item.title}</p>
-          <Clamp lines={2} className="home-main-ann-msg medium-font">{item.msg}</Clamp>
+          <Clamp lines={2} className="home-main-ann-msg medium-font">{addSpace(item.msg)}</Clamp>
         </div>
       </div>
     ))}

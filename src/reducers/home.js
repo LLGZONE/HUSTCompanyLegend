@@ -13,4 +13,11 @@ const feature = (state = {
 
 export default combineReducers({
   feature,
+  announcements: () => [],
+  members: () => [],
+  achievements: ()=> ({league: {}, projects: []}),
+  workChanceDatas: () => [],
+  experts: () => [],
+  recommendTalents: () => [],
+  footer: () => ({hotClicks: [], latestArticle: []}),
 })
