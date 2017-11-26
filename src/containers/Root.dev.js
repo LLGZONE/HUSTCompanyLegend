@@ -8,7 +8,7 @@ import {AppContainer} from 'react-hot-loader'
 
 import Home from './Home'
 import Exercitation from './Exercitation/index'
-import CompanyManagement from '../components/managementPlatform/Company'
+import CompanyManagement from './managementPlatform/Company/index'
 
 const Root = ({ store, history }) => (
   <AppContainer>

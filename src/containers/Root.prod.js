@@ -6,7 +6,7 @@ import {Route} from 'react-router'
 
 import Home from '../components/Home'
 import Exercitation from './Exercitation/index'
-import CompanyManagement from '../components/managementPlatform/Company'
+import CompanyManagement from './managementPlatform/Company/index'
 
 const Root = ({store, history}) => (
   <Provider store={store}>

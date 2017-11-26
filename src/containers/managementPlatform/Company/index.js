@@ -4,22 +4,22 @@
 import React from 'react'
 import { Route, Redirect } from 'react-router-dom'
 
-import Header from './Header'
-import AsideNav from './AsideNav'
+import Header from '../../../components/managementPlatform/Company/Header/index'
+import AsideNav from '../../../components/managementPlatform/Company/AsideNav/index'
 import PendingReview from './PendingReview'
-import PerfectMessage from './PerfectMessage'
+import PerfectMessage from '../../../components/managementPlatform/Company/PerfectMessage/index'
 import PostsManage from './PostsManage'
-import PostsPublish from './PostsPublish'
-import SignUp from './SignUp'
+import PostsPublish from '../../../components/managementPlatform/Company/PostsPublish/index'
+import SignUp from '../../../components/managementPlatform/Company/SignUp/index'
 import TraineeFilter from './TraineeFilter'
-import Footer from '../../commons/Footer'
+import Footer from '../../../components/commons/Footer/index'
 
-import hotClicks from '../../Home/hotClicks.json'
-import articles from '../../Home/aticles.json'
+import hotClicks from '../../../components/Home/hotClicks.json'
+import articles from '../../../components/Home/aticles.json'
 //for test
 import namor from 'namor'
 
-import './index.scss'
+import '../../../components/managementPlatform/Company/index.scss'
 //just for test
 import range from '../../../utils/range'
 
