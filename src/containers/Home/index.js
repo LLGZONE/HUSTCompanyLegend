@@ -26,20 +26,14 @@ class Home extends React.Component {
     footer: PropTypes.object,
   }
 
-  static
-
   render() {
     const {
-      feature: {
-        exchange,
-        base,
-        help
-      },
+      feature,
       announcements,
       members,
       achievements: {
         league,
-        subTitles,
+        projects,
       },
       workChanceDatas,
       experts,
@@ -53,10 +47,10 @@ class Home extends React.Component {
     return (
       <div>
         <Header />
-        <Feature exchange={exchange} base={base} help={help}/>
+        {feature ? <Feature/>: <Feature exchange={feature.exchange} base={feature.base} help={feature.help}/>}
         <Announcement announcements={announcements} />
         <Members memebers={members}/>
-        <Achievement league={league} subTitles={subTitles}/>
+        <Achievement league={league} projects={projects}/>
         <section className="home-main-row">
           <WorkChance datas={workChanceDatas}/>
           <Experts experts={experts}/>

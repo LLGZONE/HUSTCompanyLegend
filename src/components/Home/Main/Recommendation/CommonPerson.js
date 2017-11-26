@@ -5,7 +5,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import person from '../images/person.jpg'
 import './CommonPerson.css'
 
 const CommonPerson = ({name, school, photo, contactUrls}) => (

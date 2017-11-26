@@ -21,7 +21,7 @@ Achievement.propTypes = {
     main: PropTypes.object.isRequired,
     subTitles: PropTypes.array,
   }).isRequired,
-  subTitles: PropTypes.array,
+  projects: PropTypes.array,
 }
 
 export default Achievement

@@ -14,8 +14,8 @@ import SignUp from '../../../components/managementPlatform/Company/SignUp/index'
 import TraineeFilter from './TraineeFilter'
 import Footer from '../../../components/commons/Footer/index'
 
-import hotClicks from '../../../components/Home/hotClicks.json'
-import articles from '../../../components/Home/aticles.json'
+import hotClicks from '../../../api/Home/hotClicks.json'
+import articles from '../../../api/Home/aticles.json'
 //for test
 import namor from 'namor'
 
@@ -23,11 +23,11 @@ import '../../../components/managementPlatform/Company/index.scss'
 //just for test
 import range from '../../../utils/range'
 
-import _360 from '../../Exercitation/images/Base/360.png'
-import license from './PendingReview/license.png'
-import env1 from './PendingReview/env1.png'
-import env2 from './PendingReview/env2.png'
-import env3 from './PendingReview/env3.png'
+import _360 from '../../../components/Exercitation/images/Base/360.png'
+import license from '../../../components/managementPlatform/Company/PendingReview/license.png'
+import env1 from '../../../components/managementPlatform/Company/PendingReview/env1.png'
+import env2 from '../../../components/managementPlatform/Company/PendingReview/env2.png'
+import env3 from '../../../components/managementPlatform/Company/PendingReview/env3.png'
 
 const newPerson = () => {
   return {

@@ -32,7 +32,7 @@ const Recommendation = ({talents}) => (
 )
 
 Recommendation.propTypes = {
-  talents: PropTypes.arrayOf(PropTypes.array),
+  talents: PropTypes.arrayOf(PropTypes.object),
 }
 
 export default Recommendation

@@ -12,8 +12,8 @@ import Footer from '../../components/commons/Footer/index'
 import LogIn from '../../components/LogIn/index'
 import AdShow from '../../components/Exercitation/Home/AdShow/index'
 
-import hotClicks from '../../components/Home/hotClicks.json'
-import articles from '../../components/Home/aticles.json'
+import hotClicks from '../../api/Home/hotClicks.json'
+import articles from '../../api/Home/aticles.json'
 
 const Exercitation = ({match}) => (
   <div>
