@@ -6,8 +6,8 @@ import {Route} from 'react-router'
 import DevTools from './DevTools'
 import {AppContainer} from 'react-hot-loader'
 
-import Home from '../components/Home'
-import Exercitation from '../components/Exercitation'
+import Home from './Home'
+import Exercitation from './Exercitation/index'
 import CompanyManagement from '../components/managementPlatform/Company'
 
 const Root = ({ store, history }) => (

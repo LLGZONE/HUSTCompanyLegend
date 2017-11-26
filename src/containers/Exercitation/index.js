@@ -4,16 +4,16 @@
 import React from 'react'
 import {Route, Switch} from 'react-router-dom'
 
-import ExercitationHeader from '../commons/ExercitationHeader'
+import ExercitationHeader from '../../components/commons/ExercitationHeader/index'
 import Home from './Home'
 import ExercitationPosts from './ExercitationPosts'
 import ExercitationPostsInfo from './ExercitationPostsInfo'
-import Footer from '../commons/Footer'
-import LogIn from '../LogIn'
-import AdShow from './Home/AdShow'
+import Footer from '../../components/commons/Footer/index'
+import LogIn from '../../components/LogIn/index'
+import AdShow from '../../components/Exercitation/Home/AdShow/index'
 
-import hotClicks from '../Home/hotClicks.json'
-import articles from '../Home/aticles.json'
+import hotClicks from '../../components/Home/hotClicks.json'
+import articles from '../../components/Home/aticles.json'
 
 const Exercitation = ({match}) => (
   <div>

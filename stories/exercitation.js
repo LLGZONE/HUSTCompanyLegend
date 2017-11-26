@@ -20,7 +20,7 @@ import PostsField from '../src/components/Exercitation/ExercitationPosts/PostsFi
 import FilterItem from '../src/components/Exercitation/ExercitationPosts/FilterField/FilterItem'
 import FilterField from '../src/components/Exercitation/ExercitationPosts/FilterField'
 import AdShow from '../src/components/Exercitation/Home/AdShow'
-import ExercitationHome from '../src/components/Exercitation/Home'
+import ExercitationHome from '../src/containers/Exercitation/Home'
 
 import zuel from '../src/components/Exercitation/images/Base/zuel.png'
 import antian from '../src/components/Exercitation/images/Base/antian.png'

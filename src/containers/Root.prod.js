@@ -5,7 +5,7 @@ import {ConnectedRouter} from 'react-router-redux'
 import {Route} from 'react-router'
 
 import Home from '../components/Home'
-import Exercitation from '../components/Exercitation'
+import Exercitation from './Exercitation/index'
 import CompanyManagement from '../components/managementPlatform/Company'
 
 const Root = ({store, history}) => (

@@ -26,6 +26,8 @@ class Home extends React.Component {
     footer: PropTypes.object,
   }
 
+  static
+
   render() {
     const {
       feature: {

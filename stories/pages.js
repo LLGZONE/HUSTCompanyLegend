@@ -9,10 +9,10 @@ import { linkTo } from '@storybook/addon-links';
 import {Provider} from 'react-redux'
 import {ConnectedRouter} from 'react-router-redux'
 import Home from '../src/components/Home'
-import Exercitation from '../src/components/Exercitation/Home'
+import Exercitation from '../src/containers/Exercitation/Home'
 import configureStore, {history} from '../src/store/configureStore'
-import ExercitationPosts from '../src/components/Exercitation/ExercitationPosts'
-import ExercitationPostsInfo from '../src/components/Exercitation/ExercitationPostsInfo'
+import ExercitationPosts from '../src/containers/Exercitation/ExercitationPosts'
+import ExercitationPostsInfo from '../src/containers/Exercitation/ExercitationPostsInfo'
 import Root from '../src/containers/Root'
 
 const store = configureStore()
