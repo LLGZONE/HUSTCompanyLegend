@@ -3,7 +3,7 @@
  */
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import {BrowserRouter as Router} from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 import Header from '../src/components/managementPlatform/Company/Header'
 import AsideNav from '../src/components/managementPlatform/Company/AsideNav'
 import FormTextField from '../src/components/managementPlatform/Company/PostsPublish/FormTextField'
@@ -15,9 +15,9 @@ import SignUp from '../src/components/managementPlatform/Company/SignUp'
 import _360 from '../src/components/Exercitation/images/Base/360.png'
 import license from '../src/components/managementPlatform/Company/PendingReview/license.png'
 
-import {Provider} from 'react-redux'
-import cstore, {history} from '../src/store/configureStore'
-import {ConnectedRouter} from 'react-router-redux'
+import { Provider } from 'react-redux'
+import cstore, { history } from '../src/store/configureStore'
+import { ConnectedRouter } from 'react-router-redux'
 
 const store = cstore()
 
@@ -25,7 +25,7 @@ storiesOf('company', module)
   .addDecorator((story) => <Router>{story()}</Router>)
   .add('header', () => <Header/>)
   .add('asidenav', () => <AsideNav/>)
-  .add('text', () => <FormTextField placeholder="add something" input={{value: '', onChange(){}}}/>)
+  .add('text', () => <FormTextField placeholder="add something" input={{value: '', onChange() {}}}/>)
   .add('pending-review', () => <PendingReview
     logo={_360}
     companyName="360集团有限公司"
@@ -38,12 +38,13 @@ storiesOf('company', module)
     workImgs={[license, license, license]}
     simpleIntro="sadfsdfwerdfgggggggggggggg"
   />)
-  .add('postspublish', () => <Provider store={store}><ConnectedRouter history={history}><PostsPublish/></ConnectedRouter></Provider>)
+  .add('postspublish', () => <Provider store={store}><ConnectedRouter
+    history={history}><PostsPublish/></ConnectedRouter></Provider>)
   .add('signup', () => <Provider store={store}>
     <ConnectedRouter history={history}>
-      <PerfectMessage />
+      <PerfectMessage/>
     </ConnectedRouter></Provider>)
-  .add('log', () =>  <Provider store={store}>
-  <ConnectedRouter history={history}>
-    <SignUp/>
-  </ConnectedRouter></Provider>)
+  .add('log', () => <Provider store={store}>
+    <ConnectedRouter history={history}>
+      <SignUp/>
+    </ConnectedRouter></Provider>)

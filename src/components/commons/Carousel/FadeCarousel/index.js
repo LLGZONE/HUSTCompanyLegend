@@ -3,7 +3,7 @@
  */
 import React from 'react'
 import PropTypes from 'prop-types'
-import {addClassNames, removeClassNames} from './utils'
+import { addClassNames, removeClassNames } from './utils'
 import './FadeCarousel.css'
 
 class FadeCarousel extends React.Component {
@@ -13,14 +13,14 @@ class FadeCarousel extends React.Component {
     const children = childArr.filter(child => !!child)
     this.children = children.map(child =>
       React.cloneElement(child, {
-      className: 'slide-carousel'
-    }))
+        className: 'slide-carousel',
+      }))
 
     this.state = {
       cur: 0,
       last: -1,
       next: 1,
-      len: this.children.length
+      len: this.children.length,
     }
   }
 
@@ -52,8 +52,8 @@ class FadeCarousel extends React.Component {
     this.children[next] = addClassNames(this.children[next], 'carousel-transition')
     this.setState({
       last: last + 1 >= len ? 0 : last + 1,
-      cur:  cur + 1 >= len ? 0 : cur + 1,
-      next: next + 1 >= len ? 0 : next + 1
+      cur: cur + 1 >= len ? 0 : cur + 1,
+      next: next + 1 >= len ? 0 : next + 1,
     })
     this.setNext()
   }
@@ -68,7 +68,7 @@ class FadeCarousel extends React.Component {
 }
 
 FadeCarousel.propTypes = {
-  interval: PropTypes.number.isRequired
+  interval: PropTypes.number.isRequired,
 }
 
 export default FadeCarousel

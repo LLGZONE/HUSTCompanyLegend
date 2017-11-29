@@ -1,6 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import {BrowserRouter as Router} from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 import '../public/base.css'
 
 import Announcement from '../src/components/Home/Main/Announcement'
@@ -19,7 +19,17 @@ import expertsjson from '../src/api/home/experts.json'
 
 storiesOf('ann', module)
   .addDecorator((story) => <Router>{story()}</Router>)
-  .add('ann', () => <Announcement items={[{title: '舍弗勒倡导组建“产品安全网络”', msg: '2014 包含每个独立 API 的参考资料，这些 API 构成了 Web 强大的脚本可用性。参考资料包含 DOM 以及所有你能用到的用于构建 Web 内容和应用的相关 API 和接口。', year: 17, month: 7}, {title: '舍弗勒倡导组建“产品安全网络”', msg: '2014 包含每个独立 API 的参考资料，这些 API 构成了 Web 强大的脚本可用性。参考资料包含 DOM 以及所有你能用到的用于构建 Web 内容和应用的相关 API 和接口。', year: 17, month: 8}]} />)
+  .add('ann', () => <Announcement items={[{
+    title: '舍弗勒倡导组建“产品安全网络”',
+    msg: '2014 包含每个独立 API 的参考资料，这些 API 构成了 Web 强大的脚本可用性。参考资料包含 DOM 以及所有你能用到的用于构建 Web 内容和应用的相关 API 和接口。',
+    year: 17,
+    month: 7,
+  }, {
+    title: '舍弗勒倡导组建“产品安全网络”',
+    msg: '2014 包含每个独立 API 的参考资料，这些 API 构成了 Web 强大的脚本可用性。参考资料包含 DOM 以及所有你能用到的用于构建 Web 内容和应用的相关 API 和接口。',
+    year: 17,
+    month: 8,
+  }]}/>)
   .add('members', () => <Members
     imgUrlArr={[
       {id: 1, alt: 'antian', url: antian},
@@ -28,9 +38,13 @@ storiesOf('ann', module)
       {id: 4, alt: 'antian', url: antian},
       {id: 5, alt: 'zuel', url: zuel},
       {id: 6, alt: '360', url: _360},
-      ]}
+    ]}
   />)
-  .add('legendAchieve', () => <LedgendAchievement subTitles={[{id: 1, title: '我国学者在肠道具核梭杆菌影响大肠杆菌'}, {id: 2, title: '我国学者在肠道具核梭杆菌影响大肠杆菌',}, {id: 3, title: '我国学者在肠道具核梭杆菌影响大肠杆菌'}]} main={{alt: 'th17', title: '我国学者揭示调控TH17细胞因此而有了这一系列', url: bg}}/>)
+  .add('legendAchieve', () => <LedgendAchievement
+    subTitles={[{id: 1, title: '我国学者在肠道具核梭杆菌影响大肠杆菌'}, {id: 2, title: '我国学者在肠道具核梭杆菌影响大肠杆菌',}, {
+      id: 3,
+      title: '我国学者在肠道具核梭杆菌影响大肠杆菌',
+    }]} main={{alt: 'th17', title: '我国学者揭示调控TH17细胞因此而有了这一系列', url: bg}}/>)
   .add('academyAchieve', () => <AcademyAchievement projects={[
     {
       id: 1,

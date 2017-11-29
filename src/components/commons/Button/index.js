@@ -3,9 +3,9 @@
  */
 import React from 'react'
 import PropTypes from 'prop-types'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-const Button = ({value, backgroundColor="#FF9800", color="white", border='1px solid #FF9800', url, width, height, onClick, customStyle, name}) => {
+const Button = ({value, backgroundColor = '#FF9800', color = 'white', border = '1px solid #FF9800', url, width, height, onClick, customStyle, name}) => {
   const style = {
     backgroundColor,
     color,
@@ -16,11 +16,11 @@ const Button = ({value, backgroundColor="#FF9800", color="white", border='1px so
     display: 'flex',
     alignItems: 'center',
     padding: '5px 15px',
-    lineHeight: customStyle ? customStyle.fontSize : '16px'
+    lineHeight: customStyle ? customStyle.fontSize : '16px',
   }
 
   const btn = (
-    <input type="button" onClick={onClick} style={{...style, ...customStyle}} value={value} name={name} />
+    <input type="button" onClick={onClick} style={{...style, ...customStyle}} value={value} name={name}/>
   )
 
   return url ? <Link to={url}>{btn}</Link> : btn
