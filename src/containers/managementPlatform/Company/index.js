@@ -9,7 +9,7 @@ import AsideNav from '../../../components/managementPlatform/Company/AsideNav/in
 import PendingReview from './PendingReview'
 import PerfectMessage from '../../../components/managementPlatform/Company/PerfectMessage/index'
 import PostsManage from './PostsManage'
-import PostsPublish from '../../../components/managementPlatform/Company/PostsPublish/index'
+import PostsPublish from '../../../components/managementPlatform/Company/PostsPublish/'
 import SignUp from '../../../components/managementPlatform/Company/SignUp/index'
 import TraineeFilter from './TraineeFilter'
 import Footer from '../../../components/commons/Footer/index'
@@ -88,7 +88,7 @@ const CompanyManagement = () => {
           workImgs={[env1, env2, env3]}
           simpleIntro="网络安全关键在人才，而武汉的最大机遇就在人才。昨日，“人才”二字成为国家网络安全周开幕首日的最火关键词。上午，武汉市政府、奇虎360公司与武汉大学签署三方战略合作协议"
         />}/>
-        <Route path={`${prefix}/posts/publish`} component={PostsPublish}/>
+        <Route path={`${prefix}/posts/publish`} component={PostsPublish} />
         <Route path={`${prefix}/posts/manage`} render={() => <PostsManage data={makeData1(100)}/>}/>
         <Route path={`${prefix}/user/perfect/message`} component={PerfectMessage}/>
         <Route path={`${prefix}/signup`} component={SignUp}/>
