@@ -7,14 +7,15 @@ import {Route} from 'react-router'
 import Home from '../components/Home'
 import Exercitation from './Exercitation/index'
 import CompanyManagement from './managementPlatform/Company/index'
+import routes from '../routes'
 
 const Root = ({store, history}) => (
   <Provider store={store}>
     <ConnectedRouter history={history}>
       <div>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/exercitation" component={Exercitation} />
-        <Route path="/management/company" component={CompanyManagement} />
+        <Route exact path={routes.home.path} component={Home} />
+        <Route exact path={routes.exercitation.path} component={Exercitation} />
+        <Route path={routes.companyManagement.path} component={CompanyManagement} />
       </div>
     </ConnectedRouter>
   </Provider>

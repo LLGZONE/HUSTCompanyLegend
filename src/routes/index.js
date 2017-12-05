@@ -21,6 +21,7 @@ export const EXERCITATION_POSTS_APPLY = `${EXERCITATION_POSTS}/apply`
 export const EXERCITATION_INSTITUTE = `${EXERCITATION}/institute`
 export const EXERCITATION_MODEL = `${EXERCITATION}/model`
 
+export const LOGIN = '/login'
 //会员中心
 export const MEMBER_CENTER = '/member/center'
 //会员动态
@@ -36,6 +37,7 @@ export const CONTACT = '/CONTACT'
  *   &_MSG_PERFECTION   信息完善
  *   &_SIGNUP           注册
  *   &_TRINEE_FILTER    实习生筛选
+ *   &_PENDING          等待审核
  */
 export const COMPANY_MANAGEMENT = '/management/company'
 export const COMPANY_MANAGEMENT_POSTS_PUBLISH = `${COMPANY_MANAGEMENT}/posts/publish`
@@ -43,6 +45,7 @@ export const COMPANY_MANAGEMENT_POSTS_MANAGE = `${COMPANY_MANAGEMENT}/posts/mana
 export const COMPANY_MANAGEMENT_MSG_PERFECTION = `${COMPANY_MANAGEMENT}/user/message/perfection`
 export const COMPANY_MANAGEMENT_SIGNUP = `${COMPANY_MANAGEMENT}/signup`
 export const COMPANY_MANAGEMENT_TRAINEE_FILTER = `${COMPANY_MANAGEMENT}/trainee/filter`
+export const COMPANY_MANAGEMENT_PENDING = `${COMPANY_MANAGEMENT}/pending`
 
 const routes = {
   home: {
@@ -75,18 +78,18 @@ const routes = {
       path: EXERCITATION_MODEL,
     },
   },
+  login: {
+    path: LOGIN,
+  },
   memberCenter: {
     path: MEMBER_CENTER,
-  }
-  ,
+  },
   memberTrends: {
     path: MEMBER_TRENDS,
-  }
-  ,
+  },
   contact: {
     path: CONTACT,
-  }
-  ,
+  },
   companyManagement: {
     path: COMPANY_MANAGEMENT,
     postsPublish: {
@@ -102,9 +105,12 @@ const routes = {
       path: COMPANY_MANAGEMENT_SIGNUP,
     },
     traineeFilter: {
-      path: COMPANY_MANAGEMENT_TRAINEE_FILTER
-    }
-  }
+      path: COMPANY_MANAGEMENT_TRAINEE_FILTER,
+    },
+    pending: {
+      path: COMPANY_MANAGEMENT_PENDING,
+    },
+  },
 }
 
 export default routes

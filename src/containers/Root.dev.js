@@ -9,15 +9,16 @@ import {AppContainer} from 'react-hot-loader'
 import Home from './Home'
 import Exercitation from './Exercitation/index'
 import CompanyManagement from './managementPlatform/Company/index'
+import routes from '../routes'
 
 const Root = ({ store, history }) => (
   <AppContainer>
     <Provider store={store}>
       <ConnectedRouter history={history}>
         <div>
-          <Route exact path="/" component={Home} />
-          <Route path="/exercitation" component={Exercitation} />
-          <Route path="/management/company" component={CompanyManagement} />
+          <Route exact path={routes.home.path} component={Home} />
+          <Route path={routes.exercitation.path} component={Exercitation} />
+          <Route path={routes.companyManagement.path} component={CompanyManagement} />
           <DevTools />
         </div>
       </ConnectedRouter>
