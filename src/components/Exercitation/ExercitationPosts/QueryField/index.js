@@ -35,7 +35,7 @@ class QueryField extends React.Component {
         </div>
         <div className="exercitationPosts-query-links">
           <Link to="/exercitation/posts/filter">更多筛选</Link>
-          <Link to="/exercitation/publish">我要发布</Link>
+          <Link to="/exercitation/posts/apply/company">我要发布</Link>
         </div>
       </section>
     )
