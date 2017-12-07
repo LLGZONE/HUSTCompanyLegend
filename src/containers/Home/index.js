@@ -47,7 +47,7 @@ class Home extends React.Component {
     } = this.props
 
     return (
-      <div>
+      <>
         <Header />
         {feature ? <Feature exchange={feature.exchange} base={feature.base} help={feature.help}/> :  <Feature/>}
         <Announcement announcements={announcements} />
@@ -60,7 +60,7 @@ class Home extends React.Component {
         <Recommendation talents={recommendTalents}/>
         <FooterHeader/>
         <Footer hotClicks={hotClicks} latestArticle={latestArticle}/>
-      </div>
+      </>
     )
   }
 }

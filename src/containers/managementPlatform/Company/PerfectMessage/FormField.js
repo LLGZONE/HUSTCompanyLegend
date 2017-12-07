@@ -3,12 +3,12 @@
  */
 import React from 'react'
 import {Field, reduxForm} from 'redux-form'
-import FormSelect from './FormSelect'
-import FormTextField from '../PostsPublish/FormTextField'
-import FormFile from './FormFile'
+import FormSelect from '../../../../components/managementPlatform/Company/PerfectMessage/FormSelect'
+import FormTextField from '../../../../components/managementPlatform/Company/PostsPublish/FormTextField'
+import FormFile from '../../../../components/managementPlatform/Company/PerfectMessage/FormFile'
 import {Link} from 'react-router-dom'
 
-import './FormField.scss'
+import '../../../../components/managementPlatform/Company/PerfectMessage/FormField.scss'
 
 const renderInputField = ({ input, label, type, meta: { touched, error, warning }}) => (
   <div>

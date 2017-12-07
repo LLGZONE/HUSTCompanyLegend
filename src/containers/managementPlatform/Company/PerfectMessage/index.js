@@ -2,7 +2,7 @@
  * Created by LLGZONE on 2017/11/12.
  */
 import React from 'react'
-import LineHeader from '../../../commons/LineHeader'
+import LineHeader from '../../../../components/commons/LineHeader/index'
 import FormField from './FormField'
 
 const PerfectMessage = () => (

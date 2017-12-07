@@ -2,10 +2,10 @@
  * Created by LLGZONE on 2017/11/4.
  */
 import React from 'react'
-import LogInType from './LogInType'
-import FormField from './FormField'
+import LogInType from '../../components/LogIn/LogInType'
+import FormField from '../../components/LogIn/FormField'
 
-import './index.scss'
+import '../../components/LogIn/index.scss'
 
 class LogIn extends React.Component {
   constructor(props) {

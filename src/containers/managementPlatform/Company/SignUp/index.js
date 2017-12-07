@@ -2,7 +2,7 @@
  * Created by LLGZONE on 2017/11/5.
  */
 import React from 'react'
-import LineHeader  from '../../../commons/LineHeader'
+import LineHeader  from '../../../../components/commons/LineHeader/index'
 import SignUpForm from './SignUpForm'
 import ThirdParty from './ThirdParty'
 import {Link} from 'react-router-dom'
