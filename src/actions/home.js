@@ -1,9 +1,6 @@
 import action from '../utils/action'
 import createRequestTypes from '../utils/createRequestTypes'
-
-const REQUEST = 'REQUEST'
-const SUCCESS = 'SUCCESS'
-const FAILURE = 'FAILURE'
+import { REQUEST, FAILURE, SUCCESS } from './index'
 
 export const FEATURE = createRequestTypes('FEATURE')
 export const ANNOUNCEMENT = createRequestTypes('ANNOUNCEMENT')
