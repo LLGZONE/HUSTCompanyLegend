@@ -1,6 +1,8 @@
-/**
- * Created by LLGZONE on 2017/10/26.
- */
+export const getUserInfo = state => {
+  const {username, password} = state.reducer.user
 
-export const selectedRedditSelector = state => state.reducers.selectedReddit
-export const postsByRedditSelector = state => state.reducers.postsByReddit
+  return {
+    username,
+    password,
+  }
+}

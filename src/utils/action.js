@@ -1,5 +1,5 @@
-function action(type, payload, more) {
-  return {type, ...payload, ...more}
+function action(type, payload) {
+  return {type, ...payload}
 }
 
 export default action

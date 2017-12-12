@@ -47,6 +47,11 @@ export const COMPANY_MANAGEMENT_SIGNUP = `${COMPANY_MANAGEMENT}/signup`
 export const COMPANY_MANAGEMENT_TRAINEE_FILTER = `${COMPANY_MANAGEMENT}/trainee/filter`
 export const COMPANY_MANAGEMENT_PENDING = `${COMPANY_MANAGEMENT}/pending`
 
+/**
+ *
+ */
+export const SCHOOL_MANAGEMENT = '/management/school'
+
 const routes = {
   home: {
     path: HOME,

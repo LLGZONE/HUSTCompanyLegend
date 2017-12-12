@@ -7,8 +7,8 @@ export const LOGOUT = createReqTypes('LOGOUT')
 export const REGISTER = createReqTypes('REGISTER')
 
 export const login = {
-  request: (username, password) => action(LOGIN[REQUEST], {username, password}),
-  success: (uid) => action(LOGIN[SUCCESS], {uid}),
+  request: (username, password, loginType) => action(LOGIN[REQUEST], {username, password, loginType}),
+  success: (uid, loginType) => action(LOGIN[SUCCESS], {uid, loginType}),
   failure: error => action(LOGIN[FAILURE], {error}),
 }
 

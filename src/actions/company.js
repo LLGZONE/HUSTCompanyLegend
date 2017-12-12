@@ -38,7 +38,7 @@ export const register = {
 }
 
 export const stdList = {
-  request: cid => action(STD_LIST[REQUEST], cid),
+  request: cid => action(STD_LIST[REQUEST], {cid}),
   success: () => action(STD_LIST[SUCCESS]),
   failure: (error) => action(STD_LIST[FAILURE]),
 }
