@@ -2,7 +2,7 @@
  * Created by LLGZONE on 2017/11/5.
  */
 import React from 'react'
-import Button from '../../../../components/commons/Button/index'
+import Button from '../../../components/commons/Button/index'
 import {Field, reduxForm} from 'redux-form'
 
 import './SignUpForm.scss'

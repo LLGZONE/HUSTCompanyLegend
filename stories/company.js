@@ -10,7 +10,7 @@ import FormTextField from '../src/components/managementPlatform/Company/PostsPub
 import PendingReview from '../src/containers/managementPlatform/Company/PendingReview'
 import PostsPublish from '../src/components/managementPlatform/Company/PostsPublish'
 import PerfectMessage from '../src/containers/managementPlatform/Company/PerfectMessage/index'
-import SignUp from '../src/containers/managementPlatform/Company/SignUp'
+import SignUp from '../src/containers/managementPlatform/SignUp'
 
 import _360 from '../src/components/Exercitation/images/Base/360.png'
 import license from '../src/components/managementPlatform/Company/PendingReview/license.png'

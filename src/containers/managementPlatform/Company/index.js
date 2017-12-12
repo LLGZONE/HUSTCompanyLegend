@@ -2,7 +2,7 @@
  * Created by LLGZONE on 2017/11/8.
  */
 import React from 'react'
-import { Route, Redirect } from 'react-router-dom'
+import { Route} from 'react-router-dom'
 
 import Header from '../../../components/managementPlatform/Company/Header/index'
 import AsideNav from '../../../components/managementPlatform/Company/AsideNav/index'

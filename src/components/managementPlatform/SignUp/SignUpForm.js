@@ -7,7 +7,7 @@ import { Link, Route, Switch, Redirect} from 'react-router-dom'
 import EmailRegister from './EmailRegister'
 import MobileRegister from './MobileRegister'
 
-import '../../../../components/LogIn/LogInType.scss'
+import '../../../components/LogIn/LogInType.scss'
 import './index.scss'
 
 const SignUpForm = () => {

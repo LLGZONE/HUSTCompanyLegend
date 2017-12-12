@@ -2,9 +2,9 @@
  * Created by LLGZONE on 2017/11/5.
  */
 import React from 'react'
-import {email, required} from '../../../../utils/validate'
+import {email, required} from '../../../utils/validate'
 import {Field, reduxForm} from 'redux-form'
-import Button from '../../../../components/commons/Button/index'
+import Button from '../../../components/commons/Button/index'
 import {renderCheck} from "./MobileRegister";
 
 import './SignUpForm.scss'
