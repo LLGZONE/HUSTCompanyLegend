@@ -8,6 +8,7 @@ import LineHeader  from '../../../components/commons/LineHeader/index'
 import SignUpForm from './SignUpForm'
 import ThirdParty from './ThirdParty'
 import {Link} from 'react-router-dom'
+import routes from '../../../routes'
 
 const SignUp = ({title}) => (
   <section className="company-signup">
@@ -18,7 +19,7 @@ const SignUp = ({title}) => (
         <div className="company-signup-login">
           <p>
             已有账号？直接 &nbsp;
-            <Link to="/login">登录</Link>
+            <Link to={routes.login.path}>登录</Link>
           </p>
         </div>
         <ThirdParty/>

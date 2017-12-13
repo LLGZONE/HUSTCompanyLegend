@@ -2,7 +2,7 @@
  * Created by LLGZONE on 2017/11/8.
  */
 import React from 'react'
-import { Route} from 'react-router-dom'
+import { Route, Redirect } from 'react-router-dom'
 
 import Header from '../../../components/managementPlatform/Company/Header/index'
 import AsideNav from '../../../components/managementPlatform/Company/AsideNav/index'
@@ -93,6 +93,7 @@ const CompanyManagement = () => {
         <Route path={companyManagement.msgPerfection.path} component={PerfectMessage}/>
         <Route path={companyManagement.signUp.path} component={SignUp}/>
         <Route path={companyManagement.traineeFilter.path} render={() => <TraineeFilter data={makeData(100)}/>}/>
+        <Route path={companyManagement}/>
       </main>
       <Footer hotClicks={hotClicks} latestArticle={articles}/>
     </div>

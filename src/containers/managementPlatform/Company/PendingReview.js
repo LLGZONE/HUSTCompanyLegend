@@ -20,9 +20,9 @@ const PendingReview = ({
   workImgs,     //工作环境
   simpleIntro   //简介
 }) => (
-  <main>
+  <section style={{padding: '0 40px'}}>
     <LineHeader title="请耐心等待校方审核" style={{fontSize: '20px'}}/>
-    <div style={{padding: '0 40px'}}>
+    <div>
       <div className="pending-main-container">
         <div className="pending-info-container">
           <div className="pending-info-head">
@@ -60,7 +60,7 @@ const PendingReview = ({
         <input type="button" value="修改"/>
       </div>
     </div>
-  </main>
+  </section>
 )
 
 PendingReview.propTypes = {

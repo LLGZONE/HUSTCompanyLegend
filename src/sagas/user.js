@@ -31,6 +31,7 @@ function * userLogout() {
   while (true) {
     yield take(LOGOUT[REQUEST])
     yield call(fetchLogoutApi)
+    yield put(logout.success())
   }
 }
 

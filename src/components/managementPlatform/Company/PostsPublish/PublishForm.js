@@ -30,7 +30,6 @@ const PublishForm = ({companyName}) => (
         component={renderInputField}
         validate={required}
       />
-      <div> </div>
       <Field
         name="postsName"
         label="岗位名称"
@@ -38,7 +37,6 @@ const PublishForm = ({companyName}) => (
         component={renderInputField}
         validate={required}
       />
-      <div> </div>
       <FormSelect
         label="岗位类别"
         name="companyName"
