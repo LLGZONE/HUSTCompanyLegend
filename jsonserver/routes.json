@@ -1,0 +1,4 @@
+{
+  "/user/login/:id": "/user/:id",
+  "/user/login/": "/user/"
+}

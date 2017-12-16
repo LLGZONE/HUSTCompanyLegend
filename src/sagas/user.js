@@ -3,27 +3,34 @@ import { login, logout, LOGOUT, LOGIN } from '../actions/user'
 import { BASE_URL } from '../config/url'
 import { REQUEST } from '../actions'
 import { getUserInfo } from '../reducers/selectors'
+import fetchEntity from '../utils/fetchEntity'
 
 function fetchLoginApi(info) {
-  return fetch(`${BASE_URL}/user/register`, {
+  const url = `${BASE_URL}/user/login`
+  const header = {
     method: 'POST',
     body: JSON.stringify(info),
     headers: {
       'Content-Type': 'application/json',
     },
-  })
-    .then(response => response.json())
+  }
+
+  return fetchEntity(url, header)
 }
 
 function fetchLogoutApi() {
-  return fetch(`${BASE_URL}/user/logout`)
-    .then(response => response.json())
+  const url = `${BASE_URL}/user/logout`
+  return fetchEntity(url)
 }
 
 //work saga
 function * fetchLogin(info) {
-  yield call(fetchLoginApi, info)
-  yield put(login.success())
+  const { response, error } = yield call(fetchLoginApi, info)
+  if (response && response.code === 200) {
+    yield put(login.success())
+  } else {
+    yield put(login.failure(error))
+  }
 }
 
 //watch saga
@@ -38,7 +45,7 @@ function * userLogout() {
 function * userLogin() {
   while (true) {
     yield take(LOGIN[REQUEST])
-    const userInfo = select(getUserInfo)
+    const userInfo = yield select(getUserInfo)
     yield call(fetchLogin, userInfo)
   }
 }

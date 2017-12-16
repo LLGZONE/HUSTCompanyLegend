@@ -15,8 +15,6 @@ const store = configureStore({
   }
 })
 
-console.log(store.getState())
-
 store.runSaga(rootSaga)
 const render = () => {
   ReactDOM.render(

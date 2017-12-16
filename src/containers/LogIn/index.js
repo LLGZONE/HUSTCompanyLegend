@@ -2,10 +2,16 @@
  * Created by LLGZONE on 2017/11/4.
  */
 import React from 'react'
+import { connect } from 'react-redux'
+import { push } from 'react-router-redux'
+
+import routes from '../../routes'
+import { login } from '../../actions/user'
 import LogInType from '../../components/LogIn/LogInType'
 import FormField from '../../components/LogIn/FormField'
 
 import '../../components/LogIn/index.scss'
+import { isLogin } from '../../reducers/selectors'
 
 class LogIn extends React.Component {
   constructor(props) {
@@ -33,7 +39,15 @@ class LogIn extends React.Component {
   }
 
   signUp() {
-    console.log(this.state.account, this.state.password)
+    const { dispatch, isLogin } = this.props
+    const { account: username, password, type } = this.state
+
+    dispatch(login.request(username, password, type))
+    if (isLogin) {
+      dispatch(push(routes.companyManagement.path))
+    } else {
+      alert('not login')
+    }
   }
 
   render() {
@@ -69,4 +83,10 @@ class LogIn extends React.Component {
   }
 }
 
-export default LogIn
+const mapStateToProps = (state) => {
+  return {
+    isLogin: isLogin(state)
+  }
+}
+
+export default connect(mapStateToProps)(LogIn)

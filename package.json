@@ -2,6 +2,7 @@
   "name": "app",
   "version": "0.1.0",
   "private": true,
+  "license": "BSD 3-Clause",
   "dependencies": {
     "autoprefixer": "7.1.6",
     "babel-core": "6.26.0",
@@ -38,9 +39,9 @@
     "promise": "8.0.1",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0",
     "react-datepicker": "^0.61.0",
     "react-dev-utils": "^4.1.0",
+    "react-dom": "^16.2.0",
     "react-dropzone": "^4.2.1",
     "react-quill": "v1.1.0",
     "react-redux": "^5.0.6",
@@ -67,6 +68,7 @@
     "enzyme": "^3.1.0",
     "faker": "^4.1.0",
     "fetch-mock": "^5.13.1",
+    "json-server": "^0.12.1",
     "namor": "^1.0.1",
     "node-sass": "^4.6.0",
     "react-hot-loader": "^3.1.1",
@@ -81,7 +83,8 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "server": "json-server --watch jsonserver/db.json --port 3030 --routes jsonserver/routes.json"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -123,5 +126,6 @@
   },
   "eslintConfig": {
     "extends": "react-app"
-  }
+  },
+  "proxy": "http://localhost:3030"
 }
