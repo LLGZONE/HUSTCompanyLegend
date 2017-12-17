@@ -6,6 +6,8 @@ import BaseHeader from './BaseHeader'
 import BaseShow from './BaseShow'
 import BaseMore from '../More'
 
+import routes from '../../../../routes'
+
 import './index.css'
 
 import hust from '../../images/Base/hust.png'
@@ -64,7 +66,7 @@ const Base = () => (
         <img src={antian} alt="安天" />
       </BaseShow>
     </div>
-    <BaseMore url="/base/more" />
+    <BaseMore url={routes.exercitation.base.path} />
   </section>
 )
 

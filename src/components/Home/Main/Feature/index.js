@@ -3,7 +3,9 @@
  */
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
+import routes from '../../../../routes'
 import FeatureItem from './FeatureItem'
 import 'font-awesome/css/font-awesome.min.css'
 import './index.css'
@@ -12,25 +14,30 @@ const Feature = ({exchange, base, help}) => (
   <section>
     <div className="main-feature-bg" />
     <div className="main-feature-container">
-      <FeatureItem
-        title="成果转换"
-        text={exchange}
-        className="main-feature-item"
-      >
-        <span className="fa fa-shopping-cart icon-medium" aria-hidden />
-      </FeatureItem>
-      <FeatureItem
-        title="实习基地"
-        text={base}
-      >
-        <span className="fa fa-lock icon-medium" aria-hidden>{}</span>
-      </FeatureItem>
-      <FeatureItem
-        title="校企互助"
-        text={help}
-      >
-        <span className="fa fa-reply icon-medium" />
-      </FeatureItem>
+      <Link to='/'>
+        <FeatureItem
+          title="成果转换"
+          text={exchange}
+        >
+          <span className="fa fa-shopping-cart icon-medium" aria-hidden />
+        </FeatureItem>
+      </Link>
+      <Link to={routes.exercitation.base.path}>
+        <FeatureItem
+          title="实习基地"
+          text={base}
+        >
+          <span className="fa fa-lock icon-medium" aria-hidden>{}</span>
+        </FeatureItem>
+      </Link>
+      <Link to={routes.exercitation.path}>
+        <FeatureItem
+          title="校企互助"
+          text={help}
+        >
+          <span className="fa fa-reply icon-medium" />
+        </FeatureItem>
+      </Link>
     </div>
   </section>
 )

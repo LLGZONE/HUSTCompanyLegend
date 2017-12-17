@@ -50,7 +50,7 @@ const Institute = () => (
         <img src={course4} alt="坚果手机视频效果讲解" />
       </InstituteShow>
     </div>
-    <InstituteMore url="/institute/more" />
+    <InstituteMore url="/exercitation/institute" />
   </section>
 )
 

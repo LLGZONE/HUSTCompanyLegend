@@ -7,6 +7,7 @@ import More from '../More'
 import PostsShow from './PostsShow'
 
 import './index.css'
+import routes from '../../../../routes'
 
 import _360 from '../../images/Base/360.png'
 import qleaf from '../../images/Institute/qleaf.png'
@@ -80,7 +81,7 @@ const Posts = () => (
         <img src={baidu} alt="百度" />
       </PostsShow>
     </div>
-    <More url="/posts/more" />
+    <More url={routes.exercitation.posts.path} />
   </section>
 )
 
