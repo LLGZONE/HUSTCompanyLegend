@@ -3,24 +3,17 @@
  */
 import React from 'react'
 import controlInput from '../../../commons/WrapComponent/controlInput'
-import PropTypes from 'prop-types'
 
 import './InputField.css'
 
 class InputField extends React.Component {
   render() {
-    const {onChange, value} = this.props.input
     return (
       <div className="queryfield-input">
-        <input onChange={onChange} value={value} />
+        <input />
       </div>
     )
   }
-}
-
-InputField.propTypes = {
-  value: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired
 }
 
 export default controlInput(InputField)

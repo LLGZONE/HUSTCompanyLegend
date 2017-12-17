@@ -30,7 +30,7 @@ class QueryField extends React.Component {
     return (
       <section className="exercitationPosts-query-field">
         <div className="exercitationPosts-query-searchbar">
-          <InputField onChange={(value)=> this.getInputValue(value)} value={this.state.inputValue} />
+          <InputField getInputValue={(value)=> this.getInputValue(value)} value={this.state.inputValue} />
           <QueryBtn handleClick={()=>this.handleClick()} />
         </div>
         <div className="exercitationPosts-query-links">
