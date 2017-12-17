@@ -46,7 +46,7 @@ class LogIn extends React.Component {
   }
 
   render() {
-    const { isLogin } = this.props
+    const { isLogin, isFetching } = this.props
     const { type } = this.props.match.params
     let to = '/'
 
@@ -74,6 +74,7 @@ class LogIn extends React.Component {
               onSubmit={() => this.signUp()}
               onChange={(e) => this.handleInputChange(e)}
               to={to}
+              progress={isFetching}
             />
           </div>
         </section>
@@ -84,6 +85,7 @@ class LogIn extends React.Component {
 const mapStateToProps = (state) => {
   return {
     isLogin: isLogin(state),
+    isFetching: state.reducers.user.isFetching
   }
 }
 

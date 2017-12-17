@@ -7,18 +7,30 @@ import PropTypes from 'prop-types'
 
 import './FormField.scss'
 
-const FormField = ({onSubmit, onChange, to}) => (
+const FormField = ({onSubmit, onChange, to, progress=false}) => (
   <form className="login-form-field">
     <label className="input-field">
-      用户名：
+      <span style={{width: '4em'}}>用户名：</span>
       <input type="text" name="account" placeholder="输入账号" onChange={onChange} />
     </label>
     <label className="input-field">
+      <span style={{width: '4em'}}>
       密&nbsp;&nbsp;&nbsp;码：
-      <input type="password" name="password" placeholder="输入密码" onChange={onChange} />
+      </span>
+      <input
+        type="password"
+        name="password"
+        placeholder="输入密码"
+        onChange={onChange}
+      />
     </label>
     <div className="btn-field">
-      <input type="button" onClick={onSubmit} value="登录" />
+      <input
+        type="button"
+        disabled={progress}
+        onClick={onSubmit}
+        value={progress ? '登陆中...' : '登陆'}
+      />
       <Link to={to}>
         <button>
           注册
@@ -32,6 +44,7 @@ FormField.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
   to: PropTypes.string.isRequired,
+  progress: PropTypes.bool,
 }
 
 export default FormField
