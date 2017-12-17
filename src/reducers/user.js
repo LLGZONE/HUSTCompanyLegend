@@ -7,12 +7,14 @@ const user = (state = {
   type: 'company',
   password: '',
   uid: '',
+  isFetching: false,
 }, action) => {
   switch (action.type) {
     case LOGOUT[SUCCESS]:
       return {
         ...state,
         isLogin: false,
+        isFetching: false,
       }
     case LOGIN[REQUEST]:
       return {
@@ -20,6 +22,7 @@ const user = (state = {
         username: action.username,
         password: action.password,
         type: action.loginType,
+        isFetching: true,
       }
     case LOGIN[SUCCESS]:
       return {
@@ -27,6 +30,7 @@ const user = (state = {
         isLogin: true,
         type: action.loginType,
         uid: action.uid,
+        isFetching: false,
       }
     case LOGIN[FAILURE]:
       return {

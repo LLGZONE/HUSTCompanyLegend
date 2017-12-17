@@ -1,4 +1,3 @@
-import * as ActionTypes from '../actions/home'
 import {combineReducers} from 'redux'
 
 const feature = (state = {

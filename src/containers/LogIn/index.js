@@ -3,7 +3,7 @@
  */
 import React from 'react'
 import { connect } from 'react-redux'
-import { push } from 'react-router-redux'
+import { Redirect } from 'react-router-dom'
 
 import routes from '../../routes'
 import { login } from '../../actions/user'
@@ -34,25 +34,21 @@ class LogIn extends React.Component {
     const name = target.name
 
     this.setState({
-      [name]: value
+      [name]: value,
     })
   }
 
   signUp() {
-    const { dispatch, isLogin } = this.props
-    const { account: username, password, type } = this.state
+    const {dispatch} = this.props
+    const {account: username, password, type} = this.state
 
     dispatch(login.request(username, password, type))
-    if (isLogin) {
-      dispatch(push(routes.companyManagement.path))
-    } else {
-      alert('not login')
-    }
   }
 
   render() {
-    const {type} = this.props.match.params
-    let to = '/';
+    const { isLogin } = this.props
+    const { type } = this.props.match.params
+    let to = '/'
 
     switch (type) {
       case 'company':
@@ -69,23 +65,25 @@ class LogIn extends React.Component {
     }
 
     return (
-      <section className="login">
-        <div className="login-container">
-          <LogInType type={type}/>
-          <FormField
-            onSubmit={() => this.signUp()}
-            onChange={(e) => this.handleInputChange(e)}
-            to={to}
-          />
-        </div>
-      </section>
+      isLogin
+        ? <Redirect to={routes.companyManagement.path} />
+        : <section className="login">
+          <div className="login-container">
+            <LogInType type={type}/>
+            <FormField
+              onSubmit={() => this.signUp()}
+              onChange={(e) => this.handleInputChange(e)}
+              to={to}
+            />
+          </div>
+        </section>
     )
   }
 }
 
 const mapStateToProps = (state) => {
   return {
-    isLogin: isLogin(state)
+    isLogin: isLogin(state),
   }
 }
 

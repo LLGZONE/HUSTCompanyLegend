@@ -93,7 +93,9 @@ const CompanyManagement = () => {
         <Route path={companyManagement.msgPerfection.path} component={PerfectMessage}/>
         <Route path={companyManagement.signUp.path} component={SignUp}/>
         <Route path={companyManagement.traineeFilter.path} render={() => <TraineeFilter data={makeData(100)}/>}/>
-        <Route path={companyManagement}/>
+        <Route path={companyManagement.path}
+               render={() => <Redirect to={companyManagement.postsManage.path} />}
+        />
       </main>
       <Footer hotClicks={hotClicks} latestArticle={articles}/>
     </div>

@@ -20,16 +20,22 @@ function fetchLoginApi(info) {
 
 function fetchLogoutApi() {
   const url = `${BASE_URL}/user/logout`
+
   return fetchEntity(url)
 }
 
 //work saga
 function * fetchLogin(info) {
-  const { response, error } = yield call(fetchLoginApi, info)
-  if (response && response.code === 200) {
-    yield put(login.success())
-  } else {
-    yield put(login.failure(error))
+  try {
+    const {response} = yield call(fetchLoginApi, info)
+    if (response && response.code === 200) {
+      yield put(login.success())
+    } else {
+      yield put(login.failure())
+    }
+  }
+  catch (e) {
+    yield put(login.failure(e))
   }
 }
 

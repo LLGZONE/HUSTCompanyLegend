@@ -24,7 +24,7 @@ const AsideNavItem = ({title, to, children}) => (
 )
 
 AsideNavItem.propTypes = {
-  to: PropTypes.oneOf([PropTypes.string, PropTypes.object]).isRequired,
+  to: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
   title: PropTypes.string.isRequired,
 }
 

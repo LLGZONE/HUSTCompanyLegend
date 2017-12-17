@@ -18,7 +18,7 @@ const NavLink = ({path, msg}) => (
 )
 
 NavLink.propTypes = {
-  path: PropTypes.oneOf([PropTypes.string, PropTypes.object]).isRequired,
+  path: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
   msg: PropTypes.string.isRequired
 }
 
