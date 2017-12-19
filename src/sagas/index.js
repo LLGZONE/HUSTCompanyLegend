@@ -4,7 +4,9 @@
 import { fork } from 'redux-saga/effects'
 
 import user from './user'
+import exercitation from './exercitation'
 
 export default function* root() {
   yield fork(user)
+  yield fork(exercitation)
 }

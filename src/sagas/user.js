@@ -43,7 +43,12 @@ function * fetchLogin(info) {
 function * userLogout() {
   while (true) {
     yield take(LOGOUT[REQUEST])
-    yield call(fetchLogoutApi)
+    try {
+      yield call(fetchLogoutApi)
+    }
+    catch (err) {
+      yield put(logout.failure(err))
+    }
     yield put(logout.success())
   }
 }
