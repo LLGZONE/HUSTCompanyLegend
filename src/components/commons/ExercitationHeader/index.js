@@ -4,8 +4,8 @@
 import React from 'react'
 import NavBarItem from './NavBarItem'
 
+import Logout from '../../../containers/Logout'
 import './index.css'
-import 'font-awesome/css/font-awesome.min.css'
 
 const ExercitationHeader = () => {
 
@@ -40,10 +40,7 @@ const ExercitationHeader = () => {
             label="会员中心"
           />
         </nav>
-        <div className="commons-exercitation-icon">
-          <i className="fa fa-mobile" aria-hidden="true">
-          </i>
-        </div>
+        <Logout/>
       </header>
       <div className="hidden-div">
       </div>

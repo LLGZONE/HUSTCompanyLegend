@@ -6,7 +6,7 @@ import fetchEntity from '../utils/fetchEntity'
 import { getPostsQuery } from '../reducers/selectors'
 
 function fetchFilteredPostsApi(info) {
-  const url = `${BASE_URL}/`
+  const url = `${BASE_URL}/query`
   const header = {
     method: 'POST',
     body: JSON.stringify(info),
@@ -39,10 +39,7 @@ function * fetchFilteredPosts(queryString, filter) {
 function * watchFilteredPosts() {
   while (true) {
     yield take(POSTS_QUERY[REQUEST])
-    const [queryString, filter] = select(() => {
-      const { queryString, filter } = getPostsQuery()
-      return [queryString, filter]
-    })
+    const {queryString, filter} = yield select(getPostsQuery)
     yield call(fetchFilteredPosts, queryString, filter)
   }
 }

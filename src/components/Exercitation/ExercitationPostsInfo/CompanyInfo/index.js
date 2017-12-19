@@ -35,7 +35,7 @@ const CompanyInfo = ({imgSrc, companyName, place, size, website}) => (
 )
 
 CompanyInfo.propTypes = {
-  imgSrc: PropTypes.object.isRequired,
+  imgSrc: PropTypes.string.isRequired,
   companyName: PropTypes.string.isRequired,
   place: PropTypes.string.isRequired,
   size: PropTypes.number.isRequired,
