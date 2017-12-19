@@ -10,7 +10,7 @@ import PendingReview from './PendingReview'
 import PerfectMessage from './PerfectMessage/index'
 import PostsManage from './PostsManage'
 import PostsPublish from '../../../components/managementPlatform/Company/PostsPublish/'
-import SignUp from './SignUp/index'
+import SignUp from '../../auth/SignUp/Company'
 import TraineeFilter from './TraineeFilter'
 import Footer from '../../../components/commons/Footer/index'
 import routes from '../../../routes'
@@ -75,7 +75,8 @@ const CompanyManagement = () => {
     <div>
       <Header/>
       <main className="management-company-main-container" style={{display: 'flex', paddingTop: '70px'}}>
-        <AsideNav/>
+        <Route path={`${companyManagement.path}/exercitation`} component={AsideNav} />
+        <Route path={companyManagement.signUp.path} component={SignUp} />
         <Route path={companyManagement.pending.path} render={() => <PendingReview
           logo={_360}
           companyName="360集团有限公司"
@@ -91,9 +92,12 @@ const CompanyManagement = () => {
         <Route path={companyManagement.postsPublish.path} component={PostsPublish}/>
         <Route path={companyManagement.postsManage.path} render={() => <PostsManage data={makeData1(100)}/>}/>
         <Route path={companyManagement.msgPerfection.path} component={PerfectMessage}/>
-        <Route path={companyManagement.signUp.path} component={SignUp}/>
         <Route path={companyManagement.traineeFilter.path} render={() => <TraineeFilter data={makeData(100)}/>}/>
         <Route path={`${companyManagement.path}/exercitation`}
+               exact
+               render={() => <Redirect to={companyManagement.postsManage.path} />}
+        />
+        <Route path={`${companyManagement.path}`}
                exact
                render={() => <Redirect to={companyManagement.postsManage.path} />}
         />

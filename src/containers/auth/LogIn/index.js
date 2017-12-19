@@ -5,12 +5,12 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 
-import routes from '../../routes'
-import { login } from '../../actions/user'
-import LogInType from '../../components/LogIn/LogInType'
-import FormField from '../../components/LogIn/FormField'
+import routes from '../../../routes/index'
+import { login } from '../../../actions/user'
+import LogInType from '../../../components/LogIn/LogInType'
+import FormField from '../../../components/LogIn/FormField'
 
-import '../../components/LogIn/index.scss'
+import '../../../components/LogIn/index.scss'
 import { isLogin } from '../../reducers/selectors'
 
 class LogIn extends React.Component {

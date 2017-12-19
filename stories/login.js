@@ -4,7 +4,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import {BrowserRouter as Router} from 'react-router-dom'
-import LogIn from "../src/containers/LogIn/index"
+import LogIn from "../src/containers/auth/LogIn/index"
 
 storiesOf('LogIn', module)
   .addDecorator((story) => <Router>{story()}</Router>)

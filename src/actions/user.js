@@ -8,7 +8,7 @@ export const REGISTER = createReqTypes('REGISTER')
 
 export const login = {
   request: (username, password, loginType) => action(LOGIN[REQUEST], {username, password, loginType}),
-  success: (uid, loginType) => action(LOGIN[SUCCESS], {uid, loginType}),
+  success: uid => action(LOGIN[SUCCESS], {uid}),
   failure: error => action(LOGIN[FAILURE], {error}),
 }
 

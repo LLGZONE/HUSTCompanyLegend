@@ -32,20 +32,21 @@ export const CONTACT = '/CONTACT'
 /**
  * 公司管理平台route
  * COMPANY_MANAGEMENT   主页
+ *   & _SIGNUP           注册
  *   &_EXERCITATION     项目管理
  *     &_POSTS_PUBLISH    岗位发布
  *     &_POSTS_MANAGE     岗位管理
  *     &_MSG_PERFECTION   信息完善
- *     & _SIGNUP           注册
  *     &_TRINEE_FILTER    实习生筛选
  *     &_PENDING          等待审核
  */
 export const COMPANY_MANAGEMENT = '/management/company'
+export const COMPANY_MANAGEMENT_SIGNUP = `${COMPANY_MANAGEMENT}/signup`
+
 const COMPANY_MANAGEMENT_EXERCITATION = `${COMPANY_MANAGEMENT}/exercitation`
 export const COMPANY_MANAGEMENT_POSTS_PUBLISH = `${COMPANY_MANAGEMENT_EXERCITATION}/posts/publish`
 export const COMPANY_MANAGEMENT_POSTS_MANAGE = `${COMPANY_MANAGEMENT_EXERCITATION}/posts/manage`
 export const COMPANY_MANAGEMENT_MSG_PERFECTION = `${COMPANY_MANAGEMENT_EXERCITATION}/user/message/perfection`
-export const COMPANY_MANAGEMENT_SIGNUP = `${COMPANY_MANAGEMENT_EXERCITATION}/signup`
 export const COMPANY_MANAGEMENT_TRAINEE_FILTER = `${COMPANY_MANAGEMENT_EXERCITATION}/trainee/filter`
 export const COMPANY_MANAGEMENT_PENDING = `${COMPANY_MANAGEMENT_EXERCITATION}/pending`
 

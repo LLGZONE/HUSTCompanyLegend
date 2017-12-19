@@ -13,8 +13,7 @@ const user = (state = {
     case LOGOUT[SUCCESS]:
       return {
         ...state,
-        isLogin: false,
-        isFetching: false,
+        isLogin: false
       }
     case LOGIN[REQUEST]:
       return {
@@ -28,13 +27,13 @@ const user = (state = {
       return {
         ...state,
         isLogin: true,
-        type: action.loginType,
         uid: action.uid,
         isFetching: false,
       }
     case LOGIN[FAILURE]:
       return {
         ...state,
+        isFetching: false,
         isLogin: false,
         type: 'company',
         uid: '',

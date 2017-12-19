@@ -1,10 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { getUid, isLogin } from '../../reducers/selectors'
+import { getUid, isLogin } from '../../../reducers/selectors'
 
-import { logout } from '../../actions/user'
+import { logout } from '../../../actions/user'
 
-import '../../components/commons/ExercitationHeader/index.css'
+import '../../../components/commons/ExercitationHeader/index.css'
 import 'font-awesome/css/font-awesome.min.css'
 
 class LogoutBtn extends React.Component {

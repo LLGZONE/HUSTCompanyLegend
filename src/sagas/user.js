@@ -2,7 +2,7 @@ import { take, put, call, fork, select } from 'redux-saga/effects'
 import { login, logout, LOGOUT, LOGIN } from '../actions/user'
 import { BASE_URL } from '../config/url'
 import { REQUEST } from '../actions'
-import { getUserInfo, isLogin } from '../reducers/selectors'
+import { getUserInfo } from '../reducers/selectors'
 import fetchEntity from '../utils/fetchEntity'
 
 function fetchLoginApi(info) {
@@ -28,8 +28,8 @@ function fetchLogoutApi() {
 function * fetchLogin(info) {
   try {
     const {response} = yield call(fetchLoginApi, info)
-    if (response && response.code === 200) {
-      yield put(login.success())
+    if (response) {
+      yield put(login.success(response.uid))
     } else {
       yield put(login.failure())
     }

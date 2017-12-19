@@ -10,7 +10,7 @@ import Home from './Home'
 import ExercitationPosts from './ExercitationPosts'
 import ExercitationPostsInfo from './ExercitationPostsInfo'
 import Footer from '../../components/commons/Footer/index'
-import LogIn from '../LogIn/index'
+import LogIn from '../auth/LogIn/index'
 import AdShow from '../../components/Exercitation/Home/AdShow/index'
 
 import hotClicks from '../../api/home/hotClicks.json'

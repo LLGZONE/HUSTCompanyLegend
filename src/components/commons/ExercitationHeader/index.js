@@ -4,7 +4,7 @@
 import React from 'react'
 import NavBarItem from './NavBarItem'
 
-import Logout from '../../../containers/Logout'
+import Logout from '../../../containers/auth/Logout'
 import './index.css'
 
 const ExercitationHeader = () => {
