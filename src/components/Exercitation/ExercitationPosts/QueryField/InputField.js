@@ -8,9 +8,10 @@ import './InputField.css'
 
 class InputField extends React.Component {
   render() {
+    const { onChange, value } = this.props.input
     return (
       <div className="queryfield-input">
-        <input />
+        <input value={value} onChange={onChange} />
       </div>
     )
   }

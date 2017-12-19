@@ -3,7 +3,10 @@
  */
 import React from 'react'
 import {Route} from 'react-router-dom'
+import { connect } from 'react-redux'
 
+import { query, queryFilter } from '../../actions/exercitation'
+import { getPostsQuery } from '../../reducers/selectors'
 import QueryField from '../../components/Exercitation/ExercitationPosts/QueryField/index'
 import FilterField from '../../components/Exercitation/ExercitationPosts/FilterField/index'
 import PostsField from '../../components/Exercitation/ExercitationPosts/PostsField/index'
@@ -11,10 +14,11 @@ import Pagination from '../../components/Exercitation/ExercitationPosts/Paginati
 
 import '../../components/Exercitation/ExercitationPosts/index.scss'
 
-const ExercitationPosts = () => (
+
+const ExercitationPosts = ({query, posts, isFetching, error, filter}) => (
   <div>
     <main className="exercitation-posts-main">
-      <QueryField/>
+      <QueryField query={query} isFetching={isFetching} filter={filter} />
       <Route path="/exercitation/posts/filter" component={FilterField} />
       <PostsField handleTime="2017-09-08"/>
       <PostsField handleTime="2017-09-08"/>
@@ -29,4 +33,18 @@ const ExercitationPosts = () => (
   </div>
 )
 
-export default ExercitationPosts
+const mapStateToProps = (state) => {
+  const {posts, isFetching, error, filter} = getPostsQuery(state)
+
+  return {
+    posts,
+    isFetching,
+    error,
+    filter
+  }
+}
+
+export default connect(mapStateToProps, {
+  query: query.request,
+  queryFilter,
+})(ExercitationPosts)

@@ -12,3 +12,5 @@ export const isLogin = state => {
 
   return login
 }
+
+export const getPostsQuery = state => state.reducers.exercitation.postsQuery

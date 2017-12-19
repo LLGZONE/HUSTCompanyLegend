@@ -15,6 +15,8 @@ class FilterItem extends React.Component {
   }
 
   handleClick(e) {
+    const { clickHandler } = this.props
+
     if (this.state.lastRef) {
       this.state.lastRef.classList.add('exercitationPosts-filter-deactive')
       this.state.lastRef.classList.remove('exercitationPosts-filter-active')
@@ -25,6 +27,8 @@ class FilterItem extends React.Component {
     this.setState({lastRef: e.target})
     e.target.classList.add('exercitationPosts-filter-active')
     e.target.classList.remove('exercitationPosts-filter-deactive')
+
+    clickHandler(e.target.innerText)
   }
 
   render() {

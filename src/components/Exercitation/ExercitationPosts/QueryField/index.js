@@ -19,7 +19,9 @@ class QueryField extends React.Component {
 
   //在这里dispatch
   handleClick() {
-    console.log(this.state.inputValue)
+    const { query, filter } = this.props
+
+    query({queryString: this.state.inputValue, filter})
   }
 
   getInputValue(value) {
@@ -27,11 +29,13 @@ class QueryField extends React.Component {
   }
 
   render() {
+    const { isFetching } = this.props
+
     return (
       <section className="exercitationPosts-query-field">
         <div className="exercitationPosts-query-searchbar">
           <InputField getInputValue={(value)=> this.getInputValue(value)} value={this.state.inputValue} />
-          <QueryBtn handleClick={()=>this.handleClick()} />
+          <QueryBtn handleClick={()=>this.handleClick()} isFetching={isFetching} />
         </div>
         <div className="exercitationPosts-query-links">
           <Link to="/exercitation/posts/filter">更多筛选</Link>

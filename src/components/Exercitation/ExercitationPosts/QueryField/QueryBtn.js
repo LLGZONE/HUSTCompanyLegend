@@ -4,11 +4,12 @@
 import React from 'react'
 import Button from '../../../commons/Button/index'
 
-const QueryBtn = ({handleClick}) => (
+const QueryBtn = ({handleClick, isFetching}) => (
   <Button
-    value="搜索"
+    value={isFetching ? '加载.' : '搜索'}
     onClick={handleClick}
     customStyle={{fontSize: '28px'}}
+    disabled={isFetching}
   />
 )
 
