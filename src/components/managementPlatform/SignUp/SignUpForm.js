@@ -4,6 +4,7 @@
 import React from 'react'
 import { Link, Route, Switch, Redirect} from 'react-router-dom'
 
+import routes from '../../../routes'
 import EmailRegister from './EmailRegister'
 import MobileRegister from './MobileRegister'
 
@@ -11,7 +12,7 @@ import '../../../components/LogIn/LogInType.scss'
 import './index.scss'
 
 const SignUpForm = () => {
-  const prefix = '/management/company/exercitation/signup'
+  const prefix = routes.companyManagement.signUp.path
   const mobilePath = `${prefix}/phone`
   const emailPath = `${prefix}/email`
 

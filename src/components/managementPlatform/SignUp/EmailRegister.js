@@ -2,26 +2,28 @@
  * Created by LLGZONE on 2017/11/5.
  */
 import React from 'react'
-import {email, required} from '../../../utils/validate'
-import {Field, reduxForm} from 'redux-form'
+import { connect } from 'react-redux'
+import { email, required } from '../../../utils/validate'
+import { Field, reduxForm, formValueSelector } from 'redux-form'
 import Button from '../../../components/commons/Button/index'
-import {renderCheck} from "./MobileRegister";
+import { renderCheck } from './MobileRegister'
 
 import './SignUpForm.scss'
+import WarnText from '../../commons/WarnText'
 
-const renderField = ({ input, label, type, meta: { touched, error, warning } }) => (
+const renderField = ({input, label, type, meta: {touched, error, warning}}) => (
   <div className="company-signup-render-field">
     <input {...input} placeholder={label} type={type}/>
-    {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
+    {touched && ((error && <WarnText text={error}/>) || (warning && <span>{warning}</span>))}
   </div>
 )
 
-const renderVerification = ({ input, label, type, meta: { touched, error, warning }}) => (
+const renderVerification = ({input, label, type, meta: {touched, error, warning}}) => (
   <div className="company-signup-render-verify">
     <input {...input} placeholder={label} type={type}/>
 
     <Button value="获取邮箱验证码"/>
-    {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
+    {touched && ((error && <WarnText text={error}/>) || (warning && <span>{warning}</span>))}
   </div>
 )
 
@@ -41,8 +43,8 @@ const validate = values => {
   }
 }
 
-const EmailRegister = ({handleSubmit, reset, submitting, pristine}) => (
-  <form className="company-signup-form-main"  onSubmit={handleSubmit}>
+const EmailRegister = ({handleSubmit, submitting, checked=false}) => (
+  <form className="company-signup-form-main" onSubmit={handleSubmit}>
     <Field
       name="phone"
       type="number"
@@ -76,11 +78,21 @@ const EmailRegister = ({handleSubmit, reset, submitting, pristine}) => (
       type="checkbox"
       component={renderCheck}
     />
-    <button type="submit" disabled={submitting} className="company-signup-form-btn">注册</button>
+    <button type="submit" disabled={submitting || !checked} className="company-signup-form-btn">注册</button>
   </form>
 )
 
-export default reduxForm({
-  name: 'EmailRegister',
-  validate
+const EmailRegisterValue = reduxForm({
+  form: 'EmailRegister',
+  validate,
 })(EmailRegister)
+
+const selector = formValueSelector('EmailRegister')
+
+export default connect(state => {
+  const checked = selector(state, 'accept')
+
+  return {
+    checked
+  }
+})(EmailRegisterValue)

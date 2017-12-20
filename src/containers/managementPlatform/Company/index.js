@@ -2,6 +2,7 @@
  * Created by LLGZONE on 2017/11/8.
  */
 import React from 'react'
+import { connect } from 'react-redux'
 import { Route, Redirect } from 'react-router-dom'
 
 import Header from '../../../components/managementPlatform/Company/Header/index'
@@ -14,6 +15,7 @@ import SignUp from '../../auth/SignUp/Company'
 import TraineeFilter from './TraineeFilter'
 import Footer from '../../../components/commons/Footer/index'
 import routes from '../../../routes'
+import { isLogin } from '../../../reducers/selectors'
 
 import hotClicks from '../../../api/home/hotClicks.json'
 import articles from '../../../api/home/aticles.json'
@@ -68,43 +70,65 @@ const makeData1 = (len) => {
   })
 }
 
-const CompanyManagement = () => {
+const CompanyManagement = ({login}) => {
   const companyManagement = routes.companyManagement
 
   return (
     <div>
       <Header/>
       <main className="management-company-main-container" style={{display: 'flex', paddingTop: '70px'}}>
-        <Route path={`${companyManagement.path}/exercitation`} component={AsideNav} />
-        <Route path={companyManagement.signUp.path} component={SignUp} />
-        <Route path={companyManagement.pending.path} render={() => <PendingReview
-          logo={_360}
-          companyName="360集团有限公司"
-          linkman="张某"
-          place="武汉东湖开发区xxx"
-          size={100}
-          phone="1999999999"
-          website="www.360.com"
-          license={license}
-          workImgs={[env1, env2, env3]}
-          simpleIntro="网络安全关键在人才，而武汉的最大机遇就在人才。昨日，“人才”二字成为国家网络安全周开幕首日的最火关键词。上午，武汉市政府、奇虎360公司与武汉大学签署三方战略合作协议"
-        />}/>
-        <Route path={companyManagement.postsPublish.path} component={PostsPublish}/>
-        <Route path={companyManagement.postsManage.path} render={() => <PostsManage data={makeData1(100)}/>}/>
-        <Route path={companyManagement.msgPerfection.path} component={PerfectMessage}/>
-        <Route path={companyManagement.traineeFilter.path} render={() => <TraineeFilter data={makeData(100)}/>}/>
-        <Route path={`${companyManagement.path}/exercitation`}
-               exact
-               render={() => <Redirect to={companyManagement.postsManage.path} />}
-        />
-        <Route path={`${companyManagement.path}`}
-               exact
-               render={() => <Redirect to={companyManagement.postsManage.path} />}
-        />
+        <Route path={companyManagement.signUp.path} component={SignUp}/>
+        {!login
+          ? <Route
+            path={companyManagement.path}
+            render={({location})=> {
+              return location.pathname.indexOf(companyManagement.signUp.path) < 0
+                ? <Redirect to={companyManagement.signUp.path}/>
+                : null
+            }}
+          />
+          : (
+            <React.Fragment>
+              <Route path={`${companyManagement.path}/exercitation`} component={AsideNav}/>
+              < Route path={companyManagement.pending.path} render={() => <PendingReview
+                logo={_360}
+                companyName="360集团有限公司"
+                linkman="张某"
+                place="武汉东湖开发区xxx"
+                size={100}
+                phone="1999999999"
+                website="www.360.com"
+                license={license}
+                workImgs={[env1, env2, env3]}
+                simpleIntro="网络安全关键在人才，而武汉的最大机遇就在人才。昨日，“人才”二字成为国家网络安全周开幕首日的最火关键词。上午，武汉市政府、奇虎360公司与武汉大学签署三方战略合作协议"
+              />}/>
+              <Route path={companyManagement.postsPublish.path} component={PostsPublish}/>
+              <Route path={companyManagement.postsManage.path} render={() => <PostsManage data={makeData1(100)}/>}/>
+              <Route path={companyManagement.msgPerfection.path} component={PerfectMessage}/>
+              <Route path={companyManagement.traineeFilter.path} render={() => <TraineeFilter data={makeData(100)}/>}/>
+              <Route path={`${companyManagement.path}/exercitation`}
+                     exact
+                     render={() => <Redirect to={companyManagement.postsManage.path}/>}
+              />
+              <Route path={`${companyManagement.path}`}
+                     exact
+                     render={() => <Redirect to={companyManagement.postsManage.path}/>}
+              />
+            </React.Fragment>
+          )
+        }
       </main>
       <Footer hotClicks={hotClicks} latestArticle={articles}/>
     </div>
   )
 }
 
-export default CompanyManagement
+const mapStateToProps = state => {
+  const login = isLogin(state)
+
+  return {
+    login,
+  }
+}
+
+export default connect(mapStateToProps)(CompanyManagement)

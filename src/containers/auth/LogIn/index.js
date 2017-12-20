@@ -11,7 +11,7 @@ import LogInType from '../../../components/LogIn/LogInType'
 import FormField from '../../../components/LogIn/FormField'
 
 import '../../../components/LogIn/index.scss'
-import { isLogin } from '../../reducers/selectors'
+import { isLogin } from '../../../reducers/selectors'
 
 class LogIn extends React.Component {
   constructor(props) {
@@ -52,7 +52,7 @@ class LogIn extends React.Component {
 
     switch (type) {
       case 'company':
-        to = '/management/company/exercitation/signup'
+        to = routes.companyManagement.signUp.path
         break
       case 'school':
         to = '/management/school/signup'
