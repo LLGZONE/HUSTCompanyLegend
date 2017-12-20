@@ -5,16 +5,15 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { email, required } from '../../../utils/validate'
 import { Field, reduxForm, formValueSelector } from 'redux-form'
-import Button from '../../../components/commons/Button/index'
 import { renderCheck } from './MobileRegister'
 
 import './SignUpForm.scss'
 import WarnText from '../../commons/WarnText'
 
-const renderField = ({input, label, type, meta: {touched, error, warning}}) => (
+const renderField = ({input, label, type, meta: {touched, error}}) => (
   <div className="company-signup-render-field">
     <input {...input} placeholder={label} type={type}/>
-    {touched && ((error && <WarnText text={error}/>) || (warning && <span>{warning}</span>))}
+    {touched && (error && <WarnText text={error} className="company-signup-render-warn-text"  />)}
   </div>
 )
 
@@ -23,7 +22,7 @@ const renderVerification = ({input, label, type, meta: {touched, error, warning}
     <input {...input} placeholder={label} type={type}/>
 
     <button name={'verify'}>获取邮箱验证码</button>
-    {touched && ((error && <WarnText text={error}/>) || (warning && <span>{warning}</span>))}
+    {touched && (error && <WarnText text={error} className="company-signup-render-warn-text"  />)}
   </div>
 )
 
@@ -41,13 +40,15 @@ const validate = values => {
   if (!values.verification) {
     errors.verification = '输入邮箱验证码'
   }
+
+  return errors
 }
 
 const EmailRegister = ({handleSubmit, submitting, checked=false}) => (
   <form className="company-signup-form-main" onSubmit={handleSubmit}>
     <Field
       name="phone"
-      type="number"
+      type="text"
       label="邮箱"
       component={renderField}
       validate={[required, email]}
