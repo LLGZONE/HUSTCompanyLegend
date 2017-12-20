@@ -29,7 +29,6 @@ const Exercitation = ({match}) => {
         <Route path={`${exercitation.posts.apply.path}/:type`} component={LogIn}/>
         <Route path={exercitation.posts.path} component={ExercitationPosts}/>
       </Switch>
-      <Route path={routes.login.path} component={LogIn}/>
       <Footer hotClicks={hotClicks} latestArticle={articles}/>
     </div>
   )

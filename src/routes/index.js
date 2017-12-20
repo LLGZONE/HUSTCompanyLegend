@@ -21,7 +21,7 @@ export const EXERCITATION_POSTS_APPLY = `${EXERCITATION_POSTS}/apply`
 export const EXERCITATION_INSTITUTE = `${EXERCITATION}/institute`
 export const EXERCITATION_MODEL = `${EXERCITATION}/model`
 
-export const LOGIN = '/login'
+export const LOGIN = '/exercitation/posts/apply/company'
 //会员中心
 export const MEMBER_CENTER = '/member/center'
 //会员动态

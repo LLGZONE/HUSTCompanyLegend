@@ -77,20 +77,11 @@ const CompanyManagement = ({login}) => {
     <div>
       <Header/>
       <main className="management-company-main-container" style={{display: 'flex', paddingTop: '70px'}}>
-        <Route path={companyManagement.signUp.path} component={SignUp}/>
-        {!login
-          ? <Route
-            path={companyManagement.path}
-            render={({location})=> {
-              return location.pathname.indexOf(companyManagement.signUp.path) < 0
-                ? <Redirect to={companyManagement.signUp.path}/>
-                : null
-            }}
-          />
-          : (
+        {login
+          ? (
             <React.Fragment>
               <Route path={`${companyManagement.path}/exercitation`} component={AsideNav}/>
-              < Route path={companyManagement.pending.path} render={() => <PendingReview
+              <Route path={companyManagement.pending.path} render={() => <PendingReview
                 logo={_360}
                 companyName="360集团有限公司"
                 linkman="张某"
@@ -116,6 +107,7 @@ const CompanyManagement = ({login}) => {
               />
             </React.Fragment>
           )
+          : <Redirect to={routes.signUp.path} />
         }
       </main>
       <Footer hotClicks={hotClicks} latestArticle={articles}/>
