@@ -22,7 +22,7 @@ const renderVerification = ({input, label, type, meta: {touched, error, warning}
   <div className="company-signup-render-verify">
     <input {...input} placeholder={label} type={type}/>
 
-    <Button value="获取邮箱验证码"/>
+    <button name={'verify'}>获取邮箱验证码</button>
     {touched && ((error && <WarnText text={error}/>) || (warning && <span>{warning}</span>))}
   </div>
 )
@@ -72,6 +72,11 @@ const EmailRegister = ({handleSubmit, submitting, checked=false}) => (
       label="邮箱验证码"
       component={renderVerification}
       validate={[required]}
+      onChange={(e, newValue) => {
+        if (newValue.length > 6) {
+          e.preventDefault()
+        }
+      }}
     />
     <Field
       name="accept"
