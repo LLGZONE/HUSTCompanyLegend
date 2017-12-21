@@ -11,11 +11,11 @@ import PendingReview from './PendingReview'
 import PerfectMessage from './PerfectMessage/index'
 import PostsManage from './PostsManage'
 import PostsPublish from '../../../components/managementPlatform/Company/PostsPublish/'
-import SignUp from '../../auth/SignUp/Company'
 import TraineeFilter from './TraineeFilter'
 import Footer from '../../../components/commons/Footer/index'
 import routes from '../../../routes'
 import { isLogin } from '../../../reducers/selectors'
+import SignUp from '../../auth/SignUp/Company'
 
 import hotClicks from '../../../api/home/hotClicks.json'
 import articles from '../../../api/home/aticles.json'
@@ -31,6 +31,7 @@ import license from '../../../components/managementPlatform/Company/PendingRevie
 import env1 from '../../../components/managementPlatform/Company/PendingReview/env1.png'
 import env2 from '../../../components/managementPlatform/Company/PendingReview/env2.png'
 import env3 from '../../../components/managementPlatform/Company/PendingReview/env3.png'
+
 
 const newPerson = () => {
   return {
@@ -77,6 +78,8 @@ const CompanyManagement = ({login}) => {
     <div>
       <Header/>
       <main className="management-company-main-container" style={{display: 'flex', paddingTop: '70px'}}>
+        <Route path={companyManagement.signUp.path} component={SignUp}  />
+        <Route path={companyManagement.signUp.path} exact component={() => <Redirect to={`${companyManagement.signUp.path}/phone`} />}  />
         {login
           ? (
             <React.Fragment>
@@ -107,7 +110,10 @@ const CompanyManagement = ({login}) => {
               />
             </React.Fragment>
           )
-          : <Redirect to={routes.signUp.path} />
+          : <Route path={companyManagement.path} component={({location})=>
+            location.pathname.indexOf(companyManagement.signUp.path) < 0
+            &&
+            <Redirect to={`${companyManagement.signUp.path}/phone`}/>}/>
         }
       </main>
       <Footer hotClicks={hotClicks} latestArticle={articles}/>

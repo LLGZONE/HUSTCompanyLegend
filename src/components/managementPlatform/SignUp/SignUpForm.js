@@ -2,7 +2,7 @@
  * Created by LLGZONE on 2017/11/6.
  */
 import React from 'react'
-import { Link, Route, Switch, Redirect} from 'react-router-dom'
+import { Link, Route, Switch } from 'react-router-dom'
 
 import routes from '../../../routes'
 import EmailRegister from './EmailRegister'
@@ -19,7 +19,6 @@ const SignUpForm = () => {
   return (
     <div>
       <nav className="company-signup-form-nav">
-        <Route path={prefix} exact render={() => <Redirect to={mobilePath}/>} />
         <Route
           path={mobilePath}
           children={({ match }) => {
