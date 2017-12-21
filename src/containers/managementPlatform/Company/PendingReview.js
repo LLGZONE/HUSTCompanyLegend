@@ -8,6 +8,8 @@ import LineHeader from '../../../components/commons/LineHeader/index'
 
 import '../../../components/managementPlatform/Company/PendingReview/index.scss'
 
+let key = 0
+
 const PendingReview = ({
   logo,         //公司 logo
   companyName,  //公司名字
@@ -50,7 +52,7 @@ const PendingReview = ({
         </div>
       </div>
       <div className="pending-working-env">
-        {workImgs.map(imgSrc => <img src={imgSrc} alt="工作环境" />)}
+        {workImgs.map(imgSrc => <img key={key++} src={imgSrc} alt="工作环境" />)}
       </div>
       <div className="pending-intro">
         {simpleIntro}
@@ -64,14 +66,14 @@ const PendingReview = ({
 )
 
 PendingReview.propTypes = {
-  logo: PropTypes.object.isRequired,
+  logo: PropTypes.string.isRequired,
   companyName: PropTypes.string.isRequired,
   linkman: PropTypes.string.isRequired,
   place: PropTypes.string.isRequired,
   size: PropTypes.number.isRequired,
   phone: PropTypes.string.isRequired,
   website: PropTypes.string.isRequired,
-  license: PropTypes.object.isRequired,
+  license: PropTypes.string.isRequired,
   workImgs: PropTypes.array.isRequired,
   simpleIntro: PropTypes.string.isRequired,
 }

@@ -4,40 +4,64 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    background-color: #525252;
-    box-shadow: 0  0 10px 0 black;
-    color: #ffffff;
-    text-align: center;
+    box-shadow: 0  0 20px -2px black;
+    color: #FF6B00;
     min-height: 90vh;
 
     a {
-      color: #ffffff;
+      color: black;
     }
 
     .nav-item {
       display: flex;
       flex-direction: column;
       justify-content: space-around;
-      font-weight: bold;
-      margin-top: 20px;
 
       .header {
-        font-size: 18px;
-        padding: 10px 0;
-        margin: 10px 0;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 10px 5px;
+        border-bottom: 1px solid #FF6B00;
       }
 
-      .active-header {
-        background-color: #fa7339;
+      .link {
+        position: relative;
+        height: 30px;
+        line-height: 30px;
+        padding: 0 5px;
+        vertical-align: bottom;
+
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          left: 2px;
+          background-color: #FF6B00;
+          width: 2px;
+          height: 0;
+        }
       }
 
-      .active-link a {
-        color: #ff6b00;
+      .link.active-link {
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          left: 2px;
+          background-color: #FF6B00;
+          width: 2px;
+          height: 100%;
+          transition: height .3s ease-in-out;
+        }
       }
     }
 
     .normal-font {
-      font-size: 16px;
+      font-size: 14px;
     }
   }
 }

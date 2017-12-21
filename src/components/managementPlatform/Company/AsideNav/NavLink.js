@@ -9,7 +9,7 @@ import './index.scss'
 
 const NavLink = ({path, msg}) => (
   <Route path={path} children={({match}) => (
-    <div className={`${match ? 'active-link' : ''} normal-font`}>
+    <div className={`${match ? 'active-link' : ''} link normal-font`}>
       <Link to={path}>
         {msg}
       </Link>

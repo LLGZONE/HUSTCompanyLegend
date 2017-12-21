@@ -95,5 +95,5 @@ const FormField = ({pristine, submitting, reset}) => (
 )
 
 export default reduxForm({
-  name: 'perfectMessage'
+  form: 'perfectMessage'
 })(FormField)
