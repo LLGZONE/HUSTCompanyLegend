@@ -12,7 +12,6 @@ import ad3 from '../../images/brain.jpg'
 
 class AdShow extends React.Component {
   shouldComponentUpdate(nextProps) {
-    console.log(nextProps.match.url)
     if (nextProps.match.url === '/exercitation' || nextProps.match.url === '/exercitation/posts') {
       return false
     }

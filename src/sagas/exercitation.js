@@ -4,6 +4,7 @@ import { REQUEST } from '../actions'
 import { query, POSTS_QUERY } from '../actions/exercitation'
 import fetchEntity from '../utils/fetchEntity'
 import { getPostsQuery } from '../reducers/selectors'
+import { PAGINATION } from '../actions/pagination'
 
 function fetchFilteredPostsApi(info) {
   const url = `${BASE_URL}/query`
@@ -39,6 +40,7 @@ function * fetchFilteredPosts(queryString, filter) {
 function * watchFilteredPosts() {
   while (true) {
     yield take(POSTS_QUERY[REQUEST])
+    yield put(PAGINATION['RESET'])
     const {queryString, filter} = yield select(getPostsQuery)
     yield call(fetchFilteredPosts, queryString, filter)
   }

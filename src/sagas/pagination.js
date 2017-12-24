@@ -30,7 +30,7 @@ function * fetchList(type, page) {
 function * list() {
   while (true) {
     const action = yield take(PAGINATION[REQUEST])
-    const { page, type } = action
+    const { page, pageType: type } = action
     const list = yield select(getPageList(type, page))
     if (list.length === 0) {
       yield call(fetchList, type, page)

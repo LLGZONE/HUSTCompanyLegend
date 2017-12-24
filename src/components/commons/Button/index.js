@@ -17,6 +17,7 @@ const Button = ({value, backgroundColor = '#FF9800', color = 'white', border = '
     alignItems: 'center',
     padding: '5px 15px',
     lineHeight: customStyle ? customStyle.fontSize : '16px',
+    outline: 'none'
   }
 
   const btn = (

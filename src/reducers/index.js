@@ -7,5 +7,5 @@ export default combineReducers({
   home: (state = {}, action) => (state),
   user,
   exercitation,
-  pagination,
+  pagination: pagination(),
 })

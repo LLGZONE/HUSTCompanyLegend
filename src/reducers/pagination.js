@@ -1,7 +1,7 @@
 import { FAILURE, REQUEST, SUCCESS } from '../actions'
 import { PAGINATION } from '../actions/pagination'
 
-const RESET = reset
+const RESET = 'RESET'
 
 const pagination = () => {
   const updatePagination = (state={
@@ -58,4 +58,4 @@ const pagination = () => {
   }
 }
 
-export default pagination()
+export default pagination

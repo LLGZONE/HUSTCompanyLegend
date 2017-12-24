@@ -5,13 +5,13 @@ import React from 'react'
 import PaginationBtn from './PaginationBtn'
 import {Link} from 'react-router-dom'
 
-function renderPagesBtn(arr, pageIndex, activeStyle) {
+function renderPagesBtn(arr, pageIndex, activeStyle, path) {
   return arr.map((item) =>
     <Link
-      to={`/exercitation/posts/pagination/${item}`}
+      to={`${path}?page=${item}`}
       key={`${item}`}
     >
-      <PaginationBtn activeStyle={item === pageIndex ? activeStyle : {}} text={`${item}`} />
+      <PaginationBtn activeStyle={item === parseInt(pageIndex, 10) ? activeStyle : {}} text={`${item}`} />
     </Link>
   )
 }
