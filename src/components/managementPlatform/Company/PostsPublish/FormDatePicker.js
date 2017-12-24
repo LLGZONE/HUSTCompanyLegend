@@ -21,7 +21,7 @@ class FormDatePicker extends React.Component {
   }
 
   handleChange(date) {
-    const {input: {value, onChange}} = this.props
+    const {input: { onChange }} = this.props
 
     this.setState({start: date})
     onChange(date)

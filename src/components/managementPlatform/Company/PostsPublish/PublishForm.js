@@ -9,6 +9,7 @@ import FormDatePicker from  './FormDatePicker'
 import FormSelect from './FormSelect'
 import {required} from '../../../../utils/validate'
 import FormTextField from './FormTextField'
+import moment from 'moment'
 
 export const renderInputField = ({ input, label, type, meta: { touched, error, warning }, hasLabel=true}) => (
   <div className={hasLabel ? 'posts-publish-gap' : ''} style={hasLabel ? {display: 'flex', alignItems: 'center'} : {}}>
@@ -39,7 +40,7 @@ const PublishForm = ({companyName}) => (
       />
       <FormSelect
         label="岗位类别"
-        name="companyName"
+        name="postsTypes"
         datas={["研发岗", "测试岗", "运维岗", "运营岗", "产品岗", "行政岗"]}
       />
       <FormSelect
@@ -93,5 +94,13 @@ const PublishForm = ({companyName}) => (
 )
 
 export default reduxForm({
-  form: 'publishForm'
+  form: 'publishForm',
+  initialValues: {
+    postsType: '研发岗',
+    beOfficial: '无转正',
+    room: '包食宿',
+    duration: '一周起',
+    invalidDate: moment()
+  },
+  destroyOnUnmount: false,
 })(PublishForm)
