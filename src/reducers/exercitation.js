@@ -5,7 +5,6 @@ import { FAILURE, REQUEST, SUCCESS } from '../actions'
 const postsQuery = (state = {
   isFetching: false,
   queryString: '',
-  posts: [],
   filter: {
     place: 'all',//实习地点
     chance: 'all',//转正机会
@@ -30,7 +29,6 @@ const postsQuery = (state = {
       return {
         ...state,
         isFetching: false,
-        posts: action.posts
       }
     case POSTS_QUERY[FAILURE]:
       return {

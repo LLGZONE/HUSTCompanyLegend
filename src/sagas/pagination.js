@@ -3,6 +3,7 @@ import { BASE_URL } from '../config/url'
 import { REQUEST } from '../actions'
 import fetchEntity from '../utils/fetchEntity'
 import { PAGINATION, pagination } from '../actions/pagination'
+import { getPageList } from '../reducers/selectors'
 
 function fetchListApi(type, page) {
   const url = `${BASE_URL}/${type}/getList/${page}`
@@ -11,7 +12,7 @@ function fetchListApi(type, page) {
 }
 
 //work saga
-function * fetchList(type, page){
+function * fetchList(type, page) {
   try {
     const {response} = yield call(fetchListApi, type, page)
     if (response) {
@@ -28,7 +29,13 @@ function * fetchList(type, page){
 //watch saga
 function * list() {
   while (true) {
-    yield take(PAGINATION[REQUEST])
-    const page = yield select()
+    const action = yield take(PAGINATION[REQUEST])
+    const { page, type } = action
+    const list = yield select(getPageList(type, page))
+    if (list.length === 0) {
+      yield call(fetchList, type, page)
+    }
   }
 }
+
+export default list

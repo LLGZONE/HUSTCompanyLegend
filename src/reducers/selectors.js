@@ -16,3 +16,13 @@ export const isLogin = state => {
 export const getPostsQuery = state => state.reducers.exercitation.postsQuery
 
 export const getUid = state => state.reducers.user.uid
+
+export const getPageList = (type, page) => state => {
+  const item = state.pagination[type]
+
+  if (item) {
+    return item.page[page] || []
+  }
+
+  return []
+}

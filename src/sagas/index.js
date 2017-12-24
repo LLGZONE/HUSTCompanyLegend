@@ -5,8 +5,10 @@ import { fork } from 'redux-saga/effects'
 
 import user from './user'
 import exercitation from './exercitation'
+import list from './pagination'
 
 export default function* root() {
   yield fork(user)
   yield fork(exercitation)
+  yield fork(list)
 }
