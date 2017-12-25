@@ -1,0 +1,19 @@
+$mb-screen: 400px;
+$sm-screen: 760px;
+$md-screen: 980px;
+$lg-screen: 1920px;
+
+@mixin responsive($width) {
+  @if $width == large-screen {
+    @media screen and (max-width: $lg-screen) {@content;}
+  }
+  @else if $width == medium-screen {
+    @media screen and (max-width: $md-screen) {@content;}
+  }
+  @else if $width == small-screen {
+    @media screen and (max-width: $sm-screen) {@content;}
+  }
+  @else if $width == mobile-screen {
+    @media screen and (max-width: $mb-screen) {@content;}
+  }
+}

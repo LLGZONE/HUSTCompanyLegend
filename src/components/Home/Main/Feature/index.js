@@ -8,10 +8,10 @@ import { Link } from 'react-router-dom'
 import routes from '../../../../routes'
 import FeatureItem from './FeatureItem'
 import 'font-awesome/css/font-awesome.min.css'
-import './index.css'
+import './index.scss'
 
 const Feature = ({exchange, base, help}) => (
-  <section>
+  <section className="main-feature">
     <div className="main-feature-bg" />
     <div className="main-feature-container">
       <Link to='/'>

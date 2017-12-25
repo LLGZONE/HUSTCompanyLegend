@@ -16,7 +16,7 @@ function * fetchList(type, page) {
   try {
     const {response} = yield call(fetchListApi, type, page)
     if (response) {
-      yield put(pagination.success(type, response.list))
+      yield put(pagination.success(type, page, response.list))
     } else {
       yield put(pagination.failure(type, {msg: 'internet'}))
     }

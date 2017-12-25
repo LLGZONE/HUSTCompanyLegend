@@ -8,10 +8,10 @@ const PAGINATION = createRequestTypes('PAGINATION')
 PAGINATION[RESET] = RESET
 
 export const pagination = {
-  request: curry((pageType, page) => action(PAGINATION[REQUEST], {page, pageType})),
-  success: (pageType, list, pageCount) => action(PAGINATION[SUCCESS], {pageType, list, pageCount}),
-  failure: (pageType, error) => action(PAGINATION[FAILURE], {pageType, error}),
-  reset: (pageType) => action(PAGINATION[RESET], {pageType})
+  request: curry((pageType, page) => action(PAGINATION[REQUEST], { page, pageType })),
+  success: (pageType, page, list, pageCount) => action(PAGINATION[SUCCESS], { pageType, page, list, pageCount }),
+  failure: (pageType, error) => action(PAGINATION[FAILURE], { pageType, error }),
+  reset: (pageType) => action(PAGINATION[RESET], { pageType }),
 }
 
 export { PAGINATION }
