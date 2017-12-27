@@ -10,7 +10,7 @@ import WorkDescription from "./WorkDescription";
 
 const WorkChance = ({datas}) => (
   <div className="home-work-chance">
-    <div className="header xlarge-font">
+    <div className="header">
       <p>实习机会</p>
     </div>
     <div className="main-container">

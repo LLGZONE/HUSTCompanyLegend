@@ -3,7 +3,7 @@
  */
 import React from 'react'
 import PropTypes from 'prop-types'
-import './FeatureItem.css'
+import './FeatureItem.scss'
 
 const FeatureItem = ({title, text, children, style, className}) => (
   <div style={style} className={`${className} main-feature-item`}>

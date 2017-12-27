@@ -1,7 +1,11 @@
-$mb-screen: 400px;
+$mb-screen: 440px;
 $sm-screen: 760px;
 $md-screen: 980px;
 $lg-screen: 1920px;
+
+$sm-font: 14px;
+$normal-font: 16px;
+$large-font: 18px;
 
 @mixin responsive($width) {
   @if $width == large-screen {

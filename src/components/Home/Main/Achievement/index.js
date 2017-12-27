@@ -7,7 +7,7 @@ import PropTypes from 'prop-types'
 import AcademyAchievement from './AcademyAchievement'
 import LeagueAchievement from './LeagueAchievement'
 
-import './index.css'
+import './index.scss'
 
 const Achievement = ({league: {main, subTitles}, projects=[]}) => (
   <div className="home-main-achieve">

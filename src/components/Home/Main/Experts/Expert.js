@@ -13,7 +13,7 @@ const Expert = ({
   <div className="expert-container">
     <img className="expert-avatar " src={avatar} alt={name} />
     <div>
-      <p className="expert-name large-font">{`${name}${honor ? `——${honor}` : ''}`}</p>
+      <p className="expert-name">{`${name}${honor ? `——${honor}` : ''}`}</p>
       <p className="expert-info">领域：{field}</p>
       <p className="expert-info">方向：{area}</p>
     </div>

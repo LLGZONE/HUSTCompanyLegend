@@ -1,6 +1,0 @@
-.home-main-achieve {
-    display: flex;
-    width: 100%;
-    padding: 40px 10px;
-    --achiveHeight: calc(100vh * 68% / 2 + 0px);
-}

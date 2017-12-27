@@ -7,12 +7,17 @@
   $borderRadius: 10px;
   $whBg: #FFFFFF;
 
+  @media screen and (max-width: 1200px) {
+    max-width: 100%;
+  }
+
   .header {
     position: relative;
     width: 5em;
     padding: 0 1em;
     font-weight: bold;
     background-color: #FFFFFF;
+    font-size: 1.2em;
     height: $height;
     border-top-left-radius: $borderRadius;
     border-top-right-radius: $borderRadius + 5;
@@ -48,6 +53,18 @@
     box-sizing: border-box;
     border-top-right-radius: $borderRadius;
     overflow: hidden;
+
+    @media screen and (max-width: 1200px) {
+      width: 40%;
+    }
+
+    @media screen and (max-width: 760px) {
+      height: 360px;
+    }
+
+    @media screen and (max-width: 450px) {
+      height: 300px;
+    }
   }
 
   .description-container {
@@ -61,5 +78,13 @@
       left-radius: $borderRadius;
       right-radius: $borderRadius;
     };
+
+    @media screen and (max-width: 760px) {
+      height: 360px;
+    }
+
+    @media screen and (max-width: 450px) {
+      height: 300px;
+    }
   }
 }

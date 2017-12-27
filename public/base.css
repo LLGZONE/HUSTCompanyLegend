@@ -1,3 +1,21 @@
+body {
+    margin: 0;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+@media screen and (max-width: 760px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    body {
+        font-size: 12px;
+    }
+}
+
 .xsmal-font {
     font-size: 12px;
 }

@@ -1,3 +1,5 @@
+@import "../../../../styles/responsive";
+
 .home-main-ann {
   &-container {
     flex: 1 1 auto;
@@ -48,11 +50,21 @@
   }
 
   &-title {
+    font-size: $large-font;
     margin: 0;
+
+    @include responsive(mobile-screen) {
+      font-size: $normal-font;
+    }
   }
 
   &-msg {
     margin-top: 8px;
     letter-spacing: -3px;
+    font-size: $normal-font;
+
+    @include responsive(mobile-screen) {
+      font-size: $sm-font;
+    }
   }
 }

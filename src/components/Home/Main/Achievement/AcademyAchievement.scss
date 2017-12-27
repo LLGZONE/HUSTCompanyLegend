@@ -1,3 +1,5 @@
+@import "../../../../styles/responsive";
+
 .home-achieve-academy {
   height: var(--achiveHeight);
   $orange: rgb(255, 117, 72);
@@ -32,16 +34,23 @@
   .trapezium-title {
     @include trapezium(35px);
 
+    @include responsive(mobile-screen) {
+      @include trapezium(25px);
+    }
+
     p {
       font-weight: bold;
       margin: 10px 20px 0;
+
+      @media (max-width: 450px) {
+        margin: 10px 10px 0;
+      }
     }
   }
 
   .nav-bar {
-    display: inline-block;
     position: absolute;
-    right: 0;
+    right: 1px;
     bottom: 0;
 
     &-list {
@@ -58,6 +67,20 @@
         &:last-of-type {
           border: 0;
         }
+
+        @media (max-width: 600px) {
+          padding: 0 2px;
+        }
+
+        @media (max-width: 550px) {
+          padding: 0 2px;
+          font-size: 12px;
+        }
+
+        @media (max-width: 450px) {
+          padding: 0 1px;
+          font-size: 10px;
+        }
       }
     }
 
@@ -67,6 +90,15 @@
       color: #FFFFFF;
       padding: 0 15px;
       background-color: rgb(39, 195, 154);
+
+      @media (max-width: 550px) {
+        padding: 0 5px;
+      }
+
+      @media (max-width: 450px) {
+        height: 20px;
+        font-size: 12px;
+      }
     }
   }
 
@@ -110,6 +142,14 @@
       display: inline-block;
       width: 60%;
 
+      p:first-of-type {
+        line-height: 2em;
+
+        @include responsive(medium-screen) {
+          line-height: 1.5em;
+        }
+      }
+
       .type {
         color: $orange;
       }
@@ -117,6 +157,10 @@
       .font {
         color: #BBBBBB;
         margin: 10px;
+
+        @include responsive(medium-screen) {
+          margin: 5px;
+        }
       }
     }
   }

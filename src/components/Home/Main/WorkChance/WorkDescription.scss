@@ -31,5 +31,9 @@
     &:first-of-type {
       margin: 5px 10px 0 0;
     }
+
+    @media screen and (max-width: 450px) {
+      padding: 5px;
+    }
   }
 }

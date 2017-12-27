@@ -1,9 +1,20 @@
+@import "../../../../styles/responsive";
+
 .home-achieve-legend {
   $border-color: rgb(33, 104, 176);
   flex: 1 0 auto;
   max-width: 30%;
   margin-right: 15px;
   height: var(--achiveHeight);
+
+  @media screen and (max-width: 890px) {
+    max-width: 100%;
+    padding: 0 40px;
+  }
+
+  @media screen and (max-width: 550px) {
+    padding: 0;
+  }
 
   &-header {
     position: relative;

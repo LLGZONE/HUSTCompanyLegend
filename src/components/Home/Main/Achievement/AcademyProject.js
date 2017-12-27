@@ -7,11 +7,11 @@ const AcademyProject = ({img: {url, alt}, type, title, industry, date}) => (
   <div className="academy-project">
     <img src={url} alt={alt}/>
     <div className="academy-project-main">
-      <p style={{margin: 0, lineHeight: '2em'}}>
+      <p style={{margin: 0}}>
         <span className="type">[ {type} ]</span>
         {title}
       </p>
-      <p className="font" style={{marginTop: '10px'}}>行业: {industry}</p>
+      <p className="font">行业: {industry}</p>
       <p className="font">发布时间: {date}</p>
     </div>
   </div>

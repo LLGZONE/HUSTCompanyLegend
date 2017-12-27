@@ -6,7 +6,7 @@
 }
 
 .common-footer-join-reason {
-    font-size: 35px;
+    font-size: 32px;
     line-height: 40px;
     font-weight: 600;
     color: white;
@@ -30,4 +30,27 @@
     text-align: center;
     letter-spacing: 2px;
     padding: 0 15px;
+}
+
+@media screen and (max-width: 960px){
+    .common-footer-join-reason {
+        font-size: 26px;
+    }
+}
+
+@media screen and (max-width: 760px){
+    .common-footer-join-reason {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .common-footer-join-container {
+        padding: 0;
+        flex-direction: column;
+    }
+
+    .common-footer-join-reason {
+        font-size: 16px;
+    }
 }

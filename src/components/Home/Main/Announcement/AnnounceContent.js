@@ -23,8 +23,8 @@ const AnnounceContent = ({items}) => (
           <p className="medium-font">{`${item.month}月`}</p>
         </div>
         <div>
-          <p className="home-main-ann-title large-font">{item.title}</p>
-          <Clamp lines={2} className="home-main-ann-msg medium-font">{addSpace(item.msg)}</Clamp>
+          <p className="home-main-ann-title">{item.title}</p>
+          <Clamp lines={2} className="home-main-ann-msg">{addSpace(item.msg)}</Clamp>
         </div>
       </div>
     ))}

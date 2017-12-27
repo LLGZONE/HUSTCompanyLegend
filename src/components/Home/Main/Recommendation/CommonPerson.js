@@ -5,7 +5,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import './CommonPerson.css'
+import './CommonPerson.scss'
 
 const CommonPerson = ({name, school, photo, contactUrls}) => (
   <div className="home-main-rec-person">

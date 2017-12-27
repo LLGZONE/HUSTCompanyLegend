@@ -1,11 +1,12 @@
+@import '../../../../styles/responsive';
+
 .home-main-experts {
+  flex: 1 0 auto;
   $orange: rgb(255, 117, 72);
   $blue: rgb(71, 158, 255);
   $headerMargin: 10px;
 
-  flex: auto;
   margin-left: 10px;
-  width: 40%;
 
   .header {
     position: relative;
@@ -34,6 +35,20 @@
     border: 1.5px solid #BBBBBB;
     padding: 15px 15px 0;
     border-bottom: 0;
+
+    @media screen and (max-width: 1200px) {
+      display: flex;
+      flex-direction: row;
+    }
+
+    @media screen and (max-width: 960px) {
+      font-size: 14px;
+    }
+
+    @media screen and (max-width: 800px) {
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
   }
 
   .expert {
@@ -44,16 +59,25 @@
     &-avatar {
       width: 100px;
       height: 100px;
+      @media screen and (max-width: 960px) {
+        width: 80px;
+        height: 80px;
+      }
     }
 
     &-name {
       margin: 0 0 10px;
       font-weight: bold;
+      font-size: 1.1em;
     }
 
     &-info {
       margin: 10px 0;
       color: #BBBBBB;
+
+      @media screen and (max-width: 960px) {
+        font-size: 12px;
+      }
     }
   }
 }
