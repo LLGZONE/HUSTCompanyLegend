@@ -11,7 +11,7 @@ import Models from '../../components/Exercitation/Home/Models/index'
 
 const ExercitationHome = () => (
   <div>
-    <main style={{padding: '0 40px'}}>
+    <main>
       <Base/>
       <CompanyGallery/>
       <Posts/>

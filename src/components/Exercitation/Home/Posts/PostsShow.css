@@ -1,11 +1,26 @@
 .exercitation-posts-show {
     min-width: 45%;
+    max-width: 45%;
     display: flex;
     position: relative;
     justify-content: flex-start;
     align-items: center;
     border: 1px solid grey;
     margin-bottom: 15px;
+}
+
+@media screen and (max-width: 600px) {
+    .exercitation-posts-show {
+        max-width: 80%;
+        min-width: 80%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .exercitation-posts-show {
+        max-width: 100%;
+        min-width: 100%;
+    }
 }
 
 .exercitation-posts-show p {
@@ -16,6 +31,13 @@
     flex: auto;
     margin: 0 40px;
     max-width: 80px;
+}
+
+@media screen and (max-width: 760px){
+    .exercitation-posts-img {
+        margin: 0 10px;
+        max-width: 60px;
+    }
 }
 
 .exercitation-posts-img img {

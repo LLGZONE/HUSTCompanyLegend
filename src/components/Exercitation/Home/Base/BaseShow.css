@@ -1,5 +1,6 @@
 .exercitation-base-show {
-    min-width: 45%;
+    max-width: 48%;
+    min-width: 40%;
     display: flex;
     justify-content: space-around;
     align-items: center;
