@@ -9,9 +9,15 @@
 
 .queryfield-input > input {
     flex: auto;
-    font-size: 20px;
+    font-size: 1.3em;
     line-height: 30px;
     border:none;
+}
+
+@media screen and (max-width: 760px) {
+    .queryfield-input > input {
+        line-height: 25px;
+    }
 }
 
 .queryfield-input > input:focus {

@@ -11,6 +11,13 @@
     flex: 1 1 auto;
 }
 
+@media screen and (max-width: 760px) {
+    .exercitationPosts-query-searchbar {
+        height: 30px;
+        line-height: 30px;
+    }
+}
+
 .exercitationPosts-query-links {
     display: flex;
     margin-left: 20px;

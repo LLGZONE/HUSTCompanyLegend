@@ -4,5 +4,17 @@
 }
 
 .exercitationPosts-posts-logo img {
-    max-width: 150px;
+    max-width: 140px;
+}
+
+@media screen and (max-width: 760px) {
+    .exercitationPosts-posts-logo img {
+        max-width: 100px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .exercitationPosts-posts-logo img {
+        max-width: 75px;
+    }
 }

@@ -11,3 +11,10 @@
     width: 100%;
     justify-content: space-between;
 }
+
+@media screen and (max-width: 700px){
+    .exercitation-institute-show-container {
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+}

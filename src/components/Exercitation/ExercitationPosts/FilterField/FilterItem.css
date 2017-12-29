@@ -1,8 +1,9 @@
 .exercitationPosts-filter-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
-    font-size: 22px;
+    font-size: 1.125em;
 }
 
 .exercitationPosts-filter-container p:first-of-type {
@@ -10,7 +11,7 @@
 }
 
 .exercitationPosts-filter-container button {
-    font-size: 22px;
+    font-size: 1em;
     margin: 0 5px;
     border: none;
     background-color: transparent;

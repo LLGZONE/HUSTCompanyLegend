@@ -43,6 +43,10 @@
     align-items: center;
 }
 
+.e-bars {
+    display: none;
+}
+
 @media screen  and (max-width: 700px) {
     .commons-exercitation-header {
         justify-content: flex-end;
@@ -66,6 +70,7 @@
     }
 
     .e-bars {
+        display: block;
         margin: 0 10px;
         font-size: 1.5em;
     }

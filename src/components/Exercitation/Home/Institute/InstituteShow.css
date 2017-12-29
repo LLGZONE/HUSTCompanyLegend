@@ -7,6 +7,12 @@
     margin-bottom: 15px;
 }
 
+@media screen and (max-width: 700px){
+    .exercitation-institute-show {
+        width: 45%;
+    }
+}
+
 .exercitation-institute-show img {
     flex: auto;
     width: 100%;

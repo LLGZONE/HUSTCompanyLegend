@@ -4,7 +4,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import './PostsDynamic.css'
+import './PostsDynamic.scss'
 
 const PostsDynamic = ({concern=0, reader=0, handleTime}) => (
   <div className="exercitationPosts-posts-dynamic">

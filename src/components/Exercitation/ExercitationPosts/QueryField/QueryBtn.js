@@ -8,7 +8,7 @@ const QueryBtn = ({handleClick, isFetching}) => (
   <Button
     value={isFetching ? '加载.' : '搜索'}
     onClick={handleClick}
-    customStyle={{fontSize: '28px'}}
+    customStyle={{fontSize: '18px'}}
     disabled={isFetching}
   />
 )
