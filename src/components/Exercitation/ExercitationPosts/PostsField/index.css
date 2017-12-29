@@ -6,6 +6,12 @@
     margin: 20px 0;
 }
 
+@media screen and (max-width: 600px) {
+    .exercitationPosts {
+        margin: 10px 0;
+    }
+}
+
 .exercitationPosts-main {
     display: flex;
     align-items: center;

@@ -1,0 +1,24 @@
+.exercitationPosts-pagination {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  &-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    a {
+      margin: 0 10px;
+      text-decoration: none;
+      
+      @media screen and (max-width: 500px) {
+        margin: 0 5px;
+      }
+
+      @media screen and (max-width: 400px) {
+        margin: 0 3px;
+      }
+    }
+  }
+}
