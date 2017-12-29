@@ -3,7 +3,7 @@
  */
 import React from 'react'
 
-import './CompanyGallery.css'
+import './CompanyGallery.scss'
 
 import _360 from '../../images/Base/360.png'
 import antian from '../../images/Base/antian.png'

@@ -7,13 +7,23 @@ import NavBarItem from './NavBarItem'
 import Logout from '../../../containers/auth/Logout'
 import './index.css'
 
+let navItems;
+
+function navBarClick(e) {
+  const ele = e.target
+  ele.classList.toggle('fa-times')
+  ele.classList.toggle('fa-bars')
+  navItems.classList.toggle('nav-active')
+}
+
 const ExercitationHeader = () => {
 
   return (
     <div>
       <header className="commons-exercitation-header">
         <h1>信息与网络空间安全实习平台</h1>
-        <nav className="commons-exercitation-nav">
+        <i className="e-bars fa fa-bars" onClick={navBarClick}/>
+        <nav ref={nav=>navItems = nav} className="commons-exercitation-nav">
           <NavBarItem
             to="/exercitation"
             label="实习首页"

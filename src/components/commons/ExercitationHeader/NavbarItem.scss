@@ -19,5 +19,9 @@
         color: #ff7043;
       }
     }
+
+    @media screen and (max-width: 700px) {
+      padding: 10px;
+    }
   }
 }
