@@ -1,10 +1,11 @@
 import { combineReducers } from 'redux'
-import { POSTS_QUERY, QUERY_FILTER_CHANGE } from '../actions/exercitation'
+import { POSTS_QUERY, QUERY_FILTER_CHANGE, SHOW_QUERY, HIDDEN_QUERY } from '../actions/exercitation'
 import { FAILURE, REQUEST, SUCCESS } from '../actions'
 
 const postsQuery = (state = {
   isFetching: false,
   queryString: '',
+  showFilter: false,
   filter: {
     place: 'all',//实习地点
     chance: 'all',//转正机会
@@ -40,6 +41,16 @@ const postsQuery = (state = {
       return {
         ...state,
         filter: action.filter
+      }
+    case SHOW_QUERY:
+      return {
+        ...state,
+        showFilter: true,
+      }
+    case HIDDEN_QUERY:
+      return {
+        ...state,
+        showFilter: false,
       }
     default:
       return state

@@ -28,6 +28,15 @@ class QueryField extends React.Component {
     this.setState({inputValue: value})
   }
 
+  handleFilterShowClick() {
+    const {  showFilter, hiddenFilter, isFilterShow } = this.props
+    if (isFilterShow) {
+      hiddenFilter()
+    } else {
+      showFilter()
+    }
+  }
+
   render() {
     const { isFetching } = this.props
 
@@ -38,7 +47,9 @@ class QueryField extends React.Component {
           <QueryBtn handleClick={()=>this.handleClick()} isFetching={isFetching} />
         </div>
         <div className="exercitationPosts-query-links">
-          <Link to="/exercitation/posts/filter">更多筛选</Link>
+          <a href="javascript:" onClick={() => this.handleFilterShowClick()}>
+            更多筛选
+          </a>
           <Link to="/exercitation/posts/apply/company">我要发布</Link>
         </div>
       </section>

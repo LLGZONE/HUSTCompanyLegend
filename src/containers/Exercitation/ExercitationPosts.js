@@ -2,9 +2,9 @@
  * Created by LLGZONE on 2017/11/7.
  */
 import React from 'react'
-import { Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 
+import { showFilter, hiddenFilter } from '../../actions/exercitation'
 import { pagination } from '../../actions/pagination'
 import { query, queryFilter } from '../../actions/exercitation'
 import { getPostsQuery } from '../../reducers/selectors'
@@ -31,7 +31,7 @@ class ExercitationPosts extends React.Component {
   }
 
   shouldComponentUpdate(nextProps) {
-    return this.props.location.search !== nextProps.location.search
+    return this.props.filterShow !== nextProps.filterShow || this.props.location.search !== nextProps.location.search
   }
 
   componentDidUpdate() {
@@ -49,6 +49,9 @@ class ExercitationPosts extends React.Component {
       filter,
       match,
       paginate,
+      showFilter,
+      hiddenFilter,
+      filterShow,
     } = this.props
     const path = match.path
     const pageIndex = this.getPageIdx()
@@ -56,8 +59,15 @@ class ExercitationPosts extends React.Component {
     return (
       <div>
         <main className="exercitation-posts-main">
-          <QueryField query={query} isFetching={isFetching} filter={filter}/>
-          <Route path="/exercitation/posts/filter" component={FilterField}/>
+          <QueryField
+            query={query}
+            isFetching={isFetching}
+            filter={filter}
+            showFilter={showFilter}
+            hiddenFilter={hiddenFilter}
+            isFilterShow={filterShow}
+          />
+          {filterShow && <FilterField/>}
           <PostsField handleTime="2017-09-08"/>
           <PostsField handleTime="2017-09-08"/>
           <PostsField handleTime="2017-09-08"/>
@@ -81,6 +91,7 @@ class ExercitationPosts extends React.Component {
 
 const mapStateToProps = (state) => {
   const { isFetching, error, filter } = getPostsQuery(state)
+  const filterShow = state.reducers.exercitation.postsQuery.showFilter
   const count = 1 || state.reducers.pagination[post].pageCount
   const posts = [] || state.reducers.pagination[post].page
 
@@ -90,6 +101,7 @@ const mapStateToProps = (state) => {
     error,
     filter,
     count,
+    filterShow
   }
 }
 
@@ -97,4 +109,6 @@ export default connect(mapStateToProps, {
   query: query.request,
   queryFilter,
   paginate: pagination.request(post),
+  showFilter,
+  hiddenFilter,
 })(ExercitationPosts)

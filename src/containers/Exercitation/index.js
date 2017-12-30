@@ -22,7 +22,7 @@ const Exercitation = ({match}) => {
   return (
     <div>
       <ExercitationHeader/>
-      <Route path="/exercitation(/posts)?(|)(/posts/filter)?" exact component={AdShow}/>
+      <Route path="/exercitation/posts" exact component={AdShow}/>
       <Switch>
         <Route path={exercitation.path} exact component={Home}/>
         <Route path={exercitation.posts.info.path} exact component={ExercitationPostsInfo}/>

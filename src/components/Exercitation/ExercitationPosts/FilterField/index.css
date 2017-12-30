@@ -3,6 +3,7 @@
     box-sizing: border-box;
     padding: 15px 0 15px 7px;
     border: 1px solid gray;
+    margin-top: 10px;
 }
 
 .exercitationPosts-filter-field-container {

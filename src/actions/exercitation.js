@@ -6,6 +6,8 @@ export const PUBLISH = createRequestTypes('EXERCITATION_PUBLISH')
 export const POSTS_LIST = createRequestTypes('POSTS_LIST')
 export const POSTS_QUERY = createRequestTypes('POSTS_QUERY')
 export const QUERY_FILTER_CHANGE = 'QUERY_FILTER_CHANGE'
+export const SHOW_QUERY = 'SHOW_QUERY'
+export const HIDDEN_QUERY = 'HIDDEN_QUERY'
 
 export const publish = {
   request: (info) => action(PUBLISH[REQUEST], {info}),
@@ -29,5 +31,17 @@ export function queryFilter(filter) {
   return {
     type: QUERY_FILTER_CHANGE,
     filter: filter,
+  }
+}
+
+export function showFilter() {
+  return {
+    type: SHOW_QUERY
+  }
+}
+
+export function hiddenFilter() {
+  return {
+    type: HIDDEN_QUERY
   }
 }
