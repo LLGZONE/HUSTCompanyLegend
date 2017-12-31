@@ -1,4 +1,4 @@
-import { take, put, call, fork, select } from 'redux-saga/effects'
+import { take, put, call, select } from 'redux-saga/effects'
 import { BASE_URL } from '../config/url'
 import { REQUEST } from '../actions'
 import fetchEntity from '../utils/fetchEntity'

@@ -3,6 +3,7 @@
  */
 import React from 'react'
 import NavBarItem from './NavBarItem'
+import { Link } from 'react-router-dom'
 
 import Logout from '../../../containers/auth/Logout'
 import './index.css'
@@ -51,6 +52,12 @@ const ExercitationHeader = () => {
           />
         </nav>
         <Logout/>
+        <div className="commons-exercitation-icon">
+          <Link to="/exercitation">
+            <i className="fa fa-home">
+            </i>
+          </Link>
+        </div>
       </header>
       <div className="hidden-div">
       </div>

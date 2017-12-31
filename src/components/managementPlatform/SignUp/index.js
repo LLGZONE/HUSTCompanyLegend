@@ -12,15 +12,15 @@ import routes from '../../../routes'
 
 const SignUp = ({title}) => (
   <section className="company-signup">
-    <LineHeader title={`${title}注册`} style={{fontSize: '20px'}}/>
+    <LineHeader title={`${title}注册`} style={{fontSize: '1.2em'}}/>
     <div className="company-signup-main">
       <SignUpForm/>
       <div>
         <div className="company-signup-login">
           <p>
-            已有账号？直接 &nbsp;
-            <Link to={routes.login.path}>登录</Link>
+            已有账号？直接
           </p>
+          <Link to={routes.login.path}>登录</Link>
         </div>
         <ThirdParty/>
       </div>

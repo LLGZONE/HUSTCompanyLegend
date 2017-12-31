@@ -16,13 +16,13 @@ import AdShow from '../../components/Exercitation/Home/AdShow/index'
 import hotClicks from '../../api/home/hotClicks.json'
 import articles from '../../api/home/aticles.json'
 
-const Exercitation = ({match}) => {
+const Exercitation = ({match, location}) => {
   const exercitation = routes.exercitation
 
   return (
     <div>
       <ExercitationHeader/>
-      <Route path="/exercitation/posts" exact component={AdShow}/>
+      {location.pathname.indexOf('/exercitation/posts/apply') < 0 && <AdShow />}
       <Switch>
         <Route path={exercitation.path} exact component={Home}/>
         <Route path={exercitation.posts.info.path} exact component={ExercitationPostsInfo}/>
