@@ -22,8 +22,8 @@ const PendingReview = ({
   workImgs,     //工作环境
   simpleIntro   //简介
 }) => (
-  <section style={{padding: '0 40px'}}>
-    <LineHeader title="请耐心等待校方审核" style={{fontSize: '20px'}}/>
+  <section>
+    <LineHeader title="请耐心等待校方审核" style={{fontSize: '1.125'}}/>
     <div>
       <div className="pending-main-container">
         <div className="pending-info-container">

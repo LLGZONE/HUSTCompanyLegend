@@ -11,7 +11,7 @@ class PostsPublish extends React.Component {
 
     return (
       <section className="posts-publish-container">
-        <LineHeader title="发布实习岗位" style={{fontSize: '20px'}} />
+        <LineHeader title="发布实习岗位" style={{fontSize: '1.125em'}} />
         <PublishForm/>
       </section>
     )

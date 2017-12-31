@@ -26,8 +26,8 @@
 .commons-footer > div {
     flex: 1 1 auto;
     box-sizing: border-box;
-    max-width: calc(calc(100% - 40px) / 4);
-    padding: 0 5px;
+    max-width: 25%;
+    padding: 0 2px;
 }
 
 .commons-footer h6 {

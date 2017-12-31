@@ -15,7 +15,7 @@ const TraineeFilter = ({data, employ, abandon}) => {
 
   return (
     <section style={{marginBottom: '20px'}}>
-      <LineHeader title="大数据开发工程师实习名单" style={{fontSize: '20px'}}/>
+      <LineHeader title="大数据开发工程师实习名单" style={{fontSize: '1.125em'}}/>
       <ReactTable
         data={data}
         columns={[

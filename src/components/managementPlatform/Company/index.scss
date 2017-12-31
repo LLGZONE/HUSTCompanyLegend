@@ -1,9 +1,19 @@
 .management-company-main-container {
   display: flex;
-  padding-top: 75px;
+  padding-top: 60px;
 
   > section:nth-child(n+2) {
-    width: 100%;
+    box-sizing: border-box;
+    width: calc(100% - 90px);
     padding: 0 40px;
+
+    @media screen and (max-width: 760px) {
+      padding: 0 20px;
+    }
+
+    @media screen and (max-width: 550px) {
+      padding: 0 5px;
+      width: calc(100% - 74px);
+    }
   }
 }

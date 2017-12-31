@@ -24,6 +24,15 @@
       border: 1px solid #BBBBBB;
       border-radius: 5px;
     }
+
+    @media screen and (max-width: 600px) {
+      grid-gap: 10px 10%;
+
+      > select,
+      > div {
+        height: 30px;
+      }
+    }
   }
 
   &-drag {
@@ -46,7 +55,7 @@
     border: 2px dashed black;
     text-align: center;
     vertical-align: middle;
-    font-size: 30px;
+    font-size: 1.8em;
 
     &:before {
       display: inline-block;

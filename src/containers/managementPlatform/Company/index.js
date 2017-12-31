@@ -77,7 +77,7 @@ const CompanyManagement = ({login}) => {
   return (
     <div>
       <Header/>
-      <main className="management-company-main-container" style={{display: 'flex', paddingTop: '70px'}}>
+      <main className="management-company-main-container">
         <Route path={companyManagement.signUp.path} component={SignUp}  />
         <Route path={companyManagement.signUp.path} exact component={() => <Redirect to={`${companyManagement.signUp.path}/phone`} />}  />
         {login

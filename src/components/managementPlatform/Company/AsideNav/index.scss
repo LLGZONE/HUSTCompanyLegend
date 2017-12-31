@@ -1,6 +1,6 @@
 .management-company {
   &-aside {
-    width: 120px;
+    width: 90px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -8,6 +8,10 @@
     color: #FF6B00;
     min-height: 90vh;
 
+    @media screen and (max-width: 550px) {
+      width: 74px;
+    }
+    
     a {
       color: black;
     }
@@ -18,7 +22,7 @@
       justify-content: space-around;
 
       .header {
-        font-size: 16px;
+        font-size: 1em;
         font-weight: bold;
         padding: 10px 5px;
         border-bottom: 1px solid #FF6B00;
@@ -61,7 +65,7 @@
     }
 
     .normal-font {
-      font-size: 14px;
+      font-size: 0.9em;
     }
   }
 }

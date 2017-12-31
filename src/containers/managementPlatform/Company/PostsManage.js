@@ -14,7 +14,7 @@ class PostsManage extends React.Component {
 
     return (
       <section style={{marginBottom: '20px'}}>
-        <LineHeader title="实习岗位列表" style={{fontSize: '20px'}} />
+        <LineHeader title="实习岗位列表" style={{fontSize: '1.125em'}} />
         <ReactTable
           data={data}
           columns={[

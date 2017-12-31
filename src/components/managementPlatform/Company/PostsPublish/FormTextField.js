@@ -8,7 +8,7 @@ const FormTextField = ({label,input: {value, onChange}}) => (
       placeholder={`${label}...`}
       value={value}
       onChange={onChange}
-      style={{minHeight: '270px'}}
+      style={{minHeight: '150px'}}
     />
   </div>
 )
