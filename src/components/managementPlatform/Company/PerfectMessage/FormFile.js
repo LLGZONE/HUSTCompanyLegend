@@ -9,40 +9,45 @@ import PropTypes from 'prop-types'
 class FormFile extends React.Component {
   constructor() {
     super()
-    this.state = {files: []}
+    this.state = {
+      files: [],
+    }
   }
 
   onDrop(files) {
-    const {input: {onChange}} = this.props
+    const {input: {onChange, value}} = this.props
 
     this.setState({
-      files: this.state.files.push(files)
+      files: [...this.state.files, ...files]
     })
 
-    const imgUrls = this.state.files.map(file => URL.createObejectURL(file))
-    onChange(imgUrls)
+    onChange([...files, ...value])
   }
 
   render() {
     const {
-      input: {value},
       label,
       multiple,
       className,
       dropClassName,
+      input: {
+        value
+      }
     } = this.props
-
-    const v = value || []
 
     let id = 0
     return (
       <div className={className}>
         <span>{label}</span>:
-        <Dropzone multiple={multiple} className={dropClassName}>
+        <Dropzone onDrop={(files) => this.onDrop(files)} multiple={multiple} className={dropClassName}>
           选择文件
         </Dropzone>
         <ul>
-          {v.map(url => <i key={id++}><img src={url} alt="img" /></i>)}
+          {value && value.map(file => {
+            return <i key={id++}>
+              <img style={{marginLeft: '2px'}} src={file.preview} width="80px" height="80px" alt="img" />
+            </i>
+          })}
         </ul>
       </div>
     )
