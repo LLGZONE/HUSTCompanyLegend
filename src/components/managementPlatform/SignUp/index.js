@@ -10,12 +10,18 @@ import SignUpForm from './SignUpForm'
 import ThirdParty from './ThirdParty'
 import {Link} from 'react-router-dom'
 import routes from '../../../routes'
+import { push } from 'react-router-redux'
 
-const SignUp = ({title, identity, isFetching, registerError}) => (
+const SignUp = ({title, identity, isFetching, registerMsg }) => (
   <section className="company-signup">
     <LineHeader title={`${title}注册`} style={{fontSize: '1.2em'}}/>
     <div className="company-signup-main">
-      <SignUpForm identity={identity} isFetching={isFetching} registerError={registerError} />
+      <SignUpForm
+        identity={identity}
+        isFetching={isFetching}
+        push={push}
+        registerMsg={registerMsg}
+      />
       <div>
         <div className="company-signup-login">
           <p>
@@ -34,12 +40,12 @@ SignUp.propTypes = {
 }
 
 const mapStateToProps = (state) => {
-  const { registerError, isFetching } = state.reducers.user
+  const { registerMsg, isFetching } = state.reducers.user
 
   return {
-    registerError,
     isFetching,
+    registerMsg,
   }
 }
 
-export default connect(mapStateToProps, null, null, {pure: false})(SignUp)
+export default connect(mapStateToProps, {push}, null, {pure: false})(SignUp)

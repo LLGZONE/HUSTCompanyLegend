@@ -9,7 +9,7 @@ const user = (state = {
   uid: '',
   isFetching: false,
   error: false,
-  registerError: false
+  registerMsg: null,
 }, action) => {
   switch (action.type) {
     case LOGOUT[SUCCESS]:
@@ -47,18 +47,19 @@ const user = (state = {
       return {
         ...state,
         isFetching: true,
-        registerError: false,
+        registerMsg: null,
       }
     case REGISTER[SUCCESS]:
       return {
         ...state,
         isFetching:false,
+        registerMsg: '注册成功',
       }
     case REGISTER[FAILURE]:
       return {
         ...state,
         isFetching: false,
-        registerError: true,
+        registerMsg: action.error || '注册失败',
       }
     default:
       return state

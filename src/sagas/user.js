@@ -1,9 +1,16 @@
-import { take, put, call, fork, select, takeLatest } from 'redux-saga/effects'
+import { take, put, call, fork, select } from 'redux-saga/effects'
 import { login, logout, LOGOUT, LOGIN, register, REGISTER } from '../actions/user'
 import { BASE_URL } from '../config/url'
 import { REQUEST } from '../actions'
 import { getUserInfo } from '../reducers/selectors'
 import fetchEntity from '../utils/fetchEntity'
+import { isPerfectCMsg } from '../actions/company'
+
+function fetchUserInfo(uid) {
+  const url = `${BASE_URL}/user/getById/${uid}`
+
+  return fetchEntity(url)
+}
 
 function fetchRegisterApi(info) {
   const url = `${BASE_URL}/user/register`
@@ -49,6 +56,29 @@ function * fetchLogin(info) {
       localStorage.setItem('type', info.type)
       localStorage.setItem('expire', expireTime.toString())
       localStorage.setItem('last', Date.now().toString())
+      const { cid, sid, stid } = yield call(fetchUserInfo, response.uid)
+      switch (info.identity) {
+        case 0:
+          if (cid) {
+            localStorage.setItem('cid', cid)
+            yield put(isPerfectCMsg())
+          }
+          break;
+        case 1:
+          if (sid) {
+            localStorage.setItem('sid', sid)
+            yield put()
+          }
+          break;
+        case 2:
+          if (stid) {
+            localStorage.setItem('stid', stid)
+            yield put()
+          }
+          break;
+        default:
+          break
+      }
       yield put(login.success(response.uid))
     } else {
       yield put(login.failure())
@@ -61,17 +91,15 @@ function * fetchLogin(info) {
 
 function * fetchRegister(info) {
   try {
-    const response = yield call(fetchRegisterApi, info)
-    console.log(response)
-    console.log(response)
-    if (response.status === 200) {
+    const {response} = yield call(fetchRegisterApi, info)
+    if (response.status === 'success') {
       yield put(register.success())
     } else {
-      yield put(register.failure())
+      yield put(register.failure('用户已经存在'))
     }
   }
   catch (e) {
-    yield put(register.failure())
+    yield put(register.failure('网络故障'))
   }
 }
 
@@ -85,7 +113,7 @@ function * userLogout() {
       localStorage.clear()
     }
     catch (err) {
-      yield put(logout.failure(err))
+      yield put(logout.failure('网络故障'))
     }
   }
 }
@@ -93,8 +121,22 @@ function * userLogout() {
 function * userLogin() {
   while (true) {
     yield take(LOGIN[REQUEST])
-    const userInfo = yield select(getUserInfo)
-    yield call(fetchLogin, userInfo)
+    const {username, password, type} = yield select(getUserInfo)
+    let identity = 0
+    switch (type) {
+      case 'company':
+        identity = 0
+        break
+      case 'school':
+        identity = 1
+        break
+      case 'student':
+        identity = 2
+        break
+      default:
+        break
+    }
+    yield call(fetchLogin, {username, password, identity})
   }
 }
 
@@ -109,8 +151,10 @@ function * userRegister() {
     }
     if (email) {
       info.email = email
+      info.username = email
     } else {
       info.phone = phone
+      info.username = phone
     }
     yield call(fetchRegister, info)
   }

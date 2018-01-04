@@ -11,7 +11,7 @@ import MobileRegister from './MobileRegister'
 import '../../../components/LogIn/LogInType.scss'
 import './index.scss'
 
-const SignUpForm = ({identity, registerError, isFetching}) => {
+const SignUpForm = ({ identity, registerMsg, isFetching }) => {
   const prefix = routes.companyManagement.signUp.path
   const mobilePath = `${prefix}/phone`
   const emailPath = `${prefix}/email`
@@ -40,17 +40,29 @@ const SignUpForm = ({identity, registerError, isFetching}) => {
               <div className={match
                 ? 'login-select-type active'
                 : 'login-select-type'}>
-                  <Link to={emailPath}>
-                    邮箱注册
-                  </Link>
+                <Link to={emailPath}>
+                  邮箱注册
+                </Link>
               </div>
             )
           }}
         />
       </nav>
       <Switch>
-        <Route path={mobilePath} render={()=> <MobileRegister identity={identity} isFetching={isFetching} registerError={registerError} />} />
-        <Route path={emailPath} render={()=><EmailRegister identity={identity} isFetching={isFetching} registerError={registerError} />} />
+        <Route path={mobilePath} render={() =>
+          <MobileRegister
+            identity={identity}
+            isFetching={isFetching}
+            registerError={registerMsg}
+          />}
+        />
+        <Route path={emailPath} render={() =>
+          <EmailRegister
+            identity={identity}
+            isFetching={isFetching}
+            registerError={registerMsg}
+          />}
+        />
       </Switch>
     </div>
   )

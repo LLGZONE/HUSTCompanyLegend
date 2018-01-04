@@ -102,7 +102,7 @@ const EmailRegister = ({
     }} type="submit" disabled={submitting || !checked || !valid} className="company-signup-form-btn">
       {isFetching ? '注册中...' : '注册'}
     </button>
-    {registerError && <p>已经注册此账号</p>}
+    {registerError && <p style={{color: 'red'}}>{registerError}</p>}
   </form>
 )
 
