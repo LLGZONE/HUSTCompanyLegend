@@ -9,20 +9,21 @@ import { renderCheck } from './MobileRegister'
 
 import './SignUpForm.scss'
 import WarnText from '../../commons/WarnText'
+import { register } from '../../../actions/user'
 
-const renderField = ({input, label, type, meta: {touched, error}}) => (
+const renderField = ({ input, label, type, meta: { touched, error } }) => (
   <div className="company-signup-render-field">
     <input {...input} placeholder={label} type={type}/>
-    {touched && (error && <WarnText text={error} className="company-signup-render-warn-text"  />)}
+    {touched && (error && <WarnText text={error} className="company-signup-render-warn-text"/>)}
   </div>
 )
 
-const renderVerification = ({input, label, type, meta: {touched, error, warning}}) => (
+const renderVerification = ({ input, label, type, meta: { touched, error, warning } }) => (
   <div className="company-signup-render-verify">
     <input {...input} placeholder={label} type={type}/>
 
     <button name={'verify'}>获取邮箱验证码</button>
-    {touched && (error && <WarnText text={error} className="company-signup-render-warn-text"  />)}
+    {touched && (error && <WarnText text={error} className="company-signup-render-warn-text"/>)}
   </div>
 )
 
@@ -44,7 +45,19 @@ const validate = values => {
   return errors
 }
 
-const EmailRegister = ({handleSubmit, submitting, checked=false}) => (
+const EmailRegister = ({
+                         handleSubmit,
+                         submitting,
+                         checked = false,
+                         eml,
+                         password,
+                         verify,
+                         register,
+                         identity,
+                         isFetching = false,
+                         registerError = false,
+                         valid,
+                       }) => (
   <form className="company-signup-form-main" onSubmit={handleSubmit}>
     <Field
       name="phone"
@@ -84,7 +97,12 @@ const EmailRegister = ({handleSubmit, submitting, checked=false}) => (
       type="checkbox"
       component={renderCheck}
     />
-    <button type="submit" disabled={submitting || !checked} className="company-signup-form-btn">注册</button>
+    <button onSubmit={() => {
+      register({ email: eml, password, verify, identity })
+    }} type="submit" disabled={submitting || !checked || !valid} className="company-signup-form-btn">
+      {isFetching ? '注册中...' : '注册'}
+    </button>
+    {registerError && <p>已经注册此账号</p>}
   </form>
 )
 
@@ -97,8 +115,14 @@ const selector = formValueSelector('EmailRegister')
 
 export default connect(state => {
   const checked = selector(state, 'accept')
+  const eml = selector(state, 'email')
+  const password = selector(state, 'password')
+  const verify = selector(state, 'verification')
 
   return {
-    checked
+    checked,
+    eml,
+    password,
+    verify,
   }
-})(EmailRegisterValue)
+}, { register: register.request })(EmailRegisterValue)

@@ -24,7 +24,7 @@ class LogIn extends React.Component {
   }
 
   componentWillMount() {
-    const type = this.props.match.params
+    const { type } = this.props.match.params
     this.setState({type})
   }
 
@@ -46,8 +46,13 @@ class LogIn extends React.Component {
   }
 
   render() {
-    const { isLogin, isFetching } = this.props
-    const { type } = this.props.match.params
+    const { isLogin, isFetching, error } = this.props
+    let type
+    if (isLogin) {
+      type = this.props.type
+    } else {
+      type = this.props.match.params.type
+    }
     let to = '/'
 
     switch (type) {
@@ -76,6 +81,7 @@ class LogIn extends React.Component {
               to={to}
               progress={isFetching}
             />
+            {error && <p style={{color: "rgb(119, 0, 0)"}}>账号或者密码错误</p>}
           </div>
         </section>
     )
@@ -85,7 +91,9 @@ class LogIn extends React.Component {
 const mapStateToProps = (state) => {
   return {
     isLogin: isLogin(state),
-    isFetching: state.reducers.user.isFetching
+    isFetching: state.reducers.user.isFetching,
+    error: state.reducers.user.error,
+    type: state.reducers.user.type,
   }
 }
 

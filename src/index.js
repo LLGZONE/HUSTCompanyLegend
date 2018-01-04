@@ -9,9 +9,20 @@ import rootSaga from './sagas'
 
 import 'normalize.css'
 
+let uid = localStorage.getItem('uid')
+const expire = localStorage.getItem('expire') || 0
+if (Date.now() > parseInt(localStorage.getItem('last'), 10) + parseInt(expire, 10)) {
+  uid = false
+}
+
 const store = configureStore({
   reducers: {
     home,
+    user: {
+      uid: uid,
+      type: localStorage.getItem('type'),
+      isLogin: uid && true
+    }
   }
 })
 

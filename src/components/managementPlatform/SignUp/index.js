@@ -3,6 +3,7 @@
  */
 import React from 'react'
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 
 import LineHeader  from '../../../components/commons/LineHeader/index'
 import SignUpForm from './SignUpForm'
@@ -10,11 +11,11 @@ import ThirdParty from './ThirdParty'
 import {Link} from 'react-router-dom'
 import routes from '../../../routes'
 
-const SignUp = ({title}) => (
+const SignUp = ({title, identity, isFetching, registerError}) => (
   <section className="company-signup">
     <LineHeader title={`${title}注册`} style={{fontSize: '1.2em'}}/>
     <div className="company-signup-main">
-      <SignUpForm/>
+      <SignUpForm identity={identity} isFetching={isFetching} registerError={registerError} />
       <div>
         <div className="company-signup-login">
           <p>
@@ -32,4 +33,13 @@ SignUp.propTypes = {
   title: PropTypes.string.isRequired,
 }
 
-export default SignUp
+const mapStateToProps = (state) => {
+  const { registerError, isFetching } = state.reducers.user
+
+  return {
+    registerError,
+    isFetching,
+  }
+}
+
+export default connect(mapStateToProps, null, null, {pure: false})(SignUp)

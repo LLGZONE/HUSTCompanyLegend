@@ -1,4 +1,4 @@
-import { LOGIN, LOGOUT } from '../actions/user'
+import { LOGIN, LOGOUT, REGISTER } from '../actions/user'
 import { FAILURE, REQUEST, SUCCESS } from '../actions'
 
 const user = (state = {
@@ -8,6 +8,8 @@ const user = (state = {
   password: '',
   uid: '',
   isFetching: false,
+  error: false,
+  registerError: false
 }, action) => {
   switch (action.type) {
     case LOGOUT[SUCCESS]:
@@ -22,6 +24,7 @@ const user = (state = {
         password: action.password,
         type: action.loginType,
         isFetching: true,
+        error: false,
       }
     case LOGIN[SUCCESS]:
       return {
@@ -38,6 +41,24 @@ const user = (state = {
         type: 'company',
         uid: '',
         username: '',
+        error: true,
+      }
+    case REGISTER[REQUEST]:
+      return {
+        ...state,
+        isFetching: true,
+        registerError: false,
+      }
+    case REGISTER[SUCCESS]:
+      return {
+        ...state,
+        isFetching:false,
+      }
+    case REGISTER[FAILURE]:
+      return {
+        ...state,
+        isFetching: false,
+        registerError: true,
       }
     default:
       return state

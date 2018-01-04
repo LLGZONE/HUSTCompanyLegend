@@ -6,6 +6,7 @@ import { connect } from 'react-redux'
 import { Field, reduxForm, formValueSelector } from 'redux-form'
 
 import WarnText from '../../commons/WarnText'
+import { register } from '../../../actions/user'
 
 import './SignUpForm.scss'
 
@@ -19,7 +20,7 @@ const validate = values => {
   if (!values.password) {
     errors.password = '必填项'
   } else if (!/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,20}$/.test(values.password)) {
-    errors.password = '密码太简单'
+    errors.password = '密码为大小写与数字的组合，长度不小于8'
   }
   if (values.password !== values.repassword) {
     errors.repassword = '密码不正确'
@@ -31,16 +32,16 @@ const validate = values => {
   return errors
 }
 
-const renderField = ({input, label, type, meta: {touched, error}}) => (
+const renderField = ({ input, label, type, meta: { touched, error } }) => (
   <React.Fragment>
     <div className="company-signup-render-field">
       <input {...input} placeholder={label} type={type}/>
-      {touched && (error && <WarnText text={error} className="company-signup-render-warn-text" />)}
+      {touched && (error && <WarnText text={error} className="company-signup-render-warn-text"/>)}
     </div>
   </React.Fragment>
 )
 
-const renderVerification = ({input, label, type, meta: {touched, error}}) => (
+const renderVerification = ({ input, label, type, meta: { touched, error } }) => (
   <React.Fragment>
     <div className="company-signup-render-verify">
       <input {...input} placeholder={label} type={type}/>
@@ -50,52 +51,71 @@ const renderVerification = ({input, label, type, meta: {touched, error}}) => (
   </React.Fragment>
 )
 
-export const renderCheck = ({input, type,}) => (
+export const renderCheck = ({ input, type, }) => (
   <label className="company-signup-render-check">
     <input type={type} {...input} />
     <span>我已阅读并同意<a href="#">《校企联盟实习平台用户协议》</a></span>
   </label>
 )
 
-const MobileRegister = ({handleSubmit, submitting, checked=false}) => (
-  <form className="company-signup-form-main" onSubmit={handleSubmit}>
-    <Field
-      name="phone"
-      type="text"
-      label="请输入手机号码"
-      component={renderField}
-    />
-    <Field
-      name="password"
-      type="password"
-      label="请输入密码"
-      component={renderField}
-    />
-    <Field
-      name="repassword"
-      type="password"
-      label="请再次输入密码"
-      component={renderField}
-    />
-    <Field
-      name="verification"
-      type="text"
-      label="短信验证码"
-      component={renderVerification}
-      onChange={(e, newValue) => {
-        if (newValue.length > 6) {
-          e.preventDefault()
-        }
-      }}
-    />
-    <Field
-      name="accept"
-      type="checkbox"
-      component={renderCheck}
-    />
-    <button type="submit" disabled={submitting || !checked} className="company-signup-form-btn">注册</button>
-  </form>
-)
+const MobileRegister = ({
+                          submitting,
+                          checked = false,
+                          register,
+                          phone,
+                          password,
+                          verify,
+                          identity,
+                          isFetching = false,
+                          registerError = false,
+                          valid,
+                        }) =>
+  (
+    <form onSubmit={(e) => {
+      register({ phone, password, verify, identity })
+      e.preventDefault()
+    }} className="company-signup-form-main">
+      <Field
+        name="phone"
+        type="text"
+        label="请输入手机号码"
+        component={renderField}
+      />
+      <Field
+        name="password"
+        type="password"
+        label="请输入密码"
+        component={renderField}
+      />
+      <Field
+        name="repassword"
+        type="password"
+        label="请再次输入密码"
+        component={renderField}
+      />
+      <Field
+        name="verification"
+        type="text"
+        label="短信验证码"
+        component={renderVerification}
+        onChange={(e, newValue) => {
+          if (newValue.length > 6) {
+            e.preventDefault()
+          }
+        }}
+      />
+      <Field
+        name="accept"
+        type="checkbox"
+        component={renderCheck}
+      />
+      <button type="submit" disabled={submitting || !checked || isFetching || !valid}
+              className="company-signup-form-btn">
+        {isFetching ? '注册中...' : '注册'}
+      </button>
+      {registerError && <p style={{color: 'red'}}>已经注册此账号</p>}
+    </form>
+  )
 
 const MobileRegisterValue = reduxForm({
   form: 'MobileRegister',
@@ -106,8 +126,14 @@ const selector = formValueSelector('MobileRegister')
 
 export default connect(state => {
   const checked = selector(state, 'accept')
+  const phone = selector(state, 'phone')
+  const password = selector(state, 'password')
+  const verify = selector(state, 'verification')
 
   return {
-    checked
+    checked,
+    phone,
+    password,
+    verify,
   }
-})(MobileRegisterValue)
+}, { register: register.request })(MobileRegisterValue)

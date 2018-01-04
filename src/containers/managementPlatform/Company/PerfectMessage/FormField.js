@@ -85,7 +85,9 @@ const FormField = ({pristine, submitting, reset}) => (
       <button type="button" disabled={pristine || submitting} onClick={reset}>
         重置
       </button>
-      <button type="submit" disabled={pristine || submitting}>
+      <button onSubmit={()=>{
+
+      }} type="submit" disabled={pristine || submitting}>
         <Link to="/management/company/exercitation/pending">
           提交
         </Link>
@@ -95,5 +97,6 @@ const FormField = ({pristine, submitting, reset}) => (
 )
 
 export default reduxForm({
-  form: 'perfectMessage'
+  form: 'perfectMessage',
+  destroyOnUnMount: false,
 })(FormField)

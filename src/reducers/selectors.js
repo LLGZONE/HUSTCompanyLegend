@@ -1,9 +1,10 @@
 export const getUserInfo = state => {
-  const { username, password } = state.reducers.user
+  const { username, password, type } = state.reducers.user
 
   return {
     username,
     password,
+    type,
   }
 }
 

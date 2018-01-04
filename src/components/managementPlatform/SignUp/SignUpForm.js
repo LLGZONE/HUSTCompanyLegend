@@ -11,7 +11,7 @@ import MobileRegister from './MobileRegister'
 import '../../../components/LogIn/LogInType.scss'
 import './index.scss'
 
-const SignUpForm = () => {
+const SignUpForm = ({identity, registerError, isFetching}) => {
   const prefix = routes.companyManagement.signUp.path
   const mobilePath = `${prefix}/phone`
   const emailPath = `${prefix}/email`
@@ -49,8 +49,8 @@ const SignUpForm = () => {
         />
       </nav>
       <Switch>
-        <Route path={mobilePath} component={MobileRegister} />
-        <Route path={emailPath} component={EmailRegister} />
+        <Route path={mobilePath} render={()=> <MobileRegister identity={identity} isFetching={isFetching} registerError={registerError} />} />
+        <Route path={emailPath} render={()=><EmailRegister identity={identity} isFetching={isFetching} registerError={registerError} />} />
       </Switch>
     </div>
   )
