@@ -53,5 +53,6 @@ export function isPerfectCMsg() {
 
 export const perfectCMsg = {
   request: (cmsg) => action(PERFECT_CMSG[REQUEST], cmsg),
-  success: (cid) => action()
+  success: (cid) => action(PERFECT_CMSG[SUCCESS], cid),
+  failure: (error) => action(PERFECT_CMSG[FAILURE], {error}),
 }
