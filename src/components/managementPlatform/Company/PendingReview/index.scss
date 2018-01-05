@@ -1,4 +1,8 @@
 .pending {
+  &-liscense {
+    height: 212px;
+  }
+
   &-main-container {
     display: flex;
     justify-content: space-around;
@@ -37,16 +41,6 @@
 
       p {
         text-align: center;
-      }
-    }
-
-    &-license {
-      flex: auto;
-      max-width: 300px;
-      min-width: 100px;
-
-      img {
-        width: 100%;
       }
     }
   }

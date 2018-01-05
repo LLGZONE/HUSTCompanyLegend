@@ -13,7 +13,7 @@ import {required} from '../../../../utils/validate'
 import FormTextField from './FormTextField'
 import moment from 'moment'
 
-export const renderInputField = ({ input, label, type, meta: { touched, error}}) => (
+export const renderInputField = ({ input, label, type, meta: { touched, error}, custom}) => (
   <Grid item xs={6} lg={4}>
     <TextField
       id={label}
@@ -23,6 +23,7 @@ export const renderInputField = ({ input, label, type, meta: { touched, error}})
       type={type}
       helperText={error}
       style={{width: '100%'}}
+      {...custom}
     />
   </Grid>
 )

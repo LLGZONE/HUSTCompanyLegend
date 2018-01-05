@@ -11,7 +11,7 @@ import TextField from 'material-ui/TextField'
 import '../../../../components/managementPlatform/Company/PerfectMessage/FormField.scss'
 import Grid from 'material-ui/Grid'
 
-const renderInputField = ({ input, label, meta: { touched, error } }) => (
+const renderInputField = ({ input, label, meta: { touched, error }, custom}) => (
   <Grid item xs={10} md={6} lg={4}>
     <TextField
       {...input}
@@ -19,6 +19,7 @@ const renderInputField = ({ input, label, meta: { touched, error } }) => (
       label={label}
       error={touched && error}
       style={{width: '100%'}}
+      {...custom}
     />
   </Grid>
 )
@@ -40,14 +41,22 @@ const FormField = ({ pristine, submitting, reset }) => (
       />
       <Field
         name="contact"
-        label="请输入联系人"
-        hasLabel={false}
+        label="请输入公司法人"
+        component={renderInputField}
+      />
+      <Field
+        name="phone"
+        label="请输入电话号码"
         component={renderInputField}
       />
       <Field
         name="alternativePhone"
         label="请输入备用号码"
-        hasLabel={false}
+        component={renderInputField}
+      />
+      <Field
+        name="site"
+        label="公司网站"
         component={renderInputField}
       />
       <FormSelect
@@ -72,6 +81,28 @@ const FormField = ({ pristine, submitting, reset }) => (
       label="公司简介"
       component={FormTextField}
     />
+    <br/>
+    <Grid container >
+      <Field
+        name="certId"
+        label="公司证书编号"
+        component={renderInputField}
+        custom={{InputLabelProps: {
+          shrink: true,
+        }}}
+      />
+    </Grid>
+    <br/>
+    <Grid>
+      <Field
+        name="groupid"
+        label="组织机构代码"
+        component={renderInputField}
+        custom={{InputLabelProps: {
+            shrink: true,
+          }}}
+      />
+    </Grid>
     <br/>
     <Field
       name="license"

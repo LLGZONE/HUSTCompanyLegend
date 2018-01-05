@@ -5,6 +5,7 @@ import { REQUEST, SUCCESS, FAILURE } from './index'
 export const REGISTER = createRequestTypes('COMPANY_REGISTER')
 export const STD_LIST = createRequestTypes('STUDENT_LIST')
 export const IS_PERFECT_CMSG = 'IS_PERFECT_CMSG'
+export const PERFECT_CMSG = createRequestTypes('PERFECT_CMSG')
 
 export const register = {
   request: ({
@@ -48,4 +49,9 @@ export function isPerfectCMsg() {
   return {
     type: IS_PERFECT_CMSG
   }
+}
+
+export const perfectCMsg = {
+  request: (cmsg) => action(PERFECT_CMSG[REQUEST], cmsg),
+  success: (cid) => action()
 }
