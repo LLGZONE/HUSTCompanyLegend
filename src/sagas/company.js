@@ -9,7 +9,7 @@ function fetchComponyInfo(uid) {
 }
 
 function fetchPerfectCMsg(cmsg) {
-  const url = `${BASE_URL}/ company/submit/`
+  const url = `${BASE_URL}/company/submit/`
   const header = {
     method: 'POST',
     body: JSON.stringify(cmsg),
@@ -21,29 +21,31 @@ function fetchPerfectCMsg(cmsg) {
   return fetchEntity(url, header)
 }
 
-function * perfectCMsg() {
+function * perfectCMsgSaga(cmsg) {
   try {
-    const {response} = yield call(fetchPerfectCMsg)
+    const { response } = yield call(fetchPerfectCMsg, cmsg)
     if (response && response.cid) {
       yield put(perfectCMsg.success(response.cid))
     } else {
       put(perfectCMsg.failure())
     }
   }
-  catch(e) {
+  catch (e) {
     yield put(perfectCMsg.failure('网络故障'))
   }
 }
 
-function * watchSaga() {
+function * watchPerfectCMsg() {
   while (true) {
-    yield take(PERFECT_CMSG['REQUEST'])
-
+    const action = yield take(PERFECT_CMSG['REQUEST'])
+    const cmsg = {...action}
+    delete cmsg.type
+    yield call(perfectCMsgSaga, cmsg)
   }
 }
 
 function * rootSaga() {
-  yield fork(watchSaga)
+  yield fork(watchPerfectCMsg)
 }
 
 export default rootSaga

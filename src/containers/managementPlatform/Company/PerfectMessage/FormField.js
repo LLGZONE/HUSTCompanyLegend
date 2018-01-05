@@ -46,7 +46,7 @@ class FormField extends React.Component {
       environment,
       perfectCMsg,
     } = this.props
-
+    console.log('push')
     perfectCMsg({
       companyName,
       companyPlace,
@@ -68,7 +68,7 @@ class FormField extends React.Component {
   render() {
     const { pristine, submitting, reset } = this.props
     return (
-      <form>
+      <form onSubmit={(e) => this.handleSubmitClick(e)}>
         <Grid spacing={24} container>
           <Field
             name="companyName"
@@ -170,7 +170,6 @@ class FormField extends React.Component {
             重置
           </button>
           <button
-            onSubmit={(e) => this.handleSubmitClick(e)}
             type="submit"
             disabled={pristine || submitting}
           >
@@ -192,20 +191,20 @@ const selector = formValueSelector('perfectMessage')
 const mapStateToProps = (state) => {
 
   return {
-    companyName: selector('companyName'),
-    companyPlace: selector('companyPlace'),
-    contact: selector('contact'),
-    phone: selector('phone'),
-    alternativePhone: selector('alternativePhone'),
-    site: selector('site'),
-    industry: selector('sector'),
-    nature: selector('nature'),
-    size: selector('nature'),
-    intro: selector('intro'),
-    cert_id: selector('certId'),
-    groupid: selector('groupid'),
-    license: selector('license'),
-    environment: selector('environment'),
+    companyName: selector(state, 'companyName'),
+    companyPlace: selector(state, 'companyPlace'),
+    contact: selector(state, 'contact'),
+    phone: selector(state, 'phone'),
+    alternativePhone: selector(state, 'alternativePhone'),
+    site: selector(state, 'site'),
+    industry: selector(state, 'sector'),
+    nature: selector(state, 'nature'),
+    size: selector(state, 'nature'),
+    intro: selector(state, 'intro'),
+    cert_id: selector(state, 'certId'),
+    groupid: selector(state, 'groupid'),
+    license: selector(state, 'license'),
+    environment: selector(state, 'environment'),
   }
 }
 

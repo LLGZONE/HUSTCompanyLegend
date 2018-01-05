@@ -37,12 +37,12 @@ const Root = ({ store, history }) => (
             }
         }
         })}>
-          <React.Fragment>
+          <div>
             <Route exact path={routes.home.path} component={Home} />
             <Route path={routes.exercitation.path} component={Exercitation} />
             <Route path={routes.companyManagement.path} component={CompanyManagement} />
             <DevTools />
-          </React.Fragment>
+          </div>
         </MuiThemeProvider>
       </ConnectedRouter>
     </Provider>
