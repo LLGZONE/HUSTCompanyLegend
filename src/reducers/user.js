@@ -4,18 +4,18 @@ import { FAILURE, REQUEST, SUCCESS } from '../actions'
 const user = (state = {
   isLogin: false,
   username: '',
-  type: 'company',
+  type: '',
   password: '',
   uid: '',
   isFetching: false,
-  error: false,
+  error: '',
   registerMsg: null,
 }, action) => {
   switch (action.type) {
     case LOGOUT[SUCCESS]:
       return {
         ...state,
-        isLogin: false
+        isLogin: false,
       }
     case LOGIN[REQUEST]:
       return {
@@ -24,7 +24,7 @@ const user = (state = {
         password: action.password,
         type: action.loginType,
         isFetching: true,
-        error: false,
+        error: '',
       }
     case LOGIN[SUCCESS]:
       return {
@@ -38,10 +38,10 @@ const user = (state = {
         ...state,
         isFetching: false,
         isLogin: false,
-        type: 'company',
+        type: '',
         uid: '',
         username: '',
-        error: true,
+        error: action.error,
       }
     case REGISTER[REQUEST]:
       return {

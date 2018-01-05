@@ -6,12 +6,14 @@ import { getUserInfo } from '../reducers/selectors'
 import fetchEntity from '../utils/fetchEntity'
 import { isPerfectCMsg } from '../actions/company'
 
+//使用用户id得到用户的个人信息
 function fetchUserInfo(uid) {
   const url = `${BASE_URL}/user/getById/${uid}`
 
   return fetchEntity(url)
 }
 
+//注册
 function fetchRegisterApi(info) {
   const url = `${BASE_URL}/user/register`
   const option = {
@@ -25,6 +27,7 @@ function fetchRegisterApi(info) {
   return fetchEntity(url, option)
 }
 
+//登陆
 function fetchLoginApi(info) {
   const url = `${BASE_URL}/user/login`
   const header = {
@@ -38,6 +41,7 @@ function fetchLoginApi(info) {
   return fetchEntity(url, header)
 }
 
+//退出登陆
 function fetchLogoutApi() {
   const url = `${BASE_URL}/user/logout`
 
@@ -56,24 +60,24 @@ function * fetchLogin(info) {
       localStorage.setItem('type', info.type)
       localStorage.setItem('expire', expireTime.toString())
       localStorage.setItem('last', Date.now().toString())
-      const { cid, sid, stid } = yield call(fetchUserInfo, response.uid)
-      switch (info.identity) {
-        case 0:
+      const { response: {cid, sid, stid} } = yield call(fetchUserInfo, response.uid)
+      switch (info.type) {
+        case 'company':
           if (cid) {
-            localStorage.setItem('cid', cid)
+            localStorage.setItem('cid', cid.toString())
             yield put(isPerfectCMsg())
           }
           break;
-        case 1:
+        case 'school':
           if (sid) {
-            localStorage.setItem('sid', sid)
-            yield put()
+            localStorage.setItem('sid', sid.toString())
+            yield put(()=>{})
           }
           break;
-        case 2:
+        case 'student':
           if (stid) {
-            localStorage.setItem('stid', stid)
-            yield put()
+            localStorage.setItem('stid', stid.toString())
+            yield put(()=>{})
           }
           break;
         default:
@@ -81,11 +85,12 @@ function * fetchLogin(info) {
       }
       yield put(login.success(response.uid))
     } else {
-      yield put(login.failure())
+      yield put(login.failure('用户名或密码错误'))
     }
   }
   catch (e) {
-    yield put(login.failure(e))
+    console.log(e)
+    yield put(login.failure('网络故障'))
   }
 }
 
@@ -122,32 +127,19 @@ function * userLogin() {
   while (true) {
     yield take(LOGIN[REQUEST])
     const {username, password, type} = yield select(getUserInfo)
-    let identity = 0
-    switch (type) {
-      case 'company':
-        identity = 0
-        break
-      case 'school':
-        identity = 1
-        break
-      case 'student':
-        identity = 2
-        break
-      default:
-        break
-    }
-    yield call(fetchLogin, {username, password, identity})
+    yield call(fetchLogin, {username, password, type})
   }
 }
 
 function * userRegister() {
   while(true) {
-    const {email, password, phone, verify} = yield take(REGISTER[REQUEST])
+    const {email, password, phone, verify, type} = yield take(REGISTER[REQUEST])
     const info = {
       password,
       verify,
       email: '',
-      phone: ''
+      phone: '',
+      type,
     }
     if (email) {
       info.email = email

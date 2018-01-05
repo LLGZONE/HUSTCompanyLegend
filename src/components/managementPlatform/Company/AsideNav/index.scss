@@ -48,6 +48,17 @@
           width: 2px;
           height: 0;
         }
+
+        input {
+          background-color: transparent;
+          border: 0;
+          outline: none;
+          cursor: pointer;
+        }
+
+        input:disabled {
+          cursor: not-allowed;
+        }
       }
 
       .link.active-link {

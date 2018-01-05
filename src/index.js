@@ -10,6 +10,7 @@ import rootSaga from './sagas'
 import 'normalize.css'
 
 let uid = localStorage.getItem('uid')
+const cid = localStorage.getItem('cid')
 const expire = localStorage.getItem('expire') || 0
 if (Date.now() > parseInt(localStorage.getItem('last'), 10) + parseInt(expire, 10)) {
   uid = false
@@ -22,6 +23,10 @@ const store = configureStore({
       uid: uid,
       type: localStorage.getItem('type'),
       isLogin: uid && true
+    },
+    company: {
+      cid,
+      isPerfectCMsg: cid && true
     }
   }
 })

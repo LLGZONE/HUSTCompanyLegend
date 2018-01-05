@@ -3,23 +3,28 @@
  */
 import React from 'react'
 import PropTypes from 'prop-types'
-import {Route, Link} from 'react-router-dom'
+import { Route } from 'react-router-dom'
 
 import './index.scss'
 
-const NavLink = ({path, msg}) => (
+const NavLink = ({onClick, msg, disabled, path}) => (
   <Route path={path} children={({match}) => (
     <div className={`${match ? 'active-link' : ''} link normal-font`}>
-      <Link to={path}>
-        {msg}
-      </Link>
+      <input
+        type="button"
+        onClick={onClick}
+        disabled={disabled}
+        value={msg}
+      />
     </div>
   )} />
 )
 
 NavLink.propTypes = {
-  path: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
-  msg: PropTypes.string.isRequired
+  path: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  msg: PropTypes.string.isRequired,
+  disabled: PropTypes.bool,
+  onClick: PropTypes.func,
 }
 
 export default NavLink

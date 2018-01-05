@@ -1,15 +1,17 @@
-import { REGISTER, STD_LIST, IS_PERFECT_MSG } from '../actions/company'
+import { REGISTER, STD_LIST, IS_PERFECT_CMSG } from '../actions/company'
 
 const companyReducer = (state= {
-  isPerfectMsg: false
+  isPerfectCMsg: false
 }, action) => {
   switch (action.type) {
-    case IS_PERFECT_MSG:
+    case IS_PERFECT_CMSG:
       return {
         ...state,
-        isPerfectMsg: true,
+        isPerfectCMsg: true,
       }
     default:
       return state
   }
 }
+
+export default companyReducer

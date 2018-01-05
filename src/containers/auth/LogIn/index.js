@@ -28,6 +28,12 @@ class LogIn extends React.Component {
     this.setState({type})
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.match.type !== this.state.type) {
+      this.setState({type: nextProps.match.type})
+    }
+  }
+
   handleInputChange(e) {
     const target = e.target
     const value = target.value
@@ -38,7 +44,8 @@ class LogIn extends React.Component {
     })
   }
 
-  signUp() {
+  signUp(e) {
+    e.preventDefault()
     const {dispatch} = this.props
     const {account: username, password, type} = this.state
 
@@ -46,7 +53,7 @@ class LogIn extends React.Component {
   }
 
   render() {
-    const { isLogin, isFetching, error } = this.props
+    const { isLogin, isFetching, error, redirect } = this.props
     let type
     if (isLogin) {
       type = this.props.type
@@ -68,20 +75,19 @@ class LogIn extends React.Component {
       default:
         break
     }
-
     return (
       isLogin
-        ? <Redirect to={routes.companyManagement.path} />
+        ? <Redirect to={redirect} />
         : <section className="login">
           <div className="login-container">
             <LogInType type={type}/>
             <FormField
-              onSubmit={() => this.signUp()}
+              onSubmit={(e) => this.signUp(e)}
               onChange={(e) => this.handleInputChange(e)}
               to={to}
               progress={isFetching}
             />
-            {error && <p style={{color: "rgb(119, 0, 0)"}}>账号或者密码错误</p>}
+            {error && <p style={{color: "rgb(119, 0, 0)"}}>{error}</p>}
           </div>
         </section>
     )
@@ -89,11 +95,28 @@ class LogIn extends React.Component {
 }
 
 const mapStateToProps = (state) => {
+  const type = state.reducers.user.type
+  let redirect = '/'
+  switch (type) {
+    case 'company':
+      redirect = routes.companyManagement.path
+      break;
+    case 'school':
+      redirect = '/'
+      break
+    case 'student':
+      redirect = '/'
+      break;
+    default:
+      break;
+  }
+
   return {
     isLogin: isLogin(state),
     isFetching: state.reducers.user.isFetching,
     error: state.reducers.user.error,
-    type: state.reducers.user.type,
+    type,
+    redirect,
   }
 }
 

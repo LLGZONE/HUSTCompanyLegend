@@ -8,7 +8,7 @@ import PropTypes from 'prop-types'
 import './FormField.scss'
 
 const FormField = ({onSubmit, onChange, to, progress=false}) => (
-  <form className="login-form-field">
+  <form onSubmit={onSubmit} className="login-form-field">
     <label className="input-field">
       <span style={{width: '4em'}}>用户名：</span>
       <input type="text" name="account" placeholder="输入账号" onChange={onChange} />
@@ -26,15 +26,15 @@ const FormField = ({onSubmit, onChange, to, progress=false}) => (
     </label>
     <div className="btn-field">
       <input
-        type="button"
+        type="submit"
         disabled={progress}
-        onClick={onSubmit}
         value={progress ? '登陆中...' : '登陆'}
       />
       <Link to={to}>
-        <button>
-          注册
-        </button>
+        <input
+          type="button"
+          value="注册"
+        />
       </Link>
     </div>
   </form>

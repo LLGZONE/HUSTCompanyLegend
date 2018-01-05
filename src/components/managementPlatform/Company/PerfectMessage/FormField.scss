@@ -1,40 +1,4 @@
 .perfect-message {
-  &-form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 20px 20%;
-    justify-content: space-between;
-    align-items: stretch;
-
-    > div {
-      height: 45px;
-      border: 1px solid #BBBBBB;
-      padding: 1px;
-
-      input {
-        border: 0;
-        width: calc(100% - 20px);
-        height: 100%;
-        outline: none;
-      }
-    }
-
-    > select {
-      height: 45px;
-      border: 1px solid #BBBBBB;
-      border-radius: 5px;
-    }
-
-    @media screen and (max-width: 600px) {
-      grid-gap: 10px 10%;
-
-      > select,
-      > div {
-        height: 30px;
-      }
-    }
-  }
-
   &-drag {
     vertical-align: middle;
   }

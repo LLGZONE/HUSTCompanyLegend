@@ -4,9 +4,9 @@
 import React from 'react'
 import DatePicker from 'react-datepicker'
 import moment from 'moment'
+import Grid from 'material-ui/Grid'
 
 import 'react-datepicker/dist/react-datepicker.min.css'
-import './FormDatePicker.scss'
 
 class FormDatePicker extends React.Component {
   constructor(props) {
@@ -31,7 +31,7 @@ class FormDatePicker extends React.Component {
     const {label} = this.props
 
     return (
-      <div className="date-picker-container">
+      <Grid item xs={6} lg={4} style={{display: 'flex', alignItems: 'flex-end'}}>
         {label} :
         <DatePicker
           selected={this.state.start}
@@ -41,7 +41,7 @@ class FormDatePicker extends React.Component {
           showYearDropdown
           className="date-picker"
         />
-      </div>
+      </Grid>
     )
   }
 }

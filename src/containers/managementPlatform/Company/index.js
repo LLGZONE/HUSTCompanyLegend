@@ -71,61 +71,70 @@ const makeData1 = (len) => {
   })
 }
 
-const CompanyManagement = ({login}) => {
-  const companyManagement = routes.companyManagement
+class CompanyManagement extends React.Component {
+  render () {
+    const {login, isPerfectCMsg} = this.props
+    const companyManagement = routes.companyManagement
 
-  return (
-    <div>
-      <Header/>
-      <main className="management-company-main-container">
-        <Route path={companyManagement.signUp.path} component={SignUp}  />
-        <Route path={companyManagement.signUp.path} exact component={() => <Redirect to={`${companyManagement.signUp.path}/phone`} />}  />
-        {login
-          ? (
-            <React.Fragment>
-              <Route path={`${companyManagement.path}/exercitation`} component={AsideNav}/>
-              <Route path={companyManagement.pending.path} render={() => <PendingReview
-                logo={_360}
-                companyName="360集团有限公司"
-                linkman="张某"
-                place="武汉东湖开发区xxx"
-                size={100}
-                phone="1999999999"
-                website="www.360.com"
-                license={license}
-                workImgs={[env1, env2, env3]}
-                simpleIntro="网络安全关键在人才，而武汉的最大机遇就在人才。昨日，“人才”二字成为国家网络安全周开幕首日的最火关键词。上午，武汉市政府、奇虎360公司与武汉大学签署三方战略合作协议"
-              />}/>
-              <Route path={companyManagement.postsPublish.path} component={PostsPublish}/>
-              <Route path={companyManagement.postsManage.path} render={() => <PostsManage data={makeData1(100)}/>}/>
-              <Route path={companyManagement.msgPerfection.path} component={PerfectMessage}/>
-              <Route path={companyManagement.traineeFilter.path} render={() => <TraineeFilter data={makeData(100)}/>}/>
-              <Route path={`${companyManagement.path}/exercitation`}
-                     exact
-                     render={() => <Redirect to={companyManagement.postsManage.path}/>}
-              />
-              <Route path={`${companyManagement.path}`}
-                     exact
-                     render={() => <Redirect to={companyManagement.postsManage.path}/>}
-              />
-            </React.Fragment>
-          )
-          : <Route path={companyManagement.path} component={({location})=>
-            location.pathname.indexOf(companyManagement.signUp.path) < 0
-            &&
-            <Redirect to={`${companyManagement.signUp.path}/phone`}/>}/>
-        }
-      </main>
-      <Footer hotClicks={hotClicks} latestArticle={articles}/>
-    </div>
-  )
+    return (
+      <div>
+        <Header/>
+        <main className="management-company-main-container">
+          <Route path={companyManagement.signUp.path} component={SignUp}  />
+          <Route path={companyManagement.signUp.path} exact component={() => <Redirect to={`${companyManagement.signUp.path}/phone`} />}  />
+          {login
+            ? (
+              <React.Fragment>
+                <Route path={`${companyManagement.path}/exercitation`} component={AsideNav}/>
+                <Route path={companyManagement.pending.path} render={() => <PendingReview
+                  logo={_360}
+                  companyName="360集团有限公司"
+                  linkman="张某"
+                  place="武汉东湖开发区xxx"
+                  size={100}
+                  phone="1999999999"
+                  website="www.360.com"
+                  license={license}
+                  workImgs={[env1, env2, env3]}
+                  simpleIntro="网络安全关键在人才，而武汉的最大机遇就在人才。昨日，“人才”二字成为国家网络安全周开幕首日的最火关键词。上午，武汉市政府、奇虎360公司与武汉大学签署三方战略合作协议"
+                />}/>
+                <Route path={companyManagement.postsPublish.path} component={PostsPublish}/>
+                <Route path={companyManagement.postsManage.path} render={() => <PostsManage data={makeData1(100)}/>}/>
+                <Route path={companyManagement.msgPerfection.path} component={PerfectMessage}/>
+                <Route path={companyManagement.traineeFilter.path} render={() => <TraineeFilter data={makeData(100)}/>}/>
+                <Route path={`${companyManagement.path}/exercitation`}
+                       exact
+                       render={() => <Redirect to={companyManagement.postsManage.path}/>}
+                />
+                <Route path={`${companyManagement.path}`}
+                       exact
+                       render={() => {
+                         if (isPerfectCMsg) {
+                           return <Redirect to={companyManagement.postsManage.path}/>
+                         }
+                         return <Redirect to={companyManagement.msgPerfection.path} />
+                       }}
+                />
+              </React.Fragment>
+            )
+            : <Route path={companyManagement.path} component={({location})=>
+              location.pathname.indexOf(companyManagement.signUp.path) < 0
+              &&
+              <Redirect to={`${companyManagement.signUp.path}/phone`}/>}/>
+          }
+        </main>
+        <Footer hotClicks={hotClicks} latestArticle={articles}/>
+      </div>
+    )
+  }
 }
-
 const mapStateToProps = state => {
   const login = isLogin(state)
+  const {isPerfectCMsg} = state.reducers.company
 
   return {
     login,
+    isPerfectCMsg,
   }
 }
 

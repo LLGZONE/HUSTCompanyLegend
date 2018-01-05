@@ -3,6 +3,8 @@
  */
 import React from 'react'
 import {Field, reduxForm} from 'redux-form'
+import TextField from 'material-ui/TextField'
+import Grid from 'material-ui/Grid'
 
 import OtherDeal from './OtherDeal'
 import FormDatePicker from  './FormDatePicker'
@@ -11,19 +13,23 @@ import {required} from '../../../../utils/validate'
 import FormTextField from './FormTextField'
 import moment from 'moment'
 
-export const renderInputField = ({ input, label, type, meta: { touched, error, warning }, hasLabel=true}) => (
-  <div className={hasLabel ? 'posts-publish-gap' : ''} style={hasLabel ? {display: 'flex', alignItems: 'center'} : {}}>
-    {hasLabel ? <label>{label} :</label> : null}
-    <div>
-      <input {...input} placeholder={label} type={type} style={{padding: '0 0 0 10px'}}/>
-      {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
-    </div>
-  </div>
+export const renderInputField = ({ input, label, type, meta: { touched, error}}) => (
+  <Grid item xs={6} lg={4}>
+    <TextField
+      id={label}
+      error={error && touched}
+      {...input}
+      label={label}
+      type={type}
+      helperText={error}
+      style={{width: '100%'}}
+    />
+  </Grid>
 )
 
 const PublishForm = ({companyName}) => (
   <form>
-    <div className="posts-publish-two-col">
+    <Grid container>
       <Field
         name="companyName"
         label="单位名称"
@@ -63,25 +69,29 @@ const PublishForm = ({companyName}) => (
       <FormSelect
         name="room"
         label="食宿条件"
-        datas={["包住宿", "包三餐", "包食宿+早餐", "包食宿+中餐"]}
+        datas={["包食宿", "包三餐", "包食宿+早餐", "包食宿+中餐"]}
       />
       <Field
         name="validDate"
         label="报名有效期"
         component={FormDatePicker}
       />
-    </div>
+    </Grid>
+    <br/>
     <OtherDeal/>
+    <br/>
     <Field
       name="condition"
       label="岗位条件"
       component={FormTextField}
     />
+    <br/>
     <Field
       name="duty"
       label="岗位职责"
       component={FormTextField}
     />
+    <br/>
     <div className="posts-publish-btn-container">
       <button className="posts-publish-btn">
         提交

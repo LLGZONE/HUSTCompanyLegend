@@ -2,22 +2,10 @@
   &-container {
     padding: 0 40px;
     font-size: 1em;
-
-    input {
-      box-sizing: border-box;
-      width: 100%;
-      font-size: 1em;
-    }
   }
 
   &-gap {
     margin-bottom: 10px;
-  }
-
-  &-two-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 15px;
   }
 
   &-btn-container {

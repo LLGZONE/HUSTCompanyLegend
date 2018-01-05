@@ -4,18 +4,27 @@
 import React from 'react'
 import {Field} from 'redux-form'
 import PropTypes from 'prop-types'
+import TextField from 'material-ui/TextField'
+import Grid from 'material-ui/Grid'
+import MenuItem from 'material-ui/Menu/MenuItem'
 
 const FormSelect = ({name, label, datas}) => (
-  <div style={{display: 'flex'}} className="posts-publish-gap">
-    <label>{label} :</label>
-    <div style={{marginLeft: '10px', flex: 'auto', maxWidth: '257px'}}>
-      <Field name={name} component="select" style={{width: '100%', height: '100%'}}>
-        {datas.map((data) => (
-          <option key={data} value={data}>{data}</option>
-        ))}
-      </Field>
-    </div>
-  </div>
+    <Grid item xs={6} lg={4}>
+      <Field name={name} label={label} component={({input, label}) =>
+        <TextField
+          select
+          id={label}
+          label={label}
+          value={input.value}
+          onChange={(e)=>input.onChange(e.target.value)}
+          style={{width: '100%'}}
+        >
+          {datas.map((data) => (
+            <MenuItem key={data} value={data}>{data}</MenuItem>
+          ))}
+        </TextField>}
+      />
+    </Grid>
 )
 
 FormSelect.propTypes = {
