@@ -6,6 +6,7 @@ export const REGISTER = createRequestTypes('COMPANY_REGISTER')
 export const STD_LIST = createRequestTypes('STUDENT_LIST')
 export const IS_PERFECT_CMSG = 'IS_PERFECT_CMSG'
 export const PERFECT_CMSG = createRequestTypes('PERFECT_CMSG')
+export const PUBLISH = createRequestTypes('EXERCITATION_PUBLISH')
 
 export const register = {
   request: ({
@@ -55,4 +56,10 @@ export const perfectCMsg = {
   request: (cmsg) => action(PERFECT_CMSG[REQUEST], cmsg),
   success: (cid) => action(PERFECT_CMSG[SUCCESS], cid),
   failure: (error) => action(PERFECT_CMSG[FAILURE], {error}),
+}
+
+export const publish = {
+  request: (info) => action(PUBLISH[REQUEST], {info}),
+  success: () => action(PUBLISH[SUCCESS]),
+  failure: error => action(PUBLISH[FAILURE], error),
 }
