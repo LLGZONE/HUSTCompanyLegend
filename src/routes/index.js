@@ -54,6 +54,16 @@ export const COMPANY_MANAGEMENT_PENDING = `${COMPANY_MANAGEMENT_EXERCITATION}/pe
  *
  */
 export const SCHOOL_MANAGEMENT = '/management/school'
+export const SCHOOL_MANAGEMENT_MSG_PERFECTION = `${SCHOOL_MANAGEMENT}/user/message/perfection`
+export const SCHOOL_MANAGEMENT_POSTS_REVIEW = `${SCHOOL_MANAGEMENT}/posts/review`
+export const SCHOOL_MANAGEMENT_BASE_REVIEW = `${SCHOOL_MANAGEMENT}/base/review`
+export const SCHOOL_MANAGEMENT_STUDENT_MANAGE = `${SCHOOL_MANAGEMENT}/student/manage`
+export const SCHOOL_MANAGEMENT_POSTS_RECOMMENDATION = `${SCHOOL_MANAGEMENT}/posts/recommendation`
+export const SCHOOL_MANAGEMENT_POSTS_WAITING = `${SCHOOL_MANAGEMENT}/posts/waiting`
+export const SCHOOL_MANAGEMENT_POSTS_RATE = `${SCHOOL_MANAGEMENT}/posts/rate`
+
+export const STUDENT_MANAGEMENT = `/management/student`
+export const STUDENT_MANAGEMENT_MSG_PERFECTION = `${STUDENT_MANAGEMENT}/user/message/perfection`
 
 const routes = {
   home: {
@@ -118,6 +128,36 @@ const routes = {
     pending: {
       path: COMPANY_MANAGEMENT_PENDING,
     },
+  },
+  schoolManagement: {
+    path: SCHOOL_MANAGEMENT,
+    msgPerfection: {
+      path: SCHOOL_MANAGEMENT_MSG_PERFECTION,
+    },
+    postsReview: {
+      path: SCHOOL_MANAGEMENT_POSTS_REVIEW,
+    },
+    baseReview: {
+      path: SCHOOL_MANAGEMENT_BASE_REVIEW,
+    },
+    studentManage: {
+      path: SCHOOL_MANAGEMENT_STUDENT_MANAGE,
+    },
+    postsRecommend: {
+      path: SCHOOL_MANAGEMENT_POSTS_RECOMMENDATION,
+    },
+    postsWaiting: {
+      path: SCHOOL_MANAGEMENT_POSTS_WAITING,
+    },
+    postsRate: {
+      path: SCHOOL_MANAGEMENT_POSTS_RATE
+    },
+  },
+  studentManagement: {
+    path: STUDENT_MANAGEMENT,
+    msgPerfection: {
+      path: STUDENT_MANAGEMENT_MSG_PERFECTION,
+    }
   },
 }
 
