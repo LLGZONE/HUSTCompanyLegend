@@ -17,14 +17,14 @@ class FormDatePicker extends React.Component {
   }
 
   componentWillMount() {
-    this.props.input.onChange(this.state.start)
+    this.props.input.onChange(this.state.start.format('YYYY-DD-MM'))
   }
 
   handleChange(date) {
     const {input: { onChange }} = this.props
 
     this.setState({start: date})
-    onChange(date)
+    onChange(date.format('YYYY-MM-DD'))
   }
 
   render() {

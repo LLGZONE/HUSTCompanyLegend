@@ -7,7 +7,7 @@ import TextField from 'material-ui/TextField'
 import Grid from 'material-ui/Grid'
 
 import OtherDeal from './OtherDeal'
-import FormDatePicker from  './FormDatePicker'
+import FormDatePicker from '../../../commons/form/FormDatePicker'
 import FormSelect from './FormSelect'
 import {required} from '../../../../utils/validate'
 import FormTextField from './FormTextField'
@@ -111,7 +111,7 @@ export default reduxForm({
     beOfficial: '无转正',
     room: '包食宿',
     duration: '一周起',
-    invalidDate: moment()
+    validDate: moment().format('YYYY-MM-DD')
   },
   destroyOnUnmount: false,
 })(PublishForm)

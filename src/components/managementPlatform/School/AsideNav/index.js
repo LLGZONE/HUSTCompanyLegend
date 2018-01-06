@@ -8,47 +8,61 @@ import routes from '../../../../routes'
 
 import './index.scss'
 
-const postsUrl = '/management/company/exercitation/posts'
-const traineeUrl = '/management/company/exercitation/trainee'
-const userUrl = '/management/company/exercitation/user'
-
 const AsideNav = ({disabled, push}) => {
-  const { companyManagement } = routes
+  const { schoolManagement: scm } = routes
+  const review = `${scm}/review`
+  const posts = `${scm}/posts`
+  const user = `${scm}/user`
+  const exercitation = `${scm}/exercitation`
+
   return (
     <section className="management-company-aside">
       <nav className="management-company-aside-nav">
-        <AsideNavItem title="岗位管理" to={postsUrl}>
+        <AsideNavItem to={review} title={'审核'}>
           <NavLink
-            msg="发布岗位"
-            path={companyManagement.postsPublish.path}
-            disabled={disabled}
-            onClick={()=>push(companyManagement.postsPublish.path)}
+            msg={'基地审核'}
+            path={scm.baseReview}
+            onClick={()=>push(scm.baseReview)}
           />
           <NavLink
-            msg="岗位管理"
-            path={companyManagement.postsManage.path}
-            disabled={disabled}
-            onClick={()=>push(companyManagement.postsManage.path)}
+            msg={'岗位审核'}
+            path={scm.postsReview}
+            onClick={()=>push(scm.postsReview)}
           />
         </AsideNavItem>
-        <AsideNavItem title="实习生管理" to={traineeUrl}>
+        <AsideNavItem to={posts} title={'岗位管理'}>
           <NavLink
-            msg="实习生筛选"
-            path={companyManagement.traineeFilter.path}
-            disabled={disabled}
-            onClick={()=>push(companyManagement.traineeFilter.path)}
+            msg={'候选岗位'}
+            path={scm.postsWaiting}
+            onClick={()=>push(scm.postsWaiting)}
+          />
+          <NavLink
+            msg={'岗位评价'}
+            path={scm.postsRate}
+            onClick={()=>push(scm.postsRate)}
           />
         </AsideNavItem>
-        <AsideNavItem to={userUrl} title="用户中心">
+        <AsideNavItem to={exercitation} title={'实习管理'}>
           <NavLink
-            msg="完善信息"
-            path={companyManagement.msgPerfection.path}
-            onClick={()=>push(companyManagement.msgPerfection.path)}
+            msg={'实习推荐'}
+            path={scm.postsRecommend}
+            onClick={()=>push(scm.postsRecommend)}
           />
           <NavLink
-            msg="查看审核"
-            path={companyManagement.pending.path}
-            onClick={()=>push(companyManagement.pending.path)}
+            msg={'学生管理'}
+            path={scm.studentManage}
+            onClick={()=>push(scm.studentManage)}
+          />
+        </AsideNavItem>
+        <AsideNavItem to={user} title={'用户中心'}>
+          <NavLink
+            msg={'完善资料'}
+            path={scm.msgPerfection}
+            onClick={()=>push(scm.msgPerfection)}
+          />
+          <NavLink
+            msg={'查看审核'}
+            path={scm}
           />
         </AsideNavItem>
       </nav>

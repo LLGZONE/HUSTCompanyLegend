@@ -6,25 +6,13 @@ import { Field, reduxForm, formValueSelector } from 'redux-form'
 import FormSelect from '../../../../components/managementPlatform/Company/PerfectMessage/FormSelect'
 import FormTextField from '../../../../components/managementPlatform/Company/PostsPublish/FormTextField'
 import FormFile from '../../../../components/managementPlatform/Company/PerfectMessage/FormFile'
-import TextField from 'material-ui/TextField'
 import '../../../../components/managementPlatform/Company/PerfectMessage/FormField.scss'
 import Grid from 'material-ui/Grid'
+
 import { perfectCMsg } from '../../../../actions/company'
+import renderInputField from '../../../../components/commons/form/renderInputField'
 
 import { connect } from 'react-redux'
-
-const renderInputField = ({ input, label, meta: { touched, error }, custom }) => (
-  <Grid item xs={10} md={6} lg={4}>
-    <TextField
-      {...input}
-      id={label}
-      label={label}
-      error={touched && error}
-      style={{ width: '100%' }}
-      {...custom}
-    />
-  </Grid>
-)
 
 class FormField extends React.Component {
   handleSubmitClick(e) {
@@ -73,13 +61,11 @@ class FormField extends React.Component {
           <Field
             name="companyName"
             label="请输入企业信息"
-            hasLabel={false}
             component={renderInputField}
           />
           <Field
             name="companyPlace"
             label="请输入企业地址"
-            hasLabel={false}
             component={renderInputField}
           />
           <Field

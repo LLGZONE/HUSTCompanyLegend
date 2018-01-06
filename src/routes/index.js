@@ -54,16 +54,18 @@ export const COMPANY_MANAGEMENT_PENDING = `${COMPANY_MANAGEMENT_EXERCITATION}/pe
  *
  */
 export const SCHOOL_MANAGEMENT = '/management/school'
-export const SCHOOL_MANAGEMENT_MSG_PERFECTION = `${SCHOOL_MANAGEMENT}/user/message/perfection`
-export const SCHOOL_MANAGEMENT_POSTS_REVIEW = `${SCHOOL_MANAGEMENT}/posts/review`
-export const SCHOOL_MANAGEMENT_BASE_REVIEW = `${SCHOOL_MANAGEMENT}/base/review`
-export const SCHOOL_MANAGEMENT_STUDENT_MANAGE = `${SCHOOL_MANAGEMENT}/student/manage`
+export const SCHOOL_MANAGEMENT_POSTS_REVIEW = `${SCHOOL_MANAGEMENT}/review/posts`
+export const SCHOOL_MANAGEMENT_BASE_REVIEW = `${SCHOOL_MANAGEMENT}/review/base`
 export const SCHOOL_MANAGEMENT_POSTS_RECOMMENDATION = `${SCHOOL_MANAGEMENT}/posts/recommendation`
 export const SCHOOL_MANAGEMENT_POSTS_WAITING = `${SCHOOL_MANAGEMENT}/posts/waiting`
-export const SCHOOL_MANAGEMENT_POSTS_RATE = `${SCHOOL_MANAGEMENT}/posts/rate`
+export const SCHOOL_MANAGEMENT_POSTS_RATE = `${SCHOOL_MANAGEMENT}/exercitation/rate`
+export const SCHOOL_MANAGEMENT_STUDENT_MANAGE = `${SCHOOL_MANAGEMENT}/exercitation/student/manage`
+export const SCHOOL_MANAGEMENT_PENDING = `${SCHOOL_MANAGEMENT}/user/pending`
+export const SCHOOL_MANAGEMENT_MSG_PERFECTION = `${SCHOOL_MANAGEMENT}/user/message/perfection`
 
 export const STUDENT_MANAGEMENT = `/management/student`
 export const STUDENT_MANAGEMENT_MSG_PERFECTION = `${STUDENT_MANAGEMENT}/user/message/perfection`
+export const STUDENT_MANAGEMENT_PENDING = `${STUDENT_MANAGEMENT}/user/pending`
 
 const routes = {
   home: {
@@ -152,12 +154,18 @@ const routes = {
     postsRate: {
       path: SCHOOL_MANAGEMENT_POSTS_RATE
     },
+    pending: {
+      path: SCHOOL_MANAGEMENT_PENDING
+    },
   },
   studentManagement: {
     path: STUDENT_MANAGEMENT,
     msgPerfection: {
       path: STUDENT_MANAGEMENT_MSG_PERFECTION,
-    }
+    },
+    pending: {
+      path: STUDENT_MANAGEMENT_PENDING,
+    },
   },
 }
 

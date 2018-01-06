@@ -6,6 +6,7 @@ import {Link} from 'react-router-dom'
 
 import '../../../commons/ExercitationHeader/index.css'
 import NavBarItem from '../../../commons/ExercitationHeader/NavBarItem'
+import LogOut from '../../../../containers/auth/Logout'
 
 import 'font-awesome/css/font-awesome.min.css'
 import './index.scss'
@@ -45,12 +46,7 @@ const Header = () => (
         label="会员中心"
       />
     </nav>
-    <div className="commons-exercitation-icon">
-      <Link to="/">
-        <i className="fa fa-mobile">
-        </i>
-      </Link>
-    </div>
+    <LogOut/>
     <div className="commons-exercitation-icon">
       <Link to="/exercitation">
         <i className="fa fa-home">
