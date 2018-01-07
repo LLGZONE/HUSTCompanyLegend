@@ -8,16 +8,19 @@ import './PostsDynamic.scss'
 
 const PostsDynamic = ({concern=0, reader=0, handleTime}) => (
   <div className="exercitationPosts-posts-dynamic">
+    {/*
     <p>关注：{`${concern}人`}</p>
     <p>阅读： {`${reader}人`}</p>
     <p>HR处理：{`${handleTime}`}</p>
+    */}
+    <p>查看详情</p>
   </div>
 )
 
 PostsDynamic.propTypes = {
   concern: PropTypes.number,
   reader: PropTypes.number,
-  handleTime: PropTypes.string.isRequired
+  handleTime: PropTypes.string
 }
 
 export default PostsDynamic

@@ -5,6 +5,9 @@ import { query, POSTS_QUERY } from '../actions/exercitation'
 import fetchEntity from '../utils/fetchEntity'
 import { getPostsQuery } from '../reducers/selectors'
 import { pagination } from '../actions/pagination'
+import {fetchList} from './pagination'
+
+import {delay} from 'redux-saga'
 
 function fetchFilteredPostsApi(info) {
   const url = `${BASE_URL}/query`
@@ -38,12 +41,26 @@ function * fetchFilteredPosts(queryString, filter) {
   }
 }
 
+function* filterS(queryString, filter) {
+  const list = yield select(state=> {
+    const posts = state.reducers.pagination.intership
+    return posts && posts.page[1]
+  })
+  const result = list.filter(item => {
+    return item.isname.includes(queryString)
+  })
+  yield delay(1500)
+  yield put(query.success(result))
+  yield put(pagination.success('intership', 1, result, list.length))
+}
+
 function * watchFilteredPosts() {
   while (true) {
     yield take(POSTS_QUERY[REQUEST])
-    yield put(pagination.reset('post'))
+    yield put(pagination.reset('intership'))
+    yield call(fetchList, 'intership', 1)
     const {queryString, filter} = yield select(getPostsQuery)
-    yield call(fetchFilteredPosts, queryString, filter)
+    yield call(filterS, queryString, filter)
   }
 }
 

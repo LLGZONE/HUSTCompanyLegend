@@ -2,22 +2,24 @@
  * Created by LLGZONE on 2017/11/8.
  */
 import React from 'react'
+import { connect } from 'react-redux'
+import { push } from 'react-router-redux'
 import PropTypes from 'prop-types'
-import {Link, Route} from 'react-router-dom'
+import { Route } from 'react-router-dom'
 
 import './NavbarItem.scss'
 
-const NavBarItem = ({to, label, exact, ...rest}) => (
-  <Route path={to} exact={exact} children={({match}) => {
+const NavBarItem = ({ to, label, exact, disabled, push }) => (
+  <Route path={to} exact={exact} children={({ match }) => {
 
     return (
       <div className={`navbar-item ${match ? 'nav-active' : ''}`}>
-        <Link to={to}>
+        <a style={{ cursor: disabled ? 'not-allowed' : 'pointer' }} onClick={() => !disabled && push(to)}>
           {label}
-        </Link>
+        </a>
       </div>
     )
-  }} />
+  }}/>
 )
 
 NavBarItem.propTypes = {
@@ -26,4 +28,4 @@ NavBarItem.propTypes = {
   exact: PropTypes.bool,
 }
 
-export default NavBarItem
+export default connect(null, { push }, null, { pure: false })(NavBarItem)

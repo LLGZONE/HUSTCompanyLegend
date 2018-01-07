@@ -58,12 +58,14 @@ class FormField extends React.Component {
             label="请输入组织代码"
             component={renderInputField}
           />
+          <Grid item xs={10} lg={12}>
+            <Field
+              name="intro"
+              label="学校简介"
+              component={FormTextField}
+            />
+          </Grid>
         </Grid>
-        <Field
-          name="intro"
-          label="学校简介"
-          component={FormTextField}
-        />
         <div className="perfect-message-form-btn">
           <button type="button" disabled={pristine || submitting} onClick={reset}>
             重置

@@ -18,7 +18,7 @@ class LogoutBtn extends React.Component {
 
   render() {
     return (
-      <div onClick={() => this.handleClick()} className="commons-exercitation-icon">
+      <div title={"退出登陆"} onClick={() => this.handleClick()} className="commons-exercitation-icon">
         <i className="fa fa-sign-out" aria-hidden="true">
         </i>
       </div>

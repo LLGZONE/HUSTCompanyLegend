@@ -11,6 +11,7 @@ import Home from './Home'
 import Exercitation from './Exercitation/index'
 import CompanyManagement from './managementPlatform/Company'
 import StudentManagement from './managementPlatform/Student'
+import SchoolManagement from './managementPlatform/School'
 import routes from '../routes'
 
 const Root = ({ store, history }) => (
@@ -43,6 +44,7 @@ const Root = ({ store, history }) => (
             <Route path={routes.exercitation.path} component={Exercitation} />
             <Route path={routes.companyManagement.path} component={CompanyManagement} />
             <Route path={routes.studentManagement.path} component={StudentManagement} />
+            <Route path={routes.schoolManagement.path} component={SchoolManagement} />
             <DevTools />
           </div>
         </MuiThemeProvider>

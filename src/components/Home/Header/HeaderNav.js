@@ -25,19 +25,13 @@ const HeaderNav = () => (
           <Link to="/">首页</Link>
         </li>
         <li>
-          <Link to="/league/overview">联盟概况</Link>
+          联盟概况
         </li>
         <li>
-          <Link to="/league/service">联盟服务</Link>
+          联盟服务
         </li>
         <li>
           <Link to="/exercitation">实习平台</Link>
-        </li>
-        <li>
-          <Link to="/member/dynamics">会员动态</Link>
-        </li>
-        <li>
-          <Link to="/member/center">会员中心</Link>
         </li>
         <li>
           <Link to="/contact">联系我们</Link>

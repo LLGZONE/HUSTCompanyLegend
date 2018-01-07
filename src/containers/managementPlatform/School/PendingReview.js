@@ -45,6 +45,8 @@ const PendingReview = ({
         </Card>
       </Grid>
     </Grid>
+    <br/>
+    <br/>
     <div className="pending-intro">
       {intro}
     </div>

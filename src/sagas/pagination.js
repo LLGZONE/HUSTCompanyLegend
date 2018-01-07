@@ -12,11 +12,12 @@ function fetchListApi(type, page) {
 }
 
 //work saga
-function * fetchList(type, page) {
+export function * fetchList(type, page) {
   try {
     const {response} = yield call(fetchListApi, type, page)
+    console.log(response)
     if (response) {
-      yield put(pagination.success(type, page, response.list))
+      yield put(pagination.success(type, page, response, response.length))
     } else {
       yield put(pagination.failure(type, {msg: 'internet'}))
     }
@@ -30,7 +31,8 @@ function * fetchList(type, page) {
 function * list() {
   while (true) {
     const action = yield take(PAGINATION[REQUEST])
-    const { page, pageType: type } = action
+    const { pageType: type } = action
+    const page = 1
     const list = yield select(getPageList(type, page))
     if (list.length === 0) {
       yield call(fetchList, type, page)

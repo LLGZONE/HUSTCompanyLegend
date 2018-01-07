@@ -33,22 +33,21 @@ const ExercitationHeader = () => {
           <NavBarItem
             to="/exercitation/base"
             label="实习基地"
+            disabled
           />
           <NavBarItem
-            to="/exercitation/posts"
+            to="/exercitation/posts?page=1"
             label="实习岗位"
           />
           <NavBarItem
             to="/exercitation/institute"
             label="实习学院"
+            disabled
           />
           <NavBarItem
             to="/exercitation/model"
             label="实习标兵"
-          />
-          <NavBarItem
-            to="/member/center"
-            label="会员中心"
+            disabled
           />
         </nav>
         <Logout/>

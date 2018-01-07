@@ -23,6 +23,7 @@ const AsideNav = ({disabled, push}) => {
             msg={'基地审核'}
             path={scm.baseReview.path}
             onClick={()=>push(scm.baseReview.path)}
+            disabled
           />
           <NavLink
             msg={'岗位审核'}
@@ -35,6 +36,7 @@ const AsideNav = ({disabled, push}) => {
             msg={'候选岗位'}
             path={scm.postsWaiting.path}
             onClick={()=>push(scm.postsWaiting.path)}
+            disabled
           />
           <NavLink
             msg={'岗位评价'}
@@ -47,11 +49,13 @@ const AsideNav = ({disabled, push}) => {
             msg={'实习推荐'}
             path={scm.postsRecommend.path}
             onClick={()=>push(scm.postsRecommend.path)}
+            disabled
           />
           <NavLink
             msg={'实习日志'}
             path={scm.exercitationRecord.path}
             onClick={()=>push(scm.exercitationRecord.path)}
+            disabled
           />
           <NavLink
             msg={'学生管理'}
@@ -68,6 +72,7 @@ const AsideNav = ({disabled, push}) => {
           <NavLink
             msg={'查看审核'}
             path={scm.pending.path}
+            onClick={()=>push(scm.pending.path)}
           />
         </AsideNavItem>
       </nav>
