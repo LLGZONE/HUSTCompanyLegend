@@ -29,8 +29,10 @@ class LogIn extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.match.type !== this.state.type) {
-      this.setState({type: nextProps.match.type})
+    console.log(nextProps.match.params.type)
+    if (nextProps.match.params.type !== this.state.type) {
+      this.setState({type: nextProps.match.params.type})
+      console.log('aaa')
     }
   }
 
@@ -48,7 +50,7 @@ class LogIn extends React.Component {
     e.preventDefault()
     const {dispatch} = this.props
     const {account: username, password, type} = this.state
-
+    console.log(type)
     dispatch(login.request(username, password, type))
   }
 
@@ -67,10 +69,10 @@ class LogIn extends React.Component {
         to = routes.companyManagement.signUp.path
         break
       case 'school':
-        to = '/management/school/signup'
+        to = routes.schoolManagement.signUp.path
         break
-      case 'person':
-        to = '/management/person/signup'
+      case 'student':
+        to = routes.studentManagement.signUp.path
         break
       default:
         break
@@ -95,17 +97,17 @@ class LogIn extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  const type = state.reducers.user.type
+  const type = state.reducers.user.userType
   let redirect = '/'
   switch (type) {
     case 'company':
       redirect = routes.companyManagement.path
       break;
     case 'school':
-      redirect = '/'
+      redirect = routes.schoolManagement.path
       break
     case 'student':
-      redirect = '/'
+      redirect = routes.studentManagement.path
       break;
     default:
       break;

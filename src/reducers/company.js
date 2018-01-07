@@ -1,4 +1,4 @@
-import { REGISTER, STD_LIST, IS_PERFECT_CMSG } from '../actions/company'
+import { IS_PERFECT_CMSG } from '../actions/company'
 
 const companyReducer = (state= {
   isPerfectCMsg: false

@@ -6,7 +6,7 @@ import AsideNavItem from '../../Company/AsideNav/AsideNavItem'
 import NavLink from '../../Company/AsideNav/NavLink'
 import routes from '../../../../routes'
 
-import './index.scss'
+import '../../Company/AsideNav/index.scss'
 
 const AsideNav = ({disabled, push}) => {
   const { studentManagement: stm } = routes
@@ -18,8 +18,13 @@ const AsideNav = ({disabled, push}) => {
         <AsideNavItem to={user} title={'用户中心'}>
           <NavLink
             msg={'完善资料'}
-            path={stm.msgPerfection}
-            onClick={()=>push(stm.msgPerfection)}
+            path={stm.msgPerfection.path}
+            onClick={()=>push(stm.msgPerfection.path)}
+          />
+          <NavLink
+            msg={'审核状态'}
+            path={stm.pending.path}
+            onClick={()=>push(stm.pending.path)}
           />
         </AsideNavItem>
       </nav>

@@ -21,7 +21,7 @@ const store = configureStore({
     home,
     user: {
       uid: uid,
-      type: localStorage.getItem('type'),
+      userType: localStorage.getItem('type'),
       isLogin: uid && true
     },
     company: {

@@ -31,7 +31,7 @@ class FormDatePicker extends React.Component {
     const {label} = this.props
 
     return (
-      <Grid item xs={6} lg={4} style={{display: 'flex', alignItems: 'flex-end'}}>
+      <Grid item xs={10} lg={4} style={{display: 'flex', alignItems: 'flex-end'}}>
         {label} :
         <DatePicker
           selected={this.state.start}

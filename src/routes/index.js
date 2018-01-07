@@ -60,12 +60,15 @@ export const SCHOOL_MANAGEMENT_POSTS_RECOMMENDATION = `${SCHOOL_MANAGEMENT}/post
 export const SCHOOL_MANAGEMENT_POSTS_WAITING = `${SCHOOL_MANAGEMENT}/posts/waiting`
 export const SCHOOL_MANAGEMENT_POSTS_RATE = `${SCHOOL_MANAGEMENT}/exercitation/rate`
 export const SCHOOL_MANAGEMENT_STUDENT_MANAGE = `${SCHOOL_MANAGEMENT}/exercitation/student/manage`
+export const SCHOOL_MANAGEMENT_EXERCITATION_RECORD = `${SCHOOL_MANAGEMENT}/exercitation/record`
 export const SCHOOL_MANAGEMENT_PENDING = `${SCHOOL_MANAGEMENT}/user/pending`
 export const SCHOOL_MANAGEMENT_MSG_PERFECTION = `${SCHOOL_MANAGEMENT}/user/message/perfection`
+export const SCHOOL_MANAGEMENT_SIGNUP = `${SCHOOL_MANAGEMENT}/signup`
 
 export const STUDENT_MANAGEMENT = `/management/student`
 export const STUDENT_MANAGEMENT_MSG_PERFECTION = `${STUDENT_MANAGEMENT}/user/message/perfection`
 export const STUDENT_MANAGEMENT_PENDING = `${STUDENT_MANAGEMENT}/user/pending`
+export const STUDENT_MANAGEMENT_SIGNUP = `${STUDENT_MANAGEMENT}/signup`
 
 const routes = {
   home: {
@@ -157,6 +160,12 @@ const routes = {
     pending: {
       path: SCHOOL_MANAGEMENT_PENDING
     },
+    signUp: {
+      path: SCHOOL_MANAGEMENT_SIGNUP,
+    },
+    exercitationRecord: {
+      path: SCHOOL_MANAGEMENT_EXERCITATION_RECORD,
+    },
   },
   studentManagement: {
     path: STUDENT_MANAGEMENT,
@@ -165,6 +174,9 @@ const routes = {
     },
     pending: {
       path: STUDENT_MANAGEMENT_PENDING,
+    },
+    signUp: {
+      path: STUDENT_MANAGEMENT_SIGNUP,
     },
   },
 }

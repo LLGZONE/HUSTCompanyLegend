@@ -4,8 +4,7 @@ import Grid from 'material-ui/Grid'
 import {withStyles} from 'material-ui/styles'
 
 import renderInputField from '../../../../components/commons/form/renderInputField'
-import FormDatePicker from '../../../../components/commons/form/FormDatePicker'
-import perfectSTMsg from '../servies/perfectSTMsg'
+import FormTextField from '../../../../components/managementPlatform/Company/PostsPublish/FormTextField'
 
 import '../../../../components/managementPlatform/Company/PerfectMessage/FormField.scss'
 
@@ -19,7 +18,7 @@ const styles =(theme) => ({
 
 class FormField extends React.Component {
   static async handleSubmit(values, dispatch) {
-    const stid = await perfectSTMsg(values)
+    console.log(values)
   }
 
   render() {
@@ -31,30 +30,40 @@ class FormField extends React.Component {
         <Grid className={classes.center} spacing={24} container>
           <Field
             name="name"
-            label="请输入姓名"
+            label="请输入学校名"
             component={renderInputField}
           />
           <Field
-            name="sex"
-            label="请输入性别"
+            name="site"
+            label="请输入网站"
             component={renderInputField}
           />
           <Field
-            name="school"
-            label="请输入所在学校"
+            name="certId"
+            label="请输入证书编号"
             component={renderInputField}
           />
           <Field
-            name="birth"
-            label="出生日期"
-            component={FormDatePicker}
+            name="highAuth"
+            label="请输入上级部门"
+            component={renderInputField}
           />
           <Field
-            name="major"
-            label="请输入所在专业"
+            name="corporation"
+            label="请输入法人"
+            component={renderInputField}
+          />
+          <Field
+            name="groupId"
+            label="请输入组织代码"
             component={renderInputField}
           />
         </Grid>
+        <Field
+          name="intro"
+          label="学校简介"
+          component={FormTextField}
+        />
         <div className="perfect-message-form-btn">
           <button type="button" disabled={pristine || submitting} onClick={reset}>
             重置
@@ -72,7 +81,7 @@ class FormField extends React.Component {
 }
 
 export default withStyles(styles, {withTheme: true})(reduxForm({
-  form: 'stdPerfectMessage',
+  form: 'sPerfectMessage',
   destroyOnUnmount: false,
   onSubmit: FormField.handleSubmit,
 })(FormField))

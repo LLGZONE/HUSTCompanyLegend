@@ -4,7 +4,7 @@ import { FAILURE, REQUEST, SUCCESS } from '../actions'
 const user = (state = {
   isLogin: false,
   username: '',
-  type: '',
+  userType: '',
   password: '',
   uid: '',
   isFetching: false,
@@ -22,7 +22,7 @@ const user = (state = {
         ...state,
         username: action.username,
         password: action.password,
-        type: action.loginType,
+        userType: action.userType,
         isFetching: true,
         error: '',
       }
@@ -38,7 +38,7 @@ const user = (state = {
         ...state,
         isFetching: false,
         isLogin: false,
-        type: '',
+        userType: '',
         uid: '',
         username: '',
         error: action.error,

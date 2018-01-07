@@ -18,9 +18,9 @@ const LogInType = ({type}) => (
         高校用户
       </Link>
     </label>
-    <label className={(type === 'person' ? 'active' : '')+' login-select-btn'}>
-      <Link to="/exercitation/posts/apply/person">
-        个人用户
+    <label className={(type === 'student' ? 'active' : '')+' login-select-btn'}>
+      <Link to="/exercitation/posts/apply/student">
+        学生用户
       </Link>
     </label>
   </nav>

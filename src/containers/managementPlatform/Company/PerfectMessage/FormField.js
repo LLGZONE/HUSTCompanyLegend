@@ -2,17 +2,18 @@
  * Created by LLGZONE on 2017/11/12.
  */
 import React from 'react'
+import { connect } from 'react-redux'
 import { Field, reduxForm, formValueSelector } from 'redux-form'
+
 import FormSelect from '../../../../components/managementPlatform/Company/PerfectMessage/FormSelect'
 import FormTextField from '../../../../components/managementPlatform/Company/PostsPublish/FormTextField'
 import FormFile from '../../../../components/managementPlatform/Company/PerfectMessage/FormFile'
-import '../../../../components/managementPlatform/Company/PerfectMessage/FormField.scss'
 import Grid from 'material-ui/Grid'
-
 import { perfectCMsg } from '../../../../actions/company'
 import renderInputField from '../../../../components/commons/form/renderInputField'
 
-import { connect } from 'react-redux'
+import '../../../../components/managementPlatform/Company/PerfectMessage/FormField.scss'
+
 
 class FormField extends React.Component {
   handleSubmitClick(e) {

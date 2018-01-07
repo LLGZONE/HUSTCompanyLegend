@@ -9,7 +9,8 @@ import {MuiThemeProvider, createMuiTheme} from 'material-ui/styles'
 
 import Home from './Home'
 import Exercitation from './Exercitation/index'
-import CompanyManagement from './managementPlatform/Company/index'
+import CompanyManagement from './managementPlatform/Company'
+import StudentManagement from './managementPlatform/Student'
 import routes from '../routes'
 
 const Root = ({ store, history }) => (
@@ -33,7 +34,7 @@ const Root = ({ store, history }) => (
               A200: '#fff4f2',
               A400: '#ffcabf',
               A700: '#ffb5a6',
-              'contrastDefaultColor': 'dark',
+              'contrastDefaultColor': 'light',
             }
         }
         })}>
@@ -41,6 +42,7 @@ const Root = ({ store, history }) => (
             <Route exact path={routes.home.path} component={Home} />
             <Route path={routes.exercitation.path} component={Exercitation} />
             <Route path={routes.companyManagement.path} component={CompanyManagement} />
+            <Route path={routes.studentManagement.path} component={StudentManagement} />
             <DevTools />
           </div>
         </MuiThemeProvider>

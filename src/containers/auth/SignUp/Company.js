@@ -6,7 +6,7 @@ class CompanySignUp extends React.Component {
 
   render() {
     return (
-      <SignUp title={'公司单位'} identity={'company'}/>
+      <SignUp title={'公司单位'} identity={'companyManagement'}/>
     )
   }
 }

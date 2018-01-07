@@ -57,7 +57,7 @@ function * fetchLogin(info) {
       //实际上要使用jwt，后端没有先用着
       const expireTime = 3600 * 1000 * 100 // 100小时
       localStorage.setItem('uid', response.uid)
-      localStorage.setItem('type', info.type)
+      localStorage.setItem('type', info.usertype)
       localStorage.setItem('expire', expireTime.toString())
       localStorage.setItem('last', Date.now().toString())
       const { response: {cid, sid, stid} } = yield call(fetchUserInfo, response.uid)
@@ -125,21 +125,21 @@ function * userLogout() {
 
 function * userLogin() {
   while (true) {
-    yield take(LOGIN[REQUEST])
-    const {username, password, type} = yield select(getUserInfo)
-    yield call(fetchLogin, {username, password, type})
+    const {username, password, userType} = yield take(LOGIN[REQUEST])
+    console.log(userType)
+    yield call(fetchLogin, {username, password, usertype: userType})
   }
 }
 
 function * userRegister() {
   while(true) {
-    const {email, password, phone, verify, type} = yield take(REGISTER[REQUEST])
+    const {email, password, phone, verify, userType} = yield take(REGISTER[REQUEST])
     const info = {
       password,
       verify,
       email: '',
       phone: '',
-      type,
+      usertype: userType,
     }
     if (email) {
       info.email = email

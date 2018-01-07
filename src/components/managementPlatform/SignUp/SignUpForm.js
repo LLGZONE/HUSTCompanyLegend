@@ -12,7 +12,7 @@ import '../../../components/LogIn/LogInType.scss'
 import './index.scss'
 
 const SignUpForm = ({ identity, registerMsg, isFetching }) => {
-  const prefix = routes.companyManagement.signUp.path
+  const prefix = routes[identity].signUp.path
   const mobilePath = `${prefix}/phone`
   const emailPath = `${prefix}/email`
 
