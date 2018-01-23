@@ -1,0 +1,12 @@
+.exercitation-company-gallery {
+    display: flex;
+    width: 100%;
+    border: 1px solid grey;
+    justify-content: space-around;
+    max-height: 80px;
+}
+
+.exercitation-company-gallery > img {
+    max-width: 100px;
+    min-width: 40px;
+}

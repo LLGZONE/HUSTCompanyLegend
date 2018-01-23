@@ -69,10 +69,11 @@ const MobileRegister = ({
                           isFetching = false,
                           registerError = false,
                           valid,
+  type
                         }) =>
   (
     <form onSubmit={(e) => {
-      register({ phone, password, verify, identity })
+      register({ phone, password, verify, identity, usertype: type })
       e.preventDefault()
     }} className="company-signup-form-main">
       <Field

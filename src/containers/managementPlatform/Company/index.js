@@ -107,20 +107,19 @@ class CompanyManagement extends React.Component {
                                return <Redirect to={companyManagement.msgPerfection.path}/>
                              }}
                       />
+                      <Route path={companyManagement.msgPerfection.path} component={PerfectMessage}/>
+                      <Route path={companyManagement.pending.path} render={() => <PendingReview
+                        logo={_360}
+                        license={license}
+                        workImgs={[env1, env2, env3]}
+                      />} />
                     </React.Fragment>
                   )}
                   <Route path={companyManagement.msgPerfection.path} component={PerfectMessage}/>
                   <Route path={companyManagement.pending.path} render={() => <PendingReview
                     logo={_360}
-                    companyName="360集团有限公司"
-                    linkman="张某"
-                    place="武汉东湖开发区xxx"
-                    size={100}
-                    phone="1999999999"
-                    website="www.360.com"
                     license={license}
                     workImgs={[env1, env2, env3]}
-                    simpleIntro="网络安全关键在人才，而武汉的最大机遇就在人才。昨日，“人才”二字成为国家网络安全周开幕首日的最火关键词。上午，武汉市政府、奇虎360公司与武汉大学签署三方战略合作协议"
                   />} />
                   <Redirect to={companyManagement.msgPerfection.path}/>
                 </Switch>

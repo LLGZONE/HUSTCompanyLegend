@@ -1,10 +1,10 @@
-import { take, put, call, fork, select } from 'redux-saga/effects'
+import { take, put, call, fork } from 'redux-saga/effects'
 import { login, logout, LOGOUT, LOGIN, register, REGISTER } from '../actions/user'
 import { BASE_URL } from '../config/url'
 import { REQUEST } from '../actions'
-import { getUserInfo } from '../reducers/selectors'
 import fetchEntity from '../utils/fetchEntity'
 import { isPerfectCMsg } from '../actions/company'
+import saveToken from '../utils/saveToken'
 
 //使用用户id得到用户的个人信息
 function fetchUserInfo(uid) {
@@ -16,9 +16,10 @@ function fetchUserInfo(uid) {
 //注册
 function fetchRegisterApi(info) {
   const url = `${BASE_URL}/user/register`
+  const types =  ['company', 'school', 'student']
   const option = {
     method: 'POST',
-    body: JSON.stringify(info),
+    body: JSON.stringify({...info, usertype: types.indexOf(info.usertype)}),
     headers: {
       'Content-Type': 'application/json'
     }
@@ -29,10 +30,11 @@ function fetchRegisterApi(info) {
 
 //登陆
 function fetchLoginApi(info) {
+  const types =  ['company', 'school', 'student']
   const url = `${BASE_URL}/user/login`
   const header = {
     method: 'POST',
-    body: JSON.stringify(info),
+    body: JSON.stringify({...info, usertype: types.indexOf(info.usertype)}),
     headers: {
       'Content-Type': 'application/json',
     },
@@ -54,14 +56,12 @@ function * fetchLogin(info) {
   try {
     const { response } = yield call(fetchLoginApi, info)
     if (response && response.uid) {
-      //实际上要使用jwt，后端没有先用着
-      const expireTime = 3600 * 1000 * 100 // 100小时
       localStorage.setItem('uid', response.uid)
       localStorage.setItem('type', info.usertype)
-      localStorage.setItem('expire', expireTime.toString())
-      localStorage.setItem('last', Date.now().toString())
+      const token = response.token
+      saveToken(token)
       const { response: {cid, sid, stid} } = yield call(fetchUserInfo, response.uid)
-      switch (info.type) {
+      switch (info.usertype) {
         case 'company':
           if (cid) {
             localStorage.setItem('cid', cid.toString())
@@ -85,11 +85,11 @@ function * fetchLogin(info) {
       }
       yield put(login.success(response.uid))
     } else {
+
       yield put(login.failure('用户名或密码错误'))
     }
   }
   catch (e) {
-    console.log(e)
     yield put(login.failure('网络故障'))
   }
 }
@@ -126,20 +126,20 @@ function * userLogout() {
 function * userLogin() {
   while (true) {
     const {username, password, userType} = yield take(LOGIN[REQUEST])
-    console.log(userType)
     yield call(fetchLogin, {username, password, usertype: userType})
   }
 }
 
 function * userRegister() {
   while(true) {
-    const {email, password, phone, verify, userType} = yield take(REGISTER[REQUEST])
+    const {email, password, phone, verify, usertype, identity} = yield take(REGISTER[REQUEST])
     const info = {
       password,
       verify,
       email: '',
       phone: '',
-      usertype: userType,
+      usertype,
+      identity,
     }
     if (email) {
       info.email = email

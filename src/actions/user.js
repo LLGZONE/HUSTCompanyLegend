@@ -19,7 +19,7 @@ export const logout = {
 }
 
 export const register = {
-  request: ({email, password, phone, identity, verify}) => action(REGISTER[REQUEST], {email, password, phone, identity, verify}),
+  request: ({email, password, phone, identity, verify, usertype}) => action(REGISTER[REQUEST], {email, password, phone, identity, verify, usertype}),
   success: () => action(REGISTER[SUCCESS]),
   failure: error => action(REGISTER[FAILURE], {error}),
 }

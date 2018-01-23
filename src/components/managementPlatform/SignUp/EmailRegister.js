@@ -57,6 +57,7 @@ const EmailRegister = ({
                          isFetching = false,
                          registerError = false,
                          valid,
+  type: usertype
                        }) => (
   <form className="company-signup-form-main" onSubmit={handleSubmit}>
     <Field
@@ -98,7 +99,7 @@ const EmailRegister = ({
       component={renderCheck}
     />
     <button onSubmit={() => {
-      register({ email: eml, password, verify, identity })
+      register({ email: eml, password, verify, identity, usertype })
     }} type="submit" disabled={submitting || !checked || !valid} className="company-signup-form-btn">
       {isFetching ? '注册中...' : '注册'}
     </button>

@@ -6,7 +6,7 @@ class StudentSignUp extends React.Component {
 
   render() {
     return (
-      <SignUp title={'学生个人'} identity={'studentManagement'}/>
+      <SignUp title={'学生个人'} identity={'studentManagement'} type={'student'} />
     )
   }
 }

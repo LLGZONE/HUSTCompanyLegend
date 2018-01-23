@@ -1,0 +1,11 @@
+.home-main-achieve-legend {
+    flex: 1 0 auto;
+    max-width: 30%;
+    margin-right: 15px;
+    height: var(--achiveHeight);
+}
+
+.home-main-achieve-legend img {
+    width: 100%;
+    height: 100%;
+}

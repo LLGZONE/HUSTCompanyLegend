@@ -12,7 +12,7 @@ import {Link} from 'react-router-dom'
 import routes from '../../../routes'
 import { push } from 'react-router-redux'
 
-const SignUp = ({title, identity, isFetching, registerMsg }) => (
+const SignUp = ({title, identity, isFetching, registerMsg, type }) => (
   <section className="company-signup">
     <LineHeader title={`${title}注册`} style={{fontSize: '1.2em'}}/>
     <div className="company-signup-main">
@@ -21,6 +21,7 @@ const SignUp = ({title, identity, isFetching, registerMsg }) => (
         isFetching={isFetching}
         push={push}
         registerMsg={registerMsg}
+        type={type}
       />
       <div>
         <div className="company-signup-login">

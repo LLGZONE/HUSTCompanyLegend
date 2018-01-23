@@ -1,27 +1,34 @@
-import { take, put, fork, call, select} from 'redux-saga/effects'
+import { take, put, fork, call } from 'redux-saga/effects'
 import { BASE_URL } from '../config/url'
-import { perfectCMsg, PERFECT_CMSG, publish, PUBLISH } from '../actions/company'
+import { perfectCMsg, PERFECT_CMSG, publish, PUBLISH, companyInfoSuccess } from '../actions/company'
 import fetchEntity from '../utils/fetchEntity'
-import getUid from '../utils/getUid'
 import jsonHeader from '../utils/jsonHeader'
+import getToken from '../utils/getToken'
 
-function fetchPerfectCMsg(cmsg, uid) {
-  const url = `${BASE_URL}/company/submit/${uid}`
+function fetchPerfectCMsg(cmsg, token) {
+  const url = `${BASE_URL}/company/submit/`
 
-  return fetchEntity(url, jsonHeader(cmsg))
+  return fetchEntity(url, jsonHeader({...cmsg, token}))
 }
 
-function fetchPublishPostsInfo(postsInfo, uid) {
-  const url =  `${BASE_URL}/intership/submit/${uid}`
+function fetchPublishPostsInfo(postsInfo, token) {
+  const url =  `${BASE_URL}/intership/submit`
 
-  return fetchEntity(url, jsonHeader(postsInfo))
+  return fetchEntity(url, jsonHeader({...postsInfo, token}))
+}
+
+function fetchCompanyInfo(cid) {
+  const url = `${BASE_URL}/company/getById/${cid}`
+
+  return fetchEntity(url)
 }
 
 //============== work saga ============
-function * perfectCMsgSaga(cmsg, uid) {
+function * perfectCMsgSaga(cmsg, token) {
   try {
-    const { response } = yield call(fetchPerfectCMsg, cmsg, uid)
+    const { response } = yield call(fetchPerfectCMsg, cmsg, token)
     if (response && response.cid) {
+      console.log(response)
       localStorage.setItem('cid', response.cid)
       yield put(perfectCMsg.success(response.cid))
     } else {
@@ -33,9 +40,9 @@ function * perfectCMsgSaga(cmsg, uid) {
   }
 }
 
-function * publishPostsInfo(postsInfo, uid) {
+function * publishPostsInfo(postsInfo, token) {
   try {
-    const { response } = yield call(fetchPublishPostsInfo, uid)
+    const { response } = yield call(fetchPublishPostsInfo, token)
 
     if (response && response.isid) {
       yield put(publish.success())
@@ -52,27 +59,37 @@ function * publishPostsInfo(postsInfo, uid) {
 function * watchPerfectCMsg() {
   while (true) {
     const action = yield take(PERFECT_CMSG['REQUEST'])
-    const uid = yield select(getUid)
     //不要直接删除action的type不然后面的中间件会出错
     const cmsg = {...action}
     delete cmsg.type
-    yield call(perfectCMsgSaga, cmsg, uid)
+    const token = getToken()
+    yield call(perfectCMsgSaga, cmsg, token)
   }
 }
 
 function * watchPublishPostsInfo() {
   while (true) {
     const action = yield take(PUBLISH['REQUEST'])
-    const uid = yield select(getUid)
     const postsInfo = {...action}
+    const token = getToken()
     delete postsInfo.type
-    yield call(publishPostsInfo, uid)
+    yield call(publishPostsInfo, token)
+  }
+}
+
+function * watchGetCompanyInfo() {
+  while(true) {
+    yield take('COMPANY_INFO')
+    const cid = localStorage.getItem('cid')
+    const {response: info} = yield call(fetchCompanyInfo, cid)
+    yield put(companyInfoSuccess(info))
   }
 }
 
 function * rootSaga() {
   yield fork(watchPerfectCMsg)
   yield fork(watchPublishPostsInfo)
+  yield fork(watchGetCompanyInfo)
 }
 
 export default rootSaga

@@ -15,9 +15,8 @@ function fetchListApi(type, page) {
 export function * fetchList(type, page) {
   try {
     const {response} = yield call(fetchListApi, type, page)
-    console.log(response)
     if (response) {
-      yield put(pagination.success(type, page, response, response.length))
+      yield put(pagination.success(type, page, response.list, response.list.length))
     } else {
       yield put(pagination.failure(type, {msg: 'internet'}))
     }

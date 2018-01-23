@@ -1,0 +1,16 @@
+.exercitationPosts-pagination {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.exercitationPosts-pagination-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.exercitationPosts-pagination-container a {
+    margin: 0 10px;
+    text-decoration: none;
+}

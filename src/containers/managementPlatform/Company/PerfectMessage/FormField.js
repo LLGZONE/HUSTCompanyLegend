@@ -37,19 +37,20 @@ class FormField extends React.Component {
     } = this.props
     console.log('push')
     perfectCMsg({
-      companyName,
-      companyPlace,
-      contact,
+      cname: companyName,
+      address: companyPlace,
+      corporation: contact,
       phone,
-      alternativePhone,
+      subphone: alternativePhone,
       site,
-      industry,
-      nature,
-      size,
+      industry: 1,
+      property: nature,
+      scale: size,
       intro,
       cert_id,
       groupid,
       license,
+      high_auth: '',
       environment,
     })
   }
@@ -92,7 +93,7 @@ class FormField extends React.Component {
           <FormSelect
             name="sector"
             label="请选择所属行业"
-            datas={['计算机集成', '通信与信息', '电力自动化']}
+            datas={['IT']}
           />
           <FormSelect
             name="nature"
@@ -186,7 +187,7 @@ const mapStateToProps = (state) => {
     site: selector(state, 'site'),
     industry: selector(state, 'sector'),
     nature: selector(state, 'nature'),
-    size: selector(state, 'nature'),
+    size: selector(state, 'size'),
     intro: selector(state, 'intro'),
     cert_id: selector(state, 'certId'),
     groupid: selector(state, 'groupid'),

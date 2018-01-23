@@ -11,7 +11,7 @@ import MobileRegister from './MobileRegister'
 import '../../../components/LogIn/LogInType.scss'
 import './index.scss'
 
-const SignUpForm = ({ identity, registerMsg, isFetching }) => {
+const SignUpForm = ({ identity, registerMsg, isFetching, type }) => {
   const prefix = routes[identity].signUp.path
   const mobilePath = `${prefix}/phone`
   const emailPath = `${prefix}/email`
@@ -54,6 +54,7 @@ const SignUpForm = ({ identity, registerMsg, isFetching }) => {
             identity={identity}
             isFetching={isFetching}
             registerError={registerMsg}
+            type={type}
           />}
         />
         <Route path={emailPath} render={() =>
@@ -61,6 +62,7 @@ const SignUpForm = ({ identity, registerMsg, isFetching }) => {
             identity={identity}
             isFetching={isFetching}
             registerError={registerMsg}
+            type={type}
           />}
         />
       </Switch>

@@ -36,7 +36,7 @@ const ExercitationHeader = () => {
             disabled
           />
           <NavBarItem
-            to="/exercitation/posts?page=1"
+            to="/exercitation/posts"
             label="实习岗位"
           />
           <NavBarItem
